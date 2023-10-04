@@ -6,6 +6,8 @@ const productsRouter = require('./routes/products')
 
 const unPuerto = process.env.PUERTO
 
+app.use(express.static('public'))
+
 const iniciar = async () => {
      try {
           // await connectDB(process.env.MONGO_URL)
@@ -15,10 +17,10 @@ const iniciar = async () => {
      }
 }
 
-app.use(express.static('public'))
+app.set('view engine','ejs')
 
 app.get('/', (req, res) => {
-     res.send('hola mundo')
+     res.render('home')
 })
 
 app.use('/pepe',productsRouter)
