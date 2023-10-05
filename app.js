@@ -10,8 +10,8 @@ app.use(express.static('public'))
 
 const iniciar = async () => {
      try {
-          // await connectDB(process.env.MONGO_URL)
-          app.listen(unPuerto, console.log('el servidor se inició'))
+          await connectDB(process.env.MONGO_URL)
+          app.listen(unPuerto, console.log(`el servidor se inició ${unPuerto}`))
      } catch (error) {
           console.log(error)
      }
@@ -20,7 +20,7 @@ const iniciar = async () => {
 app.set('view engine','ejs')
 
 app.get('/', (req, res) => {
-     res.render('home')
+     res.render('index')
 })
 
 app.use('/pepe',productsRouter)
