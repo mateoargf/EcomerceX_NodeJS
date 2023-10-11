@@ -4,13 +4,15 @@ require('dotenv').config()
 const connectDB = require('./db/conexion')
 const productsRouter = require('./routes/products')
 
+const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
+const ipStatic = process.env.IPESTATICA
 
 app.use(express.static('public'))
 
 const iniciar = async () => {
      try {
-          await connectDB(process.env.MONGO_URL)
+          await connectDB(db, ipStatic)
           app.listen(unPuerto, console.log(`el servidor se inició ${unPuerto}`))
      } catch (error) {
           console.log(error)
