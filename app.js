@@ -25,6 +25,6 @@ app.get('/', (req, res) => {
      res.render('index')
 })
 
-app.use('/pepe',productsRouter)
+app.use('/prod',productsRouter)
 
 iniciar() 
