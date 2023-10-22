@@ -3,6 +3,7 @@ const app = express()
 require('dotenv').config()
 const connectDB = require('./db/conexion')
 const productsRouter = require('./routes/products')
+const path = require('path')
 
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
@@ -20,9 +21,10 @@ const iniciar = async () => {
 }
 
 app.set('view engine','ejs')
+app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
-     res.render('index')
+     res.render('pages/index')
 })
 
 app.use('/prod',productsRouter)
