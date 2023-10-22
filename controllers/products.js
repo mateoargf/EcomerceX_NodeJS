@@ -3,7 +3,7 @@ const getAllProductStatic = (req, res) => {
 }
 
 const getHydro = (req, res) => {
-     res.render('hydroShoes')
+     res.render('pages/hydroShoes')
 }
 
 const getAllProduct = (req, res) => {

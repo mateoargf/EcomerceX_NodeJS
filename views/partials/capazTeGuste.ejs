@@ -1,0 +1,116 @@
+<section class="alsoLikeSection">
+    <H2>CAPAZ TE GUSTE</H2>
+    <i class="bi bi-arrow-down-short"></i>
+    <div class="alsoLikeCards">
+        <divc class="alsoLikeCard">
+            <img src="" alt="hodie">
+            <div class="alsoLikeInfo">
+                <h4>ZAPATILLAS STAN SMT</h4>
+                <p>$105</p>
+            </div>
+        </divc>
+        <div class="alsoLikeCard">
+            <img src="" alt="remera">
+            <div class="alsoLikeInfo">
+                <h4>ZAPATILLAS BAJAS FRM</h4>
+                <p>$110</p>
+            </div>
+        </div>
+        <div class="alsoLikeCard">
+            <img src="" alt="pantalon-basico">
+            <div class="alsoLikeInfo">
+                <h4>ZAPATILLAS DIARIAS 3.0</h4>
+                <p>$65</p>
+            </div>
+        </div>
+        <div class="alsoLikeCard">
+            <img src="" alt="shorts">
+            <div class="alsoLikeInfo">
+                <h4>ZAPATILLAS OZZ</h4>
+                <p>$100</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<style>
+    .alsoLikeSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85vw;
+        min-height: 50vh;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+    }
+
+    .alsoLikeSection h2,
+    .alsoLikeSection i {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .alsoLikeSection i {
+        font-size: 2.3rem;
+        font-weight: 700;
+    }
+
+    .alsoLikeCard:hover img {
+        opacity: 0.7;
+    }
+
+    .alsoLikeCards {
+        width: 100%;
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 22% 22% 22% 22%;
+        grid-template-rows: 1fr;
+        justify-content: space-between;
+        z-index: 1;
+        gap: 1rem;
+    }
+
+    .alsoLikeCard {
+        cursor: pointer;
+    }
+
+    .alsoLikeCard img {
+        border: 1.5px solid #a5a5a5be;
+        background-color: #EAEFF1;
+        border-radius: 0.2rem;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .alsoLikeCards img {
+        max-width: 100%;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .alsoLikeInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 3rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+
+    @media screen and (max-width:767px) {
+        .alsoLikeCards {
+            width: 87%;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width:1023px) {
+        .alsoLikeCards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (min-width:1024px) and (max-width:1439px) {}
+
+    @media screen and (min-width:1440px) and (max-width:1920px) {}
+</style>

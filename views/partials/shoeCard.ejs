@@ -1,0 +1,685 @@
+<main>
+    <section class="heroSection">
+        <div class="tituloShoes">
+            <nav class="guiaTitulo">
+                <a href="#">HOME<i class="bi bi-arrow-right"></i></a>
+                <a href="#">CATÁLOGO<i class="bi bi-arrow-right"></i></a>
+                <a href="#">ZAPATILLAS<i class="bi bi-arrow-right"></i></a>
+                <a href="#">ZAPATILLAS HYDRO</a>
+            </nav>
+            <h3>ZAPATILLAS</h3>
+        </div>
+        <div class="catalogoShoes">
+            <div class="catalogoUno ocultarPhone ocultarTablet">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <img src="" alt="Hydro_Zapatillas" class="catalogoDos">
+            <div class="catalogoTres">
+                <div class="tresZonaUno">
+                    <div class="rate ocultarPhone">
+                        <div class="descripcionRate">
+                            <p>Hombres</p>
+                            <p>-</p>
+                            <p>Originales</p>
+                        </div>
+                        <div class="votacionRate">
+                            <div class="estrellas">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>2043</p>
+                        </div>
+                    </div>
+                    <h2>HYDRO ZAPATILLAS</h2>
+                    <div class="precio">
+                        <h3>$120</h3>
+                        <h3>$96</h3>
+                    </div>
+                </div>
+                <div class="catalogoColors">
+                    <h4>COLORES</h4>
+                    <div class="coloresShoes">
+                        <a href="#" class="colorShoe">
+                            <img src="" alt="">
+                        </a>
+                        <a href="#" class="colorShoe">
+                            <img src="" alt="">
+                        </a>
+                        <a href="#" class="colorShoe">
+                            <img src="" alt="">
+                        </a>
+                        <a href="#" class="colorShoe">
+                            <img src="" alt="">
+                        </a>
+                        <a href="#" class="colorShoe">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="catalogoSizes">
+                    <h4>TALLES</h4>
+                    <div class="sizesDiv">
+                        <a href="#">
+                            <h5>4</h5>
+                        </a>
+                        <a href="#">
+                            <h5>4.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>5.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>6</h5>
+                        </a>
+                        <a href="#">
+                            <h5>6.5<i class="bi bi-stopwatch"></i></h5>
+                        </a>
+                        <a href="#">
+                            <h5>7</h5>
+                        </a>
+                        <a href="#">
+                            <h5>7.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>8</h5>
+                        </a>
+                        <a href="#">
+                            <h5>8.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>9</h5>
+                        </a>
+                        <a href="#">
+                            <h5>9.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>10</h5>
+                        </a>
+                        <a href="#">
+                            <h5>10.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>11</h5>
+                        </a>
+                        <a href="#">
+                            <h5>12</h5>
+                        </a>
+                        <a href="#">
+                            <h5>12.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>13</h5>
+                        </a>
+                        <a href="#">
+                            <h5>13.5</h5>
+                        </a>
+                        <a href="#">
+                            <h5>14<i class="bi bi-stopwatch"></i></h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="catalogoInfo">
+                    <a href="#">
+                        <h4>RESEÑAS</h4>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#">
+                        <h4>DESCRIPCIÓN</h4>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#">
+                        <h4>DETALLES</h4>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#">
+                        <h4>DESTACADOS</h4>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="catalogoAgregar">
+                    <button>
+                        <h3>CARRITO</h3>
+                    </button><button>
+                        <h3>SEGUIR</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .guiaTitulo a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            border-radius: 4px;
+            background-color: #000;
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .guiaTitulo a:hover::before,
+        .guiaTitulo a:focus::before {
+            transform-origin: left;
+            transform: scaleX(1);
+
+        }
+
+        .guiaTitulo a:hover::before {
+            transition: all 0.6s ease-in;
+        }
+
+        .guiaTitulo a:hover,
+        .guiaTitulo a:focus {
+            color: #000;
+        }
+
+        .guiaTitulo a:nth-child(4) {
+            color: #000;
+        }
+
+        .tituloShoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guiaTitulo {
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .guiaTitulo a {
+            color: #4a4a4a7c;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.5s ease-out;
+            position: relative;
+        }
+
+        .guiaTitulo i {
+            font-size: 1.1rem;
+        }
+
+        @media screen and (max-width:767px) {
+            .guiaTitulo a:nth-child(4) {
+                display: none;
+            }
+
+            .guiaTitulo a:nth-child(3) i {
+                display: none;
+            }
+
+            .guiaTitulo a:nth-child(3) {
+                color: #000;
+            }
+
+            .tituloShoes h3 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .guiaTitulo a:nth-child(4) {
+                display: none;
+            }
+
+            .guiaTitulo a:nth-child(3) i {
+                display: none;
+            }
+
+            .guiaTitulo a:nth-child(3) {
+                color: #000;
+            }
+
+            .tituloShoes h3 {
+                display: none;
+            }
+        }
+
+
+        @media screen and (min-width:1024px) and (max-width:1440px) {}
+
+
+        @media screen and (min-width:1441px) and (max-width:1920px) {}
+
+        .heroSection {
+            display: flex;
+            flex-direction: column;
+            min-height: fit-content;
+            width: 85vw;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            padding-bottom: 1rem;
+            gap: 3rem;
+        }
+
+        @media screen and (max-width:767px) {
+            .heroSection {
+                min-height: 138vh;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {}
+
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {}
+
+
+        @media screen and (min-width:1440px) and (max-width:1920px) {}
+
+        .catalogoUno img:nth-child(1),
+        .catalogoUno img:nth-child(2),
+        .catalogoUno img:nth-child(3),
+        .catalogoUno img:nth-child(4),
+        .catalogoUno img:nth-child(5) {
+            height: 5rem;
+            width: 5rem;
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .descripcionRate p:nth-child(1) {
+            font-weight: 600;
+        }
+
+        .descripcionRate p:nth-child(1) {
+            font-weight: 700;
+        }
+
+        .estrellas i:nth-child(5) {
+            color: #c4c4c4;
+        }
+
+        .estrellas i:hover {
+            color: #000;
+        }
+
+        .precio h3:nth-child(1) {
+            color: #c4c4c4;
+            text-decoration: line-through;
+        }
+
+        .coloresShoes:hover .colorShoe,
+        .sizesDiv:hover a,
+        .catalogoInfo:hover a,
+        .catalogoAgregar:hover button {
+            opacity: 0.5;
+        }
+
+        .coloresShoes:hover .colorShoe:hover,
+        .sizesDiv:hover a:hover,
+        .catalogoInfo:hover a:hover,
+        .catalogoAgregar:hover button:hover {
+            opacity: 1;
+        }
+
+        .colorShoe:focus {
+            border: none;
+        }
+
+        .sizesDiv a:nth-child(6),
+        .sizesDiv a:nth-child(20) {
+            color: #ceb044;
+            border-color: #ceb044;
+            background-color: transparent;
+        }
+
+        .sizesDiv a:nth-child(6):focus,
+        .sizesDiv a:nth-child(20):focus {
+            background-color: #ceb044;
+            color: #fff;
+        }
+
+        .sizesDiv a:nth-child(9),
+        .sizesDiv a:nth-child(12) {
+            color: #adadad;
+            border-color: #adadad;
+            background-color: transparent;
+        }
+
+        .sizesDiv a:focus {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .catalogoInfo a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            border-radius: 4px;
+            background-color: #000;
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .catalogoInfo a:hover::before,
+        .catalogoInfo a:focus::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .catalogoInfo a:hover::before,
+        .catalogoAgregar button {
+            transition: all 0.6s ease-in;
+        }
+
+        .catalogoAgregar button:focus {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .catalogoShoes {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .catalogoUno {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .catalogoUno img {
+            flex: 1;
+            width: auto;
+            max-width: 100%;
+            background-color: red;
+        }
+
+        .catalogoDos {
+            min-height: 100%;
+            width: 55%;
+            background-color: blue;
+            cursor: pointer;
+        }
+
+        .catalogoTres {
+            height: 100%;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .tresZonaUno {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 18%;
+        }
+
+        .rate {
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            height: 30%;
+        }
+
+        .descripcionRate {
+            display: flex;
+            gap: 0.3rem;
+            align-items: top;
+            height: 100%;
+            width: 30%;
+            font-size: 0.8rem;
+        }
+
+        .votacionRate {
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            cursor: pointer;
+        }
+
+        .estrellas {
+            display: flex;
+            letter-spacing: 0.2rem;
+            font-size: 0.8rem;
+            height: fit-content;
+            color: #02C715;
+        }
+
+        .estrellas i,
+        .coloresShoes,
+        .colorShoe,
+        .sizesDiv,
+        .sizesDiv a {
+            transition: 0.4s all ease-in-out;
+        }
+
+        .tresZonaUno h2 {
+            letter-spacing: 0.1rem;
+        }
+
+        .precio {
+            display: flex;
+            text-align: center;
+            gap: 1rem;
+            font-size: 1.3rem;
+            color: #E72C39;
+        }
+
+        .catalogoColors {
+            height: 28%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .coloresShoes {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .colorShoe {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 0.3rem;
+            border: 2px solid #A5A5A5;
+            cursor: pointer;
+        }
+
+        .catalogoSizes {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 12rem;
+            position: relative;
+        }
+
+        .sizesDiv {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 1fr;
+            align-content: space-between;
+            grid-row-gap: 0.3rem;
+            z-index: 1;
+        }
+
+        .sizesDiv a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            text-decoration: none;
+            height: 2rem;
+            width: 4.2rem;
+            border-radius: 0.3rem;
+            border: 2px solid #A5A5A5;
+        }
+
+        .catalogoInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 8rem;
+        }
+
+        .catalogoInfo a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s ease-out;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .catalogoInfo a i {
+            font-size: 1.9rem;
+        }
+
+        .catalogoAgregar {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            min-height: fit-content;
+        }
+
+        .catalogoAgregar button {
+            padding: 0.5rem 1rem;
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.3rem;
+            border: 2px solid #000;
+            cursor: pointer;
+            box-shadow: none;
+        }
+
+
+        @media screen and (max-width:767px) {
+            .catalogoColors a:nth-child(n) {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+
+            .sizesDiv a:nth-child(n) {
+                height: 2rem;
+                width: 3.5rem;
+            }
+
+            .ocultarPhone {
+                display: none;
+            }
+
+            .catalogoShoes {
+                flex-direction: column;
+            }
+
+            .catalogoDos,
+            .catalogoTres {
+                width: 100%;
+                height: 50vh;
+            }
+
+            .descripcionRate,
+            .votacionRate {
+                width: fit-content;
+            }
+
+            .catalogoInfo {
+                min-height: 10rem;
+            }
+
+            .catalogoAgregar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .catalogoColors a:nth-child(n) {
+                width: 6rem;
+                height: 6rem;
+            }
+
+            .sizesDiv a:nth-child(n) {
+                height: 3rem;
+                width: 6rem;
+            }
+
+            .ocultarTablet {
+                display: none;
+            }
+
+            .catalogoShoes {
+                flex-direction: column;
+            }
+
+            .catalogoDos,
+            .catalogoTres {
+                width: 100%;
+            }
+
+            .catalogoDos {
+                height: 50vh;
+            }
+
+            .catalogoColors {
+                gap: 1rem;
+            }
+
+            .descripcionRate,
+            .votacionRate {
+                width: fit-content;
+            }
+
+            .catalogoAgregar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .catalogoAgregar button {
+                width: 30%;
+                height: 2.7rem;
+            }
+        }
+
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {}
+
+
+        @media screen and (min-width:1440px) and (max-width:1920px) {}
+    </style>
