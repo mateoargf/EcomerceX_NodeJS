@@ -7,13 +7,12 @@ const path = require('path')
 
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
-const ipStatic = process.env.IPESTATICA
 
 app.use(express.static('public'))
 
 const iniciar = async () => {
      try {
-          await connectDB(db, ipStatic)
+          await connectDB(db)
           app.listen(unPuerto, console.log(`el servidor se inició ${unPuerto}`))
      } catch (error) {
           console.log(error)
