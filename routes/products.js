@@ -1,12 +1,16 @@
 const Router = require('express')
 const router = Router()
 
-const { getAllProduct, getAllProductStatic, getHydro } = require('../controllers/products')
+const {
+     getAllProduct,
+     getHydro
+} = require('../controllers/products')
 
 // rutas
-router.route('/').get(getAllProduct)
-router.route('/hydro').get(getHydro)
-router.route('/estatico').get(getAllProductStatic)
+router.get('/', getAllProduct)
+router.get('/hydro', getHydro)
+// router.get('/articulo/:id', getSelectedProduct)
+// router.post('/crear', postAllProduct)
+// router.delete('/eliminar/:id', deleteAllProduct)
 
-
-module.exports=router
+module.exports = router
