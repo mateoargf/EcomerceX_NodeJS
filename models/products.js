@@ -5,6 +5,17 @@ const productSchema = new mongoose.Schema({
           type: String,
           required: true
      },
+     imagen: {
+          type: String,
+          required: true,
+          validate: {
+               validator: function (value) {
+                    // Utiliza una expresión regular para verificar la extensión de la imagen
+                    return /\.(jpg|jpeg|png|gif)$/.test(value.toLowerCase());
+               },
+               message: 'La URL de la imagen no es válida.'
+          }
+     },
      genero: {
           type: String,
           required: true
@@ -43,4 +54,4 @@ const productSchema = new mongoose.Schema({
      }
 })
 
-module.exports=mongoose.model('productSchema',productSchema)
+module.exports = mongoose.model('productSchema', productSchema)
