@@ -1,0 +1,241 @@
+<footer>
+
+    <div class="containerFooter">
+
+        <div class="infoFooter">
+
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png"
+                    alt="Logo">
+                <p>X</p>
+            </div>
+
+            <div class="derechos">
+                <p>Todos los derechos reservados &copy; 2023</p>
+            </div>
+
+            <div class="btnFooter">
+                <button><i class="bi bi-flag-fill"></i> Argentina <i class="bi bi-arrow-right iconStyle"></i></button>
+            </div>
+
+        </div>
+
+        <hr class="lineaFooter">
+
+        <div class="linksFooter">
+
+            <div class="lFooter">
+                <a href="#">Rastreador de pedidos</a>
+                <a href="#">Mapa del sitio</a>
+            </div>
+
+            <div class="lFooter">
+                <a href="#">Contáctenos</a>
+                <a href="#">Avisos legales</a>
+            </div>
+
+            <div class="lFooter">
+                <a href="#">Localizador de tiendas</a>
+                <a href="#">Política de privacidad</a>
+            </div>
+
+            <div class="lFooter">
+                <a href="#">Sostenibilidad</a>
+                <a href="#">Carreras</a>
+            </div>
+
+            <div class="lFooter">
+                <a href="#">Centro de ayuda</a>
+                <a href="#">Síganos</a>
+            </div>
+        </div>
+
+        <hr class="lineaFooterFinal">
+
+        <div class="derechosFinal">
+            <p>Todos los derechos reservados &copy; 2023</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<style>
+    /*  =========================
+    ====== Footer ===========
+    =========================
+*/
+    .containerFooter {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .infoFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .logo p {
+        font-weight: 600;
+    }
+
+    .linksFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 15px 0;
+    }
+
+    .linksFooter a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .linksFooter a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        border-radius: 4px;
+        background-color: #000;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .linksFooter a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    .lFooter {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .lineaFooterFinal {
+        display: none;
+    }
+
+    .derechosFinal {
+        display: none;
+    }
+
+    @media screen and (min-width:768px) and (max-width:1023px) {
+
+        .containerFooter {
+            width: 100%;
+        }
+
+        .infoFooter {
+            width: 95%;
+        }
+
+        .containerFooter {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .infoFooter {
+            width: 95%;
+            padding-top: 50px;
+            margin: 0 auto;
+        }
+
+        .linksFooter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 30px 0;
+        }
+
+        .lFooter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 51%;
+        }
+
+        .lineaFooterFinal {
+            display: block;
+            width: 100%;
+        }
+
+        .derechosFinal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 0;
+        }
+
+    }
+
+
+    @media screen and (max-width:767px) {
+
+        .containerFooter {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .infoFooter {
+            width: 95%;
+            padding-top: 50px;
+            margin: 0 auto;
+        }
+
+        .derechos {
+            display: none;
+        }
+
+        .linksFooter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 30px 0;
+        }
+
+        .lFooter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 51%;
+            gap: 0rem;
+        }
+
+        .lineaFooterFinal {
+            display: block;
+            width: 100%;
+        }
+
+        .derechosFinal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 0;
+        }
+    }
+</style>
