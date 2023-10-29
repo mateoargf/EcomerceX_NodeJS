@@ -6,7 +6,7 @@ const {
      getFormulario
 } = require('../controllers/user')
 
-// rutas
+// rutas:
 router.get('/form', getFormulario)
 
 module.exports = router
