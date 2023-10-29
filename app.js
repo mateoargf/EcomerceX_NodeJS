@@ -3,6 +3,7 @@ const app = express()
 require('dotenv').config()
 const connectDB = require('./db/conexion')
 const productsRouter = require('./routes/products')
+const userRouter = require('./routes/user')
 const path = require('path')
 
 const db = process.env.MONGO_URL
@@ -25,7 +26,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
      res.status(200).render('pages/index')
 })
-
+// rednderizado de todas las webs de productos
 app.use('/prod',productsRouter)
+
+// renderizado de todas las webs respecto a usuarios
+app.use('/user',userRouter)
 
 iniciar() 
