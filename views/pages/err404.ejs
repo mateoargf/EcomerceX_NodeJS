@@ -1,4 +1,4 @@
-<%- include('../partials/link-css') %>
+<%- include('../partials/header') -%>
 
      <style>
           * {
@@ -216,31 +216,26 @@
                }
           }
      </style>
+     <main id="section-error">
+          <div class="error-code 404">
+               <div class="404">
+                    <span>404</span>
+               </div>
+               <div class="error-title">
+                    ALGO SALIÓ MAL...
+               </div>
+               <div class="error-message">
+                    No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
+                    otro camino!
+               </div>
+               <div class="div-button">
+                    <button class="continue-button">
+                         CONTINUAR COMPRANDO
+                    </button>
+               </div>
+          </div>
+     </main>
 
-     <%- include('../partials/head_assets') %>
+     <%- include('../partials/footer') -%>
 
-          <%- include('../partials/header2') %>
-
-               <main id="section-error">
-                    <div class="error-code 404">
-                         <div class="404">
-                              <span>404</span>
-                         </div>
-                         <div class="error-title">
-                              ALGO SALIÓ MAL...
-                         </div>
-                         <div class="error-message">
-                              No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
-                              otro camino!
-                         </div>
-                         <div class="div-button">
-                              <button class="continue-button">
-                                   CONTINUAR COMPRANDO
-                              </button>
-                         </div>
-                    </div>
-               </main>
-
-               <%- include('../partials/footer2') %>
-
-                    <%- include('../partials/script') %>
+          <%- include('../partials/script') %>
