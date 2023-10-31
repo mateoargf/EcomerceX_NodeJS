@@ -1,0 +1,644 @@
+<%- include('../partials/header') -%>
+<style>
+/*Comienzo de la ediccion del main*/
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.infoPersonal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+
+.navInfoPersonal{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navInfoPersonal > a {
+    text-decoration: none;
+    font-size: 1.188em;
+    font-weight: 500;
+    color: #c6c6c6;
+    transition: all 0.3s ease;
+}
+
+
+.navInfoPersonal > a:hover{
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+
+.usernameTitle{
+    padding: 30px 0;
+}
+
+.titleSpecial {
+    -webkit-text-stroke: 2px #000;
+    color: transparent;
+}
+
+.personalData{
+    display: flex;
+    padding: 30px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20%;
+    padding-right: 30px;
+}
+
+.btnList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #c6c6c6;
+    background-color: transparent;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.188em; 
+    cursor: pointer;
+}
+
+.btnList:focus{
+    color: #c6c6c6;
+}
+
+.btnList:nth-child(1){
+    color:#c6c6c6 ;
+}
+
+.btnList:nth-child(1) .arrowRight{
+    display: none;
+}
+
+.btnList:nth-child(1) .arrowLeft{
+    display: block;
+}
+
+.btnList:focus .arrowLeft{
+    display: block;
+}
+
+.btnList:focus .arrowRight{
+    display: none;
+}
+
+.arrowLeft{
+    display: none;
+}
+
+.arrowUp{
+    display: none;
+}
+
+.btnOut{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 130px;
+    height: 40px;
+    color: #000;
+    padding: 5px 10px;
+    margin-top: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    background: transparent;
+    z-index: 0;
+}
+
+
+.btnOut::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    transition: 0.2s;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.btnOut:hover{
+    color: #545454;
+}
+
+.btnOut:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnOut:focus{
+    border: 1px solid #000;
+}
+
+
+.iconOut{
+    font-size: 1.188em; 
+    color: #000;
+}
+
+.personalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+form{
+    width: 150%;
+}
+
+.containerOption{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.option label {
+    color: #c6c6c6;
+    padding: 10px 0;
+}
+
+.option input{
+    padding: 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1em;
+    border: 2px solid #fff;
+    border-bottom: 2px solid #c6c6c6;
+    transition: all 0.3s ease;
+}
+
+.option input:hover{
+    padding: 10px;
+    border: 2px solid #c6c6c6;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.option input:focus{
+    padding: 10px;
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.containerBtnForm{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btnEdit > button{
+    height: 40px;
+    min-width: 130px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 35px;
+    background: #fff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnEdit > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnEdit > button:hover{
+    color: #545454;
+}
+
+.btnEdit > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnEdit > button:focus{
+    border: 1px solid #000;
+}
+
+.btnDelete > button{
+    height: 40px;
+    min-width: 130px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 25px;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnDelete > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnDelete > button:hover{
+    color: #545454;
+}
+
+.btnDelete > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnDelete > button:focus{
+    border: 1px solid #000;
+}
+
+.needHelp{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linksHelp{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+
+    .usernameTitle h1{
+        font-size: 2.9em;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    .personalData{
+        flex-direction: row;
+    }
+
+    .list{
+        width: 35%;
+    }
+    
+
+}
+
+
+@media screen and (max-width:767px) {
+
+    .title{
+        display: none;
+    }
+
+    .usernameTitle h1 {
+        font-size: 2.2em;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    .personalData{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .list {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .btnList:focus .arrowUp{
+        display: block;
+        color: #000;
+    }
+
+    .btnList:focus .arrowLeft{
+        display: none;
+    }
+
+    .btnList:nth-child(1) .arrowLeft{
+        display: none;
+    }
+
+    .btnList:nth-child(1) .arrowUp{
+        display: block;
+        color: #000;
+    }
+
+    .personalInfo{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .titlePersonalInfo{
+        display: none;
+    }
+
+    .containerOption {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        width: 100%;
+    }
+
+    .option{
+        width: 100%;
+    }
+
+    .containerBtnForm {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btnEdit{
+        width: 100%;
+    }
+
+    .btnEdit button {
+        width: 100%;
+    }
+
+    .btnDelete {
+        width: 100%;
+    }
+
+    .btnDelete button {
+        width: 100%;
+    }
+
+   
+}
+
+</style>
+
+<main>
+    <section id="pInfo">
+
+        <div class="container">
+
+            <div class="infoPersonal">
+
+                <div class="text">
+                    <nav class="navInfoPersonal">
+                        <a href="#">Inicio <i class="bi bi-arrow-right"></i></a>
+                        <a href="#">Perfil <i class="bi bi-arrow-right"></i></a>
+                    </nav>
+                    <h3>Informacion Personal</h3>
+                </div>
+
+                <div class="title">
+                    <h2>Informacion Personal</h2>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="usernameTitle">
+                <h1><span class="titleSpecial">Bienvenido,</span> Usuario</h1>
+            </div>
+
+            <hr>
+
+            <div class="personalData">
+
+                <div class="list">
+                   
+                    <button class="btnList">
+                        <i class="bi bi-person-fill iconBtn" disabled></i> 
+                        Informacion Personal 
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnList">
+                        <i class="bi bi-handbag iconBtn"></i> 
+                        Mi bolsa 
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnList" id="btnWhislist">
+                        <i class="bi bi-heart iconBtn"></i> 
+                        Mi lista de deseos
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnList">
+                        <i class="bi bi-wallet2 iconBtn"></i> 
+                        Detalles del pago
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnList">
+                        <i class="bi bi-truck iconBtn"></i> 
+                        Detalles de la entrega
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnList">
+                        <i class="bi bi-arrow-counterclockwise iconBtn"></i> 
+                        Historial de pedidos 
+                        <i class="bi bi-arrow-right arrowRight"></i> 
+                        <i class="bi bi-arrow-left arrowLeft"></i> 
+                        <i class="bi bi-arrow-up arrowUp"></i>
+                    </button>
+
+                    <button class="btnOut iconOut"><i class="bi bi-box-arrow-in-right iconStyle"></i>Cerrar sesion</button>
+
+            
+                </div>
+
+                <hr>
+
+                <div class="personalInfo">
+
+                    <div class="titlePersonalInfo">
+                        <h2>Informacion Personal</h2>
+                    </div>
+
+                    <form action="">
+
+                        <div class="containerOption">
+
+                            <div class="option">
+                                <label for="">Nombre</label>
+                                <input type="text">
+                            </div>
+
+                            <div class="option">
+                                <label for="">Tu contraseña de adiClub</label>
+                                <input type="text">
+                            </div>
+
+                        </div>
+                        
+                        <div class="containerOption">
+
+                            <div class="option">
+                                <label for="">Genero</label>
+                                <input type="text">
+                            </div>
+
+                            <div class="option">
+                                <label for="">Email</label>
+                                <input type="email">
+                            </div>
+
+                        </div>
+
+
+                        <div class="containerOption">
+
+                            <div class="option">
+                                <label for="">Fecha de nacimiento</label>
+                                <input type="text">
+                            </div>
+
+                            <div class="option">
+                                <label for="">Tu numero de telefono</label>
+                                <input type="email">
+                            </div>
+
+                        </div>
+
+                        <div class="containerBtnForm">
+
+                            <div class="btnEdit">
+                                <button>Editar cuenta</button>
+                            </div>
+
+                            <div class="btnDelete">
+                                <button> <i class="bi bi-trash"></i> Eliminar cuentas</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                    
+
+                    <div class="needHelp">
+
+                        <div class="titleHelp">
+                            <h2>¿Necesitas ayuda?</h2>
+                        </div>
+
+                        <div class="linksHelp">
+                           
+                            <div class="links">
+                                <a href="#">Productos</a>
+                                <a href="#">Promociones y vales</a>
+                                <a href="#">Informacion de la empresa</a>
+                            </div>
+
+                            <div class="links">
+                                <a href="#">Ordenador</a>
+                                <a href="#">Devolucion y reembolso</a>
+                                <a href="#">Cuenta y newsletter</a>
+                            </div>
+                
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        
+
+
+        </div>
+
+    </section>
+</main>
+
+<%- include('../partials/footer') -%>
+
+          <%- include('../partials/script') %>

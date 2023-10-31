@@ -1,0 +1,1226 @@
+<%- include('../partials/header') -%>
+
+<style>
+    
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.infoPersonal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+
+.navInfoPersonal{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navInfoPersonal > a {
+    text-decoration: none;
+    font-size: 1.188em;
+    font-weight: 500;
+    color: #c6c6c6;
+    transition: all 0.3s ease;
+}
+
+
+.navInfoPersonal > a:hover{
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.usernameTitle{
+    padding: 30px 0;
+}
+
+.titleSpecial {
+    -webkit-text-stroke: 2px #000;
+    color: transparent;
+}
+
+.personalData{
+    display: flex;
+    padding: 30px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20%;
+    padding-right: 30px;
+}
+
+.btnList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #c6c6c6;
+    background-color: transparent;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.188em; 
+    cursor: pointer;
+}
+
+.btnList:focus{
+    color: #c6c6c6;
+}
+
+
+.btnList:nth-child(2){
+    color:#c6c6c6 ;
+}
+
+.btnList:nth-child(2) .arrowRight{
+    display: none;
+}
+
+.btnList:nth-child(2) .arrowLeft{
+    display: block;
+}
+
+.btnList:focus .arrowLeft{
+    display: block;
+}
+
+.btnList:focus .arrowRight{
+    display: none;
+}
+
+.arrowLeft{
+    display: none;
+}
+
+.arrowUp{
+    display: none;
+}
+
+.btnOut{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 130px;
+    height: 40px;
+    color: #000;
+    padding: 5px 10px;
+    margin-top: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    background: transparent;
+    z-index: 0;
+}
+
+
+.btnOut::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    transition: 0.2s;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.btnOut:hover{
+    color: #545454;
+}
+
+.btnOut:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnOut:focus{
+    border: 1px solid #000;
+}
+
+
+.iconOut{
+    font-size: 1.188em; 
+    color: #000;
+}
+
+.myBag{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    width: 80%;
+    gap: 2rem;
+}
+
+.bagHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnOption button {
+    min-width: 130px;
+    height: 40px;
+    color: #1a1a1a;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #3e3e3e;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.btnOption button:hover {
+    background: #3e3e3e;
+    color: #fff;
+}
+
+.rueda {
+    font-size: 1.2em;
+}
+
+.containerProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+
+.deleteProduct{
+    display: none;
+}
+
+.dataProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 67%;
+}
+
+.imageProduct{
+    width: 25%;
+}
+
+.imageProduct img {
+    height: 15vh;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.headerProduct{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titleProduct{
+    display: flex;
+    align-items: center;
+}
+
+.iconPlus{
+    display: none;
+}
+
+.priceProduct{
+    display: none;
+}
+
+.priceProduct p {
+    color: #c6c6c6;
+}
+
+.descriptionProduct{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.descriptionProduct p {
+    text-transform: uppercase;
+}
+
+.infoProduct{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.numberPrice p {
+    color: #E32B2B;
+}
+
+.infoTitleProduct p {
+    color: #c6c6c6;
+    text-transform: uppercase;
+}
+
+.iconCircle {
+    color: #c6c6c6;
+    font-size: 0.5em;
+}
+
+.btnProduct button {
+    border: none;
+    font-size: 2em;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.iconStyle{
+    transition: all 0.3s ease;
+}
+
+.iconStyle:hover{
+    transition: all 0.3s ease;
+    color: #3e3e3e;
+}
+
+
+.btnProduct button {
+    border: none;
+    font-size: 2em;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.containerPrice{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.containerItems{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.itemOne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textGrey p {
+    color: #c6c6c6;
+    text-transform: uppercase;
+}
+
+
+.totalTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleTotal h2{
+    color: #E32B2B;
+}
+
+.totalPrice h2 {
+    color: #E32B2B;
+}
+
+.btnBag{
+    display: flex;
+    margin: 2rem 0;
+    gap: 2rem;
+    width: 100%;
+}
+
+.btnEdit{
+    width: 25%;
+}
+
+.btnDelete{
+    width: 27%;
+}
+
+.btnEdit > button{
+    height: 40px;
+    min-width: 130px;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 25px;
+    background: #fff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnEdit > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnEdit > button:hover{
+    color: #545454;
+}
+
+.btnEdit > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnEdit > button:focus{
+    border: 1px solid #000;
+}
+
+.btnDelete > button{
+    height: 40px;
+    min-width: 130px;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 25px;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnDelete > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnDelete > button:hover{
+    color: #545454;
+}
+
+.btnDelete > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnDelete > button:focus{
+    border: 1px solid #000;
+}
+.needHelp{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linksHelp{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) { 
+   
+    .usernameTitle h1{
+        font-size: 2.9em;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    .personalData{
+        flex-direction: row;
+    }
+
+    .list{
+        width: 35%;
+    }
+
+    .myBag{
+        width: 64%;
+    }
+
+    .dataProduct{
+        padding-left: 15px;
+    }
+
+    .deleteProduct{
+        display: block;
+    }
+
+    .deleteProduct button{
+        height: 16vh;
+        padding: 0px 25px;
+        background-color: #E32B2B;
+        color:#fff;
+        border-radius: 4px;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+    }
+
+    .deleteProduct button:hover{
+        background-color: #fff;
+        color: #E32B2B;
+        transition: all 0.3s ease;
+    }
+
+    .imageProduct{
+        width: 27%;
+    }
+
+    .headerProduct{
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .titleProduct{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .iconPlus{
+        display: block;
+    }
+
+    .btnProduct{
+        display: none;
+    }
+
+    .descriptionProduct{
+        width: 100%;
+    }
+
+    .infoTitleProduct{
+        display: none;
+    }
+
+    .btnBag{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btnEdit{
+        width: 100%;
+    }
+
+    .btnEdit button {
+        width: 100%;
+    }
+
+    .btnDelete{
+        width: 100%;
+    }
+
+    .btnDelete button {
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width:767px) {
+  
+
+    .title{
+        display: none;
+    }
+
+    .usernameTitle h1 {
+        font-size: 2.2em;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    .personalData{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .list {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .myBag{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .product{
+        width: 100%;
+    }
+
+    .deleteProduct{
+        display: block;
+    }
+
+    .deleteProduct button{
+        height: 15vh;
+        padding: 0px 25px;
+        background-color: #E32B2B;
+        color:#fff;
+        border-radius: 4px;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+    }
+
+    .deleteProduct button:hover{
+        background-color: #fff;
+        color: #E32B2B;
+        transition: all 0.3s ease;
+    }
+
+    .headerProduct{
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .titleProduct{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .dataProduct{
+        padding-left: 15px;
+    }
+
+    .containerPrice{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .titlePrice{
+        width: 100%;
+    }
+
+    .containerItems{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .itemOne{
+        width: 100%;
+    }
+
+    .descriptionProduct{
+        width: 100%;
+    }
+
+    .infoTitleProduct{
+        display: none;
+    }
+
+    .iconPlus{
+        display: block;
+    }
+
+    .iconPlus > button{
+        background: transparent;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    .priceProduct{
+        display: block;
+    }
+
+    .btnProduct{
+        display: none;
+    }
+
+    .btnBag{
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .btnEdit{
+        width: 100%;
+    }
+
+    .btnEdit button {
+        width: 100%;
+    }
+
+    .btnDelete{
+        width: 100%;
+    }
+
+    .btnDelete button {
+        width: 100%;
+    }
+
+}
+</style>
+
+<main>
+<section id="pInfo">
+    <div class="container">
+        <div class="infoPersonal">
+            <div class="text">
+                <nav class="navInfoPersonal">
+                    <a href="#">Inicio <i class="bi bi-arrow-right"></i></a>
+                    <a href="#">Perfil <i class="bi bi-arrow-right"></i></a>
+                </nav>
+                <h3>Mi lista de deseos</h3>
+            </div>
+            <div class="title">
+                <h2>Mi lista de deseos</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="usernameTitle">
+            <h1><span class="titleSpecial">Bienvenido,</span> Usuario</h1>
+        </div>
+        <hr>
+        <div class="personalData">
+            <div class="list">
+                <button class="btnList">
+                    <i class="bi bi-person-fill iconBtn"></i> 
+                    Informacion Personal 
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnList" disabled>
+                    <i class="bi bi-handbag iconBtn"></i> 
+                    Mi bolsa 
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnList">
+                    <i class="bi bi-heart iconBtn"></i> 
+                    Mi lista de deseos
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnList">
+                    <i class="bi bi-wallet2 iconBtn"></i> 
+                    Detalles del pago
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnList">
+                    <i class="bi bi-truck iconBtn"></i> 
+                    Detalles de la entrega
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnList">
+                    <i class="bi bi-arrow-counterclockwise iconBtn"></i> 
+                    Historial de pedidos 
+                    <i class="bi bi-arrow-right arrowRight"></i> 
+                    <i class="bi bi-arrow-left arrowLeft"></i> 
+                    <i class="bi bi-arrow-up arrowUp"></i>
+                </button>
+                <button class="btnOut iconOut"><i class="bi bi-box-arrow-in-right iconStyle"></i>Cerrar sesion</button>
+            </div>
+            <hr>
+            <div class="myBag">
+                <div class="bagHeader">
+                    <div class="bagTitle">
+                        <h2>Mi bolsa</h2>
+                    </div>
+                    <div class="btnOption">
+                        <button><i class="bi bi-gear rueda"></i> Configuracion</button>
+                    </div>
+                </div>
+                <div class="containerProduct">
+                    <div class="product">
+                        <div class="deleteProduct">
+                            <button><i class="bi bi-trash"></i></button>
+                        </div>
+                        <div class="imageProduct">
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg" alt="producto del usuario">
+                        </div>
+                        <div class="dataProduct">
+                            <div class="headerProduct">
+                                <div class="titleProduct">
+                                    <div class="nameProduct">
+                                        <h2>Adicolor Contempo Tee</h2>
+                                    </div>
+                                    <div class="iconPlus">
+                                        <button>
+                                            <i class="bi bi-three-dots-vertical stylePlus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="containerPrice">
+                                    <div class="priceProduct">
+                                        <p>Precio: </p>
+                                    </div>
+                                    <div class="numberPrice">
+                                        <p>$40</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descriptionProduct">
+                                <div class="infoProduct">
+                                    <div class="infoTitleProduct">
+                                        <p>Tamaño:</p>
+                                    </div>
+                                    <div class="descriptionInfoProduct">
+                                        <p>XS</p>
+                                    </div>
+                                </div>
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+                                <div class="infoProduct">
+                                    <div class="infoTitleProduct">
+                                        <p>Color:</p>
+                                    </div>
+                                    <div class="descriptionInfoProduct">
+                                        <p>Maravilla Blanca</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Cantidad: </p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>1 par</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="btnProduct">
+                            <button><i class="bi bi-arrow-right iconStyle"></i></button>
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="product">
+
+                        <div class="deleteProduct">
+                            <button><i class="bi bi-trash"></i></button>
+                        </div>
+
+                        <div class="imageProduct">
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg" alt="producto del usuario">
+                        </div>
+
+                        <div class="dataProduct">
+
+                            <div class="headerProduct">
+
+                                <div class="titleProduct">
+
+                                    <div class="nameProduct">
+                                        <h2>Teofil essentials pants</h2>
+                                    </div>
+
+                                    <div class="iconPlus">
+                                        <button>
+                                            <i class="bi bi-three-dots-vertical stylePlus"></i>
+
+                                        </button>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="containerPrice">
+                                    <div class="priceProduct">
+                                        <p>Precio: </p>
+                                    </div>
+
+                                    <div class="numberPrice">
+                                        <p>$60</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="descriptionProduct">
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Tamaño:</p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>XS</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Color:</p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>Maravilla blanca</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Cantidad: </p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>1 par</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="btnProduct">
+                            <button><i class="bi bi-arrow-right iconStyle"></i></button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product">
+
+                        <div class="deleteProduct">
+                            <button><i class="bi bi-trash"></i></button>
+                        </div>
+
+                        <div class="imageProduct">
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg" alt="producto del usuario">
+                        </div>
+
+                        <div class="dataProduct">
+
+                            <div class="headerProduct">
+
+                                <div class="titleProduct">
+
+                                    <div class="nameProduct">
+                                        <h2>Ozweego shoes</h2>
+                                    </div>
+
+                                    <div class="iconPlus">
+                                        <button>
+                                            <i class="bi bi-three-dots-vertical stylePlus"></i>
+
+                                        </button>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="containerPrice">
+                                    <div class="priceProduct">
+                                        <p>Precio: </p>
+                                    </div>
+
+                                    <div class="numberPrice">
+                                        <p>$96</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="descriptionProduct">
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Tamaño:</p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>5-5</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Color:</p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>Felicidad blanca</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="character">
+                                    <i class="bi bi-circle-fill iconCircle"></i>
+                                </div>
+
+                                <div class="infoProduct">
+
+                                    <div class="infoTitleProduct">
+                                        <p>Cantidad: </p>
+                                    </div>
+
+                                    <div class="descriptionInfoProduct">
+                                        <p>1 par</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="btnProduct">
+                            <button><i class="bi bi-arrow-right iconStyle"></i></button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="containerPrice">
+
+                    <div class="titlePrice">
+                        <h2>Precio total</h2>
+                    </div>
+
+                    <div class="containerItems">
+
+                        <div class="itemOne">
+
+                            <div class="textGrey">
+                                <p>3 items</p>
+                            </div>
+
+                            <div class="Itemprice">
+                                <p>$220.00</p>
+                            </div>
+
+                        </div>
+
+                        <div class="itemOne">
+
+                            <div class="textGrey">
+                                <p>Precio original</p></div>
+
+                            <div class="Itemprice">
+                                <p>$244.00</p>
+                            </div>
+
+                        </div>
+
+                        <div class="itemOne">
+
+                            <div class="textGrey">
+                                <p>impuesto de ventas</p>
+                            </div>
+
+                            <div class="Itemprice">
+                                <p> - </p>
+                            </div>
+
+                        </div>
+
+                        <div class="itemOne">
+
+                            <div class="textGrey">
+                                <p>delivery</p>
+                            </div>
+
+                            <div class="Itemprice">
+                                <p>free</p>
+                            </div>
+
+                        </div>
+
+                        <div class="itemOne">
+
+                            <div class="textGrey">
+                                <p>Venta</p>
+                            </div>
+
+                            <div class="Itemprice">
+                                <p>- $24.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="total">
+
+                    <div class="totalTitle">
+
+                        <div class="titleTotal">
+                            <h2>Total</h2>
+
+                        </div>
+
+                        <div class="totalPrice">
+
+                            <h2>$220.00</h2>                          
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="btnBag">
+
+                    <div class="btnEdit">
+                        <button>Comprar productos</button>
+                    </div>
+
+                    <div class="btnDelete">
+                        <button><i class="bi bi-tag"></i> Aplicar codigo de promocion</button>
+                    </div>
+
+                </div>
+
+
+                <div class="needHelp">
+
+                    <div class="titleHelp">
+                        <h2>¿Necesitas ayuda?</h2>
+                    </div>
+
+                    <div class="linksHelp">
+                        
+                        <div class="links">
+                            <a href="#">Productos</a>
+                            <a href="#">Promociones y vales</a>
+                            <a href="#">Informacion de la empresa</a>
+                        </div>
+
+                        <div class="links">
+                            <a href="#">Ordenador</a>
+                            <a href="#">Devolucion y reembolso</a>
+                            <a href="#">Cuenta y newsletter</a>
+                        </div>
+            
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>    
+</section>
+</main>       
+
+<%- include('../partials/footer') -%>
+
+          <%- include('../partials/script') %>

@@ -1,0 +1,1112 @@
+<%- include('../partials/header') -%>
+<style>
+    h3{
+    color:white;
+}
+p{
+    color:white;
+}
+
+/*Apartado numero 1: bienvenido*/
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.infoPersonal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+.navInfoPersonal{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navInfoPersonal > a {
+    text-decoration: none;
+    font-size: 1.188em;
+    font-weight: 500;
+    color: #c6c6c6;
+    transition: all 0.3s ease;
+}
+
+
+.navInfoPersonal > a:hover{
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+
+.usernameTitle{
+    padding: 30px 0;
+}
+
+.colorSpecial {
+    color: #c6c6c6;
+}
+
+.title{
+    display: none;
+}
+
+.init{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+}
+
+.finalSectionPage{
+    display: none;
+}
+
+.welcome {
+    background-color: #000;
+    /*height: 15vh;*/
+    padding: 30px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 5px;
+}
+
+.textWelcome, .titleWelcome {
+    color: #fff!important;
+}
+
+
+.sectionActive {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.sectionDisable{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.sectionDisable h2 {
+    color: #c6c6c6;
+}
+
+
+.arrowDownActive , .arrowRightActive{
+    font-size: 2rem;
+}
+
+.arrowRightActive{
+    color: #c6c6c6;
+}
+
+.arrowRightDisable, .arrowDownDisable{
+    display: none;
+}
+/*Fin del apartado numero 1*/
+
+/*Apartado numero 2: tu informacion*/
+
+.heroContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.heroOne > form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.titleInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.info form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    padding: 15px;
+    border: 2px solid #fff;
+    border-bottom: 2px solid #c6c6c6;
+    transition: all 0.3s ease;
+}
+
+.form input:hover{
+    padding: 15px;
+    border: 2px solid #c6c6c6;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus{
+    padding: 15px;
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+
+.specialForm{
+    display: flex;
+    align-items: center;
+}
+
+.specialForm a {
+    position: absolute;
+    left: 66%;
+}
+
+.specialForm input{
+    padding: 15px;
+    border: 2px solid #fff;
+    border-bottom: 2px solid #c6c6c6;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.specialForm input:hover{
+    padding: 15px;
+    border: 2px solid #c6c6c6;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.specialForm input:focus{
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/*Fin del apartado numero 2*/
+
+/*apartado numero 3: tipo de delivery*/
+
+.deliveryTitle{
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+}
+
+.optionDelivery{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.delivery > button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #c6c6c6;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.check{
+    display: none;
+    color: #00C514;
+    font-size: 1.5rem;
+}
+
+.delivery > button:focus .check{
+    display: block;
+}
+
+.delivery > button:focus{
+    color: #000;
+}
+
+
+/*fin del apartado numero 3*/
+
+/*apartado numero 4: los puntos mas cercanos*/
+
+.nearestPoint{
+    display: flex;
+    flex-direction: column;
+}
+
+.nearestTitle{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.checkTwo{
+    display: none;
+    color: #00C514;
+    font-size: 1.5rem;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    text-align: left;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option:focus .checkTwo{
+    display: block;
+}
+
+.optionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.optionText{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btnHeroOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem ;
+}
+
+.btnEdit , .btnDelete{
+    width: 100%;
+}
+
+.btnEdit > button{
+    height: 40px;
+    min-width: 130px;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 25px;
+    background: #fff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnEdit > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnEdit > button:hover{
+    color: #545454;
+}
+
+.btnEdit > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnEdit > button:focus{
+    border: 1px solid #000;
+}
+
+.btnDelete > button{
+    height: 40px;
+    min-width: 130px;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 5px 25px;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    z-index: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnDelete > button::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btnDelete > button:hover{
+    color: #545454;
+}
+
+.btnDelete > button:hover::after{
+    border: 1px solid #545454;
+}
+
+.btnDelete > button:focus{
+    border: 1px solid #000;
+}
+
+
+/*fin del apartado 4*/
+
+/*apartado 5: detalles del pedido*/
+.orderDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 20px ;
+}
+
+
+.order{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem ;
+}
+
+.imageOrder img {
+    height: 30vh;
+    border-radius: 5px;
+}
+
+.orderDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.descriptionText{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.textDescription {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textDescription p {
+    text-transform: uppercase;
+}
+/*fin del apartado 5*/
+
+/*apartado 6: resumen del pedido*/
+.orderSummary{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.orSummary{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.summaryList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listTitle p {
+    text-transform: uppercase;
+}
+
+.total {
+    padding: 20px 0px;
+}
+
+.totalTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleTotal, .totalPrice h2 {
+    text-transform: uppercase;
+    color: #E32B2B;
+}
+/*fin del apartado 6*/
+
+
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    
+
+  
+    .container{
+        width: 90%;
+    }
+
+    .title{
+        display: block;
+    }
+
+    .init{
+        flex-direction: column;
+    }
+
+    .sectionPage hr {
+        display: none;
+    }
+
+    .sectionPage{
+        display: flex;
+        align-items: center;
+    }
+
+    .sectionActive{
+        width: 29%;
+    }
+
+    .sectionDisable{
+        width: 36%;
+    }
+
+    .arrowRightDisable{
+        display: block;
+        font-size: 2em;
+    }
+
+    .arrowDownActive{
+        display: none;
+    }
+
+    .heroOne{
+        gap: 2rem;
+    }
+
+    .finalSectionPage{
+        display: block;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .imagePresentation{
+        display: block;
+    }
+
+    .imagePresentation img {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .info hr {
+        display: none;
+    }
+
+    .titleInfo{
+        justify-content: left;
+    }
+
+    .hrDelivery {
+        display: none;
+    }
+
+    .deliveryTitle{
+        justify-content: left;
+    }
+
+    .optionDelivery{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .delivery{
+        width: 100%;
+    }
+
+    .delivery button {
+        color: #000;
+    }
+
+    .hrNearestPoint {
+        display: none;
+    }
+
+    .nearestTitle {
+        justify-content: left;
+    }
+
+    .nearest{
+        width: 100%;
+    }
+
+    .point {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .option {
+        width: 48%;
+    }
+
+    .btnHeroOne{
+        flex-direction: row;
+        margin-top: 3rem;
+    }
+}
+
+
+
+
+@media screen and (min-width:1024px){
+       .container{
+        width: 85%;
+    }
+
+    .title{
+        display: block;
+    }
+
+    .init{
+        flex-direction: column;
+    }
+
+    .sectionPage{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .arrowRightDisable{
+        display: block;
+        font-size: 2em;
+    }
+
+    .arrowDownActive{
+        display: none;
+    }
+
+    .sectionActive{
+        align-items: center;
+        justify-content: space-between;
+        width: 23%;
+    }
+
+    .sectionDisable{
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+    }
+
+    .finalSectionPage{
+        display: block;
+    }
+
+    .presentation{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .imagePresentation{
+        display: block;
+        width: 50%;
+    }
+
+    .welcome{
+        width: 50%;
+        height: 20vh;
+        justify-content: left;
+    }
+
+    .imagePresentation img {
+        height: 20vh;
+        width: 100%;
+    }
+
+    .heroContainer{
+        flex-direction: row;
+    }
+
+    .heroOne{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+    .info hr {
+        display: none;
+    }
+
+    .titleInfo{
+        justify-content: left;
+    }
+
+    .deliveryTitle{
+        justify-content: left;
+    }
+
+    .form{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form input {
+        width: 48%;
+    }
+
+    .specialForm a {
+        left: 38%;
+    }
+
+    .optionDelivery {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hrDelivery {
+        display: none;
+    }
+
+    .delivery{
+        width: 100%;
+    }
+
+    .delivery button{
+        color: #000;
+    }
+
+    .nearestTitle{
+        justify-content: left;
+    }
+
+    .hrNearestPoint{
+        display: none;
+    }
+
+    .point{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    .option{
+        width: 55%;
+    }
+
+    .btnHeroOne{
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+
+}
+</style>
+<main>
+    <section id="checkoutPage">
+
+        <div class="container">
+
+            <div class="infoPersonal">
+
+                <div class="text">
+                    <nav class="navInfoPersonal">
+                        <a href="#">Inicio <i class="bi bi-arrow-right"></i></a>
+                        <a href="#">Mi bolsa <i class="bi bi-arrow-right"></i></a>
+                    </nav>
+                    <h3>Pagina de pago</h3>
+                </div>
+
+                <div class="title">
+                    <h2>Pagina de pago</h2>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="init">
+
+                <div class="sectionPage">
+
+                    <div class="sectionActive">
+                        <h2>1. Opcion de delivery</h2> <i class="bi bi-arrow-right arrowRightDisable"></i> <i class="bi bi-arrow-down arrowDownActive"></i>
+                    </div>
+
+                    <hr>
+
+                    <div class="sectionDisable">
+                        <h2>2. Opcion de pago</h2><i class="bi bi-arrow-right arrowRightActive"></i> <i class="bi bi-arrow-down arrowDownDisable"></i>
+                        
+                    </div>
+
+                    <hr>
+
+                    <div class="sectionDisable">
+                        <h2>3. Revision de orden</h2><i class="bi bi-arrow-right arrowRightActive"></i> <i class="bi bi-arrow-down arrowDownDisable"></i>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <hr class="finalSectionPage">
+
+
+                <div class="presentation">
+
+                    <div class="welcome">
+
+                        <div class="titleWelcome">
+                            <h3>¡Bienvenido de vuelta, usuario!</h3>
+                        </div>
+
+                        <div class="textWelcome">
+                            <p>Me alegro de verte de nuevo. Ordenemos tu entrega...</p>
+                        </div>
+
+                    </div>
+
+                    <div class="imagePresentation">
+                        <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/lukas-eggers-xcZvvG6a4tI-unsplash.jpg" alt="imagen de presentacion">
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="heroContainer">
+
+                <form class="heroOne">
+
+                    <div class="info">
+
+                        <div class="titleInfo">
+                            <h2>Tu informacion</h2>
+                        </div>
+
+                        <hr>
+
+                        
+
+                            <div class="form">
+                                <input type="text" placeholder="Primer Nombre*">
+                                <input type="text" placeholder="Ultimo Nombre*">
+                            </div>
+
+                            <div class="specialForm">
+                                <input type="" placeholder="Comience a escribir la dirección*
+                                ">
+                                <a href="#">Ingresa tu email manualmente</a>
+                            </div>
+
+                            <div class="form">
+                                <input type="email" placeholder="Email*">
+                                <input type="tel" placeholder="Numero de Telefono *">
+                            </div>
+
+                        
+
+                    </div>
+
+                    <div class="typeDelivery">
+
+                        <div class="deliveryTitle">
+                            <h2>Tipo de delivery</h2>
+                        </div>
+                        
+                        <hr class="hrDelivery">
+
+                        <div class="optionDelivery">
+
+                            <div class="delivery">
+                                <button type="button">Levantar <i class="bi bi-check2-square check"></i></button>
+                                <hr>
+                            </div>
+
+                            <div class="delivery">
+                                <button type="button">Levantar <i class="bi bi-check2-square check"></i></button>
+                                <hr>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="nearestPoint">
+
+                        <div class="nearestTitle">
+                            <h2>Los puntos mas cercanos en el dnipro</h2>
+                        </div>
+                        
+                        <hr class="hrNearestPoint">
+
+                        <div class="nearest">
+
+                            <div class="point">
+
+                                <button type="button" class="option">
+
+                                    <div class="optionTitle">
+                                        <h3>Trc "caravan"</h3>
+                                        <i class="bi bi-check2-square checkTwo"></i>
+                                    </div>
+
+                                    <div class="optionText">
+                                        <p>Nyzhn'odniprovs'ka St,17</p>
+                                    </div>
+                                    
+                                    <span class="colorSpecial"><p>Martes - Domingo, 10:00 - 20:00</p></span>
+                                    <hr>
+                                </button>
+
+                                <button type="button" class="option">
+                                    <div class="optionTitle">
+                                        <h3>Trc "Most city"</h3>
+                                        <i class="bi bi-check2-square checkTwo"></i>
+                                        
+                                    </div>
+
+                                    <div class="optionText">
+                                        <p>Hlinky St,2</p>
+                                        <span class="colorSpecial"><p>Martes - Domingo, 10:00 - 22:00</p></span>
+                                        
+                                    </div>
+                                    <hr>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="btnHeroOne">
+                        <div class="btnEdit">
+                            <button>Guardar y continuar</button>
+                        </div>
+
+                        <div class="btnDelete">
+                            <button> <i class="bi bi-tag"></i>Aplicar codigo de promo</button>
+                        </div>
+
+                    </div>
+                    
+                </form>
+                
+                <hr>
+                
+
+                <div class="heroTwo">
+
+                    <div class="orderDetails">
+
+                        <div class="orderTitle">
+                            <h2>Detalles del pedido</h2>
+                        </div>
+
+                        <div class="order">
+
+                            <div class="imageOrder">
+                                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg" alt="foto del producto">
+                            </div>
+
+                            <div class="orderDescription">
+
+                                <div class="descriptionTitle">
+                                    <h3>Ozweggo shoes</h3>
+                                </div>
+
+                                <div class="descriptionText">
+
+                                    <div class="textDescription">
+                                        <div class="textTitle">
+                                            <span class="colorSpecial"><p>tamaño:</p></span>
+                                        </div>
+                                        <div class="textText"><p>5-5</p></div>
+                                    </div>
+
+                                    <div class="textDescription">
+                                        <div class="textTitle">
+                                            <span class="colorSpecial"><p>Color</p></span>
+                                        </div>
+                                        <div class="textText">
+                                            <p>Bliss</p>
+                                        </div>
+                                    </div>
+                                    <div class="textDescription">
+                                        <div class="textTitle">
+                                            <span class="colorSpecial"><p>Cantidad:</p></span>
+                                        </div>
+                                        <div class="textText">
+                                            <p>1 par</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="orderSummary">
+
+                        <div class="summaryTitle">
+                            <h2>Resumen del pedido</h2>
+                        </div>
+
+                        <div class="orSummary">
+
+                            <div class="summaryList">
+                                <div class="listTitle">
+                                    <span class="colorSpecial"><p>1 item</p></span>
+                                </div>
+
+                                <div class="listText">
+                                    <p>$96.00</p>
+                                </div>
+                            </div>
+
+                            <div class="summaryList">
+                                <div class="listTitle">
+                                    <span class="colorSpecial"><p>Precio original</p></span>
+                                </div>
+
+                                <div class="listText">
+                                    <p>$120.00</p>
+                                </div>
+                            </div>
+
+                            <div class="summaryList">
+                                <div class="listTitle">
+                                    <span class="colorSpecial"><p>impuesto de ventas</p></span>
+                                </div>
+
+                                <div class="listText">
+                                    <p> - </p>
+                                </div>
+                            </div>
+
+                            <div class="summaryList">
+                                <div class="listTitle">
+                                    <span class="colorSpecial"><p>Delivery</p></span>
+                                </div>
+
+                                <div class="listText">
+                                    <p> FREE</p>
+                                </div>
+                            </div>
+
+                            <div class="summaryList">
+                                <div class="listTitle">
+                                    <span class="colorSpecial"><p>Venta</p></span>
+                                </div>
+
+                                <div class="listText">
+                                    <p> - $24.00</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
+                    </div>
+                    
+                    <hr>
+
+                    <div class="total">
+
+                        <div class="totalTitle">
+
+                            <div class="titleTotal">
+                                <h2>Total</h2>
+
+                            </div>
+
+                            <div class="totalPrice">
+
+                                <h2>$96.00</h2>                          
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+</main>
+<%- include('../partials/footer') -%>
+
+<%- include('../partials/script') %>
