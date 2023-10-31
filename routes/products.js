@@ -4,13 +4,15 @@ const router = Router()
 const {
      getAllProduct,
      getHydro,
-     getAllGroup
+     getAllCategory,
+     getMoreFrom
 } = require('../controllers/products')
 
 // rutas
 router.get('/', getAllProduct)
 router.get('/hydro', getHydro)
-router.get('/group', getAllGroup)
+router.get('/category', getAllCategory)
+router.get('/morefrom, getMoreFrom')
 // router.get('/articulo/:id', getSelectedProduct)
 // router.post('/crear', postAllProduct)
 // router.delete('/eliminar/:id', deleteAllProduct)

@@ -6,11 +6,15 @@ const getAllProduct = (req, res) => {
      res.status(200).json({ msg: 'probando testeando rutas DOS' })
 }
 
-const getAllGroup = (req, res) => {
-     res.status(200).render('pages/mockups')
+const getAllCategory = (req, res) => {
+     res.status(200).render('pages/category')
+}
+const getMoreFrom = (req, res) => {
+     res.status(200).render('pages/moreFrom')
 }
 module.exports = {
      getAllProduct,
      getHydro,
-     getAllGroup
+     getAllCategory,
+     getMoreFrom
 }
