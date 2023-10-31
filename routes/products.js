@@ -12,7 +12,7 @@ const {
 router.get('/', getAllProduct)
 router.get('/hydro', getHydro)
 router.get('/category', getAllCategory)
-router.get('/morefrom, getMoreFrom')
+router.get('/morefrom', getMoreFrom)
 // router.get('/articulo/:id', getSelectedProduct)
 // router.post('/crear', postAllProduct)
 // router.delete('/eliminar/:id', deleteAllProduct)
