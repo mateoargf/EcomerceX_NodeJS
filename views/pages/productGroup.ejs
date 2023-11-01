@@ -141,15 +141,16 @@ main  a {
 .zocalo  a:hover{transform: scale(1.5,1.5);}
 .alert a:hover{transform: scale(1.5,1.5); color: white;}
 
+
 .image-container {
     height: 300px; /* Establece la altura fija deseada */
     width: 100%; /* Permite que el ancho se ajuste automáticamente */
     overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
     background-color: rgba(239,244,248,255);
-    border: 1px solid #000;
     text-align: center;
     border-radius: 1%;
     border: 2px solid rgba(0,0,0,0.2);    
+    transition: all 0.3s ease-out;
 }
 
 .image-container img {
@@ -157,13 +158,14 @@ main  a {
   transition: transform 0.3s ease, border 0.3s ease;
 }
 
-.image-container:hover {
+ 
+ .image-container:hover {
+    box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(0,0,0,0.5);
-    transform: scale(1.1,1.1);
-     z-index: 2; 
-    transition: all 0.3s ease;
-  }
-
+    opacity: 0.85;
+    filter: brightness(0.87) contrast(1.1);
+    transition: all 0.3s ease-in-out;
+}
 
   
 /*---------------Tablet------------- */
