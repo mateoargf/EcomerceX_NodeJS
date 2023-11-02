@@ -11,6 +11,7 @@ const layouts = require('express-ejs-layouts');
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
 
+// conectamos con la base de datos y el puerto a través de dotenv
 const iniciar = async () => {
      try {
           await connectDB(db)

@@ -24,6 +24,11 @@ const getLogin = (req, res) => {
 const getCategory = (req, res) => {
      res.status(200).render('pages/category')
 }
+
+const postAllProduct = (req, res) => {
+     res.status(200).json({msg:'crear productos'})
+}
+
 module.exports = {
      getAllProduct,
      getHydro,
@@ -32,5 +37,6 @@ module.exports = {
      getCheckPage,
      getWishList,
      getLogin,
-     getCategory
+     getCategory,
+     postAllProduct
 }

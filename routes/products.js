@@ -9,7 +9,8 @@ const {
      getWishList,
      getLogin,
      getAllGroup,
-     getCategory
+     getCategory,
+     postAllProduct
 } = require('../controllers/products')
 
 // rutas
@@ -21,8 +22,8 @@ router.get('/checkPage', getCheckPage)
 router.get('/wishlist', getWishList)
 router.get('/login', getLogin)
 router.get('/category', getCategory)
+router.post('/crear', postAllProduct)
 // router.get('/articulo/:id', getSelectedProduct)
-// router.post('/crear', postAllProduct)
 // router.delete('/eliminar/:id', deleteAllProduct)
 
 module.exports = router
