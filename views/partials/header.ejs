@@ -57,19 +57,128 @@
                     <li><a href="#">VENTA</a></li>
                 </ul>
             </nav>
-            <div class="headerIcons">
+            <div class="menuHeader">
                 <div class="search">
                     <form action="" class="formSearch">
                         <button><i class="bi bi-search iconSearch"></i></button>
-                        <input type="text" name="" id="" placeholder="Buscar">
+                        <input type="text" name="" id="" placeholder="Busqueda">
                     </form>
                 </div>
-                <a href="#" class="carrito">
-                    <i class="bi bi-bag"></i>
-                </a>
-                <a href="#" class="menuIcon">
-                    <i class="bi bi-list"></i>
-                </a>
+                <div class="bag">
+                    <button id="openBag"><i class="bi bi-bag iconBag"></i></button>
+                </div>
+                <div class="bagMenu" id="menuBag">
+                    <div class="bagContainerHeader">
+                        <button id="closeBag"><i class="bi bi-x-lg"></i></button>
+                        <h3>Carrito de Compras</h3>
+                    </div>
+                    <hr>
+                    <div class="bagContainerMain">
+                        <div class="productBagMenu">
+                            <div class="imageMenuBag">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="producto del usuario">
+                            </div>
+                            <div class="infoBagMenu">
+                                <div class="titleProductBagMenu">
+                                    <h2>Example</h2>
+                                </div>
+                                <div class="priceProductBagMenu">
+                                    <p>Precio :</p> <span class="specialTextBagMenu">
+                                        <p>$150</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="bagContainerMainTwo">
+                        <h2>Total:</h2>
+                        <span class="specialTextBagMenu">
+                            <p>$180</p>
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="bagContainerFooter">
+                        <button>Comprar Ahora</button>
+                    </div>
+                </div>
+                <div class="menuHamburger">
+                    <button id="openHamburger"><i class="bi bi-list iconMenu"></i></button>
+                </div>
+                <div class="hamburgerMenu" id="hamburger">
+                    <div class="hamburgerContainerHeader">
+                        <div class="logoHeaderHamburger">
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png"
+                                alt="logo adiddas">
+                            <p>X</p>
+                        </div>
+                        <div class="btnHamburguer">
+                            <div class="btnTraslate">
+                                <button><i class="bi bi-translate"></i> eng <i class="bi bi-arrow-down"></i></button>
+                            </div>
+                            <div class="btnDollar">
+                                <button><i class="bi bi-currency-dollar"></i> usd <i
+                                        class="bi bi-arrow-down"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerHamburgerContent">
+                        <div class="element">
+                            <div class="section">
+                                <a href="#">Home Page</a>
+                                <button><i class="bi bi-arrow-right arrow-right"></i></button>
+                            </div>
+                            <div class="img">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="img">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="">
+                            </div>
+                            <div class="section">
+                                <a href="#">Catalog</a>
+                                <button><i class="bi bi-arrow-right arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="section">
+                                <a href="#">Contactos</a>
+                                <button><i class="bi bi-arrow-right arrow-right"></i></button>
+                            </div>
+                            <div class="img">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="img">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="">
+                            </div>
+                            <div class="section">
+                                <a href="#">Preguntas frecuentes</a>
+                                <button><i class="bi bi-arrow-right arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="section">
+                                <a href="#">Perfil</a>
+                                <button><i class="bi bi-arrow-right arrow-right"></i></button>
+                            </div>
+
+                            <div class="img">
+                                <img src="/img/header/myWishlist_photo.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerHamburgerContainer">
+                        <div class="textFooter">
+                            <p>No te detengas hasta que estés orgullosa</p>
+                        </div>
+                        <div class="iconFooter">
+                            <button id="closeHamburger"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -353,16 +462,27 @@
             transform: scaleX(1);
         }
 
-
-        .headerIcons {
-            width: 20vw;
-            text-align: center;
+        .menuHeader {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: end;
+            gap: 0.5rem;
+        }
+
+
+        .search {
+            display: flex;
+            align-items: center;
+            border: 2px solid #2a2a2a;
+            border-radius: 5px;
+            padding: 0px 15px;
+            height: 40px;
+            width: 40%;
+            transition: all 0.5s ease;
         }
 
         .search:hover {
+            width: 100%;
             transition: all 0.5s ease;
         }
 
@@ -374,57 +494,421 @@
             width: 100%;
         }
 
-        .search {
-            text-decoration: none;
-            background-color: #FEFEFE;
-            border: 2px solid #4A4A4A;
-            border-radius: 5px;
-            height: 1.9rem;
-            width: 7rem;
+        .formSearch {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
+        }
+
+        .formSearch>button {
+            background-color: transparent;
+            border: none;
             cursor: pointer;
+        }
+
+        .iconSearch {
+            color: #2a2a2a;
+            font-size: 1.2em;
+        }
+
+        .formSearch>input {
+            height: 30px;
+            width: 100%;
+            border: none;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            text-align: left;
+        }
+
+        .formSearch>input:hover {
+            width: 100%;
+            text-align: right;
+            transition: all 0.3s ease;
+        }
+
+        .formSearch>input:focus {
+            text-align: left;
+            outline: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        /*Configuracion del menu hamburguesa*/
+        /*Header del menu hamburguesa*/
+        .menuHamburger>button {
+            padding: 3px 10px;
+            background-color: transparent;
+            border: 2px solid #3a3a3a;
+            border-radius: 5px;
+            cursor: pointer;
+            /*position: relative;*/
+            display: inline-block;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .menuHamburger>button:hover {
+            border: 2px solid #b8b8b8;
+        }
+
+        .iconMenu:hover {
+            color: #b8b8b8;
+        }
+
+        .iconMenu {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+
+        .hamburgerMenu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .hamburgerMenu.visible {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s ease;
+        }
+
+
+        .hamburgerContainerHeader {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .logoHeaderHamburger {
+            display: flex;
+            align-items: center;
+        }
+
+        .logoHeaderHamburger img {
+            height: 100px;
+        }
+
+        .btnHamburguer {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+
+        .btnTraslate button {
+            min-width: 130px;
+            height: 40px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            padding: 4px 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             position: relative;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid #2a2a2a;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
         }
 
-        .search button {
+        .btnTraslate button:hover {
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+        .btnDollar button {
+            min-width: 130px;
+            height: 40px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            padding: 4px 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid #2a2a2a;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .btnDollar button:hover {
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+        /*fin de la ediccion del header del menu hamburguesa*/
+
+        /*ediccion del contenido del menu hamburguesa*/
+        .containerHamburgerContent {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            flex-direction: column;
+            width: 95%;
+        }
+
+        .element {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid #c6c6c6;
+        }
+
+        .img img {
+            height: 20vh;
+            border-radius: 5px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 58%;
+        }
+
+        .section button {
+            background-color: transparent;
             border: none;
             cursor: pointer;
         }
 
-        .search input,
-        .lupa {
-            border: none;
+        .arrow-right {
+            font-size: 2em;
+        }
+
+        /*fin de la ediccion del contenido del menu hamburguesa*/
+
+        /*ediccion del "footer" del menu hamburguesa*/
+        .footerHamburgerContainer {
+            display: flex;
+            align-items: center;
+            width: 70%;
+            margin: 0 auto;
+            padding: 30px 0;
+            justify-content: center;
+        }
+
+        .textFooter {
+            display: none;
+        }
+
+        .iconFooter button {
+            width: 90px;
+            height: 90px;
+            background-color: transparent;
             color: #000;
-            font-weight: 700;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.5em;
+            line-height: 90px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
             outline: none;
         }
 
-        .search input {
-            text-align: center;
-            width: 3.5rem;
-            cursor: pointer;
+        .iconFooter button:hover {
+            background-color: #000;
+            color: #fff;
         }
 
-        .carrito,
-        .menuIcon {
-            text-decoration: none;
+        /*fin de la ediccion del "footer" del munu hamburguesa*/
+
+        /*Ediccion del boton del carrito*/
+        .bag>button {
+            padding: 3px 10px;
+            background-color: transparent;
+            border: 2px solid #3a3a3a;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .bag>button:hover {
+            border: 2px solid #b8b8b8;
+        }
+
+        .iconBag {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .iconBag:hover {
+            color: #b8b8b8;
+        }
+
+        .alertBag>li {
+            list-style: none;
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .alertBag>li>p {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /*menu bag*/
+        .bagMenu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+            transition: all 0.5s ease;
+            position: fixed;
+        }
+
+        .bagMenu.visible {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s ease;
+        }
+
+
+        .bagContainerHeader {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .productBagMenu {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #4A4A4A;
-            cursor: pointer;
-            border: 2px solid #4A4A4A;
-            border-radius: 5px;
-            height: 1.9rem;
-            width: 1.9rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-left: 0.7rem;
         }
 
+        .imageMenuBag img {
+            height: 25vh;
+        }
+
+        .priceProductBagMenu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bagContainerMainTwo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bagContainerHeader>button {
+            width: 90px;
+            height: 90px;
+            background-color: transparent;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.5em;
+            line-height: 90px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            outline: none;
+        }
+
+        .bagContainerHeader button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .specialTextBagMenu p {
+            color: #E32B2B;
+        }
+
+
+        .bagContainerFooter button {
+            height: 40px;
+            width: 100%;
+            background-color: #fff;
+            border: 2px solid #2a2a2a;
+            border-radius: 5px;
+            color: #000;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bagContainerFooter button:hover {
+            background: #2a2a2a;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /*fin de la ediccion del boton bag y 
+fin de la ediccion del header*/
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .containerHeader {
+                width: 95%;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .containerHeader {
+                width: 95%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .bag {
+                display: none;
+            }
+
+            .hamburgerContainerHeader {
+                flex-direction: column;
+            }
+
+            .containerHamburgerContent {
+                flex-direction: column;
+                width: 95%;
+            }
+        }
+        /*fin de la ediccion del header*/
         @media screen and (max-width:767px) {
 
             header {
@@ -436,55 +920,21 @@
                 display: none;
             }
 
-            .carrito {
-                display: none;
-            }
-
-            .headerIcons {
-                justify-content: space-between;
-                width: 40vw;
-            }
-
-            .search {
-                width: 7rem;
-            }
         }
 
         @media screen and (min-width:768px) and (max-width:1023px) {
             .containerNav {
                 display: none;
             }
-
-            .headerIcons {
-                width: 28vw;
-            }
         }
 
 
         @media screen and (min-width:1024px) and (max-width:1440px) {
-            .headerIcons {
-                width: 15vw;
-            }
+           
         }
 
 
         @media screen and (min-width:1441px) and (max-width:1920px) {
-            .headerIcons {
-                width: 11vw;
-            }
-
-            .search input {
-                width: 4.5rem;
-            }
-
-            .search input,
-            .lupa {
-                font-size: 1rem;
-            }
-
-            .carrito,
-            .menuIcon {
-                font-size: 1.2rem;
-            }
+            
         }
     </style>
