@@ -1,443 +1,462 @@
-<%- include('../partials/header') -%>
+<%- include('../partials/headerIntroHome') %>
+    <%- include('../partials/header') -%>
 
-    <main>
-        <section class="padreHero">
-            <section class="textoHero" data-aos="fade-up" data-aos-once="true">
-                <H1>INDUMENTARIA DEPORTIVA X</H1>
-                <i class="bi bi-arrow-down"></i>
-            </section>
-            <div class="divHeros">
-                <section class="hero hombreHeroMobile">
-                    <div class="divHero">
-                        <div class="heroDivUno" data-aos="fade-right" data-aos-delay="900" data-aos-once="true">
-                            <h2 class="ocultar">03/<span>05</span></h2>
-                            <div class="heroDivDos">
-                                <div class="heroTexto ocultar">
-                                    <h4>PONTE TUS X Y DA UN PASO ADELANTE</h4>
-                                    <H1>INDUMENTARIA DEPORTIVA X</H1>
-                                    <P>El Tú-niforme. Ropa deportiva nacida en la cancha, reinventada para el
-                                        día a día.
-                                    </P>
+        <main id="main">
+            <section class="padreHero">
+                <section class="textoHero" data-aos="fade-up" data-aos-once="true">
+                    <H1>INDUMENTARIA DEPORTIVA X</H1>
+                    <i class="bi bi-arrow-down"></i>
+                </section>
+                <div class="divHeros">
+                    <section class="hero hombreHeroMobile">
+                        <div class="divHero">
+                            <div class="heroDivUno" data-aos="fade-right" data-aos-delay="900" data-aos-once="true">
+                                <h2 class="ocultar">03/<span>05</span></h2>
+                                <div class="heroDivDos">
+                                    <div class="heroTexto ocultar">
+                                        <h4>PONTE TUS X Y DA UN PASO ADELANTE</h4>
+                                        <H1>INDUMENTARIA DEPORTIVA X</H1>
+                                        <P>El Tú-niforme. Ropa deportiva nacida en la cancha, reinventada para el
+                                            día a día.
+                                        </P>
+                                    </div>
+                                    <div class="heroBotones">
+                                        <a class="btnHombre">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            HOMBRE
+                                        </a>
+                                        <a class="btnMujer ocultar">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            MUJER
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="heroBotones">
-                                    <a class="btnHombre">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        HOMBRE
-                                    </a>
-                                    <a class="btnMujer ocultar">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        MUJER
-                                    </a>
-                                </div>
+                                <a class="heroSiguiente ocultar">
+                                    SIGUIENTE<i class="bi bi-arrow-right flechaSiguiente"></i></a>
                             </div>
-                            <a class="heroSiguiente ocultar">
-                                SIGUIENTE<i class="bi bi-arrow-right flechaSiguiente"></i></a>
+                            <img src="" alt="modelo" class="imgHero" data-aos="fade-left" data-aos-delay="900"
+                                data-aos-once="true">
                         </div>
-                        <img src="" alt="modelo" class="imgHero" data-aos="fade-left" data-aos-delay="900"
-                            data-aos-once="true">
-                    </div>
-                </section>
-                <section class="hero mujerHeroMobile">
-                    <div class="divHero">
-                        <a class="btnMujer btnMujerMobile">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            MUJER
-                        </a>
-                        <img src="" alt="modelo" class="imgHero mobileMujerImg">
-                    </div>
-                </section>
-            </div>
-        </section>
-    </main>
+                    </section>
+                    <section class="hero mujerHeroMobile">
+                        <div class="divHero">
+                            <a class="btnMujer btnMujerMobile">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                MUJER
+                            </a>
+                            <img src="" alt="modelo" class="imgHero mobileMujerImg">
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+            integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            window.addEventListener("load", () => {
+                const loader = document.querySelector(".container");
 
-    <style>
-        .btnHombre:hover,
-        .btnMujer:hover,
-        .heroSiguiente:hover {
-            background: transparent;
-            opacity: 0.9;
-            box-shadow: none;
-            color: #000;
-        }
+                const header = document.querySelector("#header");
+                const main = document.querySelector("#main");
+                const footer = document.querySelector("#footer");
 
-
-        .btnHombre span:nth-child(1),
-        .btnMujer span:nth-child(1) {
-            width: 100%;
-            height: 2px;
-            top: 0;
-            left: -100%;
-        }
-
-        .btnHombre span:nth-child(2),
-        .btnMujer span:nth-child(2) {
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            right: -100%;
-        }
-
-        .btnHombre span:nth-child(3),
-        .btnMujer span:nth-child(3) {
-            width: 2px;
-            height: 100%;
-            bottom: -100%;
-            left: 0;
-        }
-
-        .btnHombre span:nth-child(4),
-        .btnMujer span:nth-child(4) {
-            width: 2px;
-            height: 100%;
-            top: -100%;
-            right: 0;
-        }
-
-        .btnHombre:hover span:nth-child(1),
-        .btnMujer:hover span:nth-child(1) {
-            left: 0;
-        }
-
-        .btnHombre:hover span:nth-child(2),
-        .btnMujer:hover span:nth-child(2) {
-            right: 0;
-        }
-
-        .btnHombre:hover span:nth-child(3),
-        .btnMujer:hover span:nth-child(3) {
-            bottom: 0;
-        }
-
-        .btnHombre:hover span:nth-child(4),
-        .btnMujer:hover span:nth-child(4) {
-            top: 0;
-        }
-
-
-        .heroSiguiente::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1.5px;
-            border-radius: 4px;
-            background-color: #000;
-            bottom: 0;
-            left: 0;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: all 0.5s ease-in-out;
-        }
-
-        .heroSiguiente:hover::before {
-            transform-origin: left;
-            transform: scaleX(1);
-        }
-
-        .textoHero {
-            display: none;
-        }
-
-        .hero {
-            display: flex;
-            height: 88vh;
-            background: linear-gradient(45deg, #579D5E, #62A869, #A9E5AA, #62A869, #579D5E, #4F965A);
-            background-size: 400% 400%;
-            animation: fondoHero 10s ease-in 0.6s infinite;
-            overflow: hidden;
-        }
-
-        .divHero {
-            width: 85vw;
-            margin: 0 auto;
-            display: flex;
-        }
-
-        .heroDivUno {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin-top: 1rem;
-            width: 85vw;
-            margin: 0 auto;
-        }
-
-        .heroDivUno h2 span {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .heroDivDos {
-            height: 28vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .heroTexto {
-            height: 17vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .heroTexto h4 {
-            color: white;
-            font-size: 0.9rem;
-            letter-spacing: 0.05rem;
-            margin-top: 0.7rem;
-        }
-
-        .heroTexto h1 {
-            letter-spacing: 0.05rem;
-            font-size: 1.8rem;
-            margin-left: 0.3rem;
-        }
-
-        .heroTexto p {
-            letter-spacing: 0.02rem;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-left: 0.3rem;
-        }
-
-        .heroBotones {
-            display: flex;
-            gap: 1.2rem;
-            margin-left: 0.3rem;
-        }
-
-        .btnHombre,
-        .btnMujer {
-            background-color: #000;
-            color: #bebebe;
-            border: none;
-            outline: none;
-            height: 2.5rem;
-            width: 10rem;
-            border-radius: 3px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: all 0.4s ease-in;
-            overflow: hidden;
-        }
-
-        .btnHombre span,
-        .btnMujer span {
-            position: absolute;
-            background-color: #000;
-            transition: all 0.6s ease-in;
-        }
-
-        .heroSiguiente {
-            width: 8.5rem;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.4s ease-in;
-            overflow: hidden;
-        }
-
-        .flechaSiguiente {
-            font-size: 1.7rem;
-        }
-
-        .imgHero {
-            height: 99%;
-            margin-right: 10rem;
-            margin-top: -1rem;
-        }
-
-        .mujerHeroMobile {
-            display: none;
-        }
-
-        /* filter: drop-shadow para dar sombra a img */
-
-        @keyframes fondoHero {
-            0% {
-                background-position: 0 50%;
+                loader.addEventListener("click", () => {
+                    loader.classList.add("container-hidden");
+                    header.classList.add("hidden");
+                    main.classList.add("hidden");
+                    footer.classList.add("hidden");
+                })
+            });
+        </script>
+        <style>
+            .btnHombre:hover,
+            .btnMujer:hover,
+            .heroSiguiente:hover {
+                background: transparent;
+                opacity: 0.9;
+                box-shadow: none;
+                color: #000;
             }
 
-            50% {
-                background-position: 100% 50%;
+
+            .btnHombre span:nth-child(1),
+            .btnMujer span:nth-child(1) {
+                width: 100%;
+                height: 2px;
+                top: 0;
+                left: -100%;
             }
 
-            100% {
-                background-position: 0 50%;
+            .btnHombre span:nth-child(2),
+            .btnMujer span:nth-child(2) {
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                right: -100%;
             }
 
-        }
-
-
-        @media screen and (max-width:767px) {
-            main {
-                width: 95vw;
-                margin: 0 auto;
+            .btnHombre span:nth-child(3),
+            .btnMujer span:nth-child(3) {
+                width: 2px;
+                height: 100%;
+                bottom: -100%;
+                left: 0;
             }
 
-            .padreHero {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
+            .btnHombre span:nth-child(4),
+            .btnMujer span:nth-child(4) {
+                width: 2px;
+                height: 100%;
+                top: -100%;
+                right: 0;
+            }
+
+            .btnHombre:hover span:nth-child(1),
+            .btnMujer:hover span:nth-child(1) {
+                left: 0;
+            }
+
+            .btnHombre:hover span:nth-child(2),
+            .btnMujer:hover span:nth-child(2) {
+                right: 0;
+            }
+
+            .btnHombre:hover span:nth-child(3),
+            .btnMujer:hover span:nth-child(3) {
+                bottom: 0;
+            }
+
+            .btnHombre:hover span:nth-child(4),
+            .btnMujer:hover span:nth-child(4) {
+                top: 0;
+            }
+
+
+            .heroSiguiente::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1.5px;
+                border-radius: 4px;
+                background-color: #000;
+                bottom: 0;
+                left: 0;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .heroSiguiente:hover::before {
+                transform-origin: left;
+                transform: scaleX(1);
             }
 
             .textoHero {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+                display: none;
             }
 
-            .textoHero h1 {
+            .hero {
+                display: flex;
+                height: 88vh;
+                background: linear-gradient(45deg, #579D5E, #62A869, #A9E5AA, #62A869, #579D5E, #4F965A);
+                background-size: 400% 400%;
+                animation: fondoHero 10s ease-in 0.6s infinite;
+                overflow: hidden;
+            }
+
+            .divHero {
+                width: 85vw;
+                margin: 0 auto;
+                display: flex;
+            }
+
+            .heroDivUno {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin-top: 1rem;
+                width: 85vw;
+                margin: 0 auto;
+            }
+
+            .heroDivUno h2 span {
+                color: white;
                 font-size: 1.2rem;
             }
 
-            .textoHero i {
-                font-size: 1.8rem;
-            }
-
-            .divHeros {
+            .heroDivDos {
+                height: 28vh;
                 display: flex;
                 flex-direction: column;
-                gap: 1rem;
+                justify-content: space-between;
             }
 
-            .hero {
-                height: 45vh;
-                width: 95%;
-                margin: 0 auto;
+            .heroTexto {
+                height: 17vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .heroTexto h4 {
+                color: white;
+                font-size: 0.9rem;
+                letter-spacing: 0.05rem;
+                margin-top: 0.7rem;
+            }
+
+            .heroTexto h1 {
+                letter-spacing: 0.05rem;
+                font-size: 1.8rem;
+                margin-left: 0.3rem;
+            }
+
+            .heroTexto p {
+                letter-spacing: 0.02rem;
+                font-weight: 700;
+                font-size: 0.8rem;
+                margin-left: 0.3rem;
+            }
+
+            .heroBotones {
+                display: flex;
+                gap: 1.2rem;
+                margin-left: 0.3rem;
+            }
+
+            .btnHombre,
+            .btnMujer {
+                background-color: #000;
+                color: #bebebe;
+                border: none;
+                outline: none;
+                height: 2.5rem;
+                width: 10rem;
+                border-radius: 3px;
+                font-weight: 700;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                transition: all 0.4s ease-in;
+                overflow: hidden;
+            }
+
+            .btnHombre span,
+            .btnMujer span {
+                position: absolute;
+                background-color: #000;
+                transition: all 0.6s ease-in;
+            }
+
+            .heroSiguiente {
+                width: 8.5rem;
+                position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                position: relative;
+                gap: 0.5rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.4s ease-in;
+                overflow: hidden;
             }
 
-            .divHero {
-                text-align: center;
-            }
-
-            .ocultar {
-                display: none;
-            }
-
-            .btnHombre {
-                z-index: 10;
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
+            .flechaSiguiente {
+                font-size: 1.7rem;
             }
 
             .imgHero {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                height: 99%;
+                margin-right: 10rem;
+                margin-top: -1rem;
             }
 
-            .btnMujerMobile {
-                z-index: 10;
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
-            }
-        }
-
-        @media screen and (min-width:768px) and (max-width:1023px) {
-            main {
-                width: 95vw;
-                margin: 0 auto;
-            }
-
-            .padreHero {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .textoHero {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .textoHero h1 {
-                font-size: 1.8rem;
-            }
-
-            .textoHero i {
-                font-size: 1.8rem;
-            }
-
-            .divHeros {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero {
-                height: 45vh;
-                width: 95%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-            }
-
-            .divHero {
-                text-align: center;
-            }
-
-            .ocultar {
+            .mujerHeroMobile {
                 display: none;
             }
 
-            .btnHombre {
-                z-index: 10;
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
+            /* filter: drop-shadow para dar sombra a img */
+
+            @keyframes fondoHero {
+                0% {
+                    background-position: 0 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0 50%;
+                }
+
             }
 
-            .imgHero {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+
+            @media screen and (max-width:767px) {
+                main {
+                    width: 95vw;
+                    margin: 0 auto;
+                }
+
+                .padreHero {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .textoHero {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    text-align: center;
+                }
+
+                .textoHero h1 {
+                    font-size: 1.2rem;
+                }
+
+                .textoHero i {
+                    font-size: 1.8rem;
+                }
+
+                .divHeros {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .hero {
+                    height: 45vh;
+                    width: 95%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+
+                .divHero {
+                    text-align: center;
+                }
+
+                .ocultar {
+                    display: none;
+                }
+
+                .btnHombre {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
+
+                .imgHero {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .btnMujerMobile {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
             }
 
-            .btnMujerMobile {
-                z-index: 10;
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
+            @media screen and (min-width:768px) and (max-width:1023px) {
+                main {
+                    width: 95vw;
+                    margin: 0 auto;
+                }
+
+                .padreHero {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .textoHero {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    text-align: center;
+                }
+
+                .textoHero h1 {
+                    font-size: 1.8rem;
+                }
+
+                .textoHero i {
+                    font-size: 1.8rem;
+                }
+
+                .divHeros {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .hero {
+                    height: 45vh;
+                    width: 95%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+
+                .divHero {
+                    text-align: center;
+                }
+
+                .ocultar {
+                    display: none;
+                }
+
+                .btnHombre {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
+
+                .imgHero {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .btnMujerMobile {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
             }
-        }
 
-        @media screen and (min-width:1024px) and (max-width:1440px) {}
+            @media screen and (min-width:1024px) and (max-width:1440px) {}
 
-        @media screen and (min-width:1441px) and (max-width:1920px) {}
-    </style>
+            @media screen and (min-width:1441px) and (max-width:1920px) {}
+        </style>
 
 
-    <%- include('../partials/footer') -%>
+        <%- include('../partials/footer') -%>
 
-        <%- include('../partials/script') %>
+            <%- include('../partials/script') %>

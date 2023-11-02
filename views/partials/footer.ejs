@@ -1,4 +1,4 @@
-<footer data-aos="fade-down" data-aos-once="true">
+<footer data-aos="fade-down" data-aos-once="true" id="footer">
      <div class="containerFooter">
 
           <div class="infoFooter">
@@ -52,6 +52,15 @@
 
 </html>
 <style>
+     #footer {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #footer.hidden {
+            opacity: 1;
+            visibility: visible;
+        }
      .linksFooter a::before {
      content: "";
      position: absolute;

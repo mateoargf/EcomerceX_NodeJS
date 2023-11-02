@@ -1,25 +1,25 @@
-const hamburger = document.querySelector("#hamburger");
-const abrir = document.querySelector("#openHamburger");
-const cerrar = document.querySelector("#closeHamburger");
+// const hamburger = document.querySelector("#hamburger");
+// const abrir = document.querySelector("#openHamburger");
+// const cerrar = document.querySelector("#closeHamburger");
 
 
-const bag = document.querySelector("#menuBag");
-const abrirBag = document.querySelector("#openBag");
-const cerrarBag = document.querySelector("#closeBag");
+// const bag = document.querySelector("#menuBag");
+// const abrirBag = document.querySelector("#openBag");
+// const cerrarBag = document.querySelector("#closeBag");
 
 
-const plus = document.querySelector("#plus");
-const abrirPlus = document.querySelector("#openPlus");
-const cerrarPlus = document.querySelector("#closePlus");
+// const plus = document.querySelector("#plus");
+// const abrirPlus = document.querySelector("#openPlus");
+// const cerrarPlus = document.querySelector("#closePlus");
 
 
-abrir.addEventListener("click", () => {
-    hamburger.classList.add("visible");
-})
+// abrir.addEventListener("click", () => {
+//     hamburger.classList.add("visible");
+// })
 
-cerrar.addEventListener("click", () =>{
-    hamburger.classList.remove("visible");
-})
+// cerrar.addEventListener("click", () =>{
+//     hamburger.classList.remove("visible");
+// })
 
 
 

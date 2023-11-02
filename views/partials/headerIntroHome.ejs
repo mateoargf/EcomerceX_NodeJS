@@ -1,0 +1,98 @@
+<div id="preloader">
+     <div id="percent">1%</div>
+     <div id="bar">
+          <div id="barconfrm"></div>
+     </div>
+</div>
+
+<div class="container">
+     <h1>X "Tu lugar de confianza"</h1>
+     <p>¡Haz click para entrar!</p>
+</div>
+<style>
+     #preloader {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100vh;
+          z-index: 100;
+          background: #0f0f0f;
+          position: fixed;
+     }
+
+     #percent {
+          color: #fff;
+     }
+
+     #bar {
+          width: 60%;
+          margin-top: 20px;
+     }
+
+     #barconfrm {
+          width: 1%;
+          padding: 1px 0px;
+          background: #fff;
+     }
+
+     #header {
+          opacity: 0;
+          visibility: hidden;
+     }
+
+     #header.hidden {
+          opacity: 1;
+          visibility: visible;
+     }
+
+     #main {
+          opacity: 0;
+          visibility: hidden;
+     }
+
+     #main.hidden {
+          opacity: 1;
+          visibility: visible;
+     }
+
+     .container {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 100%;
+          height: 100vh;
+          position: fixed;
+          background: #c6c6c6;
+          transition: opacity 0.75s, visibility 0.75s;
+     }
+
+     .container-hidden {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.75s, visibility 0.75s;
+     }
+
+
+     .container h1 {
+          font-weight: 800;
+          font-size: 3em;
+          /*48px*/
+          text-transform: uppercase;
+          color: #000;
+          opacity: 0;
+     }
+
+     .container p {
+          font-weight: 400;
+          font-size: 1.063em;
+          /*17px*/
+          text-transform: uppercase;
+          color: #000;
+          opacity: 0;
+     }
+</style>
