@@ -1,390 +1,387 @@
-<%- include('../partials/header') -%>
-
 <style>
-    
-/*Ediccion de la seccion inicio*/
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: 0 auto;
-    gap: 1rem;
-}
+    /*Ediccion de la seccion inicio*/
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: 0 auto;
+        gap: 1rem;
+    }
 
-.infoPersonal{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.text{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-transform: uppercase;
-    padding: 20px 0;
-}
-
-.navInfoPersonal{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.navInfoPersonal > a {
-    text-decoration: none;
-    font-size: 1.188em;
-    font-weight: 500;
-    color: #c6c6c6;
-    transition: all 0.3s ease;
-}
-
-
-.navInfoPersonal > a:hover{
-    color: #000;
-    transition: all 0.3s ease;
-}
-
-.title{
-    display: none;
-}
-
-.colorSpecial {
-    color: #c6c6c6;
-}
-
-.usernameTitle{
-    padding: 30px 0;
-}
-
-.titleSpecial {
-    -webkit-text-stroke: 2px #000;
-    color: transparent;
-}
-
-.headerImg{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.btnCategoryOne{
-    min-width: 130px;
-    height: 40px;
-    color: #1a1a1a;
-    font-weight: 500;
-    text-align: center;
-    font-size: 1.2em;
-    padding: 4px 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: 2px solid #2a2a2a;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btnCategoryOne:hover{
-    color: #b8b8b8;
-    border: 2px solid #b8b8b8;
-    transition: all 0.3s ease;
-}
-
-.btnCategoryOne:focus{
-    color: #b8b8b8;
-    border: 2px solid #b8b8b8;
-    transition: all 0.3s ease;
-}
-
-/*fin de la ediccion de inicio*/
-
-/*ediccion de la seccion de los productos*/
-
-
-/*ARREGLAR LOS CONTENEDORES DE LOS
-PRODUCTOS PARA QUE SEA UN CONTENEDOR
-DE 2 PRODUCTOS*/
-.productOne{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.productTwo{
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-}
-
-.containerSmallProduct{
-    display: flex;
-    flex-direction: column;
-}
-
-.smallProductOne{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.smallProductTwo{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.smallPOne img{
-    width: 100%;
-    border-radius: 5px;
-}
-
-.infoSmallP{
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.nameProduct > a {
-    text-decoration: none;
-}
-
-.categoryProduct p {
-    color: #c6c6c6;
-}
-
-.containerBigProduct{
-    display: flex;
-    flex-direction: column;
-}
-
-.containerBigProduct img{
-    width: 100%;
-    border-radius: 5px;
-}
-
-
-.containerCounter{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.counter{
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-
-}
-
-.pageCounter p {
-    font-size: 1.3em;
-}
-
-.backNumber{
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.arrowCounter{
-    font-size: 1.4em;
-}
-
-.ofNumber{
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-@media screen and (min-width:1024px) {
-   
-
-    .infoPersonal{
+    .infoPersonal {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
-    .text{
+
+    .text {
         display: flex;
         align-items: center;
         gap: 1rem;
         text-transform: uppercase;
-        padding: 30px 0;
+        padding: 20px 0;
     }
-    
-    .navInfoPersonal{
+
+    .navInfoPersonal {
         display: flex;
         align-items: center;
         gap: 1rem;
     }
-    
-    .navInfoPersonal > a {
+
+    .navInfoPersonal>a {
         text-decoration: none;
         font-size: 1.188em;
         font-weight: 500;
         color: #c6c6c6;
         transition: all 0.3s ease;
     }
-    
-    
-    .navInfoPersonal > a:hover{
+
+
+    .navInfoPersonal>a:hover {
         color: #000;
         transition: all 0.3s ease;
     }
 
-    .title{
-        display: block;
-    }
-    
-    .container{
-        width: 90%;
-    }
-
-    .buttonCategoryContainer{
-        display: flex;
-        gap: 1rem;
-    }
-
-    .btnCategoryTwo{
-        display: block;
-        min-width: 130px;
-        height: 40px;
-        color: #1a1a1a;
-        font-weight: 500;
-        text-align: center;
-        font-size: 1.2em;
-        padding: 4px 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-block;
-        outline: none;
-        border-radius: 5px;
-        border: 2px solid #2a2a2a;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .btnCategoryTwo:hover{
-        color: #b8b8b8;
-        border: 2px solid #b8b8b8;
-        transition: all 0.3s ease;
-    }
-
-    .btnCategoryTwo:focus{
-        color: #b8b8b8;
-        border: 2px solid #b8b8b8;
-        transition: all 0.3s ease;
-    }
-
-    .productOne{
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 0.5rem;
-    }
-
-    .containerSmallProduct{
-        width: 60%;
-        gap: 1rem;
-    }
-
-    .containerBigProduct{
-        width: 56%;
-    }
-
-    .smallProductOne {
-        flex-direction: row;
-    }
-
-    .smallProductTwo {
-        flex-direction: row;
-    }
-
-    .productTwo{
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 0.5rem;
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:1023px){
-    
-    .title{
-        display: block;
-    }
-
-    .buttonCategoryContainer{
-        display: flex;
-        gap: 1rem;
-    }
-
-    .btnCategoryTwo{
-        display: block;
-        min-width: 130px;
-        height: 40px;
-        color: #1a1a1a;
-        font-weight: 500;
-        text-align: center;
-        font-size: 1.2em;
-        padding: 4px 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-block;
-        outline: none;
-        border-radius: 5px;
-        border: 2px solid #2a2a2a;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .btnCategoryTwo:hover{
-        color: #b8b8b8;
-        border: 2px solid #b8b8b8;
-        transition: all 0.3s ease;
-    }
-
-    .btnCategoryTwo:focus{
-        color: #b8b8b8;
-        border: 2px solid #b8b8b8;
-        transition: all 0.3s ease;
-    }
-
-    .specialTextButton{
+    .title {
         display: none;
     }
 
-    .productOne{
-        gap: 1rem;
+    .colorSpecial {
+        color: #c6c6c6;
     }
 
-    .productTwo{
-        gap: 1rem;
+    .usernameTitle {
+        padding: 30px 0;
     }
 
-    .containerSmallProduct{
+    .titleSpecial {
+        -webkit-text-stroke: 2px #000;
+        color: transparent;
+    }
+
+    .headerImg {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .btnCategoryOne {
+        min-width: 130px;
+        height: 40px;
+        color: #1a1a1a;
+        font-weight: 500;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 4px 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid #2a2a2a;
+        background: transparent;
+        display: flex;
+        align-items: center;
         gap: 0.5rem;
     }
 
-    .smallProductOne{
-        flex-direction: row;
+    .btnCategoryOne:hover {
+        color: #b8b8b8;
+        border: 2px solid #b8b8b8;
+        transition: all 0.3s ease;
     }
 
-    .smallProductTwo{
-        flex-direction: row;
+    .btnCategoryOne:focus {
+        color: #b8b8b8;
+        border: 2px solid #b8b8b8;
+        transition: all 0.3s ease;
+    }
+
+    /*fin de la ediccion de inicio*/
+
+    /*ediccion de la seccion de los productos*/
+
+
+    /*ARREGLAR LOS CONTENEDORES DE LOS
+PRODUCTOS PARA QUE SEA UN CONTENEDOR
+DE 2 PRODUCTOS*/
+    .productOne {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .productTwo {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .containerSmallProduct {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .smallProductOne {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .smallProductTwo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .smallPOne img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .infoSmallP {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .nameProduct>a {
+        text-decoration: none;
+    }
+
+    .categoryProduct p {
+        color: #c6c6c6;
+    }
+
+    .containerBigProduct {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerBigProduct img {
+        width: 100%;
+        border-radius: 5px;
     }
 
 
-}
+    .containerCounter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .counter {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+    }
+
+    .pageCounter p {
+        font-size: 1.3em;
+    }
+
+    .backNumber {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .arrowCounter {
+        font-size: 1.4em;
+    }
+
+    .ofNumber {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    @media screen and (min-width:1024px) {
+
+
+        .infoPersonal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+            padding: 30px 0;
+        }
+
+        .navInfoPersonal {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navInfoPersonal>a {
+            text-decoration: none;
+            font-size: 1.188em;
+            font-weight: 500;
+            color: #c6c6c6;
+            transition: all 0.3s ease;
+        }
+
+
+        .navInfoPersonal>a:hover {
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .title {
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+        }
+
+        .buttonCategoryContainer {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btnCategoryTwo {
+            display: block;
+            min-width: 130px;
+            height: 40px;
+            color: #1a1a1a;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.2em;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid #2a2a2a;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btnCategoryTwo:hover {
+            color: #b8b8b8;
+            border: 2px solid #b8b8b8;
+            transition: all 0.3s ease;
+        }
+
+        .btnCategoryTwo:focus {
+            color: #b8b8b8;
+            border: 2px solid #b8b8b8;
+            transition: all 0.3s ease;
+        }
+
+        .productOne {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .containerSmallProduct {
+            width: 60%;
+            gap: 1rem;
+        }
+
+        .containerBigProduct {
+            width: 56%;
+        }
+
+        .smallProductOne {
+            flex-direction: row;
+        }
+
+        .smallProductTwo {
+            flex-direction: row;
+        }
+
+        .productTwo {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width:1023px) {
+
+        .title {
+            display: block;
+        }
+
+        .buttonCategoryContainer {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btnCategoryTwo {
+            display: block;
+            min-width: 130px;
+            height: 40px;
+            color: #1a1a1a;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.2em;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid #2a2a2a;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btnCategoryTwo:hover {
+            color: #b8b8b8;
+            border: 2px solid #b8b8b8;
+            transition: all 0.3s ease;
+        }
+
+        .btnCategoryTwo:focus {
+            color: #b8b8b8;
+            border: 2px solid #b8b8b8;
+            transition: all 0.3s ease;
+        }
+
+        .specialTextButton {
+            display: none;
+        }
+
+        .productOne {
+            gap: 1rem;
+        }
+
+        .productTwo {
+            gap: 1rem;
+        }
+
+        .containerSmallProduct {
+            gap: 0.5rem;
+        }
+
+        .smallProductOne {
+            flex-direction: row;
+        }
+
+        .smallProductTwo {
+            flex-direction: row;
+        }
+
+
+    }
 </style>
 
 <main>
@@ -410,7 +407,7 @@ DE 2 PRODUCTOS*/
             <hr>
 
             <div class="usernameTitle">
-                <h1> Camperas  Pantalones <span class="titleSpecial">Zapatos</span> tops capuchas</h1>
+                <h1> Camperas Pantalones <span class="titleSpecial">Zapatos</span> tops capuchas</h1>
             </div>
 
             <hr>
@@ -426,7 +423,8 @@ DE 2 PRODUCTOS*/
 
                     <button class="btnCategoryOne"><i class="bi bi-filter-left"></i> Filtros</button>
 
-                    <button class="btnCategoryTwo"><i class="bi bi-sort-down-alt"></i> Ordernar por<span class="specialTextButton">: Mas Buscadas</span></button>
+                    <button class="btnCategoryTwo"><i class="bi bi-sort-down-alt"></i> Ordernar por<span
+                            class="specialTextButton">: Mas Buscadas</span></button>
 
                 </div>
 
@@ -440,8 +438,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Superstar shoes</a>
@@ -459,8 +458,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Samba leather shoes</a>
@@ -482,8 +482,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Desconocido</a>
@@ -501,8 +502,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Superstar shoes</a>
@@ -523,8 +525,9 @@ DE 2 PRODUCTOS*/
 
                 <div class="containerBigProduct">
 
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/tom-sodoge-3vAdYH9FfG0-unsplash.jpg" alt="">
-                    
+                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/tom-sodoge-3vAdYH9FfG0-unsplash.jpg"
+                        alt="">
+
                     <div class="infoSmallP">
                         <div class="nameProduct">
                             <a href="#">Dame 8 basketball shoes</a>
@@ -547,8 +550,9 @@ DE 2 PRODUCTOS*/
             <div class="productTwo">
 
                 <div class="containerBigProduct">
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/tom-sodoge-3vAdYH9FfG0-unsplash.jpg" alt="">
-                    
+                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/tom-sodoge-3vAdYH9FfG0-unsplash.jpg"
+                        alt="">
+
                     <div class="infoSmallP">
                         <div class="nameProduct">
                             <a href="#">Adi2000 shoes</a>
@@ -571,8 +575,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Busenitz pro shoes</a>
@@ -590,8 +595,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">nMS_R1 V2 SHOES</a>
@@ -613,8 +619,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Gazelle shoes</a>
@@ -632,8 +639,9 @@ DE 2 PRODUCTOS*/
 
                         <div class="smallPOne">
 
-                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                        
+                            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg"
+                                alt="">
+
                             <div class="infoSmallP">
                                 <div class="nameProduct">
                                     <a href="#">Ozweego shoes</a>
@@ -688,6 +696,3 @@ DE 2 PRODUCTOS*/
 
     </section>
 </main>
-<%- include('../partials/footer') -%>
-
-          <%- include('../partials/script') %>

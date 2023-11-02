@@ -1,199 +1,236 @@
-<%- include('../partials/header') -%>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <style>
+    /* ====== Reajuste header a causa de que esta pagina usa boostrap ====== */
 
-/* ====== Reajuste header a causa de que esta pagina usa boostrap ====== */
+    header {
+        margin: 0px;
+        width: 100vw;
+    }
 
-header{
-    margin:0px;
-    width: 100vw;
-}
-header p{margin: 0px;}
+    header p {
+        margin: 0px;
+    }
 
-nav a{
-    text-decoration: none!important;
-    color: black!important;
-}
+    nav a {
+        text-decoration: none !important;
+        color: black !important;
+    }
 
-h3{font-size: 0.9rem;}
+    h3 {
+        font-size: 0.9rem;
+    }
 
-h4{
-    font-size: 16px!important;
-    margin: 0px!important;
-}
+    h4 {
+        font-size: 16px !important;
+        margin: 0px !important;
+    }
 
-/* ====== Reajuste footer a causa de que esta pagina usa boostrap ====== */
+    /* ====== Reajuste footer a causa de que esta pagina usa boostrap ====== */
 
-footer p{margin: 0px;}
+    footer p {
+        margin: 0px;
+    }
 
-hr{margin:0px;}
+    hr {
+        margin: 0px;
+    }
 
-/* ====== MAIN ====== */
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;    
-    width: 85vw;
-    margin: 0 auto;
-}
+    /* ====== MAIN ====== */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 85vw;
+        margin: 0 auto;
+    }
 
-main  a {
-    font-size: 1em;
-    color: #000!important;
-}
-/* ====== CATEGORIAS ====== */
+    main a {
+        font-size: 1em;
+        color: #000 !important;
+    }
 
-.category{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-}
+    /* ====== CATEGORIAS ====== */
 
-.text {
-    display: flex;   
-    gap: 10px;
-}
+    .category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
 
-
-.CATALOG{
-    color:#000;
-    font-weight: bold;
-}
-
-.colorSpecial {
-    color: #c6c6c6; 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.title{
-    display: none;
-}
-
-.infoPersonal{padding-top:30px;}
-.container-category, .infoPersonal{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80vw;
-    margin: 0 auto;
-}
+    .text {
+        display: flex;
+        gap: 10px;
+    }
 
 
-/* ==== Linea HR ===== */
+    .CATALOG {
+        color: #000;
+        font-weight: bold;
+    }
 
-.rotated-element{
-    transform-origin: left top;
-    color:#000;
-    width: 100%;
-    height: 2px;
-    color: #000;
-}
+    .colorSpecial {
+        color: #c6c6c6;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-/* ==== Contenedor de Categorias ===== */
+    .title {
+        display: none;
+    }
 
-.container{
-    margin: 0!important;
-    padding: 0!important;
-    min-width: 80vw;
-}
+    .infoPersonal {
+        padding-top: 30px;
+    }
 
-
-.article-category {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#elemento1,#elemento2,#elemento3,
-#elemento4,#elemento5{
-    padding: 5px;
-}
-
-.article-category img {
-    height: 100%; /* Rellena el 100% de la altura del contenedor */
-    width: auto; /* Permite que el ancho se ajuste automáticamente para mantener la relación de aspecto */
-}
-
-.zocalo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.category-name {
-    flex: 1;
-    margin: 0px;
-    font-weight: bold;
-}
-
-.zocalo .bi-arrow-right {font-size: 2rem;}
-.zocalo .bi-arrow-right:hover {transform: scale(1.5,1.5);}
-.zocalo  a:hover{transform: scale(1.5,1.5);}
-.alert a:hover{transform: scale(1.5,1.5); color: white;}
-
-.image-container {
-    height: 300px; /* Establece la altura fija deseada */
-    width: 100%; /* Permite que el ancho se ajuste automáticamente */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
-    background-color: rgba(239,244,248,255);
-    text-align: center;
-    border-radius: 1%;
-    border: 2px solid rgba(0,0,0,0.2);    
-    transition: all 0.3s ease-out;
-}
-
-.image-container img {
-  /* object-fit: cover; */
-  transition: transform 0.3s ease, border 0.3s ease;
-}
-
- 
- .image-container:hover {
-    box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(0,0,0,0.5);
-    opacity: 0.85;
-    filter: brightness(0.87) contrast(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
-  
-/*---------------Tablet------------- */
-@media screen and (min-width:768px) {
-    
-    
-    .row #elemento2 .article-category,.row #elemento4 .article-category
-    {flex-direction: column-reverse;}
-
-    .title{display:block;}
-
-    .title h2{font-size: 25px;    }
-
-    
+    .container-category,
+    .infoPersonal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80vw;
+        margin: 0 auto;
+    }
 
 
-} 
+    /* ==== Linea HR ===== */
 
-/* ====== Correccion bootstrap entre 992-1023px ====== */
-@media screen and (min-width:992px){
-    .row #elemento4 .article-category
-    {
-    flex-direction: column;
-    }   
-    .row #elemento5 .article-category{
-        flex-direction: column-reverse;
-    } 
-}
+    .rotated-element {
+        transform-origin: left top;
+        color: #000;
+        width: 100%;
+        height: 2px;
+        color: #000;
+    }
 
+    /* ==== Contenedor de Categorias ===== */
+
+    .container {
+        margin: 0 !important;
+        padding: 0 !important;
+        min-width: 80vw;
+    }
+
+
+    .article-category {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #elemento1,
+    #elemento2,
+    #elemento3,
+    #elemento4,
+    #elemento5 {
+        padding: 5px;
+    }
+
+    .article-category img {
+        height: 100%;
+        /* Rellena el 100% de la altura del contenedor */
+        width: auto;
+        /* Permite que el ancho se ajuste automáticamente para mantener la relación de aspecto */
+    }
+
+    .zocalo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .category-name {
+        flex: 1;
+        margin: 0px;
+        font-weight: bold;
+    }
+
+    .zocalo .bi-arrow-right {
+        font-size: 2rem;
+    }
+
+    .zocalo .bi-arrow-right:hover {
+        transform: scale(1.5, 1.5);
+    }
+
+    .zocalo a:hover {
+        transform: scale(1.5, 1.5);
+    }
+
+    .alert a:hover {
+        transform: scale(1.5, 1.5);
+        color: white;
+    }
+
+    .image-container {
+        height: 300px;
+        /* Establece la altura fija deseada */
+        width: 100%;
+        /* Permite que el ancho se ajuste automáticamente */
+        overflow: hidden;
+        /* Oculta cualquier parte de la imagen que se salga del contenedor */
+        background-color: rgba(239, 244, 248, 255);
+        text-align: center;
+        border-radius: 1%;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-out;
+    }
+
+    .image-container img {
+        /* object-fit: cover; */
+        transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+
+    .image-container:hover {
+        box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        opacity: 0.85;
+        filter: brightness(0.87) contrast(1.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    /*---------------Tablet------------- */
+    @media screen and (min-width:768px) {
+
+
+        .row #elemento2 .article-category,
+        .row #elemento4 .article-category {
+            flex-direction: column-reverse;
+        }
+
+        .title {
+            display: block;
+        }
+
+        .title h2 {
+            font-size: 25px;
+        }
+
+
+
+
+    }
+
+    /* ====== Correccion bootstrap entre 992-1023px ====== */
+    @media screen and (min-width:992px) {
+        .row #elemento4 .article-category {
+            flex-direction: column;
+        }
+
+        .row #elemento5 .article-category {
+            flex-direction: column-reverse;
+        }
+    }
 </style>
 <main>
     <div class="category">
@@ -207,91 +244,97 @@ main  a {
                     <span class="colorSpecial">
                         <h3 class="CATALOG"> CATÁLOGO</h3>
                     </span>
-                    
+
                 </div>
                 <div class="title">
                     <h2>CATÁLOGO</h2>
                 </div>
             </div>
-        </div>   
-            <hr class="rotated-element">
-            <div class="container">
-                <div class="row">
-                    <div id="elemento1" class="col-12 col-md-6 col-lg-3">
-                        <div class="article-category">
-                            <div class="zocalo">
-                                <p class="category-name">ZAPATILLAS</p>
+        </div>
+        <hr class="rotated-element">
+        <div class="container">
+            <div class="row">
+                <div id="elemento1" class="col-12 col-md-6 col-lg-3">
+                    <div class="article-category">
+                        <div class="zocalo">
+                            <p class="category-name">ZAPATILLAS</p>
                             <a href="www.google.com">
                                 <i class="bi bi-arrow-right"></i>
                             </a>
-                            </div>
-                            <div class="image-container">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/zapatilla-group.png" alt="Zapatillas">
-                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img class="img-fluid"
+                                src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/zapatilla-group.png"
+                                alt="Zapatillas">
                         </div>
                     </div>
-                    <div id="elemento2"class="col-12 col-md-6 col-lg-6 ">
-                        <div class="article-category">
-                            <div class="zocalo">
-                                <p class="category-name">MOCHILAS</p>
-                                <a href="www.google.com">
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>    
-                            </div>
-                            <div class="image-container">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mochila-group.png" alt="Mochilas">
-                            </div>
-
-                        </div>
-                    </div>    
-                    <div id="elemento3"class="col-12 col-md-6 col-lg-3">
-                        <div class="article-category">
-                            <div class="zocalo">
-                                <p class="category-name">CAMPERAS</p>
-                                <a href="www.google.com">
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                            <div class="image-container">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/campera-group.png" alt="Camperas">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="elemento4"class="col-12 col-md-6 col-lg-6">
-                        <div class="article-category">
-                            <div class="zocalo">
-                                <p class="category-name">PANTALONES</p>
-                                <a href="www.google.com">
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>    
-                            </div>
-                            <div class="image-container">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/pantalon-group.png" alt="Pantalones">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="elemento5"class="col-12 col-md-6 col-lg-3">
-                        <div class="article-category">
-                            <div class="zocalo">
-                                <p class="category-name">REMERAS</p>
-                                <a href="www.google.com">
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>    
-                            </div>
-                            <div class="image-container">
-                                <img class="img-fluid" src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/camiseta-group.png" alt="Remeras">
-                            </div>
-                                
-                        </div>
-                    </div>
-                    
-                    
                 </div>
+                <div id="elemento2" class="col-12 col-md-6 col-lg-6 ">
+                    <div class="article-category">
+                        <div class="zocalo">
+                            <p class="category-name">MOCHILAS</p>
+                            <a href="www.google.com">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img class="img-fluid"
+                                src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mochila-group.png"
+                                alt="Mochilas">
+                        </div>
+
+                    </div>
+                </div>
+                <div id="elemento3" class="col-12 col-md-6 col-lg-3">
+                    <div class="article-category">
+                        <div class="zocalo">
+                            <p class="category-name">CAMPERAS</p>
+                            <a href="www.google.com">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img class="img-fluid"
+                                src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/campera-group.png"
+                                alt="Camperas">
+                        </div>
+                    </div>
+                </div>
+                <div id="elemento4" class="col-12 col-md-6 col-lg-6">
+                    <div class="article-category">
+                        <div class="zocalo">
+                            <p class="category-name">PANTALONES</p>
+                            <a href="www.google.com">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img class="img-fluid"
+                                src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/pantalon-group.png"
+                                alt="Pantalones">
+                        </div>
+                    </div>
+                </div>
+                <div id="elemento5" class="col-12 col-md-6 col-lg-3">
+                    <div class="article-category">
+                        <div class="zocalo">
+                            <p class="category-name">REMERAS</p>
+                            <a href="www.google.com">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img class="img-fluid"
+                                src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/camiseta-group.png"
+                                alt="Remeras">
+                        </div>
+
+                    </div>
+                </div>
+
+
             </div>
+        </div>
     </div>
 
-   </main>
-
-                         <%- include('../partials/footer') -%>
-
-                              <%- include('../partials/script') %>
+</main>

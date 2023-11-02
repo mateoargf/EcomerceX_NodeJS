@@ -6,11 +6,10 @@ const productsRouter = require('./routes/products')
 const userRouter = require('./routes/user')
 const errRouter = require('./routes/err')
 const path = require('path')
+const layouts = require('express-ejs-layouts');
 
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
-
-app.use(express.static('public'))
 
 const iniciar = async () => {
      try {
@@ -21,8 +20,15 @@ const iniciar = async () => {
      }
 }
 
+// para uso de archivos estáticos
+app.use(express.static('public'))
+
+// para uso de ejs
 app.set('view engine','ejs')
 app.set('views', path.join(__dirname, 'views'));
+// para layouts
+app.set('layout', 'layouts/layout')
+app.use(layouts)
 
 app.get('/', (req, res) => {
      res.status(200).render('pages/index')

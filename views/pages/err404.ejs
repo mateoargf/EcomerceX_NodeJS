@@ -1,241 +1,235 @@
-<%- include('../partials/header') -%>
+<style>
+     * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: 'Syne', sans-serif;
+     }
 
-     <style>
-          * {
-               padding: 0;
-               margin: 0;
-               box-sizing: border-box;
-               font-family: 'Syne', sans-serif;
-          }
+     h1 {
+          font-weight: 800;
+          font-size: 3em;
+          /*48px*/
+          text-transform: uppercase;
+          color: #000;
+     }
 
-          h1 {
-               font-weight: 800;
-               font-size: 3em;
-               /*48px*/
-               text-transform: uppercase;
-               color: #000;
-          }
+     h2 {
+          font-weight: 600 bold;
+          font-size: 1.375em;
+          /*22px*/
+          text-transform: uppercase;
+          color: #000;
+     }
 
-          h2 {
-               font-weight: 600 bold;
-               font-size: 1.375em;
-               /*22px*/
-               text-transform: uppercase;
-               color: #000;
-          }
+     h3 {
+          font-weight: 500;
+          font-size: 1.188em;
+          /*19px*/
+          text-transform: uppercase;
+          color: #000;
+     }
 
-          h3 {
-               font-weight: 500;
-               font-size: 1.188em;
-               /*19px*/
-               text-transform: uppercase;
-               color: #000;
-          }
+     p {
+          font-weight: 400;
+          font-size: 1.063em;
+          /*17px*/
+          color: #000;
+          margin: 0;
+     }
 
-          p {
-               font-weight: 400;
-               font-size: 1.063em;
-               /*17px*/
-               color: #000;
-               margin: 0;
-          }
+     a {
+          font-size: 400;
+          font-size: 1em;
+          /*16px*/
+          color: #000;
+     }
 
-          a {
-               font-size: 400;
-               font-size: 1em;
-               /*16px*/
-               color: #000;
-          }
-
-          hr {
-               color: #c6c6c6;
-          }
+     hr {
+          color: #c6c6c6;
+     }
 
 
+     body {
+          background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron2.jpg');
+          background-size: 90vw 120%;
+          background-repeat: no-repeat;
+          background-position: center;
+
+     }
+
+     /*
+====================
+====== MAIN ========
+====================
+*/
+     main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          width: 85vw;
+          margin: 0 auto;
+     }
+
+     /*-------------------------------------
+-----------------404-----------------
+------------------------------------- */
+     .error-code {
+          font-size: 92px;
+          font-weight: 800;
+          color: transparent;
+     }
+
+     /*-------------------------------------
+-----------------404 imagen------------
+------------------------------------- */
+
+     .error-code span {
+          /* background-image: url('../img/fondo-404.jpg'); */
+          background-image: url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/fondo-404.jpg');
+          background-clip: text;
+          -webkit-background-clip: text;
+          filter: sepia(80%) contrast(0.5) brightness(0.9);
+     }
+
+     /*-------------------------------------
+--------SOMETHING WENT WRONG-----------
+------------------------------------- */
+     .error-title {
+          font-size: 20px;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 10px;
+          padding-top: 40px;
+     }
+
+     /*-------------------------------------
+-----------------Texto ERROR-----------
+------------------------------------- */
+     .error-message {
+          font-size: 12px;
+          color: #555;
+          margin: 30px 0 30px;
+     }
+
+     /*-------------------------------------
+-----------------Boton-----------------
+------------------------------------- */
+     .div-button {
+          display: flex;
+          justify-content: center;
+          padding-bottom: 12vh;
+     }
+
+     .continue-button {
+          background-color: #333;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 14px;
+          position: relative;
+          box-shadow: 3px 3px 5px black;
+          margin-top: 20px;
+     }
+
+     .continue-button:hover {
+          background-color: #555;
+     }
+
+     @media only screen and (min-width: 767px) {
           body {
                background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron2.jpg');
                background-size: 90vw 120%;
                background-repeat: no-repeat;
                background-position: center;
-
           }
 
-          /*
-====================
-====== MAIN ========
-====================
-*/
-          main {
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               justify-content: center;
-               text-align: center;
-               width: 85vw;
-               margin: 0 auto;
-          }
-
-          /*-------------------------------------
------------------404-----------------
-------------------------------------- */
-          .error-code {
-               font-size: 92px;
-               font-weight: 800;
-               color: transparent;
-          }
-
-          /*-------------------------------------
------------------404 imagen------------
-------------------------------------- */
-
-          .error-code span {
-               /* background-image: url('../img/fondo-404.jpg'); */
-               background-image: url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/fondo-404.jpg');
-               background-clip: text;
-               -webkit-background-clip: text;
-               filter: sepia(80%) contrast(0.5) brightness(0.9);
-          }
-
-          /*-------------------------------------
---------SOMETHING WENT WRONG-----------
-------------------------------------- */
           .error-title {
-               font-size: 20px;
-               font-weight: bold;
-               color: #333;
-               margin-bottom: 10px;
-               padding-top: 40px;
+               font-size: 25px;
           }
 
-          /*-------------------------------------
------------------Texto ERROR-----------
-------------------------------------- */
           .error-message {
-               font-size: 12px;
-               color: #555;
-               margin: 30px 0 30px;
-          }
-
-          /*-------------------------------------
------------------Boton-----------------
-------------------------------------- */
-          .div-button {
-               display: flex;
-               justify-content: center;
-               padding-bottom: 12vh;
+               font-size: 13px;
           }
 
           .continue-button {
-               background-color: #333;
-               color: #fff;
-               border: none;
-               padding: 10px 20px;
-               border-radius: 5px;
-               cursor: pointer;
+               font-size: 16px;
+          }
+     }
+
+     @media only screen and (min-width: 1024px) {
+
+          body {
+               background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron10.jpg');
+               background-size: 90vw 180%;
+               background-repeat: no-repeat;
+               background-position: center;
+
+          }
+
+          .error-code {
+               font-size: 10vw;
+          }
+
+          .error-title {
+               font-size: 30px;
+          }
+
+          .error-message {
                font-size: 14px;
-               position: relative;
-               box-shadow: 3px 3px 5px black;
-               margin-top: 20px;
           }
 
-          .continue-button:hover {
-               background-color: #555;
+          .continue-button {
+               font-size: 19px;
+          }
+     }
+
+     @media only screen and (min-width: 1439px) {
+          body {
+
+               background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron.jpg');
+               background-size: 90vw 150%;
+               background-repeat: no-repeat;
+               background-position: center;
           }
 
-          @media only screen and (min-width: 767px) {
-               body {
-                    background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron2.jpg');
-                    background-size: 90vw 120%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-               }
-
-               .error-title {
-                    font-size: 25px;
-               }
-
-               .error-message {
-                    font-size: 13px;
-               }
-
-               .continue-button {
-                    font-size: 16px;
-               }
+          .error-code {
+               font-size: 12vw;
           }
 
-          @media only screen and (min-width: 1024px) {
-
-               body {
-                    background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron10.jpg');
-                    background-size: 90vw 180%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-
-               }
-
-               .error-code {
-                    font-size: 10vw;
-               }
-
-               .error-title {
-                    font-size: 30px;
-               }
-
-               .error-message {
-                    font-size: 14px;
-               }
-
-               .continue-button {
-                    font-size: 19px;
-               }
+          .error-title {
+               font-size: 40px;
           }
 
-          @media only screen and (min-width: 1439px) {
-               body {
-
-                    background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(240, 240, 240, 0.7)), url('https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/patron.jpg');
-                    background-size: 90vw 150%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-               }
-
-               .error-code {
-                    font-size: 12vw;
-               }
-
-               .error-title {
-                    font-size: 40px;
-               }
-
-               .error-message {
-                    font-size: 15px;
-               }
-
-               .continue-button {
-                    font-size: 20px;
-               }
+          .error-message {
+               font-size: 15px;
           }
-     </style>
-     <main id="section-error">
-          <div class="error-code 404">
-               <div class="404">
-                    <span>404</span>
-               </div>
-               <div class="error-title">
-                    ALGO SALIÓ MAL...
-               </div>
-               <div class="error-message">
-                    No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
-                    otro camino!
-               </div>
-               <div class="div-button">
-                    <button class="continue-button">
-                         CONTINUAR COMPRANDO
-                    </button>
-               </div>
+
+          .continue-button {
+               font-size: 20px;
+          }
+     }
+</style>
+<main id="section-error">
+     <div class="error-code 404">
+          <div class="404">
+               <span>404</span>
           </div>
-     </main>
-
-     <%- include('../partials/footer') -%>
-
-          <%- include('../partials/script') %>
+          <div class="error-title">
+               ALGO SALIÓ MAL...
+          </div>
+          <div class="error-message">
+               No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
+               otro camino!
+          </div>
+          <div class="div-button">
+               <button class="continue-button">
+                    CONTINUAR COMPRANDO
+               </button>
+          </div>
+     </div>
+</main>
