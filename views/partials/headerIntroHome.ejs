@@ -9,6 +9,27 @@
      <h1>X "Tu lugar de confianza"</h1>
      <p>¡Haz click para entrar!</p>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+     integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     
+<script>
+     window.addEventListener("load", () => {
+          const loader = document.querySelector(".container");
+
+          const header = document.querySelector("#header");
+          const main = document.querySelector("#main");
+          const footer = document.querySelector("#footer");
+
+          loader.addEventListener("click", () => {
+               loader.classList.add("container-hidden");
+               header.classList.add("hidden");
+               main.classList.add("hidden");
+               footer.classList.add("hidden");
+          })
+     });
+</script>
 <style>
      #preloader {
           position: absolute;
@@ -54,6 +75,16 @@
      }
 
      #main.hidden {
+          opacity: 1;
+          visibility: visible;
+     }
+
+     #footer {
+          opacity: 0;
+          visibility: hidden;
+     }
+
+     #footer.hidden {
           opacity: 1;
           visibility: visible;
      }
