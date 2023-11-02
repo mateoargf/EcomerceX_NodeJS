@@ -5,26 +5,29 @@
      </div>
 </div>
 
-<div class="container">
+<div class="text-preloader">
      <h1>X "Tu lugar de confianza"</h1>
      <p>¡Haz click para entrar!</p>
 </div>
 
 <script>
+  
      window.addEventListener("load", () => {
-          const loader = document.querySelector(".container");
+          const loader = document.querySelector(".text-preloader");
 
           const header = document.querySelector("#header");
           const main = document.querySelector("#main");
           const footer = document.querySelector("#footer");
 
           loader.addEventListener("click", () => {
-               loader.classList.add("container-hidden");
+               loader.classList.add("text-preloader-hidden");
                header.classList.add("hidden");
                main.classList.add("hidden");
                footer.classList.add("hidden");
           })
      });
+  
+
 </script>
 <style>
      #preloader {
@@ -33,11 +36,12 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          width: 100%;
+          width: 100vw;
           height: 100vh;
           z-index: 100;
           background: #0f0f0f;
           position: fixed;
+          
      }
 
      #percent {
@@ -57,11 +61,14 @@
 
      #header {
           opacity: 0;
+           display:none; 
           visibility: hidden;
      }
 
      #header.hidden {
           opacity: 1;
+          display:flex; 
+          flex-direction: column;
           visibility: visible;
      }
 
@@ -77,35 +84,39 @@
 
      #footer {
           opacity: 0;
+          display:none; 
           visibility: hidden;
      }
 
      #footer.hidden {
           opacity: 1;
+          display:flex;
           visibility: visible;
      }
 
-     .container {
+     .text-preloader {
           position: absolute;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          width: 100%;
+          width: 100vw;
           height: 100vh;
-          position: fixed;
           background: #c6c6c6;
           transition: opacity 0.75s, visibility 0.75s;
+          
+        
      }
 
-     .container-hidden {
+     .text-preloader-hidden {
           opacity: 0;
           visibility: hidden;
+          /* display: none; */
           transition: opacity 0.75s, visibility 0.75s;
      }
 
 
-     .container h1 {
+     .text-preloader h1 {
           font-weight: 800;
           font-size: 3em;
           /*48px*/
@@ -114,7 +125,7 @@
           opacity: 0;
      }
 
-     .container p {
+     .text-preloader p {
           font-weight: 400;
           font-size: 1.063em;
           /*17px*/
@@ -123,3 +134,58 @@
           opacity: 0;
      }
 </style>
+
+<script>
+
+     const tll = gsap.timeline({
+         paused: "true"
+     });
+     tll.to("#percent, #bar", {
+         duration: .2,
+         opacity: 0,
+         zIndex: -1
+     });
+     tll.to("#preloader", {
+         duration: .8,
+         width: "0%"
+     });
+     tll.from(".text-preloader", {
+         duration: 1.5,
+         y: "-150%"
+     }, "-=.2");
+     tll.to(".text-preloader h1", {
+         opacity:1,
+         textShadow: "12px 20px rgba(255,255,255,0.23)",
+         skewY: 10,
+         y: "10%",
+         stagger: {
+             amount: .4
+         }
+     });
+     tll.to(".text-preloader p", {
+         opacity:1,
+         textShadow: "12px 20px rgba(255,255,255,0.23)",
+         skewY: 10,
+         y: "10%",
+         stagger: {
+             amount: .4
+         }
+     });
+     let width = 1;
+     let bar = document.getElementById("barconfrm");
+     let id;
+     function move(){
+         id = setInterval(frame,10);
+     }
+     function frame(){
+         if(width>=100){
+             clearInterval(id);
+             tll.play();
+         }
+         else{
+             width++;
+             bar.style.width = width + "%";
+             document.getElementById("percent").innerHTML = width + "%";
+         }
+     }
+ </script>
