@@ -4,7 +4,7 @@ const router = Router()
 const {
      getAllProduct,
      getHydro,
-     getMoreFrom,
+     // getMoreFrom,
      getCheckPage,
      getWishList,
      getLogin,
@@ -17,7 +17,7 @@ const {
 router.get('/', getAllProduct)
 router.get('/hydro', getHydro)
 router.get('/group', getAllGroup)
-router.get('/morefrom', getMoreFrom)
+// router.get('/morefrom', getMoreFrom)
 router.get('/checkPage', getCheckPage)
 router.get('/wishlist', getWishList)
 router.get('/login', getLogin)
