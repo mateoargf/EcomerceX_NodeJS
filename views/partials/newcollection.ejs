@@ -593,16 +593,31 @@ a {
     color: #000;
 }
 
+.headerArrivals,.headerCollection,.headerMas,.headerPopular,.headerCategory{
+   padding: 20px 0px;
+}
+.headerArrivals h2,
+.headerCollection h2,
+.headerPopular h2,
+#top-container h2 {
+  font-weight: 800;
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
 .nameProduct a{
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .nameProduct a:hover{
     color: #545454;
     transition: all 0.3s ease;
 }
+
 
 .titleCategory a{
     text-decoration: none;
@@ -612,6 +627,8 @@ a {
 .for p{
     color: #c6c6c6;
     text-transform: uppercase;
+    text-overflow: clip;
+    font-size: 14px;
 }
 
 .btn{
@@ -672,7 +689,7 @@ a {
     border-radius: 5px;
 }
 
-.product img {
+ .product img {
     height: 44vh;
     border-radius: 5px;
 }
@@ -794,6 +811,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    align-items: flex-start;
+   
 }
 
 .productCollectionTwo{
@@ -880,7 +899,6 @@ a {
     border: 1px solid #000;
 }
 
-
 /* ----- PopularNOW ------- */
 
 #popularNow{
@@ -900,11 +918,23 @@ a {
 .mainPopular{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
 }
 
-.mainPopular .product img{
-    height: 49vh;
+.mainPopular .product{
+    width:calc(50% -10px);
+    margin-bottom: 20px;
+}
+.mainPopular .product img{    max-width: 100%;}
+
+.infoProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
 }
 
 .price{
@@ -912,9 +942,7 @@ a {
     gap: 0.3rem;
 }
 
-.price span{
-    color: #E32B32;
-}
+.price span{color: #E32B32;}
 
 .footerPopular{
     display: flex;
@@ -926,19 +954,23 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding-bottom: 10px;
+   
 }
 
 .imageP img{
     height: 44vh;
     border-radius: 3px;
+    max-width: 100%;
 }
 
 .wideImageP{
-    width: 100%;
+    max-width: 100%;
 }
 
+
+
 .wideImageP img{
-    height: 44vh;
     width: 100%;
     border-radius: 5px;
 }
@@ -946,6 +978,8 @@ a {
 .wideImagePopular{
     display: flex;
     align-items: center;
+    max-width: 100%;
+/
 }
 
 .wideImagePopular .wideImageP{
@@ -1044,11 +1078,16 @@ a {
     width: 60%;
 }
 
-.fliaOne{
+.fliaOne,.fliaTwo{
     display: flex;
     gap: 0.5rem;
+    height: auto;
 }
-
+.fliaTwo .wideProduct img,
+.fliaOne .product img{
+    max-width: 100%;
+    height: auto;
+}
 .productArrivalTwo .product img{
     height: 96vh;
 }
@@ -1154,24 +1193,50 @@ a {
         padding: 0px
     }
     
-    /* .image{
-        width: 100%;
-    }
-
-    .image img{
-        height: 50vh;
-        width: 100%;
-    }
-
-    .advertisement{
-        height: 50vh;
-        width: 100%;
-        gap: 2rem;
-    } */
 
     #popularNow{
         width: 90%;
     }
+    /*-------------------------*/
+
+    .imagesPopular {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .imagespopular .imageP {
+        flex-basis: calc(50% - 1rem); /* Los otros dos elementos ocupan el 50% del ancho en la segunda fila */
+        margin-bottom: 2rem;
+    }
+    .imagespopular .wideImageP {
+        flex-basis: calc(100% - 2rem); /* El primer elemento ocupa todo el ancho en la primera fila */
+        margin-right: 2rem;
+    }
+
+    .wideImagePopular{
+        display: flex;
+        flex-direction: column;
+    }
+    .imagespopular {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }   
+
+    .imageP {
+        flex-basis: calc(50% - 1rem); /* Cada imagen ocupa el 50% del ancho de su contenedor */
+        margin-bottom: 2rem; /* Agrega un espacio en la parte inferior para crear una nueva fila */
+    }
+
+    .wideadvertisement {
+        flex-basis: 50%; /* El elemento de anuncio ocupa todo el ancho en su propia fila */
+        margin-bottom: 2rem; /* Agrega un espacio en la parte inferior del anuncio */
+        padding: 0px
+    }
+    
+
+    /*-------------------------*/
 
 
     .wideImagePopular .wideImageP{
