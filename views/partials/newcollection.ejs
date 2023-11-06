@@ -519,8 +519,6 @@
             </div>
 
         </div>
-    
-
         <div id="container">
             <div class="productMoreOne">
                 <div class="container1 img-container1">
@@ -560,7 +558,7 @@
 
 </div>
 <style>
-   
+
 .carousel-container {
   width: 80vw;
   margin: 0 auto;
@@ -586,6 +584,7 @@ button {
 p {
     font-weight: 400;
     font-size: 1.063em;
+    
 }
 
 a {
@@ -709,24 +708,43 @@ a {
 #container{
    display:flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+   justify-content: center;
+   align-items: center;
    padding-top:30px;
 }
 .container1{
     flex: 1;
     width: 40vw;
-    text-align: center
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+
+
 }
-.productMoreOne,.productMoreTwo{
+.productMoreOne{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+}
+.productMoreTwo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.container1 .img-container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    padding: 10px;
 
 }
-
 .img-container1 img,
 .img-container2 img {
   max-width: 40vw; 
+  height: 20vw;
 }
 
 .imagenancha {
@@ -738,6 +756,16 @@ a {
   width: 100vw;
   
 }
+.diseño-text{
+    font-size: 1.4vw; /* Tamaño de letra inicial */
+    transition: font-size 0.3s ease; /* Transición suave para el cambio de tamaño de letra */
+   
+  }
+.productMoreOne p,.productMoreTwo p{
+    font-size: 1.3vw;
+    transition: font-size 0.3s ease; /* Transición suave para el cambio de tamaño de letra */
+}
+
 /* ----- NewColleccion ------- */
 
 #newCollection{
@@ -759,6 +787,7 @@ a {
     align-items: center;
     gap: 0.5rem;
     padding-bottom: 15px;
+    justify-content: space-between;
 }
 
 .infoProduct{
@@ -773,6 +802,10 @@ a {
     gap: 0.5rem;
     padding-bottom: 50px;
 }
+
+.productCollectionOne .product img,
+.productCollectionTwo .product img,
+.imagesCollection img{max-width: 100%;}
 
 .imagesCollection{
     display: flex;
@@ -1051,6 +1084,287 @@ a {
     height: 65.6vh;
     border-radius: 3px;
 }
+@media screen and (min-width:1024px) and (max-width:1430px){
+ 
+    .container1 p, .container1 p{font-size: 1.5vw;}
+
+    .diseño-text{font-size: 1.7vw;}
+    
+    
+
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .product{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .product img{
+        height: 50vh;
+        width: 100%;
+    }
+
+    .wideProduct img{
+        height: 50vh;
+    }
+
+
+    .containerHeader{
+        width: 90%;
+    }
+
+    nav{
+        display: none;
+    }
+
+    #newCollection{
+        width: 90%;
+    }
+
+    .productCollectionOne,.productCollectionTwo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .productCollectionOne .wideProduct, .productCollectionTwo .wideProduct {
+        flex-basis: calc(100% - 2rem); /* El primer elemento ocupa todo el ancho en la primera fila */
+        margin-right: 2rem;
+    }
+
+    .productCollectionOne .product, .productCollectionTwo .product {
+        flex-basis: calc(50% - 1rem); /* Los otros dos elementos ocupan el 50% del ancho en la segunda fila */
+        margin-bottom: 2rem;
+    }
+
+    .imagesCollection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }   
+
+    .image {
+        flex-basis: calc(50% - 1rem); /* Cada imagen ocupa el 50% del ancho de su contenedor */
+        margin-bottom: 2rem; /* Agrega un espacio en la parte inferior para crear una nueva fila */
+    }
+
+    .advertisement {
+        flex-basis: 50%; /* El elemento de anuncio ocupa todo el ancho en su propia fila */
+        margin-bottom: 2rem; /* Agrega un espacio en la parte inferior del anuncio */
+        padding: 0px
+    }
+    
+    /* .image{
+        width: 100%;
+    }
+
+    .image img{
+        height: 50vh;
+        width: 100%;
+    }
+
+    .advertisement{
+        height: 50vh;
+        width: 100%;
+        gap: 2rem;
+    } */
+
+    #popularNow{
+        width: 90%;
+    }
+
+
+    .wideImagePopular .wideImageP{
+        width: 100%;
+    }
+
+    #newArrivals{
+        width: 90%;
+    }
+
+    .productArrivalTwo .product img{
+        height: 110vh;
+    }
+
+    .imageCategory img{
+        height: 40.6vh;
+    }
+
+    .productMoreOne p, .productMoreTwo p{
+        font-size: 2.1vw;
+    }
+    .diseño-text{
+        font-size: 2.2vw;
+    }
+
+}
+    @media screen and (max-width:767px){
+    .product{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .product img{
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .containerHeader{
+        width: 95%;
+    }
+    
+    nav{
+        display: none;
+    }
+
+    .bag{
+        display: none;
+    }
+
+    #newCollection{
+        width: 95%;
+    }
+
+    .productCollectionOne{
+        flex-direction: column;
+    }
+
+    .productCollectionTwo{
+        flex-direction: column;
+    }
+
+    .imagesCollection{
+        flex-direction: column;
+    }
+
+    .image{
+        width: 100%;
+    }
+
+    .image img{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .advertisement{
+        height: 70vh;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    #popularNow{
+        width: 95%;
+    }
+
+    .mainPopular{
+        flex-direction: column;
+    }
+
+    .mainPopular .product img{
+        height: 100vh;
+    }
+
+    .imagesPopular{
+        flex-direction: column;
+    }
+
+    .wideImagePopular{
+        flex-direction: column;
+    }
+
+    .wideImagePopular .wideImageP{
+        width: 100%;
+    }
+
+    .imageP img{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .wideAdvertisement{
+        height: 60vh;
+    }
+
+    .titleAdW h2{
+        text-align: center;
+    }
+
+    .textAdW p{
+        text-align: center;
+    }
+
+    .btnAdW button{
+        display: flex;
+        justify-content: center;
+    }
+
+    #newArrivals{
+        width: 95%;
+    }
+
+    .mainArrivals{
+        flex-direction: column;
+    }
+
+    .productArrivalOne{
+        width: 100%;
+    }
+
+    .fliaOne{
+        flex-direction: column;
+    }
+
+    .category{
+        flex-direction: column;
+    }
+
+    .men{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+
+    .women{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .imageCategory img{
+        height: 100vh;
+        width: 100%;
+    }
+
+    
+    .container1 p, .container1 p{font-size: 2.8vw;}
+
+    .diseño-text{font-size: 3.2vw;}
+    
+    #container{
+        display: flex;
+        flex-direction:column;
+       justify-content: center;
+        align-items: center;
+       
+    }
+    .container1{
+        width: 80vw;
+        padding-bottom: 20px;
+    }
+    .productMoreOne{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .productMoreTwo{
+        flex-direction:column-reverse}
+
+    .img-container1 img, .img-container2 img {
+        max-width: 100vw; 
+        height: 80vw;
+    }
+    
+}
+
 
 </style>
 <script>
