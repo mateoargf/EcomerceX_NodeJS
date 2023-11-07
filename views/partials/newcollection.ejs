@@ -156,7 +156,7 @@
                 <div class="advertisement">
 
                     <div class="titleAd">
-                        <h2>Oferta de mitad de temporada: hasta 50% de descuento</h2>
+                        <h1>Oferta de mitad de temporada: hasta 50% de descuento</h1>
                     </div>
 
                     <div class="textAd">
@@ -283,7 +283,7 @@
                 <div class="wideAdvertisement">
 
                     <div class="titleAdW">
-                        <h2>desbloquea más de lo que amas</h2>
+                        <h1>desbloquea más de lo que amas</h1>
                     </div>
 
                     <div class="textAdW">
@@ -476,18 +476,14 @@
                 </div>
                 <div class="container1 text-container1">
                     <h2><span class="diseño-text">REGRESO DE "SUB-MARCA"</span></h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo tempora ut similique eligendi
-                        dolorem, iste aliquam vel voluptatem debitis voluptates repellat ab distinctio soluta enim
-                        rerum, adipisci provident voluptatum quaerat.</p>
+                    <p>X Basketball se enorgullece de anunciar el regreso de X eurocamp, una muestra de juegos múltiples de los atletas de élite elegibles para el draft de la NBA de Europa...</p>
                     <p><a href="#" class="a-mas">MAS</a></p>
                 </div>
             </div>
             <div class="productMoreTwo">
                 <div class="container1 text-container1">
                     <h2><span class="diseño-text">DISEÑADO POR & PARA MUJERES</span></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum eaque porro? Voluptates
-                        doloribus iusto, ducimus quaerat accusantium enim amet praesentium suscipit nulla, est dolor
-                        consequatur quia delectus sint corporis? </p>
+                    <p>Dado que cuatro de cada 10 (43%) mujeres comenzaron a hacer senderismo durante la pandemia, X terrex está impulsada a desarrollar productos diseñados específicamente para esta comunidad...</p>
                     <p><a href="#" class="a-mas">MAS</a></p>
                 </div>
                 <div class="container1 img-container1">
@@ -509,7 +505,7 @@
 <style>
 
 .carousel-container {
-  width: 80vw;
+  width: 85vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -520,10 +516,11 @@
     display: block;
 }
 
-
+/*
 button {
   margin: 10px;
-}
+} // Lo saque ya que me hace conflicto para editar otras cosas
+*/
 /* 
    ------------------------- 
    ----Nueva Coleccion------
@@ -549,17 +546,18 @@ a {
 .headerCollection h2,
 .headerPopular h2,
 #top-container h2 {
-  font-weight: 800;
-  font-size: 23px;
+  /*font-weight: 600;*/
+  font-size: 1.357em;
   text-transform: uppercase;
+  /*Modifique el tamaño y el ancho de la letra (?*/
 }
 
 .nameProduct a{
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     
 }
 
@@ -685,7 +683,7 @@ a {
     text-align: start;
     display: flex;
     flex-direction: column;
-
+    gap: 1rem; /*Agregue gap para separar el contenido*/
 
 }
 .productMoreOne{
@@ -693,6 +691,8 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    /*Agregue el width para que ocupe todo el espacio*/
 }
 .productMoreTwo{
     display: flex;
@@ -729,8 +729,9 @@ a {
    
   }
 .productMoreOne p,.productMoreTwo p{
-    font-size: 1.3vw;
+    font-size: 0.9em; /*Modifique el tamaño*/
     transition: font-size 0.3s ease; /* Transición suave para el cambio de tamaño de letra */
+    width: 70%;
 }
 
 /* ----- NewColleccion ------- */
@@ -773,8 +774,9 @@ a {
 }
 
 .productCollectionOne .product img,
-.productCollectionTwo .product img,
-.imagesCollection img{max-width: 100%;}
+.productCollectionTwo .product img/*
+.imagesCollection img*/{max-width: 100%;}
+/*le sace el max-width porque hace el el aviso quede muy ancho */
 
 .imagesCollection{
     display: flex;
@@ -797,9 +799,11 @@ a {
 .advertisement .titleAd, .advertisement .textAd{
     padding: 0px 10px;
 }
-.titleAd h2{
+.titleAd h1{ /*Lo cambie de un h2 a un h1 porque la letra es grande en el diseño original*/
+    font-size: 2em;
     color: #fff;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .textAd p {
@@ -880,7 +884,10 @@ a {
     width:calc(50% -10px);
     margin-bottom: 20px;
 }
-.mainPopular .product img{    max-width: 100%;}
+.mainPopular .product img{    
+    max-width: 100%;
+    height: 49vh;
+}
 
 .infoProduct{
     display: flex;
@@ -911,18 +918,20 @@ a {
 }
 
 .imageP img{
-    height: 44vh;
+    height: 44vh;/*44vh*/
     border-radius: 3px;
-    max-width: 100%;
+    /*max-width: 100%;*/
 }
 
 .wideImageP{
-    max-width: 100%;
+    /*max-width: 100%;*/
+    width: 100%;
 }
 
 
 
 .wideImageP img{
+    height: 44vh;
     width: 100%;
     border-radius: 5px;
 }
@@ -945,18 +954,20 @@ a {
     justify-content: center;
     gap: 1.5rem;
     padding:70px;
-    align-items: center;
+    align-items: start;
 }
 
-.titleAdW h2{
+.titleAdW h1{
+    font-size: 2em;
     color: #000;
+    text-transform: uppercase;
     text-align: start;
 }
 
 .textAdW p {
     color: #000;
-    text-align: start;
     font-size: 0.9em;
+    text-align: start;
     width: 90%;
 }
 
@@ -1030,25 +1041,27 @@ a {
 .productArrivalOne{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
 }
 .productArrivalTwo{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    /*width: 80%;*/
 }
 .fliaOne,.fliaTwo{
     display: flex;
     gap: 0.5rem;
     height: auto;
+    align-items: center;
+    justify-content: space-between;
 }
 .fliaTwo .wideProduct img,
 .fliaOne .product img{
     max-width: 100%;
-    height: auto;
+    height: 44vh;
 }
 
-.productArrivalTwo .product img{height:calc(67vw/1.28);}
+.productArrivalTwo .product img{height: 96vh /*calc(67vw/1.28);*/}
 
 
 .category{
