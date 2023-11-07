@@ -340,45 +340,32 @@
             </div>
 
         </div>
-
         <div class="mainArrivals">
-
             <div class="productArrivalOne">
-
                 <div class="fliaOne">
-
                     <div class="product">
-
                         <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg" alt="">
-                    
                         <div class="infoProduct">
                             <div class="nameProduct">
                                 <a href="#">Real madrid icon top</a>
                             </div>
-    
                             <div class="for">
                                 <p>Futbol masculino</p>
                             </div>
-    
                             <div class="price">
                                 <p>$100</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="product">
-
                         <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg" alt="">
-                    
                         <div class="infoProduct">
                             <div class="nameProduct">
                                 <a href="#">Rivalry shoes</a>
                             </div>
-    
                             <div class="for">
                                 <p>Original de mujeres</p>
                             </div>
-    
                             <div class="price">
                                 <p>$100</p>
                             </div>
@@ -387,112 +374,74 @@
                 </div>
                <div class="fliaTwo">
                 <div class="wideProduct">
-
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg" alt="">
-                
                     <div class="infoProduct">
                         <div class="nameProduct">
                             <a href="#">Adicolor essentials rib tank top</a>
                         </div>
-
                         <div class="for">
                             <p>Original de mujeres</p>
                         </div>
-
                         <div class="price">
                             <p>$30</p>
                         </div>
                     </div>
                 </div>
-
                </div>
-            
-
             </div>
-
             <div class="productArrivalTwo">
-
                 <div class="product">
-
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
-                
                     <div class="infoProduct">
                         <div class="nameProduct">
                             <a href="#">Corset</a>
                         </div>
-
                         <div class="for">
                             <p>Original de mujeres</p>
                         </div>
-
                         <div class="price">
                             <p>$45</p>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-
         </div>
-
-
         <div class="category">
-
             <div class="men">
-
                 <div class="headerCategory">
-
                     <div class="titleCategory">
                         <h2><a href="#">Hombre</a></h2>
                     </div>
-
                     <div class="arrowRight">
                         <button><i class="bi bi-arrow-right"></i></button>
                     </div>
-
                 </div>
-
                 <div class="imageCategory">
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
                 </div>
-
             </div>
-
             <div class="kids">
-
                 <div class="imageCategory">
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
                 </div>
-
                 <div class="headerCategory">
-
                     <div class="titleCategory">
                         <h2><a href="#">Niños</a></h2>
                     </div>
-
                     <div class="arrowRight">
                         <button><i class="bi bi-arrow-right"></i></button>
                     </div>
-
                 </div>
             </div>
-
             <div class="women">
-
                 <div class="headerCategory">
-
                     <div class="titleCategory">
                         <h2><a href="#">Mujeres</a></h2>
                     </div>
-
                     <div class="arrowRight">
                         <button><i class="bi bi-arrow-right"></i></button>
                     </div>
-
                 </div>
-
                 <div class="imageCategory">
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/mohamad-khosravi-4fkUAduhoSY-unsplash.jpg" alt="">
                 </div>
@@ -611,6 +560,7 @@ a {
     transition: all 0.3s ease;
     font-size: 15px;
     font-weight: 600;
+    
 }
 
 .nameProduct a:hover{
@@ -689,7 +639,7 @@ a {
     border-radius: 5px;
 }
 
- .product img {
+  .product img{
     height: 44vh;
     border-radius: 5px;
 }
@@ -841,10 +791,12 @@ a {
     background: #000;
     height: 50vh;
     width: 50%;/*19.8*/
-    padding: 0px 15px;
+    padding: 0px 0px;
     border-radius: 5px;
 }
-
+.advertisement .titleAd, .advertisement .textAd{
+    padding: 0px 10px;
+}
 .titleAd h2{
     color: #fff;
     text-align: center;
@@ -975,11 +927,12 @@ a {
     border-radius: 5px;
 }
 
+
 .wideImagePopular{
     display: flex;
     align-items: center;
     max-width: 100%;
-/
+
 }
 
 .wideImagePopular .wideImageP{
@@ -992,6 +945,7 @@ a {
     justify-content: center;
     gap: 1.5rem;
     padding:70px;
+    align-items: center;
 }
 
 .titleAdW h2{
@@ -1070,14 +1024,19 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding-bottom: 30px;
 }
 
 .productArrivalOne{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
 }
-
+.productArrivalTwo{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
 .fliaOne,.fliaTwo{
     display: flex;
     gap: 0.5rem;
@@ -1088,16 +1047,19 @@ a {
     max-width: 100%;
     height: auto;
 }
-.productArrivalTwo .product img{
-    height: 96vh;
-}
+
+.productArrivalTwo .product img{height:calc(67vw/1.28);}
+
 
 .category{
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 0.5rem;    
 }
-
+.men img,.kids img,.women img{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .headerCategory{
     display:flex;
     align-items: center;
@@ -1155,6 +1117,7 @@ a {
     nav{
         display: none;
     }
+    /*-----------NEWCOLLECTION--------------*/
 
     #newCollection{
         width: 90%;
@@ -1193,12 +1156,12 @@ a {
         padding: 0px
     }
     
+    /*-----------POPULAR NOW--------------*/
 
     #popularNow{
         width: 90%;
     }
-    /*-------------------------*/
-
+   
     .imagesPopular {
         display: flex;
         flex-wrap: wrap;
@@ -1235,15 +1198,12 @@ a {
         padding: 0px
     }
     
-
-    /*-------------------------*/
-
-
     .wideImagePopular .wideImageP{
         width: 100%;
     }
+    /*-----------NEW ARRIVALS--------------*/
 
-    #newArrivals{
+    /* #newArrivals{
         width: 90%;
     }
 
@@ -1260,8 +1220,25 @@ a {
     }
     .diseño-text{
         font-size: 2.2vw;
+    } */
+    #newArrivals .category .men .imageCategory img,
+    #newArrivals .category .kids .imageCategory img,
+    #newArrivals .category .women .imageCategory img   {
+    height: auto;
+    border-radius: 3px;
+    }
+    .imageCategory img{
+    height: auto;
+    border-radius: 3px;
+}
+    #newArrivals .product img{
+        height: auto;
+        width: 100%;
     }
 
+    .productArrivalTwo .product img {
+    height: calc(84vw/1.28);
+    }
 }
     @media screen and (max-width:767px){
     .product{
@@ -1374,7 +1351,9 @@ a {
     .productArrivalOne{
         width: 100%;
     }
-
+    .productArrivalTwo {
+        width: 100%;
+    }
     .fliaOne{
         flex-direction: column;
     }
@@ -1394,11 +1373,11 @@ a {
         flex-direction: column-reverse;
     }
 
-    .imageCategory img{
+    .imageCategory img, .productArrivalTwo .product img{
         height: 100vh;
         width: 100%;
     }
-
+    
     
     .container1 p, .container1 p{font-size: 2.8vw;}
 
@@ -1425,7 +1404,7 @@ a {
 
     .img-container1 img, .img-container2 img {
         max-width: 100vw; 
-        height: 80vw;
+        height: 65vw;
     }
     
 }
