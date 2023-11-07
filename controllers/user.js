@@ -1,7 +1,7 @@
-const getFormulario = (req, res) => {
-     res.status(200).json({msg:'ruta formulario'})
+const getFormularioRegistro = (req, res) => {
+     res.status(200).render('pages/registro')
 }
 
 module.exports = {
-     getFormulario
+     getFormularioRegistro
 }
