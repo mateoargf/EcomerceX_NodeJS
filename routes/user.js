@@ -3,10 +3,10 @@ const router = Router()
 
 // asignamos las funciones de controllers a routes
 const {
-     getFormulario
+     getFormularioRegistro
 } = require('../controllers/user')
 
 // rutas:
-router.get('/form', getFormulario)
+router.get('/registro', getFormularioRegistro)
 
 module.exports = router
