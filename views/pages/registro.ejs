@@ -1,9 +1,120 @@
-<form action="/registro" method="post">
-<label for=""></label>
-<input type="text">
-<label for=""></label>
-<input type="text">
-<label for=""></label>
-<input type="text">
-<button>Registrate</button>
-</form>
+<main>
+     <form action="/registro" method="post" class="formularioRegistro">
+          <h2>Completa el formulario</h2>
+          <p>Usuario:</p>
+          <input type="text" placeholder="santi123" name="username">
+          <p>Contraseña:</p>
+          <input type="password" placeholder="abcd123" name="password">
+          <p>Email:</p>
+          <input type="email" placeholder="santi123@hotmail.com" name="email">
+          <button>Registrate</button>
+     </form>
+</main>
+<style>
+     main {
+          height: 65vh;
+          width: 86vw;
+          margin: 0 auto;
+     }
+
+     .formularioRegistro input:focus,
+     .formularioRegistro input:valid {
+          background-color: #fff;
+          outline-color: #222;
+     }
+
+     .formularioRegistro input:hover {
+          border: 2px solid #616161;
+     }
+
+     .formularioRegistro button:hover {
+          background-color: #0056b3;
+          border: 2px solid #0056b3;
+     }
+
+     .formularioRegistro input,
+     .formularioRegistro button {
+          transition: all 0.4s ease-in-out;
+     }
+
+     .formularioRegistro {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          justify-content: center;
+          height: 100%;
+     }
+
+     .formularioRegistro h2 {
+          text-align: center;
+     }
+
+     .formularioRegistro p {
+          width: 45%;
+          margin: 0 auto;
+          padding-left: 0.3rem;
+     }
+
+     .formularioRegistro input {
+          width: 45%;
+          height: 2.5rem;
+          padding-left: 0.5rem;
+          border-color: transparent;
+          border-radius: 5px;
+          margin: 0 auto;
+          cursor: pointer;
+          color: #333333;
+          font-family: 'Syne', sans-serif;
+          font-weight: 600;
+          border: 2px solid #bebebe;
+     }
+
+     .formularioRegistro button {
+          background-color: #007BFF;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          width: 15%;
+          margin: 0 auto;
+          height: 2.5rem;
+          font-size: 1rem;
+          text-align: center;
+     }
+
+
+     @media screen and (max-width:767px) {
+          main {
+               height: 40vh;
+          }
+
+          .formularioRegistro p,
+          .formularioRegistro input {
+               width: 90%;
+          }
+
+          .formularioRegistro button {
+               width: 35%;
+          }
+     }
+
+     @media screen and (min-width:768px) and (max-width:1023px) {
+          main {
+               height: 50vh;
+          }
+
+          .formularioRegistro p,
+          .formularioRegistro input {
+               width: 70%;
+          }
+
+          .formularioRegistro button {
+               width: 20%;
+          }
+     }
+
+     @media screen and (min-width:1024px) and (max-width:1440px) {}
+
+     @media screen and (min-width:1441px) and (max-width:1920px) {}
+</style>
