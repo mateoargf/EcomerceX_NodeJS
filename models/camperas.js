@@ -21,7 +21,7 @@ const camperaSchema = new mongoose.Schema({
     },
   },
   talla: {
-    type: String,
+    type: [String],
     required: true,
   },
   color: {
