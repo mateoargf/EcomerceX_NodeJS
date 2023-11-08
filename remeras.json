@@ -1,0 +1,99 @@
+[{
+    "marca": "Naike",
+    "modelo": "AeroShirt",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-amarilla.png",
+    "talle": ["S", "M", "L"],
+    "color": "Blanco",
+    "precio": 9.99,
+    "descripción": "Remera deportivas con rayas amarillas.",
+    "categoría": "Deportiva",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Naike",
+    "modelo": "Clasic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-blanca.png",
+    "talle": ["S", "M", "L","XL"],
+    "color": "Blanco",
+    "precio": 7.50,
+    "descripción": "Remera clasica lisa.",
+    "categoría": "Lisa",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Naike",
+    "modelo": "Clasic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-azul.png",
+    "talle": ["S", "M","XL"],
+    "color": "Azul",
+    "precio": 7.50,
+    "descripción": "Remera clasica lisa.",
+    "categoría": "Lisa",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Davida",
+    "modelo": "Clasic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-Bagge.png",
+    "talle": ["M","XL"],
+    "color": "Beige",
+    "precio": 7.50,
+    "descripción": "Remera clasica lisa.",
+    "categoría": "Lisa",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "Davida",
+    "modelo": "Fittnes",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-negra.png",
+    "talle": ["S","M","L","XL"],
+    "color": "Negro",
+    "precio": 21.80,
+    "descripción": "Remera clasica lisa.",
+    "categoría": "Deportiva",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Davida",
+    "modelo": "Landscape",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-estampa-bosque.png",
+    "talle": ["S","M","L","XL"],
+    "color": "Multicolor",
+    "precio": 17.30,
+    "descripción": "Remera estampada con un arbol",
+    "categoría": "Estampado",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Davida",
+    "modelo": "Landscape",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-estampa-monta%C3%B1a.png",
+    "talle": ["S","L"],
+    "color": "Multicolor",
+    "precio": 17.30,
+    "descripción": "Remera estampada con una montaña",
+    "categoría": "Estampado",
+    "valoraciones": []
+  },
+  
+  {
+    "marca": "Naike",
+    "modelo": "Terracota",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Remeras/Remera-ladrillo.png",
+    "talle": ["M","L","XL"],
+    "color": "Multicolor",
+    "precio": 30.00,
+    "descripción": "Remera estampada color ladrillo",
+    "categoría": "Estampado",
+    "valoraciones": []
+  }
+  
+
+  
+]

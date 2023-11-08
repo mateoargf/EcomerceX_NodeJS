@@ -20,10 +20,14 @@ const remeraSchema = new mongoose.Schema({
       message: 'La URL de la imagen no es válida.',
     },
   },
-  talla: {
-    type: String,
-    required: true,
-  },
+  talle: [
+
+    {
+      type: String,
+      enum: ['S', 'M', 'L', 'XL'],
+      required: true,
+    },
+  ],
   color: {
     type: String,
     required: true,

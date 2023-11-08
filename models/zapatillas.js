@@ -20,10 +20,13 @@ const shoeSchema = new mongoose.Schema({
       message: 'La URL de la imagen no es válida.',
     },
   },
-  talle: {
-    type: Number,
+  talle: [
+    {
+    type: String,
+    enum: ['6', '7', '8', '9', '10', '11', '12'],
     required: true,
   },
+  ],
   color: {
     type: String,
     required: true,

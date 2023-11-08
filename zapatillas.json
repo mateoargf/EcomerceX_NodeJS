@@ -1,0 +1,91 @@
+[
+  {
+    "marca": "Naike",
+    "modelo": "UltraPulse",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-azul.png",
+    "talle": ["7", "9", "10", "12"],
+    "color": "Azul",
+    "precio": 39.99,
+    "descripción": "Zapatillas conocidas por su comodidad y estilo icónico.",
+    "categoría": "Urbana",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "Lona Clásica",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-azul2.png",
+    "talle": ["6","7", "9", "10", "11","12"],
+    "color": "Azul",
+    "precio": 10.00,
+    "descripción": "Zapatillas chatas para uso diario",
+    "categoría": "Lona",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "Lona Plus",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-roja.png",
+    "talle": ["9", "10", "11","12"],
+    "color": "Rojo",
+    "precio": 12.00,
+    "descripción": "Zapatillas chatas para uso diario",
+    "categoría": "Lona",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "LonFoss",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-rosa.png",
+    "talle": ["6", "7", "11","12"],
+    "color": "Rosa",
+    "precio": 11.50,
+    "descripción": "Zapatillas a lunares para uso diario",
+    "categoría": "Lona",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "HighTrek",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/Zapatillas-gris.png",
+    "talle": ["8", "10", "11"],
+    "color": "Verde",
+    "precio": 7.50,
+    "descripción": "Zapatillas con abrazadera alta",
+    "categoría": "Botas",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "CityPulse",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-blanca.png",
+    "talle": ["6","7","8","9", "10", "11","12"],
+    "color": "Blanco",
+    "precio": 13.90,
+    "descripción": "Zapatillas con abrazadera alta",
+    "categoría": "Botas",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "SkyBound",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-naranja.png",
+    "talle": ["6","12"],
+    "color": "Naranja",
+    "precio": 23.99,
+    "descripción": "Zapatillas con abrazadera alta",
+    "categoría": "Botas",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "StreetBlack",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Zapatillas/zapatillas-negra.png",
+    "talle": ["7", "9", "10", "11","12"],
+    "color": "Negro",
+    "precio": 51.99,
+    "descripción": "Zapatillas urbanas de uso diario.",
+    "categoría": "Urbana",
+    "valoraciones": []
+  }
+]
+  

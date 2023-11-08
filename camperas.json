@@ -1,0 +1,90 @@
+[
+  {
+    "marca": "Davida",
+    "modelo": "University",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-azulyblanca.png",
+    "talle": ["S", "M", "L", "XL"],
+    "color": "Azul",
+    "precio": 31.99,
+    "descripción": "Campera ligera del tipo universitaria",
+    "categoría": "Casual",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "Collage",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-rojayblanca.png",
+    "talle": ["S", "L"],
+    "color": "Rojo",
+    "precio": 34.99,
+    "descripción": "Campera ligera del tipo universitaria",
+    "categoría": "Casual",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "Running",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-gris.png",
+    "talle": ["M", "L", "XL"],
+    "color": "Gris",
+    "precio": 22.00,
+    "descripción": "Campera deportiva para uso diario",
+    "categoría": "Sport",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "Essentials",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-impermeable.png",
+    "talle": ["S", "M", "L","XL"],
+    "color": "Colorido",
+    "precio": 22.00,
+    "descripción": "Campera deportiva para uso diario",
+    "categoría": "Impermeable",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "ColourFusion",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-multicolor.png",
+    "talle": ["S", "M", "L"],
+    "color": "Colorido",
+    "precio": 15.50,
+    "descripción": "Campera deportiva para uso diario",
+    "categoría": "Impermeable",
+    "valoraciones": []
+  },
+  {
+    "marca": "Naike",
+    "modelo": "Clasic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-negra.png",
+    "talle": ["M", "L", "XL"],
+    "color": "Negro",
+    "precio": 9.75,
+    "descripción": "Campera básica para uso diario",
+    "categoría": "Casual",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "PolarDream",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-impermeableverde.png",
+    "talle": ["S","M", "L", "XL"],
+    "color": "Verde",
+    "precio": 19.75,
+    "descripción": "Campera para el frío puffer",
+    "categoría": "Puffer",
+    "valoraciones": []
+  },
+  {
+    "marca": "Davida",
+    "modelo": "PolarDream",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Camperas/Campera-impermeableroja.png",
+    "talle": ["S","M"],
+    "color": "Rojo",
+    "precio": 29.50,
+    "descripción": "Campera para el frío puffer",
+    "categoría": "Puffer",
+    "valoraciones": []
+  }
+]

@@ -20,10 +20,13 @@ const pantalonSchema = new mongoose.Schema({
       message: 'La URL de la imagen no es válida.',
     },
   },
-  talla: {
-    type: String,
-    required: true,
-  },
+  talla: [
+    {
+      type: String,
+      enum: ['36', '38', '40', '42', '44'],
+      required: true,
+    },
+  ],
   color: {
     type: String,
     required: true,

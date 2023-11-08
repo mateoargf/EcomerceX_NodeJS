@@ -1,0 +1,90 @@
+[{
+    "marca": "Bandu",
+    "modelo": "Clasic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-jeansclasicos.png",
+    "talla": ["36","38","40","42","44"],
+    "color": "Azul",
+    "precio": 15.99,
+    "descripción": "Pantalón de jeans para uso diario",
+    "categoría": "Jeans",
+    "valoraciones": []
+  },
+  {
+    "marca": "The South Face",
+    "modelo": "Work",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-Beggiecargo.png",
+    "talla": ["40","42","44"],
+    "color": "Beige",
+    "precio": 45.00,
+    "descripción": "Pantalón de trabajo con bolsillos grandes",
+    "categoría": "Cargo",
+    "valoraciones": []
+  },
+  {
+    "marca": "Bandu",
+    "modelo": "Work",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-naranja.png",
+    "talla": ["38","40","42"],
+    "color": "Naranja",
+    "precio": 43.99,
+    "descripción": "Pantalón de trabajo con bolsillos grandes",
+    "categoría": "Cargo",
+    "valoraciones": []
+  },
+  {
+    "marca": "The South Face",
+    "modelo": "Flare",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-blanco.png",
+    "talla": ["36","38","40","42","44"],
+    "color": "Blanco",
+    "precio": 16.50,
+    "descripción": "Pantalón acampanados de jeans para uso diario",
+    "categoría": "Jeans",
+    "valoraciones": []
+  },
+  {
+    "marca": "Bandu",
+    "modelo": "QuickShorts",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-jeanscortos.png",
+    "talla": ["36","38","40"],
+    "color": "Azul",
+    "precio": 8.50,
+    "descripción": "Pantalón corto de jeans para uso diario",
+    "categoría": "Short",
+    "valoraciones": []
+  },
+  {
+    "marca": "Bandu",
+    "modelo": "Blazz",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-amarillos.png",
+    "talla": ["36","38","40","44"],
+    "color": "Amarillo",
+    "precio": 48.50,
+    "descripción": "Pantalón de vestir",
+    "categoría": "Elegante",
+    "valoraciones": []
+  },
+  {
+    "marca": "The South Face",
+    "modelo": "Luxury",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-rosa.png",
+    "talla": ["36","42"],
+    "color": "Rojo",
+    "precio": 33.90,
+    "descripción": "Pantalón de vestir",
+    "categoría": "Elegante",
+    "valoraciones": []
+  },
+  {
+    "marca": "The South Face",
+    "modelo": "Luxury",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Pantalones/Pantalones-vestiroscuro.png",
+    "talla": ["38","40","42","44"],
+    "color": "Azul",
+    "precio": 32.75,
+    "descripción": "Pantalón de vestir",
+    "categoría": "Elegante",
+    "valoraciones": []
+  }
+  
+]

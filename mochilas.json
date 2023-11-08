@@ -1,0 +1,89 @@
+[
+  {
+    "marca": "Bandu",
+    "modelo": "SchoolKid",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-rojo.png",
+    "color": "Rojo",
+    "precio": 75.99,
+    "descripción": "Mochila ideal para el colegio primario",
+    "categoría": "Mochila",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "Bandu",
+    "modelo": "SchoolSecundary",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-celeste.png",
+    "color": "Azul",
+    "precio": 53.50,
+    "descripción": "Mochila ideal para el colegio secundario",
+    "categoría": "Mochila",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "The South Face",
+    "modelo": "Orejas",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-azul.png",
+    "color": "Gris",
+    "precio": 33.10,
+    "descripción": "Mochila con orejas para el colegio",
+    "categoría": "Mochila",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "The South Face",
+    "modelo": "Picnic",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-blanco.png",
+    "color": "Blanco",
+    "precio": 35.90,
+    "descripción": "Cartera grande de paseo",
+    "categoría": "Cartera",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "The South Face",
+    "modelo": "Elegant",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-rosa.png",
+    "color": "Rosa",
+    "precio": 85.10,
+    "descripción": "Cartera elegante ",
+    "categoría": "Cartera",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "Bandu",
+    "modelo": "Elegant",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-verde2.png",
+    "color": "Verde",
+    "precio": 52.80,
+    "descripción": "Cartera elegante ",
+    "categoría": "Cartera",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "Bandu",
+    "modelo": "Tirantes",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-gris.png",
+    "color": "Gris",
+    "precio": 38.85,
+    "descripción": "Bolso con tirantes",
+    "categoría": "Bolso",
+    "valoraciones": []
+  },
+
+  {
+    "marca": "The South Face",
+    "modelo": "Fluorence",
+    "imagen": "https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/Bolsos/Bolso-amarillo.png",
+    "color": "Amarillo",
+    "precio": 15.50,
+    "descripción": "Bolso brilloso",
+    "categoría": "Bolso",
+    "valoraciones": []
+  }
+]
