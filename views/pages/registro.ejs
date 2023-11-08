@@ -1,13 +1,13 @@
 <main>
-     <form action="/registro" method="POST" class="formularioRegistro">
+     <form action="/user/registro" method="post" class="formularioRegistro">
           <h2>Completa el formulario</h2>
           <p>USUARIO</p>
-          <input type="text" placeholder="santi123" name="username">
+          <input type="text" placeholder="santi123" name="username" class="inputRegistro">
           <p>CONTRASEÑA</p>
-          <input type="password" placeholder="abcd123" name="password">
+          <input type="password" placeholder="abcd123" name="password" class="inputRegistro">
           <p>EMAIL</p>
-          <input type="email" placeholder="santi123@hotmail.com" name="email">
-          <button type="submit">Registrate</button>
+          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro">
+          <input type="submit" value="ENVIAR" class="botonRegistrate">
      </form>
 </main>
 <style>
@@ -17,23 +17,23 @@
           margin: 0 auto;
      }
 
-     .formularioRegistro input:focus,
-     .formularioRegistro input:valid {
+     .inputRegistro:focus,
+     .inputRegistro:valid {
           background-color: #fff;
           outline-color: #222;
      }
 
-     .formularioRegistro input:hover {
+     .inputRegistro:hover {
           border: 2px solid #616161;
      }
 
-     .formularioRegistro button:hover {
+     .botonRegistrate:hover {
           background-color: #0056b3;
           border: 2px solid #0056b3;
      }
 
-     .formularioRegistro input,
-     .formularioRegistro button {
+     .inputRegistro,
+     .botonRegistrate {
           transition: all 0.4s ease-in-out;
      }
 
@@ -55,7 +55,7 @@
           padding-left: 0.3rem;
      }
 
-     .formularioRegistro input {
+     .inputRegistro {
           width: 45%;
           height: 2.5rem;
           padding-left: 0.5rem;
@@ -69,7 +69,7 @@
           border: 2px solid #bebebe;
      }
 
-     .formularioRegistro button {
+     .botonRegistrate {
           background-color: #007BFF;
           color: #fff;
           border: none;
@@ -90,11 +90,11 @@
           }
 
           .formularioRegistro p,
-          .formularioRegistro input {
+          .inputRegistro{
                width: 90%;
           }
 
-          .formularioRegistro button {
+          .botonRegistrate {
                width: 35%;
           }
      }
@@ -105,11 +105,11 @@
           }
 
           .formularioRegistro p,
-          .formularioRegistro input {
+          .inputRegistro {
                width: 70%;
           }
 
-          .formularioRegistro button {
+          .botonRegistrate {
                width: 20%;
           }
      }
