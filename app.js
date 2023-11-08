@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-const connectDB = require('./db/conexion')
-const productsRouter = require('./routes/products')
-const userRouter = require('./routes/user')
-const errRouter = require('./routes/err')
+const connectDB = require('./server/db/conexion')
+const productsRouter = require('./server/routes/products')
+const userRouter = require('./server/routes/user')
+const errRouter = require('./server/routes/err')
 const path = require('path')
 const layouts = require('express-ejs-layouts');
 
