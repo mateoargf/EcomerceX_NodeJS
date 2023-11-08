@@ -20,19 +20,35 @@
           </div>
 
           <hr class="lineaFooter">
-
+          
           <div class="linksFooter">
-               <a href="#">Rastreador de pedidos</a>
-               <a href="#">Mapa del sitio</a>
-               <a href="#">Contáctenos</a>
-               <a href="#">Avisos legales</a>
-               <a href="#">Localizador de tiendas</a>
-               <a href="#">Política de privacidad</a>
-               <a href="#">Sostenibilidad</a>
-               <a href="#">Carreras</a>
-               <a href="#">Centro de ayuda</a>
-               <a href="#">Síganos</a>
-          </div>
+        
+               <div class="lFooter">
+                   <a href="#">Rastreador de pedidos</a>
+                   <a href="#">Mapa del sitio</a>
+               </div>
+       
+               <div class="lFooter">
+                   <a href="#">Contáctenos</a>
+                   <a href="#">Avisos legales</a>
+               </div>
+       
+               <div class="lFooter">
+                   <a href="#">Localizador de tiendas</a>
+                   <a href="#">Política de privacidad</a>
+               </div>
+       
+               <div class="lFooter">
+                   <a href="#">Sostenibilidad</a>
+                   <a href="#">Carreras</a>
+               </div>
+       
+               <div class="lFooter">
+                   <a href="#">Centro de ayuda</a>
+                   <a href="#">Síganos</a>
+               </div>
+           </div>
+
 
           <hr class="lineaFooterFinal">
 
@@ -109,6 +125,7 @@
 }
 
 .linksFooter {
+     /*
      display: grid;
      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
      grid-template-rows: 1fr;
@@ -116,13 +133,45 @@
      grid-row-gap: 0.3rem;
      z-index: 1;
      padding: 30px 0;
+     */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 2rem;
+     padding: 15px 0 ;
 }
 
 .linksFooter a {
      position: relative;
      text-decoration: none;
      color: #000;
-     justify-self: center;
+     /*justify-self: center;*/
+}
+
+.linksFooter a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-radius: 4px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.linksFooter a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+.lFooter{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
 }
 
 .derechosFinal {
@@ -133,25 +182,105 @@
 }
 
 @media screen and (max-width:767px) {
+     .containerFooter{
+          width: 100%;
+     }
+
+
      .infoFooter {
           width: 90%;
           margin: 0 auto;
      }
-
+     /*
      .linksFooter {
           grid-template-columns: 50% 50%;
-     }
+          gap: 1rem;
+     }*/
+
+     .linksFooter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 30px 0;
+    }
+    
+    .lFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:1023px) {
+
+     .derechos{
+          display: block;
+     }
+
      .infoFooter {
           width: 90%;
           margin: 0 auto;
      }
-
+     
      .linksFooter {
           grid-template-columns: 50% 50%;
      }
+
+     
+      .containerFooter{
+        width: 100%;
+    }
+
+    .infoFooter{
+        width: 95%;
+    }
+
+    
+    .containerFooter{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .infoFooter{
+        width: 95%;
+        margin: 0 auto;
+        /*
+        padding-top: 50px ;
+        */
+    }
+    
+    .linksFooter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 30px 0;
+    }
+    
+    .lFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
+    
+    .lineaFooterFinal{
+        display: block;
+    }
+    
+    .derechosFinal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 0;
+    }
+     
+     
 }
 
 @media screen and (min-width:1024px) {
