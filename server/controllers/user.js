@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const Usuarios = require('../models/usuarios')
 
 const getFormularioRegistro = (req, res) => {
-     res.status(200).render('pages/registro')
+     res.status(200).render('pages/registro', { errorMessage: req.flash('error') })
 }
 
 const postFormularioRegistro = async (req, res) => {
@@ -19,8 +19,14 @@ const postFormularioRegistro = async (req, res) => {
           res.redirect('/')
      } catch(error){
           if(error.code===11000){
+               req.flash('error', 'este usuario ya esta en uso')
                console.log('este usuario ya esta en uso')
+
+          }else{
+               req.flash('error', 'error desconocido')
+               console.log('error desconocido')
           }
+          res.redirect('/user/registro');
      }
 }
 

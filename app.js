@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const session = require('express-session')
+const flash = require('express-flash')
 require('dotenv').config()
 const connectDB = require('./server/db/conexion')
 const productsRouter = require('./server/routes/products')
@@ -21,6 +23,14 @@ const iniciar = async () => {
           console.log(error)
      }
 }
+
+app.use(session({
+     secret: 'palabras-secretas', 
+     resave: false,
+     saveUninitialized: true,
+   }));
+app.use(flash());
+
 
 // para uso de archivos estáticos
 app.use(express.static('public'))

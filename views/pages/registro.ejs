@@ -7,6 +7,9 @@
           <input type="password" placeholder="abcd123" name="password" class="inputRegistro">
           <p>EMAIL</p>
           <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro">
+          <% if(errorMessage) { %>
+               <p class="error-message"><%= errorMessage %></p>
+          <% } %>
           <input type="submit" value="ENVIAR" class="botonRegistrate">
      </form>
 </main>
