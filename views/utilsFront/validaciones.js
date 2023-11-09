@@ -32,10 +32,10 @@ document.addEventListener("click", function(event) {
 
 
 function validarPassword() {
-   var passwordInput = document.getElementById("passwordInput");
-   var mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
+   let passwordInput = document.getElementById("passwordInput");
+   let mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
 
-   var regexRequerimientos = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+   let regexRequerimientos = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
    if (!regexRequerimientos.test(passwordInput.value)) {
        mensajeErrorPassword.textContent = "minimo 8 caracteres, 1 caracter especial, al menos 1 numero, al menos 1 mayus y 1 minúscula";
@@ -50,8 +50,8 @@ function validarPassword() {
 
 // Agregar evento clic al documento para ocultar el mensaje de error al hacer clic fuera del input
 document.addEventListener("click", function(event) {
-   var passwordInput = document.getElementById("passwordInput");
-   var mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
+   let passwordInput = document.getElementById("passwordInput");
+   let mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
 
    if (event.target !== passwordInput) {
        mensajeErrorPassword.style.display = "none"; // Oculta el mensaje de error
@@ -61,11 +61,11 @@ document.addEventListener("click", function(event) {
 
 
 function validarEmail() {
-   var emailInput = document.getElementById("emailInput");
-   var mensajeErrorEmail = document.getElementById("mensajeErrorEmail");
+   let emailInput = document.getElementById("emailInput");
+   let mensajeErrorEmail = document.getElementById("mensajeErrorEmail");
 
-   var regexEmail = /@/;
-   var regexEspacios = /\s/;
+   let regexEmail = /@/;
+   let regexEspacios = /\s/;
 
    if (!regexEmail.test(emailInput.value)) {
        mensajeErrorEmail.textContent = "Ingresa al menos un carácter '@' en el correo electrónico.";
