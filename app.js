@@ -45,5 +45,4 @@ app.use('/prod',productsRouter)
 app.use('/user',userRouter)
 
 
-
 iniciar() 

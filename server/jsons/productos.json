@@ -1,0 +1,175 @@
+[
+     {
+          "nombre": "remera clásica",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Remeras/Remera-blanca.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente camiseta para el verano.",
+          "descripcion": "Camiseta de algodón blanca para uso diario.",
+          "detalles": "100% algodón, cuello redondo, manga corta.",
+          "stock": 50,
+          "tipo": "remeras"
+     },
+     {
+          "nombre": "rolon",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Remeras/Remera-negra.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente camiseta para el deporte.",
+          "descripcion": "Camiseta dry-fit para uso deportivo.",
+          "detalles": "materiales anti-transpirantes, cuello redondo, manga corta.",
+          "stock": 50,
+          "tipo": "remeras"
+     },
+     {
+          "nombre": "cargos neo",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Pantalones/Pantalones-Beggiecargo.png",
+          "genero": "Hombre",
+          "calificacion": 4.2,
+          "precio": 39.99,
+          "talles": [
+               "28",
+               "30",
+               "32",
+               "34"
+          ],
+          "reseñas": "Excelente calidad, pero talla pequeña.",
+          "descripcion": "Cargos de corte suelto.",
+          "detalles": "98% algodón, 2% elastano, cierre de cremallera, lavado a máquina.",
+          "stock": 30,
+          "tipo": "pantalones"
+     },
+     {
+          "nombre": "fort ultra",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Pantalones/Pantalones-naranja.png",
+          "genero": "Hombre",
+          "calificacion": 4.2,
+          "precio": 39.99,
+          "talles": [
+               "28",
+               "30",
+               "32",
+               "34"
+          ],
+          "reseñas": "Excelente calidad, ideal para salidas con amigos.",
+          "descripcion": "pantalones a la moda y resistentes.",
+          "detalles": "98% algodón, 2% elastano, lavado a máquina.",
+          "stock": 30,
+          "tipo": "pantalones"
+     },
+     {
+          "nombre": "running H20",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/zapatillas2.jpg",
+          "genero": "Mujer",
+          "calificacion": 4.7,
+          "precio": 49.99,
+          "talles": [
+               "4",
+               "4.5",
+               "5",
+               "5.5",
+               "6",
+               "6.5",
+               "7",
+               "7.5",
+               "8",
+               "8.5",
+               "9",
+               "9.5",
+               "10",
+               "10.5",
+               "11",
+               "11.5",
+               "12",
+               "12.5",
+               "13",
+               "13.5",
+               "14"
+          ],
+          "reseñas": "Geniales para correr maratones. Es lo que buscaba",
+          "descripcion": "Zapatillas deportivas elegantes para ciclos de competencia.",
+          "detalles": "Material de alta calidad, suela anti-impacto para deportistas.",
+          "stock": 20,
+          "tipo": "zapatillas"
+     },
+     {
+          "nombre": "suit",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Camperas/Campera-impermeableverde.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente campera para la lluvia.",
+          "descripcion": "Campera piloto donde tus días de lluvia no son los mismos.",
+          "detalles": "100% rompe-vientos, capucha incluida, diseño innovador.",
+          "stock": 50,
+          "tipo": "camperas"
+     },
+     {
+          "nombre": "f12",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Camperas/Campera-gris.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente campera para deportes.",
+          "descripcion": "Campera inspirada en corredores de F1.",
+          "detalles": "100% rompe-vientos, materiales resistentes, diseño exclusivo.",
+          "stock": 50,
+          "tipo": "camperas"
+     },
+     {
+          "nombre": "supervivencia 2.0",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Bolsos/Bolso-celeste.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente para el día a día.",
+          "descripcion": "Mochila de uso diario con un diseño especializado en comodidad.",
+          "detalles": "materiales que aseguran el uso diario y comodidad. Brinda un soporte de anti-balanceo para cuidar tu espalda.",
+          "stock": 50,
+          "tipo": "mochilas"
+     },
+     {
+          "nombre": "amadeus",
+          "imagen": "https://github.com/mateoargf/imagenesXEcomerceTPFINAL/blob/main/Bolsos/Bolso-gris.png",
+          "genero": "Mujer",
+          "calificacion": 4.5,
+          "precio": 19.99,
+          "talles": [
+               "S",
+               "M",
+               "L"
+          ],
+          "reseñas": "Excelente en eventos.",
+          "descripcion": "Mochila anti-robos especializada en distintos sistemas de uso.",
+          "detalles": "materiales que aseguran el uso diario y comodidad. Brinda un soporte de anti-balanceo para cuidar tu espalda y con cierres reforzados con la nueva tecnología anti-robo.",
+          "stock": 50,
+          "tipo": "mochilas"
+     }
+]
