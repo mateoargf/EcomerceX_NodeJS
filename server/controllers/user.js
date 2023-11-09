@@ -3,13 +3,16 @@ const bcrypt = require('bcrypt')
 // modelos
 const Usuarios = require('../models/usuarios')
 //validacionpassword
-const { validarContrasena } = require('../utils/validacionContrasena');
+const { validarContrasena } = require('./../utilsBack/validacionContrasena');
 //validacionemail
-const { validarMail} = require('../utils/validacionMail');
+const { validarMail} = require('./../utilsBack/validacionMail');
 
 
 const getFormularioRegistro = (req, res) => {
-     res.status(200).render('pages/registro', { errorMessage: req.flash('error') })
+     
+     res.status(200).render('pages/registro', { 
+          errorMessage: req.flash('error')
+     })
 }
 
 const postFormularioRegistro = async (req, res) => {

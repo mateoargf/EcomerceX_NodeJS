@@ -1,12 +1,22 @@
+
+
+
 <main>
+     
      <form action="/user/registro" method="post" class="formularioRegistro">
           <h2>Completa el formulario</h2>
+          
           <p>USUARIO</p>
-          <input type="text" placeholder="santi123" name="username" class="inputRegistro">
+          <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInput" oninput="validarTexto()">
+          <p id="mensajeError" class="error-message"></p>
+
           <p>CONTRASEÑA</p>
-          <input type="password" placeholder="abcd123" name="password" class="inputRegistro">
+          <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInput" oninput="validarPassword()">
+          <p id="mensajeErrorPassword" class="error-message"></p>
+
           <p>EMAIL</p>
-          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro">
+          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInput" oninput="validarEmail()">
+          <p id="mensajeErrorEmail" class="error-message"></p>
           <% if(errorMessage) { %>
                <p class="error-message"><%= errorMessage %></p>
           <% } %>
@@ -14,6 +24,7 @@
      </form>
 </main>
 <style>
+
      main {
           height: 65vh;
           width: 86vw;
@@ -124,3 +135,6 @@
 
      @media screen and (min-width:1441px) and (max-width:1920px) {}
 </style>
+
+<script src="/utilsFront/validaciones.js"></script>
+
