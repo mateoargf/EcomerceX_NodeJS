@@ -18,13 +18,19 @@ const postFormularioRegistro = async (req, res) => {
           console.log(user)
           res.redirect('/')
      } catch(error){
+         
           if(error.code===11000){
+               if(error.keyPattern && error.keyPattern.email){
+                    req.flash('error', 'este email ya esta en uso')
+                    console.log('este email ya esta en uso')
+               }
+               else{
                req.flash('error', 'este usuario ya esta en uso')
                console.log('este usuario ya esta en uso')
-
+               }
           }else{
                req.flash('error', 'error desconocido')
-               console.log('error desconocido')
+               console.log('error desconocido:', error)
           }
           res.redirect('/user/registro');
      }
