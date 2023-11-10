@@ -123,7 +123,7 @@
           justify-content: center;
           padding-bottom: 12vh;
      }
-
+     /*
      .continue-button {
           background-color: #333;
           color: #fff;
@@ -139,6 +139,50 @@
 
      .continue-button:hover {
           background-color: #555;
+     }*/
+
+     .continue-button {
+          min-width: 130px;
+          height: 45px;
+          width: 20%;
+          position: relative;
+          padding: 5 25px;
+          background: #fff;
+          color: #fff;
+          font-weight: 600;
+          font-size: 1.063em;
+          text-align: center;
+          border: 1px solid #c6c6c6;
+          border-radius: 3px;
+          z-index: 0;
+          transition: all 0.3s ease;
+          cursor: pointer;
+     }
+
+     .continue-button::after{
+          content: "";
+          width: 100%;
+          z-index: -1;
+          position: absolute;
+          height: 100%;
+          bottom: 3px;
+          right: 5px;
+          background: #000;
+          border: 1px solid #000;
+          border-radius: 3px;
+          transition: 0.2s;
+     }
+
+     .continue-button:hover{
+          color: #545454;
+     }
+
+     .continue-button:hover::after{
+          border: 1px solid #545454;
+     }
+
+     .continue-button:focus{
+          border: 1px solid #000;
      }
 
      @media only screen and (min-width: 767px) {
@@ -214,6 +258,14 @@
                font-size: 20px;
           }
      }
+
+     @media screen and (max-width:767px){
+          .continue-button{
+               font-size: 11px;
+               width: 25%;
+          }
+     }
+
 </style>
 <section id="section-error">
      <div class="error-code 404">
@@ -221,16 +273,14 @@
                <span>404</span>
           </div>
           <div class="error-title">
-               ALGO SALIÓ MAL...
+               <h3>ALGO SALIÓ MAL...</h3>
           </div>
           <div class="error-message">
-               No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
-               otro camino!
+               <p>No podemos encontrar la página que estás buscando. ¡Pero no te preocupes, puedes encontrar
+                    otro camino!</p>
           </div>
           <div class="div-button">
-               <button class="continue-button">
-                    CONTINUAR COMPRANDO
-               </button>
+               <button class="continue-button">CONTINUAR COMPRANDO</button>
           </div>
      </div>
 </section>
