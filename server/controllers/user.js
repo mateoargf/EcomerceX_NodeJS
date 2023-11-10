@@ -3,13 +3,26 @@ const bcrypt = require('bcrypt')
 // modelos
 const Usuarios = require('../models/usuarios')
 //validacionpassword
-const { validarContrasena } = require('../utils/validacionContrasena');
+const { validarContrasena } = require('./../utilsBack/validacionContrasena');
 //validacionemail
+<<<<<<< HEAD
 const { validarMail } = require('../utils/validacionMail');
 
 // controladores: GET
+=======
+const { validarMail} = require('./../utilsBack/validacionMail');
+
+
+const getRegistroExitoso = (req, res) => {
+     res.status(200).render('pages/registroExitoso');
+ }
+
+>>>>>>> f22f818755d9aeada3c0046352d10314d41cab99
 const getFormularioRegistro = (req, res) => {
-     res.status(200).render('pages/registro', { errorMessage: req.flash('error') })
+     
+     res.status(200).render('pages/registro', { 
+          errorMessage: req.flash('error')
+     })
 }
 
 const getFormularioGoogleLogin = (req, res) => {
@@ -53,11 +66,19 @@ const postFormularioRegistro = async (req, res) => {
      try {
           const user = await Usuarios.create({ username, password: hashedPassword, email })
           console.log(user)
+<<<<<<< HEAD
           res.redirect('/')
      } catch (error) {
           //error por duplicado
           if (error.code === 11000) {
                if (error.keyPattern && error.keyPattern.email) {
+=======
+          res.redirect('/user/RegistroExitoso')
+     } catch(error){
+         //error por duplicado
+          if(error.code===11000){
+               if(error.keyPattern && error.keyPattern.email){
+>>>>>>> f22f818755d9aeada3c0046352d10314d41cab99
                     req.flash('error', 'este email ya esta en uso')
                     console.log('este email ya esta en uso')
                }
@@ -76,7 +97,11 @@ const postFormularioRegistro = async (req, res) => {
 module.exports = {
      getFormularioRegistro,
      postFormularioRegistro,
+<<<<<<< HEAD
      getFormularioGoogleLogin,
      getFormularioGoogleLogout,
      getGoogleRedirect
+=======
+     getRegistroExitoso
+>>>>>>> f22f818755d9aeada3c0046352d10314d41cab99
 }

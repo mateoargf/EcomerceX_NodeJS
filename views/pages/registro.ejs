@@ -1,19 +1,40 @@
+
+
+
 <main>
+     
      <form action="/user/registro" method="post" class="formularioRegistro">
           <h2>Completa el formulario</h2>
+          
           <p>USUARIO</p>
-          <input type="text" placeholder="santi123" name="username" class="inputRegistro">
+          <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInput" oninput="validarTexto()">
+          <p id="mensajeError" class="error-message"></p>
+
           <p>CONTRASEÑA</p>
-          <input type="password" placeholder="abcd123" name="password" class="inputRegistro">
+          <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInput" oninput="validarPassword()">
+          <p id="mensajeErrorPassword" class="error-message"></p>
+
           <p>EMAIL</p>
-          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro">
+          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInput" oninput="validarEmail()">
+          <p id="mensajeErrorEmail" class="error-message"></p>
           <% if(errorMessage) { %>
                <p class="error-message"><%= errorMessage %></p>
           <% } %>
           <input type="submit" value="ENVIAR" class="botonRegistrate">
      </form>
+
+
 </main>
+     <!-- Modal -->
+    <div id="myModal" class="modal">
+     <div class="modal-content">
+       <span class="close">&times;</span>
+       <p>¡Registro exitoso!</p>
+     </div>
+   </div>
+
 <style>
+
      main {
           height: 65vh;
           width: 86vw;
@@ -90,6 +111,47 @@
           color: red;
      }
 
+     /* Estilos para el modal */
+.modal {
+  display: none; /* Por defecto, el modal estará oculto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Estilo para el botón de cerrar (la "x") */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
      @media screen and (max-width:767px) {
           main {
                height: 40vh;
@@ -102,6 +164,10 @@
 
           .botonRegistrate {
                width: 35%;
+          }
+          .modal-content {
+               width: 90%; /* Hacer el modal más ancho en pantallas pequeñas */
+               max-width: none; /* Eliminar la restricción de ancho máximo */
           }
      }
 
@@ -118,9 +184,16 @@
           .botonRegistrate {
                width: 20%;
           }
+          .modal-content {
+          width: 70%; /* Reducir el ancho del modal en pantallas medianas */
+          }
      }
 
      @media screen and (min-width:1024px) and (max-width:1440px) {}
 
      @media screen and (min-width:1441px) and (max-width:1920px) {}
+
 </style>
+<script src="/utilsFront/modal.js"></script>
+<script src="/utilsFront/validaciones.js"></script>
+

@@ -147,7 +147,14 @@ DE 2 PRODUCTOS*/
     }
 
     .nameProduct>a {
+        color: #000;
         text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .nameProduct > a:hover{
+        color: #b8b8b8;
+        transition: all 0.3s ease;
     }
 
     .categoryProduct p {
@@ -177,6 +184,11 @@ DE 2 PRODUCTOS*/
         align-items: center;
         gap: 0.8rem;
 
+    }
+
+    .link a {
+        color: #000;
+        text-transform: uppercase;
     }
 
     .pageCounter p {
@@ -241,7 +253,7 @@ DE 2 PRODUCTOS*/
         }
 
         .container {
-            width: 90%;
+            width: 85%;
         }
 
         .buttonCategoryContainer {
@@ -310,9 +322,22 @@ DE 2 PRODUCTOS*/
             justify-content: space-between;
             gap: 0.5rem;
         }
+
+        .usernameTitle h1{
+            font-size: 2.2em;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #000;
+        }
     }
 
     @media screen and (min-width:768px) and (max-width:1023px) {
+
+        .usernameTitle h1{
+            font-size: 1.2em;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
 
         .title {
             display: block;

@@ -42,7 +42,9 @@ app.use(passport.session({
 }))
 
 // para uso de archivos estáticos
-app.use(express.static('public'))
+app.use(express.static('views'))
+
+
 
 // para uso de ejs
 app.set('view engine', 'ejs')

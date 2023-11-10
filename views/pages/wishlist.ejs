@@ -2,7 +2,7 @@
     .container {
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 85%;
         margin: 0 auto;
     }
 
@@ -42,6 +42,13 @@
 
     .usernameTitle {
         padding: 30px 0;
+    }
+
+    .usernameTitle h1{
+        font-size: 2.2em;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #000;
     }
 
     .titleSpecial {
@@ -369,7 +376,7 @@
     }
 
     .btnDelete {
-        width: 27%;
+        width: 28%;
     }
 
     .btnEdit>button {
@@ -486,7 +493,15 @@
         gap: 3rem;
     }
 
+    .links a {
+        color: #000;
+    }
+
     @media screen and (min-width:768px) and (max-width:1023px) {
+
+        .headerDiv{
+            width: 95vw;
+        }
 
         .usernameTitle h1 {
             font-size: 2.9em;
@@ -552,6 +567,12 @@
             display: block;
         }
 
+        .iconPlus button{
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
         .btnProduct {
             display: none;
         }
@@ -590,6 +611,9 @@
 
     @media screen and (max-width:767px) {
 
+        .headerDiv{
+            width: 95vw;
+        }
 
         .title {
             display: none;
