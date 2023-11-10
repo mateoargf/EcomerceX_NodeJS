@@ -2,155 +2,207 @@
 
 
 <main>
-     
-     <form action="/user/registro" method="post" class="formularioRegistro">
-          <h2>Completa el formulario</h2>
-          
-          <p>USUARIO</p>
-          <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInput" oninput="validarTexto()">
-          <p id="mensajeError" class="error-message"></p>
+     <div class="contenedor-formularios">    
+          <ul class="contenedor-tabs">
+               <li class="tab tab-segunda active">
+                    <a href="#iniciar-sesion">INICIAR SESION</a>
+               </li>
+               <li class="tab tab-primera">
+                    <a href="#registrarse">REGISTRARSE</a>
+               </li>
+          </ul>
+          <div class="contenido-tab">
+               <div id="iniciar-sesion">
+                    
+                    <form action="/user/login" method="post" class="formularioInicioSesion">    
+                         <h1>LOGIN </h1>
+                         
+                         <input type="text" placeholder="Nombre de usuario" name="username" class="inputInicioSesion" id="usernameInput">
+                         <p id="mensajeError" class="error-message"></p>
 
-          <p>CONTRASEÑA</p>
-          <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInput" oninput="validarPassword()">
-          <p id="mensajeErrorPassword" class="error-message"></p>
+                         
+                         <input type="password" placeholder="Contraseña" name="password" class="inputInicioSesion" id="passwordInput">
+                         <p id="mensajeErrorPassword" class="error-message"></p>
+                         <input type="submit" value="LOGUEARSE" class="botonIniciarSesion">
+                    </form>
+               </div>
+               <div id="registrarse">
+                    
+                    <form action="/user/registro" method="post" class="formularioRegistro">
+                         <h2>Completa el formulario</h2>
+                         
+                         <!-- <p>USUARIO</p> -->
+                         <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInput" oninput="validarTexto()">
+                         <p id="mensajeError" class="error-message"></p>
 
-          <p>EMAIL</p>
-          <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInput" oninput="validarEmail()">
-          <p id="mensajeErrorEmail" class="error-message"></p>
-          <% if(errorMessage) { %>
-               <p class="error-message"><%= errorMessage %></p>
-          <% } %>
-          <input type="submit" value="ENVIAR" class="botonRegistrate">
-     </form>
+                         <!-- <p>CONTRASEÑA</p> -->
+                         <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInput" oninput="validarPassword()">
+                         <p id="mensajeErrorPassword" class="error-message"></p>
 
+                         <!-- <p>EMAIL</p> -->
+                         <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInput" oninput="validarEmail()">
+                         <p id="mensajeErrorEmail" class="error-message"></p>
+                         <% if(errorMessage) { %>
+                              <p class="error-message"><%= errorMessage %></p>
+                         <% } %>
+                         <span>Al registrarte, aceptas nuestras Condiciones, nuestra Política de privacidad y nuestra Política de cookies.</span>
+                         <input type="submit" value="ENVIAR" class="botonRegistrate">
+                    </form>
+               </div>
+          </div>
+     </div> 
 
 </main>
-     <!-- Modal -->
-    <div id="myModal" class="modal">
-     <div class="modal-content">
-       <span class="close">&times;</span>
-       <p>¡Registro exitoso!</p>
-     </div>
-   </div>
+
 
 <style>
-
-     main {
-          height: 65vh;
-          width: 86vw;
-          margin: 0 auto;
-     }
-
-     .inputRegistro:focus,
-     .inputRegistro:valid {
-          background-color: #fff;
-          outline-color: #222;
-     }
-
-     .inputRegistro:hover {
-          border: 2px solid #616161;
-     }
-
-     .botonRegistrate:hover {
-          background-color: #0056b3;
-          border: 2px solid #0056b3;
-     }
-
-     .inputRegistro,
-     .botonRegistrate {
-          transition: all 0.4s ease-in-out;
-     }
-
-     .formularioRegistro {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          justify-content: center;
-          height: 100%;
-     }
-
-     .formularioRegistro h2 {
-          text-align: center;
-     }
-
-     .formularioRegistro p {
-          width: 45%;
-          margin: 0 auto;
-          padding-left: 0.3rem;
-     }
-
-     .inputRegistro {
-          width: 45%;
-          height: 2.5rem;
-          padding-left: 0.5rem;
-          border-color: transparent;
-          border-radius: 5px;
-          margin: 0 auto;
-          cursor: pointer;
-          color: #333333;
-          font-family: 'Syne', sans-serif;
-          font-weight: 600;
-          border: 2px solid #bebebe;
-     }
-
-     .botonRegistrate {
-          background-color: #007BFF;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          width: 15%;
-          margin: 0 auto;
-          height: 2.5rem;
-          font-size: 1rem;
-          text-align: center;
-     }
-
-     .error-message {
-          color: red;
-     }
-
-     /* Estilos para el modal */
-.modal {
-  display: none; /* Por defecto, el modal estará oculto */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+footer,header{
+     display: none;
 }
 
-/* Contenido del modal */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
+main {
+     height: 65vh;
+     width: 90vw;
+     margin: 0 auto;
+     }
+.contenedor-formularios {
+     width: 100%;
+     max-width: 500px;
+     margin: 0 auto;
+     margin-top: 30px;
+     padding: 30px 0px;
+     border-radius: 5px;
+     background-color: #fff;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el botón de cerrar (la "x") */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.contenedor-tabs {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     overflow: hidden;
+     border-radius: 5px;
+     background: white;
+     margin-bottom: 20px;
+     display: flex;
+     justify-content: center;
+     gap:15px;
 }
 
 
+
+.contenedor-tabs li a {
+     display: block;
+     color: #333;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     border-radius: 5px;
+     background-color: gray;
+
+}
+
+.contenedor-tabs li a:hover {
+     background-color: rgb(93, 91, 91 );
+}
+
+.contenedor-tabs li a.active {
+     background-color: #007BFF;
+     color: white;
+}
+
+
+#registrarse {
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+}
+
+#iniciar-sesion {
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.formularioInicioSesion, .formularioRegistro{
+     display:flex;
+     flex-direction: column; 
+     width: 80%;
+     margin: 0 auto;
+     background-color: transparent;
+     border-radius: 10px;
+     gap: 1rem;
+}
+
+.formularioInicioSesion h2, .formularioRegistro h2 {
+     text-align: center;
+     margin-bottom: 20px;
+}
+
+.inputInicioSesion, .inputRegistro {
+     width: 100%;
+     height: 2.5rem;
+     padding: 0.5rem;
+     border: 2px solid #bebebe;
+     border-radius: 5px;
+     margin-bottom: 15px;
+     font-size: 1rem;
+}
+
+.error-message {
+     color: red;
+     text-align: left;
+     margin-bottom: 15px;
+}
+.botonRegistrate, .botonIniciarSesion {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     width: 90%;
+     margin: 0 auto;
+     height: 2.5rem;
+     font-size: 1rem;
+     text-align: center;
+}
+.botonRegistrate:hover, .botonIniciarSesion:hover {
+     background-color: #0056b3;
+     border: 2px solid #0056b3;
+}
+
+.inputRegistro, .inputInicioSesion,
+.botonRegistrate, .botonIniciarSesion {
+     transition: all 0.4s ease-in-out;
+}
+
+.inputRegistro:focus,.inputInicioSesion:focus,.inputInicioSesion:valid,
+.inputRegistro:valid {
+     background-color: #fff;
+     outline-color: #222;
+}
+.inputRegistro:hover, .inputInicioSesion:hover {
+     border: 2px solid #616161;
+}   
+
+
+.formularioRegistro p {
+     width: 45%;
+     margin: 0 auto;
+     padding-left: 0.3rem;
+}
+
+
+.inputRegistro, .inputInicioSesion {
+     cursor:auto;
+     color: #333333;
+}
+
+ 
 
      @media screen and (max-width:767px) {
           main {
@@ -165,10 +217,7 @@
           .botonRegistrate {
                width: 35%;
           }
-          .modal-content {
-               width: 90%; /* Hacer el modal más ancho en pantallas pequeñas */
-               max-width: none; /* Eliminar la restricción de ancho máximo */
-          }
+         
      }
 
      @media screen and (min-width:768px) and (max-width:1023px) {
@@ -184,16 +233,13 @@
           .botonRegistrate {
                width: 20%;
           }
-          .modal-content {
-          width: 70%; /* Reducir el ancho del modal en pantallas medianas */
-          }
+         
      }
 
      @media screen and (min-width:1024px) and (max-width:1440px) {}
 
-     @media screen and (min-width:1441px) and (max-width:1920px) {}
+     @media screen and (min-width:1441px) and (max-width:1920px) {} */
 
 </style>
-<script src="/utilsFront/modal.js"></script>
-<script src="/utilsFront/validaciones.js"></script>
 
+<script src="/utilsFront/validaciones.js"></script>
