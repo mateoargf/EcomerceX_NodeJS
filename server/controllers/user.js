@@ -19,8 +19,8 @@ const getRegistroExitoso = (req, res) => {
 
 >>>>>>> f22f818755d9aeada3c0046352d10314d41cab99
 const getFormularioRegistro = (req, res) => {
-     
-     res.status(200).render('pages/registro', { 
+
+     res.status(200).render('pages/registro', {
           errorMessage: req.flash('error')
      })
 }
