@@ -5,10 +5,10 @@
      <div class="contenedor-formularios">    
           <ul class="contenedor-tabs">
                <li class="tab tab-segunda active">
-                    <a href="#iniciar-sesion">INICIAR SESION</a>
+                    <a id="LOGIN" href="#iniciar-sesion">INICIAR SESION</a>
                </li>
                <li class="tab tab-primera">
-                    <a href="#registrarse">REGISTRARSE</a>
+                    <a id="SIGNUP" href="#registrarse">REGISTRARSE</a>
                </li>
           </ul>
           <div class="contenido-tab">
@@ -55,26 +55,54 @@
 </main>
 
    <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const iniciarSesionTab = document.querySelector(".tab-segunda");
-    const registrarseTab = document.querySelector(".tab-primera");
-    const iniciarSesionForm = document.getElementById("iniciar-sesion");
-    const registrarseForm = document.getElementById("registrarse");
+     document.addEventListener("DOMContentLoaded", function() {
+     const iniciarSesionTab = document.querySelector(".tab-segunda");
+     const registrarseTab = document.querySelector(".tab-primera");
+     const iniciarSesionForm = document.getElementById("iniciar-sesion");
+     const registrarseForm = document.getElementById("registrarse");
+     const LOGIN = document.getElementById("LOGIN");
+     const SIGNUP = document.getElementById("SIGNUP");
+     registrarseForm.style.display = "none"; //ocultamos el formulario de registro
+     LOGIN.classList.add("active"); //ponemos el boton de login en azul
 
-    iniciarSesionTab.addEventListener("click", function() {
-      iniciarSesionTab.classList.add("active");
-      registrarseTab.classList.remove("active");
-      iniciarSesionForm.style.display = "block";
-      registrarseForm.style.display = "none";
-    });
 
-    registrarseTab.addEventListener("click", function() {
-      registrarseTab.classList.add("active");
-      iniciarSesionTab.classList.remove("active");
-      registrarseForm.style.display = "block";
-      iniciarSesionForm.style.display = "none";
-    });
-  });
+     
+
+     iniciarSesionTab.addEventListener("click", function() {
+          //SI LOGIN SE HACE CLICK SE DEJA ENCENDIDO EL BOTON DE LOGIN Y SE APAGA EL DE REGISTRO
+          if(LOGIN.classList.contains("active")){
+          }
+          else
+          {
+               SIGNUP.classList.remove("active");
+               LOGIN.classList.add("active");
+          }
+          
+          iniciarSesionTab.classList.add("active");
+          registrarseTab.classList.remove("active");
+          iniciarSesionForm.style.display = "block";
+          registrarseForm.style.display = "none";
+     });
+
+     registrarseTab.addEventListener("click", function() {
+          if(SIGNUP.classList.contains("active")){
+          }
+          else
+          {
+               LOGIN.classList.remove("active");
+               SIGNUP.classList.add("active");
+          }
+          
+
+          registrarseTab.classList.add("active");
+          iniciarSesionTab.classList.remove("active");
+          registrarseForm.style.display = "block";
+          iniciarSesionForm.style.display = "none";
+
+     });
+});
+
+
 </script>
   
 
@@ -112,6 +140,7 @@ main {
      justify-content: center;
      gap:15px;
 }
+
 
 
 
@@ -225,6 +254,9 @@ main {
      cursor:auto;
      color: #333333;
 }
+
+
+
 
 </style>
 
