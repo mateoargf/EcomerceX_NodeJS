@@ -8,6 +8,10 @@ const { validarContrasena } = require('./../utilsBack/validacionContrasena');
 const { validarMail} = require('./../utilsBack/validacionMail');
 
 
+const getRegistroExitoso = (req, res) => {
+     res.status(200).render('pages/registroExitoso');
+ }
+
 const getFormularioRegistro = (req, res) => {
      
      res.status(200).render('pages/registro', { 
@@ -42,7 +46,7 @@ const postFormularioRegistro = async (req, res) => {
      try {
           const user = await Usuarios.create({ username, password: hashedPassword, email })
           console.log(user)
-          res.redirect('/')
+          res.redirect('/user/RegistroExitoso')
      } catch(error){
          //error por duplicado
           if(error.code===11000){
@@ -64,5 +68,6 @@ const postFormularioRegistro = async (req, res) => {
 
 module.exports = {
      getFormularioRegistro,
-     postFormularioRegistro
+     postFormularioRegistro,
+     getRegistroExitoso
 }
