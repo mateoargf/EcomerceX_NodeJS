@@ -8,11 +8,14 @@ const productsRouter = require('./server/routes/products')
 const userRouter = require('./server/routes/user')
 const errRouter = require('./server/routes/err')
 const path = require('path')
-const layouts = require('express-ejs-layouts');
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const layouts = require('express-ejs-layouts')
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO
+const secretSession = process.env.SECRET_SESSION
+const secretPassport = process.env.SECRET_PASSPORT
+const passport = require('passport')
 
 // conectamos con la base de datos y el puerto a través de dotenv
 const iniciar = async () => {
@@ -25,18 +28,24 @@ const iniciar = async () => {
 }
 
 app.use(session({
-     secret: 'palabras-secretas', 
+     secret: secretSession,
      resave: false,
      saveUninitialized: true,
-   }));
+}));
 app.use(flash());
 
+app.use(passport.initialize())
+app.use(passport.session({
+     secret: secretPassport,
+     resave: false,
+     saveUninitialized: true
+}))
 
 // para uso de archivos estáticos
 app.use(express.static('public'))
 
 // para uso de ejs
-app.set('view engine','ejs')
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));
 // para layouts
 app.set('layout', 'layouts/layout')
@@ -50,10 +59,10 @@ app.get('/', (req, res) => {
 app.use('/err', errRouter)
 
 // rednderizado de todas las webs de productos
-app.use('/prod',productsRouter)
+app.use('/prod', productsRouter)
 
 // renderizado de todas las webs respecto a usuarios
-app.use('/user',userRouter)
+app.use('/user', userRouter)
 
 
 iniciar() 
