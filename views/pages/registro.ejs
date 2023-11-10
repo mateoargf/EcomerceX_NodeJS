@@ -54,6 +54,30 @@
 
 </main>
 
+   <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const iniciarSesionTab = document.querySelector(".tab-segunda");
+    const registrarseTab = document.querySelector(".tab-primera");
+    const iniciarSesionForm = document.getElementById("iniciar-sesion");
+    const registrarseForm = document.getElementById("registrarse");
+
+    iniciarSesionTab.addEventListener("click", function() {
+      iniciarSesionTab.classList.add("active");
+      registrarseTab.classList.remove("active");
+      iniciarSesionForm.style.display = "block";
+      registrarseForm.style.display = "none";
+    });
+
+    registrarseTab.addEventListener("click", function() {
+      registrarseTab.classList.add("active");
+      iniciarSesionTab.classList.remove("active");
+      registrarseForm.style.display = "block";
+      iniciarSesionForm.style.display = "none";
+    });
+  });
+</script>
+  
+
 
 <style>
 footer,header{
