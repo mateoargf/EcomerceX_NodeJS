@@ -149,10 +149,8 @@ module.exports = {
      getFormularioGoogleLogin,
      getFormularioGoogleLogout,
      getGoogleRedirect,
-     
      getGoogleCallback,
      getAuthGoogle,
-     
      postFormulario,
      getFormulario,
      getLogueoExitoso,
