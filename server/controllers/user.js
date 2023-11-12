@@ -10,12 +10,12 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./../config/configGoogle');
 // flash
 
-     
+
 
 //validacionpassword
 const { validarContrasena } = require('./../utilsBack/validacionContrasena');
 //validacionemail
-const { validarMail} = require('./../utilsBack/validacionMail');
+const { validarMail } = require('./../utilsBack/validacionMail');
 
 const getFormulario = (req, res) => {
      const activeTab = req.query.activeTab ;//si no hay query, login
