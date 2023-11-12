@@ -31,6 +31,7 @@ router.get('/RegistroExitoso', getRegistroExitoso)
 
 
 
+
 router.get('/googleLogin',getFormularioGoogleLogin)
 router.get('/googleLogout',getFormularioGoogleLogout)
 router.get('/auth/google/callback',getGoogleCallback )

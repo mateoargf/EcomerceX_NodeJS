@@ -14,7 +14,8 @@
           <div class="contenido-tab">
                <div id="iniciar-sesion">
                     <div>
-                    <form action="/user/login" method="post" class="formularioInicioSesion">    
+                    <form action="/user/registro" method="post" class="formularioInicioSesion">    
+                         <input type="hidden" name="activeTab" value="login">
                          <h2>LOGIN </h2>
                          
                          <input type="text" placeholder="Nombre de usuario" name="username" class="inputInicioSesion" id="usernameInput">
@@ -50,6 +51,7 @@
                <div id="registrarse">
                     <div>
                     <form action="/user/registro" method="post" class="formularioRegistro">
+                         <input type="hidden" name="activeTab" value="signup">
                          <h2>INGRESE SU INFORMACION</h2>
                          
                          <!-- <p>USUARIO</p> -->

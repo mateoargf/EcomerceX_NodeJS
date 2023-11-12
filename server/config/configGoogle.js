@@ -19,6 +19,8 @@ passport.deserializeUser((id,done)=>{
 
 })
 
+
+
 //REGISTRO CON GOOGLE
 passport.use(
     'registroGoogle',
@@ -29,16 +31,24 @@ passport.use(
         callbackURL:'http://localhost:3600/user/auth/google/callback',
         scope:['profile','email']
     }, 
-    (profile,done)=>{
+    async(profile,done)=>{
+        try{
         //funcion callback passport
+        //array de scopes
+        console.log(profile.id)
+        //guardar el usuario en la base de datos
 
-        Console.log("profile")
+     try {
+         const profileObject = JSON.parse(profile);
+         console.log(profileObject.id);
+     } catch (error) {
+         console.error('No se pudo analizar el objeto como JSON:', error);
+    }
 
-        console.log(profile)
-        Console.log("profile")
-        console.log(profile.emails[0].value)
         //el usuario esta ya registrado con ese email
-        User.findOne({googleId:profile.id}).then((eldato)=>{
+        const eldato=await User.findOne({googleId:profile.id});
+          
+
             if(eldato){
                         console.log('el usuario ya esta registrado en mi base')
                         done(null,eldato)
@@ -49,18 +59,18 @@ passport.use(
                         username:profile.displayName,
                         email:profile.emails[0].value,
                     })
-                    newUser.save().then((UsuarioGuardado)=>{
-                        console.log('el usuario se creo con exito',UsuarioGuardado)
-                        done(null,UsuarioGuardado)
+                    const Usuarioguardado= await newUser.save();
+                    console.log('el usuario se creo con exito',Usuarioguardado)
+                    done(null,Usuarioguardado)
                         
-                    })
+                    
             }
-        }).catch((error)=>{
+        } catch(error){
             console.log('error al buscar el usuario en la base de datos',error)
-            done(error,null)
+            done(error,null);}
         })
-    })
-)
+    )
+
 
 passport.use(
     'loginGoogle',

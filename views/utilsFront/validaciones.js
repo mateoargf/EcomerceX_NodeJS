@@ -38,7 +38,7 @@ function validarPassword() {
    let regexRequerimientos = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
    if (!regexRequerimientos.test(passwordInput.value)) {
-       mensajeErrorPassword.textContent = "minimo 8 caracteres, 1 caracter especial, al menos 1 numero, al menos 1 mayus y 1 minúscula";
+       mensajeErrorPassword.textContent = "Minimo 8 caracteres, 1 caracter especial, al menos 1 numero, al menos 1 mayus y 1 minúscula";
        mensajeErrorPassword.style.display = "block"; // Muestra el mensaje de error
        passwordInput.classList.add("invalid-input");
    } else {

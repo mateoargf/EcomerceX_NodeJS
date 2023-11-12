@@ -58,11 +58,11 @@ const getGoogleRedirect = async (req, res) => {
      // res.status(200).render('pages/registroExitoso');
 }
 
-const getGoogleCallback = (req, res) => {
-     passport.authenticate('registroGoogle', {
+const getGoogleCallback = async (req, res) => {
+    await passport.authenticate('registroGoogle', {
          failureRedirect: '/err/404',
      })(req, res, () => {
-          console.log("req.user",req.user)
+          console.log("req.user",req.body.user)
          res.redirect('/RegistroExitoso');
      });
  };
@@ -72,10 +72,12 @@ const getGoogleCallback = (req, res) => {
 const postFormulario = async (req, res) => {
      //destructuring del modelo usuarios
 
-     const { username, password, email } = req.body
+    console.log("req.body",req.body)
      //activeTab es el nombre de la pestaña activa
-     const activeTab = req.query.activeTab || 'login';//si no hay query, login
+     const activeTab = req.body.activeTab ;//si no hay query, login
+     console.log("activeTab",activeTab)
      if(activeTab === 'signup') {
+          const { username, password, email } = req.body
           const contraseñaError = validarContrasena(password, username);   
           const emailError = await validarMail(email);
 
@@ -109,27 +111,35 @@ const postFormulario = async (req, res) => {
                     req.flash('error', 'error desconocido')
                     console.log('error desconocido:', error)
                }
-               res.redirect('/user/registro#registrarse');
+               res.redirect('/user/registro');
           }
-     }else if(req.query.activeTab === 'login') {
+     }else if(activeTab === 'login') {
           const { username, password } = req.body
+          console.log("username",username)
           try{
+               console.log("try")
+
                const user = await Usuarios.findOne({ username });
                if(!user){
+                    console.log("usuario incorrecto");
                     req.flash('error', 'Nombre de usuario incorrecto');
                     return res.redirect('/user/registro#login');
                }
                const match = await bcrypt.compare(password, user.password);
                if(!match){
-               req.flash('error', 'Contraseña incorrecta');
-               return res.redirect('/user/registro#login');
+                    console.log("password incorrecto");
+                    req.flash('error', 'Contraseña incorrecta');
+                    return res.redirect('/user/registro#login');
                }
                req.login(user, (err) => {
                     if (err) {
+                         console.log("error al iniciar sesion",err);
                         req.flash('error', 'Error al iniciar sesión');
                         return res.redirect('/user/login');
                     }
+               console.log("login exitoso");
                return res.redirect('/user/loginExitoso');
+
                });
           } catch (error) {
                req.flash('error', 'Error al iniciar sesión');
