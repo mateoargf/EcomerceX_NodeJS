@@ -38,12 +38,7 @@ passport.use(
         console.log(profile.id)
         //guardar el usuario en la base de datos
 
-     try {
-         const profileObject = JSON.parse(profile);
-         console.log(profileObject.id);
-     } catch (error) {
-         console.error('No se pudo analizar el objeto como JSON:', error);
-    }
+    
 
         //el usuario esta ya registrado con ese email
         const eldato=await User.findOne({googleId:profile.id});
