@@ -16,6 +16,15 @@ const unPuerto = process.env.PUERTO
 const secretSession = process.env.SECRET_SESSION
 const secretPassport = process.env.SECRET_PASSPORT
 const passport = require('passport')
+// para uso de archivos estáticos
+app.use(express.static('views'))
+
+
+
+// para uso de ejs
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
+
 
 // conectamos con la base de datos y el puerto a través de dotenv
 const iniciar = async () => {
@@ -41,14 +50,7 @@ app.use(passport.session({
      saveUninitialized: true
 }))
 
-// para uso de archivos estáticos
-app.use(express.static('views'))
 
-
-
-// para uso de ejs
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, 'views'));
 // para layouts
 app.set('layout', 'layouts/layout')
 app.use(layouts)

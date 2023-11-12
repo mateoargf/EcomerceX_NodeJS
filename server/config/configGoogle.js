@@ -4,17 +4,24 @@ const keys=require('./keysGoogle')
 const User=require('../models/userGoogle')
 
 passport.serializeUser((user,done)=>{
-        done(null,user.id)
+console.log('serializeUser',user)
+    done(null,user.id)
 })
 
 passport.deserializeUser((id,done)=>{
+    console.log('deserializeUser',id)
     User.findById(id).then((user)=>{
         done(null,user)
+    }).catch((error)=>{
+        console.log('error al buscar el usuario en la base de datos',error)
+        done(error,null)
     })
+
 })
 
 //REGISTRO CON GOOGLE
 passport.use(
+    'registroGoogle',
     new GoogleStrategy({
         //opciones de estrategia de google
         clientID:keys.google.clientID,
@@ -25,8 +32,11 @@ passport.use(
     (profile,done)=>{
         //funcion callback passport
 
+        Console.log("profile")
 
         console.log(profile)
+        Console.log("profile")
+        console.log(profile.emails[0].value)
         //el usuario esta ya registrado con ese email
         User.findOne({googleId:profile.id}).then((eldato)=>{
             if(eldato){
@@ -53,6 +63,7 @@ passport.use(
 )
 
 passport.use(
+    'loginGoogle',
     new GoogleStrategy({
         //opciones de estrategia de google
         clientID:keys.google.clientID,
