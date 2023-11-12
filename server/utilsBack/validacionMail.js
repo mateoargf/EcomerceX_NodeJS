@@ -5,10 +5,12 @@ const Usuarios = require('../models/usuarios');
 function validarMail(Email) {
     const regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    if(Email) {
+        
     
     if (!regexMail.test(Email)) {  //si no cumple con el formato entra al if
         return "El formato del correo electrónico no es válido.";
-    }
+    }}
 
     // Verifica si está en uso
     return Usuarios.findOne({ email: Email })
