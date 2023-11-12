@@ -5,59 +5,225 @@
      <div class="contenedor-formularios">    
           <ul class="contenedor-tabs">
                <li class="tab tab-segunda active">
-                    <a href="#iniciar-sesion">INICIAR SESION</a>
+                    <a id="LOGIN" href="#iniciar-sesion">INICIAR SESION</a>
                </li>
                <li class="tab tab-primera">
-                    <a href="#registrarse">REGISTRARSE</a>
+                    <a id="SIGNUP" href="#registrarse">REGISTRARSE</a>
                </li>
           </ul>
           <div class="contenido-tab">
                <div id="iniciar-sesion">
-                    
-                    <form action="/user/login" method="post" class="formularioInicioSesion">    
-                         <h1>LOGIN </h1>
+                    <div>
+                    <form action="/user/registro" method="post" class="formularioInicioSesion">    
+                         <h2>LOGIN </h2>
                          
                          <input type="text" placeholder="Nombre de usuario" name="username" class="inputInicioSesion" id="usernameInput">
-                         <p id="mensajeError" class="error-message"></p>
-
-                         
+                                        
                          <input type="password" placeholder="Contraseña" name="password" class="inputInicioSesion" id="passwordInput">
-                         <p id="mensajeErrorPassword" class="error-message"></p>
-                         <input type="submit" value="LOGUEARSE" class="botonIniciarSesion">
+                        
+                         <% if(errorMessage) { %>
+                              <p class="error-message"><%= errorMessage %></p>
+                         <% } %>
+                         <input type="submit" value="ENTRAR" class="botonIniciarSesion">
                     </form>
+                    </div>
+                    <div class="container-google">
+                         <div class="linea-or">
+                           <span class="primera-linea"></span>
+                           <span class="or">O</span>
+                           <span class="segunda-linea"></span>
+                         </div>
+                         <div class="container-google-button">
+                                   <button class="boton-google"> 
+                                        <a href="/user/auth/google"> 
+                                             <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="google" width="20px" height="20px">  
+                                             <span class="">Loguearse con Google</span>
+                                        </a>
+                                       
+                                   </button>
+
+                                   <!-- <iframe src="https://accounts.google.com.....">
+                                   </iframe> -->
+                         </div>
+                    </div>
                </div>
                <div id="registrarse">
-                    
-                    <form action="/user/registro" method="post" class="formularioRegistro">
-                         <h2>Completa el formulario</h2>
+                    <div>
+                    <form action="/user/registro#registrarse" method="post" class="formularioRegistro">
+                         <h2>INGRESE SU INFORMACION</h2>
                          
                          <!-- <p>USUARIO</p> -->
-                         <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInput" oninput="validarTexto()">
-                         <p id="mensajeError" class="error-message"></p>
+                         <input type="text" placeholder="Mesias" name="username" class="inputRegistro" id="usernameInputRegistro" oninput="validarTexto()">
+                         <p id="mensajeErrorRegistro" class="error-message"></p>
 
                          <!-- <p>CONTRASEÑA</p> -->
-                         <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInput" oninput="validarPassword()">
-                         <p id="mensajeErrorPassword" class="error-message"></p>
+                         <input type="password" placeholder="Contraseña123*" name="password" class="inputRegistro" id="passwordInputRegistro" oninput="validarPassword()">
+                         <p id="mensajeErrorPasswordRegistro" class="error-message"></p>
 
                          <!-- <p>EMAIL</p> -->
-                         <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInput" oninput="validarEmail()">
-                         <p id="mensajeErrorEmail" class="error-message"></p>
+                         <input type="email" placeholder="santi123@hotmail.com" name="email" class="inputRegistro" id="emailInputRegistro" oninput="validarEmail()">
+                         <p id="mensajeErrorEmailRegistro" class="error-message"></p>
                          <% if(errorMessage) { %>
                               <p class="error-message"><%= errorMessage %></p>
                          <% } %>
                          <span>Al registrarte, aceptas nuestras Condiciones, nuestra Política de privacidad y nuestra Política de cookies.</span>
                          <input type="submit" value="ENVIAR" class="botonRegistrate">
                     </form>
+                    </div>
+                    <div class="container-google">
+                         <div class="linea-or">
+                           <span class="primera-linea"></span>
+                           <span class="or">O</span>
+                           <span class="segunda-linea"></span>
+                         </div>
+                         <div class="container-google-button">
+                                   <button class="boton-google"> 
+                                        <a href="/user/auth/google"> 
+                                             <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="google" width="20px" height="20px">  
+                                             <span class="">Registrarse con Google</span>
+                                        </a>
+                                       
+                                   </button>
+                         </div>
+                    </div>
+
+
                </div>
           </div>
      </div> 
 
 </main>
 
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+     // const mensajeErrorLogin = document.getElementById("mensajeErrorLogin");
+     const mensajeErrorElement = document.getElementById("mensajeError");
+     const mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
+     const mensajeErrorEmail = document.getElementById("mensajeErrorEmail"); 
+     const iniciarSesionTab = document.querySelector(".tab-segunda");  //contenedor login
+     const registrarseTab = document.querySelector(".tab-primera");   //contenedor registro
+     const iniciarSesionForm = document.getElementById("iniciar-sesion"); //formulario login
+     const registrarseForm = document.getElementById("registrarse");  //formulario registro
+     const LOGIN = document.getElementById("LOGIN");          //boton login
+     const SIGNUP = document.getElementById("SIGNUP");        //boton registro
+     const url = window.location.href.includes("#"); //comprobamos si la url tiene un fragmento
+     urlFragment = window.location.hash; //obtenemos el fragmento de la url
+
+     // mensajeErrorLogin.style.display = "none";
+     // mensajeErrorElement.style.display = "none";
+     // mensajeErrorPassword.style.display = "none";
+     console.log(urlFragment);
+     console.log(url);
+     const mensajeErrorLOGIN = document.getElementById("mensajeErrorLogin");
+
+     //error de login
+     console.log(mensajeErrorLOGIN)
+     if (mensajeErrorLOGIN) {
+    // Muestra el mensaje de error
+    mensajeErrorLOGIN.style.display = "block";
+    mensajeErrorLOGIN.textContent = "Usuario o contraseña incorrectos";
+} else {
+    // Opcional: Puedes manejar la situación donde el elemento no se encuentra
+    console.error("El elemento mensajeErrorLogin no se encontró");
+}
+
+     if(url===false || urlFragment === "#iniciar-sesion"){
+          console.log("ENTRO login")
+          LOGIN.classList.add("active");
+          SIGNUP.classList.remove("active");
+          registrarseForm.style.display = "none"; //ocultamos el formulario de registro
+          iniciarSesionForm.style.display = "block"; //mostramos el formulario de login
+          registrarseTab.classList.remove("active"); 
+          iniciarSesionTab.classList.add("active");
+     }
+     else if(urlFragment === "#registrarse"){
+          console.log("ENTRO registrarse")
+               LOGIN.classList.remove("active"); //ponemos el boton de login en gris
+               SIGNUP.classList.add("active"); //ponemos el boton de registro en azul
+               registrarseForm.style.display = "block"; //mostramos el formulario de registro
+               iniciarSesionForm.style.display = "none"; //ocultamos el formulario de login
+               registrarseTab.classList.add("active"); //ponemos el boton de registro en azul
+               iniciarSesionTab.classList.remove("active"); //ponemos el boton de login en gris
+               mensajeErrorEmail.style.display = "none";  
+          }
+          else{          
+              console.log("no hizo nada")
+          }
+        
+
+     LOGIN.addEventListener("click", function() {
+          console.log("apreto login");
+          if(!LOGIN.classList.contains("active")){
+               SIGNUP.classList.remove("active");
+               LOGIN.classList.add("active");
+          }
+          
+          iniciarSesionTab.classList.add("active");
+          registrarseTab.classList.remove("active");
+          iniciarSesionForm.style.display = "block";
+          registrarseForm.style.display = "none";
+     });
+     SIGNUP.addEventListener("click", function() {
+          console.log("apreto signup");
+          if(SIGNUP.classList.contains("active")){
+          }
+          else
+          {
+               LOGIN.classList.remove("active");
+               SIGNUP.classList.add("active");
+          }
+          
+          
+          registrarseTab.classList.add("active");
+          iniciarSesionTab.classList.remove("active");
+          registrarseForm.style.display = "block";
+          iniciarSesionForm.style.display = "none";
+
+     });
+});
+     //      iniciarSesionTab.addEventListener("click", function() {
+               
+     //           if(!LOGIN.classList.contains("active")){
+     //                SIGNUP.classList.remove("active");
+     //                LOGIN.classList.add("active");
+     //           }
+               
+     //           iniciarSesionTab.classList.add("active");
+     //           registrarseTab.classList.remove("active");
+     //           iniciarSesionForm.style.display = "block";
+     //           registrarseForm.style.display = "none";
+     //      });
+
+     //      registrarseTab.addEventListener("click", function() {
+     //           if(SIGNUP.classList.contains("active")){
+     //           }
+     //           else
+     //           {
+     //                LOGIN.classList.remove("active");
+     //                SIGNUP.classList.add("active");
+     //           }
+               
+
+     //           registrarseTab.classList.add("active");
+     //           iniciarSesionTab.classList.remove("active");
+     //           registrarseForm.style.display = "block";
+     //           iniciarSesionForm.style.display = "none";
+
+     //      });
+     
+
+
+</script>
+  
+
 
 <style>
 footer,header{
      display: none;
+}
+body{
+     background-color: whitesmoke;
 }
 
 main {
@@ -91,24 +257,30 @@ main {
 
 
 
+
 .contenedor-tabs li a {
      display: block;
      color: #333;
+     color: rgb(200, 200, 200);
      text-align: center;
      padding: 14px 16px;
      text-decoration: none;
      border-radius: 5px;
-     background-color: gray;
-
+     opacity: 0.3;
+     background-color: rgb(50,50,50);
+     
 }
 
 .contenedor-tabs li a:hover {
-     background-color: rgb(93, 91, 91 );
+     background-color: rgb(91, 91, 91 );
+     color:white;
+     opacity: 0.7;
 }
 
 .contenedor-tabs li a.active {
      background-color: #007BFF;
      color: white;
+     opacity: 1;
 }
 
 
@@ -134,7 +306,7 @@ main {
      margin: 0 auto;
      background-color: transparent;
      border-radius: 10px;
-     gap: 1rem;
+     gap: 0.7rem;
 }
 
 .formularioInicioSesion h2, .formularioRegistro h2 {
@@ -148,14 +320,19 @@ main {
      padding: 0.5rem;
      border: 2px solid #bebebe;
      border-radius: 5px;
-     margin-bottom: 15px;
+     margin-top: 15px;
      font-size: 1rem;
 }
 
 .error-message {
      color: red;
      text-align: left;
-     margin-bottom: 15px;
+     margin-bottom: 0px;
+     
+}
+
+#mensajeErrorLogin{
+     color: red;
 }
 .botonRegistrate, .botonIniciarSesion {
      background-color: #007BFF;
@@ -165,10 +342,11 @@ main {
      cursor: pointer;
      transition: background-color 0.3s ease;
      width: 90%;
-     margin: 0 auto;
+     margin: 10px auto;
      height: 2.5rem;
      font-size: 1rem;
      text-align: center;
+     
 }
 .botonRegistrate:hover, .botonIniciarSesion:hover {
      background-color: #0056b3;
@@ -191,9 +369,10 @@ main {
 
 
 .formularioRegistro p {
-     width: 45%;
-     margin: 0 auto;
-     padding-left: 0.3rem;
+     width: 100%;
+     margin: 0;
+     text-align: center;
+     
 }
 
 
@@ -201,6 +380,81 @@ main {
      cursor:auto;
      color: #333333;
 }
+
+
+.container-google {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.linea-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.primera-linea,
+.segunda-linea {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.or {
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.container-google-button {
+  margin-top: 20px;
+}
+
+
+
+.container-google{
+     width: 80%;
+     margin: 0 auto;
+}
+
+.boton-google {
+     background-color:#f0f0f0;
+     border: 2px solid black;
+     border-radius: 15px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     width: 70%;
+     margin: 0 auto;
+     height: 2.5rem;
+     font-size: 1rem;
+     text-align: center;
+     transition: all 0.4s ease-in-out;
+}
+
+
+.boton-google:hover{
+     background-color:#333333 ;
+     border: 2px solid #0056b3;
+}
+
+.boton-google a{
+     text-decoration: none;
+     color: black;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     text-transform: uppercase;
+     /* font-weight: bold; */
+     font-size: 14px;
+}
+
+.boton-google:hover  span{
+     transition: all 0.4s ease-in-out;
+     color:white;
+     
+}
+
 
 </style>
 

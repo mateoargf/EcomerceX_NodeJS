@@ -1,9 +1,9 @@
   console.log("validaciones.js cargado");
   
   function validarTexto() {
-    let inputElement = document.getElementById("usernameInput");
+    let inputElement = document.getElementById("usernameInputRegistro");
     console.log("inputElement: ", inputElement);
-    let mensajeErrorElement = document.getElementById("mensajeError");
+    let mensajeErrorElement = document.getElementById("mensajeErrorRegistro");
 
     // Validar el valor del input (solo texto, sin números ni caracteres especiales)
     let valorInput = inputElement.value;
@@ -20,8 +20,8 @@
 
 // Agregar evento clic al documento para ocultar el mensaje de error al hacer clic fuera del input
 document.addEventListener("click", function(event) {
-    let inputElement = document.getElementById("usernameInput");
-    let mensajeErrorElement = document.getElementById("mensajeError");
+    let inputElement = document.getElementById("usernameInputRegistro");
+    let mensajeErrorElement = document.getElementById("mensajeErrorRegistro");
 
     if (event.target !== inputElement) {
         mensajeErrorElement.style.display = "none"; // Oculta el mensaje de error
@@ -33,7 +33,7 @@ document.addEventListener("click", function(event) {
 
 function validarPassword() {
    let passwordInput = document.getElementById("passwordInput");
-   let mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
+   let mensajeErrorPassword = document.getElementById("mensajeErrorPasswordRegistro");
 
    let regexRequerimientos = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -51,7 +51,7 @@ function validarPassword() {
 // Agregar evento clic al documento para ocultar el mensaje de error al hacer clic fuera del input
 document.addEventListener("click", function(event) {
    let passwordInput = document.getElementById("passwordInput");
-   let mensajeErrorPassword = document.getElementById("mensajeErrorPassword");
+   let mensajeErrorPassword = document.getElementById("mensajeErrorPasswordRegistro");
 
    if (event.target !== passwordInput) {
        mensajeErrorPassword.style.display = "none"; // Oculta el mensaje de error
@@ -62,7 +62,7 @@ document.addEventListener("click", function(event) {
 
 function validarEmail() {
    let emailInput = document.getElementById("emailInput");
-   let mensajeErrorEmail = document.getElementById("mensajeErrorEmail");
+   let mensajeErrorEmail = document.getElementById("mensajeErrorEmailRegistro");
 
    let regexEmail = /@/;
    let regexEspacios = /\s/;
