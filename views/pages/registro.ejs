@@ -5,16 +5,16 @@
      <div class="contenedor-formularios">    
           <ul class="contenedor-tabs">
                <li class="tab tab-segunda active">
-                    <a id="LOGIN" href="#iniciar-sesion">INICIAR SESION</a>
+                    <a id="LOGIN" href="/user/registro?active=login">INICIAR SESION</a>
                </li>
                <li class="tab tab-primera">
-                    <a id="SIGNUP" href="#registrarse">REGISTRARSE</a>
+                    <a id="SIGNUP" href="/user/registro?active=signup">REGISTRARSE</a>
                </li>
           </ul>
           <div class="contenido-tab">
                <div id="iniciar-sesion">
                     <div>
-                    <form action="/user/registro" method="post" class="formularioInicioSesion">    
+                    <form action="/user/login" method="post" class="formularioInicioSesion">    
                          <h2>LOGIN </h2>
                          
                          <input type="text" placeholder="Nombre de usuario" name="username" class="inputInicioSesion" id="usernameInput">
@@ -49,7 +49,7 @@
                </div>
                <div id="registrarse">
                     <div>
-                    <form action="/user/registro#registrarse" method="post" class="formularioRegistro">
+                    <form action="/user/registro" method="post" class="formularioRegistro">
                          <h2>INGRESE SU INFORMACION</h2>
                          
                          <!-- <p>USUARIO</p> -->
@@ -106,15 +106,15 @@
      const iniciarSesionForm = document.getElementById("iniciar-sesion"); //formulario login
      const registrarseForm = document.getElementById("registrarse");  //formulario registro
      const LOGIN = document.getElementById("LOGIN");          //boton login
-     const SIGNUP = document.getElementById("SIGNUP");        //boton registro
-     const url = window.location.href.includes("#"); //comprobamos si la url tiene un fragmento
-     urlFragment = window.location.hash; //obtenemos el fragmento de la url
-
+     const SIGNUP = document.getElementById("SIGNUP"); 
+     console.log("estoy aca")
+       //boton registro
+     const url = window.location.href;
+     const urlParams = new URLSearchParams(url.split('?')[1]);
+     const activeTab = urlParams.get('active');
      // mensajeErrorLogin.style.display = "none";
      // mensajeErrorElement.style.display = "none";
      // mensajeErrorPassword.style.display = "none";
-     console.log(urlFragment);
-     console.log(url);
      const mensajeErrorLOGIN = document.getElementById("mensajeErrorLogin");
 
      //error de login
@@ -127,30 +127,20 @@
     // Opcional: Puedes manejar la situación donde el elemento no se encuentra
     console.error("El elemento mensajeErrorLogin no se encontró");
 }
-
-     if(url===false || urlFragment === "#iniciar-sesion"){
-          console.log("ENTRO login")
+console.log("estoy aca")
+     if (activeTab === 'signup') {
+          console.log("active tab es signup");
+          LOGIN.classList.remove("active");
+          SIGNUP.classList.add("active");
+          registrarseForm.style.display = "block";
+          iniciarSesionForm.style.display = "none";
+     } else {
+          console.log("active tab es login");
           LOGIN.classList.add("active");
           SIGNUP.classList.remove("active");
-          registrarseForm.style.display = "none"; //ocultamos el formulario de registro
-          iniciarSesionForm.style.display = "block"; //mostramos el formulario de login
-          registrarseTab.classList.remove("active"); 
-          iniciarSesionTab.classList.add("active");
+          registrarseForm.style.display = "none";
+          iniciarSesionForm.style.display = "block";
      }
-     else if(urlFragment === "#registrarse"){
-          console.log("ENTRO registrarse")
-               LOGIN.classList.remove("active"); //ponemos el boton de login en gris
-               SIGNUP.classList.add("active"); //ponemos el boton de registro en azul
-               registrarseForm.style.display = "block"; //mostramos el formulario de registro
-               iniciarSesionForm.style.display = "none"; //ocultamos el formulario de login
-               registrarseTab.classList.add("active"); //ponemos el boton de registro en azul
-               iniciarSesionTab.classList.remove("active"); //ponemos el boton de login en gris
-               mensajeErrorEmail.style.display = "none";  
-          }
-          else{          
-              console.log("no hizo nada")
-          }
-        
 
      LOGIN.addEventListener("click", function() {
           console.log("apreto login");
