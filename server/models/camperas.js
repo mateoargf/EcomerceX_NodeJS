@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const {Schema} = mongoose
 
-const camperaSchema = new mongoose.Schema({
+const camperaSchema = new Schema({
   marca: {
     type: String,
     required: true,
@@ -54,4 +55,4 @@ const camperaSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Campera', camperaSchema, 'productos');
+module.exports = mongoose.model('Campera', camperaSchema);

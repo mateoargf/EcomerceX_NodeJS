@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const {Schema} = mongoose
 
-const shoeSchema = new mongoose.Schema({
+const shoeSchema = new Schema({
   marca: {
     type: String,
     required: true,
