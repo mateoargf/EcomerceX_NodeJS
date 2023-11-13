@@ -33,15 +33,15 @@ const getCategory = (req, res) => {
 
 // enviamos los productos a la coleccion productos
 const postAllProduct = async(req, res) => {
-     // camperas envio
-     try {
-          const resultado = await Campera.insertMany(camperaData)
-          console.log(`JSON enviado con éxito ${resultado}`)
-     } catch(error) {
-          console.log(`Error al enviar los datos ${error}`)
-     } finally {
-          mongoose.disconnect()
-     }
+     // envio camperas
+     // try {
+     //      const resultado = await Campera.insertMany(camperaData)
+     //      console.log(`JSON enviado con éxito ${resultado}`)
+     // } catch(error) {
+     //      console.log(`Error al enviar los datos ${error}`)
+     // } finally {
+     //      mongoose.disconnect()
+     // }
 }
 
 module.exports = {

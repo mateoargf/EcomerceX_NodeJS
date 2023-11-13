@@ -54,4 +54,4 @@ const camperaSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Campera', camperaSchema);
+module.exports = mongoose.model('Campera', camperaSchema, 'productos');
