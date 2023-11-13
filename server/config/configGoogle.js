@@ -30,6 +30,7 @@ passport.use('registroGoogle',new GoogleStrategy({
               // Si el usuario no existe, créalo en tu base de datos
                 const newUser=await UserGoogle.create({ username,email,googleId});
                 // res.redirect('/user/registroExitoso')
+                console.log('el usuario se creo con exito',newUser)
                 done(null,newUser)
             }else{
                 done(null,user)
@@ -64,7 +65,7 @@ passport.use('registroGoogle',new GoogleStrategy({
            
             passport.deserializeUser((id,done)=>{
                 
-               User.findById({_id:id})
+               UserGoogle.findById({_id:id})
                .then((user)=>{
                    if(!user){
                        return done(new Error('usuario no encontrado'),null)

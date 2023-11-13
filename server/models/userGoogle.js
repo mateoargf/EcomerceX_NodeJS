@@ -4,8 +4,7 @@ const Schema=mongoose.Schema
 const usergoogleShema=new Schema({
     username:{
         type:String,
-        required: true,
-        unique: true
+        required: true
     },
     googleId:{
         type:String,

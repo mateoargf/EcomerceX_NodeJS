@@ -134,7 +134,7 @@ const getGoogleCallback = (req, res, next) => {
          if (err) {
            return next(err);
          }
-         
+         console.log(user)
           res.render('pages/googleCallback', { user });
        });
      })(req, res, next);
