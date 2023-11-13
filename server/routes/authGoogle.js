@@ -1,19 +1,19 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-const autorizo=(req,res,next)=>{
-    console.log("hola")
+// const autorizo=(req,res,next)=>{
+//     console.log("hola")
+//     console.log("req.user autorizo",req.user)
+// if(!req.user){
+//     res.redirect('/auth/register')
+// }else{
+//     next()
+// }
+// }
 
-if(!req.user){
-    res.redirect('/auth/login')
-}else{
-    next()
-}
-}
+// router.get('/', autorizo,(req,res)=>{
 
-router.get('/', autorizo,(req,res)=>{
-
-    res.render('profile',{user:req.user})
-})
+//     res.render('/profile',{user:req.user})
+// })
 
 
-module.exports=router
+// module.exports=router

@@ -1,102 +1,144 @@
 const passport=require('passport')
 const GoogleStrategy=require('passport-google-oauth20').Strategy
 const keys=require('./keysGoogle')
-const User=require('../models/userGoogle')
+const UserGoogle=require('./../models/userGoogle');
+// const mongoose = require('mongoose');
 
-passport.serializeUser((user,done)=>{
-console.log('serializeUser',user)
-    done(null,user.id)
-})
-
-passport.deserializeUser((id,done)=>{
-    console.log('deserializeUser',id)
-    User.findById(id).then((user)=>{
-        done(null,user)
-    }).catch((error)=>{
-        console.log('error al buscar el usuario en la base de datos',error)
-        done(error,null)
-    })
-
-})
 
 
 
 //REGISTRO CON GOOGLE
-passport.use(
-    'registroGoogle',
-    new GoogleStrategy({
+passport.use('registroGoogle',new GoogleStrategy({
         //opciones de estrategia de google
         clientID:keys.google.clientID,
         clientSecret:keys.google.clientSecret,
         callbackURL:'http://localhost:3600/user/auth/google/callback',
-        scope:['profile','email']
-    }, 
-    async(profile,done)=>{
-        try{
-        //funcion callback passport
-        //array de scopes
-        console.log(profile.id)
-        //guardar el usuario en la base de datos
-
+        scope: ['email', 'profile']
+        
+    }, async(accessToken,refreshToken,profile,done)=>{
+        console.log("profile",profile)
+        console.log(profile.emails[0].value)
+        try {   
+            // Verificar si el usuario ya existe en tu base de datos por su correo electrónico
+            username=profile.displayName;
+            email=profile.emails[0].value;
+            googleId=profile.id;
+           console.log('username',username,'email',email,'googleId',googleId,'profile',profile)
+            const user = await UserGoogle.findOne({ email: profile.emails[0].value });
     
-
-        //el usuario esta ya registrado con ese email
-        const eldato=await User.findOne({googleId:profile.id});
-          
-
-            if(eldato){
-                        console.log('el usuario ya esta registrado en mi base')
-                        done(null,eldato)
+            if (!user) {
+              // Si el usuario no existe, créalo en tu base de datos
+                const newUser=await UserGoogle.create({ username,email,googleId});
+                // res.redirect('/user/registroExitoso')
+                done(null,newUser)
             }else{
-                   //el usuario no esta registrado en mi base
-                    const newUser = new User({
-                        // googleId:profile.id,
-                        username:profile.displayName,
-                        email:profile.emails[0].value,
-                    })
-                    const Usuarioguardado= await newUser.save();
-                    console.log('el usuario se creo con exito',Usuarioguardado)
-                    done(null,Usuarioguardado)
-                        
-                    
+                done(null,user)
+                
             }
-        } catch(error){
-            console.log('error al buscar el usuario en la base de datos',error)
-            done(error,null);}
-        })
-    )
+        
+        }catch(error){
+            console.log('error al guardar el usuario en la base de datos',error)
+            done(error,null);
+        }
+    }));
 
-
-passport.use(
-    'loginGoogle',
-    new GoogleStrategy({
-        //opciones de estrategia de google
-        clientID:keys.google.clientID,
-        clientSecret:keys.google.clientSecret,
-        callbackURL:'http://localhost:3600/user/auth/google/callback',
-        scope:['profile','email']
-    }, 
-    (profile,done)=>{
-        //funcion callback passport
-
-
-        console.log(profile)
-        //el usuario esta ya registrado con ese email
-        User.findOne({googleId:profile.id}).then((eldato)=>{
-            if(eldato){
-                        console.log('el usuario ya esta registrado iniciar sesion')
-                        done(null,eldato)
-            }else{
-                   done(null,false)
+             
+             
+        //      user = await User.create({
+        //         googleId: profile.id,
+        //         userName: profile.displayName,
+        //         email: profile.emails[0].value,
+        //         // Otros datos necesarios
+        //       });
+        //     }
+        //     console.log("user",user)
+        //     // Devuelve el usuario
+        //     done(null, user);
+        //   } catch (error) {
+        //     done(error, null);
+        //   }}));
+          passport.serializeUser((user,done)=>{
+            console.log('serializeUser',user)
+                done(null,user.id)
+            })
+           
+            passport.deserializeUser((id,done)=>{
+                
+               User.findById({_id:id})
+               .then((user)=>{
+                   if(!user){
+                       return done(new Error('usuario no encontrado'),null)
+                  }
+                   done(null,user);
+                })
+              .catch((error)=>{
+                    console.log('error al buscar el usuario en la base de datos',error)
+                    done(error,null)
+               })
+            
             }
-        }).catch((error)=>{
-            console.log('error al buscar el usuario en la base de datos',error)
-            done(error,null)
-        })
+            )      
+
+       
+  
+//     async(accessToken,refreshToken,profile,done)=>{
+//         console.log("profile",profile)
+
+//         try{
+//         //el usuario esta ya registrado con ese email
+//         const eldato=await User.findOne({googleId:profile.id});
+
+//             if(eldato){
+//                 console.log('el usuario ya esta registrado en mi base')
+//                 done(null,eldato)
+//             }else{
+//                 const newUser = new User({
+//                 username:profile.displayName,
+//                 email:profile.emails[0].value,});
+//                 const usuarioGuardado= await newUser.save();
+//                 console.log('el usuario se creo con exito',usuarioGuardado)
+//                 done(null,usuarioGuardado);
+//                 }
+//         }catch(error){
+//                 console.log('error al guardar el usuario en la base de datos',error)
+//                 done(error,null);
+//             }
+//     })
+// );
+
+
+
+// passport.use(
+//     'loginGoogle',
+//     new GoogleStrategy({
+//         //opciones de estrategia de google
+//         clientID:keys.google.clientID,
+//         clientSecret:keys.google.clientSecret,
+//         callbackURL:'http://localhost:3600/user/auth/google/callback',
+//         scope:['profile','email']
+//     }, 
+//     (profile,done)=>{
+//         //funcion callback passport
+
+
+//         console.log(profile)
+//         //el usuario esta ya registrado con ese email
+//         User.findOne({googleId:profile.id}).then((eldato)=>{
+//             if(eldato){
+//                         console.log('el usuario ya esta registrado iniciar sesion')
+//                         done(null,eldato)
+//             }else{
+//                    done(null,false)
+//             }
+//         }).catch((error)=>{
+//             console.log('error al buscar el usuario en la base de datos',error)
+//             done(error,null)
+//         })
 
 
        
     
-    })
-)
+//     })
+// )
 
+module.exports = {passport} ;

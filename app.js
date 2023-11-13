@@ -10,6 +10,7 @@ const errRouter = require('./server/routes/err')
 const path = require('path')
 const layouts = require('express-ejs-layouts')
 app.use(express.json())
+
 app.use(express.urlencoded({ extended: true }))
 const db = process.env.MONGO_URL
 const unPuerto = process.env.PUERTO

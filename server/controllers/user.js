@@ -1,22 +1,23 @@
 // bcrypt
 const bcrypt = require('bcrypt')
-// modelos
+// modelos usuario
 const Usuarios = require('../models/usuarios')
+// modelos usuario google
+const userGoogle = require('./../models/userGoogle')
 // passport
 const passport = require('passport')
-// google
+// oauth20
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// keys
-const keys = require('./../config/configGoogle');
-// flash
+// const {  User } = require('./../config/configGoogle.js');
+// const { google } = require('googleapis');
+// const {OAuth2Client} = require('google-auth-library');
+const key = require('./../config/keysGoogle.js');
 
-
-
-//validacionpassword
+//validacionpassword-email
 const { validarContrasena } = require('./../utilsBack/validacionContrasena');
-//validacionemail
 const { validarMail } = require('./../utilsBack/validacionMail');
 
+// GET y POST
 const getFormulario = (req, res) => {
      const activeTab = req.query.activeTab ;//si no hay query, login
      if (activeTab === 'login') {
@@ -32,47 +33,11 @@ const getFormulario = (req, res) => {
                activeTab: 'login', 
                errorMessage: req.flash('error') })
           }
-     }
-
-//LOGUEO Y REGISTRO EXITOSO
-const getRegistroExitoso = (req, res) => {res.status(200).render('pages/registroExitoso');}
-const getLogueoExitoso = (req, res) => {res.status(200).render('pages/logueoExitoso');}
-
-// Formularios registro y login
-
-
-
-
-//GOOGLE
-const getFormularioGoogleLogin = (req, res) => {
-     res.render('login', { user: req.user })
-}
-
-const getFormularioGoogleLogout = (req, res) => {
-     req.logOut()
-     res.redirect('/')
-}
-
-const getGoogleRedirect = async (req, res) => {
-    
-     // res.status(200).render('pages/registroExitoso');
-}
-
-const getGoogleCallback = async (req, res) => {
-    await passport.authenticate('registroGoogle', {
-         failureRedirect: '/err/404',
-     })(req, res, () => {
-          console.log("req.user",req.body.user)
-         res.redirect('/RegistroExitoso');
-     });
- };
-
-// controladores: POST
-
+     };
 const postFormulario = async (req, res) => {
      //destructuring del modelo usuarios
 
-    console.log("req.body",req.body)
+     console.log("req.body",req.body)
      //activeTab es el nombre de la pestaña activa
      const activeTab = req.body.activeTab ;//si no hay query, login
      console.log("activeTab",activeTab)
@@ -134,8 +99,8 @@ const postFormulario = async (req, res) => {
                req.login(user, (err) => {
                     if (err) {
                          console.log("error al iniciar sesion",err);
-                        req.flash('error', 'Error al iniciar sesión');
-                        return res.redirect('/user/login');
+                         req.flash('error', 'Error al iniciar sesión');
+                         return res.redirect('/user/login');
                     }
                console.log("login exitoso");
                return res.redirect('/user/loginExitoso');
@@ -147,23 +112,47 @@ const postFormulario = async (req, res) => {
                return res.redirect('/user/registro#login');
           }
      }
-};
+     };
+     
+//logueo y registro exitoso
+const getRegistroExitoso = (req, res) => {res.status(200).render('pages/registroExitoso');}
+const getLogueoExitoso = (req, res) => {res.status(200).render('pages/logueoExitoso');}
 
 
-const getAuthGoogle = (req, res, next) => passport.authenticate('registroGoogle', {
-     scope: ['profile', 'email'],
- })(req, res, next);
+const getAuthGoogle  = passport.authenticate('registroGoogle', { scope: ['profile', 'email'] });
+
+const getGoogleCallback = (req, res, next) => {
+     passport.authenticate('registroGoogle', (err, user, info) => {
+       // Aquí puedes manejar la redirección después de la autenticación de Google
+       if (err) {
+         return next(err);
+       }
+       if (!user) {
+         return res.redirect('/user/not-authorized');
+       }
+       req.logIn(user, (err) => {
+         if (err) {
+           return next(err);
+         }
+         
+          res.render('pages/googleCallback', { user });
+       });
+     })(req, res, next);
+   }; 
+
+   
 
 
 module.exports = {
-     getFormularioGoogleLogin,
-     getFormularioGoogleLogout,
-     getGoogleRedirect,
+     // getFormularioGoogleLogin,
+     // getFormularioGoogleLogout,
      getGoogleCallback,
      getAuthGoogle,
+
      postFormulario,
      getFormulario,
      getLogueoExitoso,
      getRegistroExitoso,
+     
     
 }

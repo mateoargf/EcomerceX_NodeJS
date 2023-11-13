@@ -9,9 +9,7 @@ const getAllProduct = (req, res) => {
 const getAllGroup = (req, res) => {
      res.status(200).render('pages/productGroup')
 }
-// const getMoreFrom = (req, res) => {
-//      res.status(200).render('pages/moreFrom')
-// }
+
 const getCheckPage = (req, res) => {
      res.status(200).render('pages/checkPage')
 }
