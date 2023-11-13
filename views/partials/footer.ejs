@@ -3,7 +3,7 @@
 
           <div class="infoFooter">
 
-               <div class="logo">
+               <div class="logo" id="footerLink">
                     <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png" alt="logo">
                     <p>X</p>
                </div>
@@ -99,6 +99,7 @@
 .logo {
      display: flex;
      align-items: center;
+     cursor: pointer;
 }
 
 .logo img {
@@ -310,3 +311,14 @@
      }
 }
 </style>
+
+<script>
+     // agrega un evento click que vuelva al inicio
+      document.getElementById('footerLink').addEventListener('click', (e) => {
+          // Evita que el enlace siga normalmente
+          e.preventDefault()
+  
+          // Redirige a '/'
+          window.location.href="/"
+      })
+ </script>

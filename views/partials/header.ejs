@@ -10,7 +10,7 @@
         </a>
     </div>
     <div class="headerDiv" data-aos="fade-left" data-aos-once="true">
-        <div class="containerLogo">
+        <div class="containerLogo" id="headerLink">
             <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png" alt="logo">
             <p>X</p>
         </div>
@@ -169,7 +169,7 @@
     </div>
 </header>
 <style>
-   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
     * {
         margin: 0;
@@ -354,6 +354,7 @@
         align-items: center;
         justify-content: space-between;
         font-weight: 600;
+        cursor: pointer;
     }
 
     .containerLogo img {
@@ -557,7 +558,7 @@
         right: 0;
         bottom: 0;
         background-color: #fff;
-        color:black;
+        color: black;
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s ease;
@@ -873,7 +874,7 @@ fin de la ediccion del header*/
             display: none;
         }
 
-        .headerDiv{
+        .headerDiv {
             width: 95vw;
         }
     }
@@ -911,7 +912,7 @@ fin de la ediccion del header*/
         }
         */
 
-        .headerDiv{
+        .headerDiv {
             width: 95vw;
         }
 
@@ -933,7 +934,17 @@ fin de la ediccion del header*/
 
 
     @media screen and (min-width:1441px) and (max-width:1920px) {}
+</style>
 
-    </style>
+<script>
+    // agrega un evento click que vuelva al inicio
+     document.getElementById('headerLink').addEventListener('click', (e) => {
+         // Evita que el enlace siga normalmente
+         e.preventDefault()
+ 
+         // Redirige a '/'
+         window.location.href="/"
+     })
+</script>
 <script src="./../pages/scripts/bag.js"></script>
 <script src="./../pages/scripts/hamburguesa.js"></script>
