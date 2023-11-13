@@ -124,9 +124,7 @@ const getAuthGoogle  = passport.authenticate('registroGoogle', { scope: ['profil
 const getGoogleCallback = (req, res, next) => {
      const action = req.query.action;
      console.log("action",action)
-//      const query = url.parse(req.url, true).query;
-//     console.log("query",query)
-//      const action = query.action; 
+
      passport.authenticate('registroGoogle', (err, user, info) => {
        // Aquí puedes manejar la redirección después de la autenticación de Google
        if (err) {
