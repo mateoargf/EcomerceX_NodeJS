@@ -17,31 +17,43 @@ passport.use('registroGoogle',new GoogleStrategy({
         
     }, async(accessToken,refreshToken,profile,done)=>{
         console.log("profile",profile)
-        console.log(profile.emails[0].value)
+        let nuevoUsuario=false;
+        
         try {   
             // Verificar si el usuario ya existe en tu base de datos por su correo electrónico
-            username=profile.displayName;
-            email=profile.emails[0].value;
+            
             googleId=profile.id;
-           console.log('username',username,'email',email,'googleId',googleId,'profile',profile)
-            const user = await UserGoogle.findOne({ email: profile.emails[0].value });
-    
+            const user = await UserGoogle.findOne({googleId});
+            //nuevousuario por defecto false
+            
+
             if (!user) {
-              // Si el usuario no existe, créalo en tu base de datos
-                const newUser=await UserGoogle.create({ username,email,googleId});
+              // Si el mail no existe, créalo en tu base de datos
+                const newUser=await UserGoogle.create({ 
+                    username:profile.displayName,
+                    email:profile.emails[0].value,
+                    googleId
+                });
+                nuevoUsuario=true;
                 // res.redirect('/user/registroExitoso')
                 console.log('el usuario se creo con exito',newUser)
-                done(null,newUser)
+                done(null,newUser,{nuevoUsuario})
             }else{
-                done(null,user)
+                //variable resultadobusqueda = a true
+                
+                console.log('el usuario ya esta registrado. iniciar sesion')
+                // res.render('/googleCallback',{resultadoBusqueda:true})
+                console.log('user',user)
+                nuevoUsuario=false;
+                done(null,user,{nuevoUsuario})
                 
             }
         
         }catch(error){
             console.log('error al guardar el usuario en la base de datos',error)
-            done(error,null);
+            done(error,null,{nuevoUsuario:null})};
         }
-    }));
+    ));
 
              
              

@@ -35,8 +35,9 @@
                            <span class="segunda-linea"></span>
                          </div>
                          <div class="container-google-button">
-                                   <button class="boton-google"> 
-                                        <a href="/user/auth/google"> 
+                                   <button class="boton-google googleButtonLogin"> 
+                                        
+                                        <a href="/user/auth/google?action=login"> 
                                              <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="google" width="20px" height="20px">  
                                              <span class="">Loguearse con Google</span>
                                         </a>
@@ -79,8 +80,9 @@
                            <span class="segunda-linea"></span>
                          </div>
                          <div class="container-google-button">
-                                   <button class="boton-google"> 
-                                        <a href="/user/auth/google"> 
+                                   <button class="boton-google googleButtonRegister"> 
+                                        
+                                        <a href="/user/auth/google?action=register"> 
                                              <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="google" width="20px" height="20px">  
                                              <span class="">Registrarse con Google</span>
                                         </a>
@@ -95,6 +97,13 @@
      </div> 
 
 </main>
+
+<script>
+     document.getElementById("googleButtonRegister").addEventListener("click", function() {
+         // Redirigir a la URL de Google con el query string ?action=register
+         window.location.href = "/user/auth/google?action=register";
+     });
+     </script>
 
    <script>
     document.addEventListener("DOMContentLoaded", function() {

@@ -1,7 +1,11 @@
  
 <main>
+    <% if (message) { %>
+        <div class="mensaje"><%= message %></div>
+    <% } %>
 <div id="modal" class="modal">
 <div class="modal-content">
+     <h1><%= user.username %> </h1>
      <h2>¡Registro Exitoso!</h2>
      <p>Tu cuenta se ha registrado correctamente.</p>
      

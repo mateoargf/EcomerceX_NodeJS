@@ -9,9 +9,9 @@ const passport = require('passport')
 // oauth20
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const {  User } = require('./../config/configGoogle.js');
-// const { google } = require('googleapis');
 // const {OAuth2Client} = require('google-auth-library');
 const key = require('./../config/keysGoogle.js');
+const url = require('url');
 
 //validacionpassword-email
 const { validarContrasena } = require('./../utilsBack/validacionContrasena');
@@ -122,21 +122,39 @@ const getLogueoExitoso = (req, res) => {res.status(200).render('pages/logueoExit
 const getAuthGoogle  = passport.authenticate('registroGoogle', { scope: ['profile', 'email'] });
 
 const getGoogleCallback = (req, res, next) => {
+     const action = req.query.action;
+     console.log("action",action)
+//      const query = url.parse(req.url, true).query;
+//     console.log("query",query)
+//      const action = query.action; 
      passport.authenticate('registroGoogle', (err, user, info) => {
        // Aquí puedes manejar la redirección después de la autenticación de Google
        if (err) {
          return next(err);
        }
-       if (!user) {
-         return res.redirect('/user/not-authorized');
-       }
-       req.logIn(user, (err) => {
-         if (err) {
-           return next(err);
-         }
-         console.log(user)
-          res.render('pages/googleCallback', { user });
-       });
+       //esNuevoUsuario = info
+         console.log(info)
+        esNuevoUsuario = info.nuevoUsuario
+       if (esNuevoUsuario===false) {
+          if (action === 'login') {
+               console.log("action user y menssage",action,user,esNuevoUsuario)
+               return res.render('pages/registroExitoso', { message: 'No estaba registrado. Se creó usuario' ,user});
+             } else {
+               console.log("action user y menssage",action,user,esNuevoUsuario)
+               return res.render('pages/registroExitoso',{ message: '' ,user});
+             }
+     }else{
+          if (action === 'login') {
+               console.log("action user y menssage",action,user,esNuevoUsuario)
+               return res.render('pages/logueoExitoso',{ message: '' , user});
+               } else if(action === 'register'){
+                    console.log("action user y menssage",action,user,esNuevoUsuario)
+               return res.render('pages/logueoExitoso', { message: 'Ya existía y se logueó',user});
+               }
+          }
+          
+        
+      console.log("no paso nada")       
      })(req, res, next);
    }; 
 

@@ -4,3 +4,20 @@
 <p><strong>Correo:</strong> <%= user.email %></p>
 <p><strong>GoogleId:</strong> <%= user.googleId %></p>
 </main>
+
+<% if (error) { %>
+    <div class="error-message">
+        Usuario ya creado. Redirigiendo en <span id="countdown">5</span> segundos.
+    </div>
+    <script>
+        let countdown = 5;
+        const interval = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown === 0) {
+                clearInterval(interval);
+                window.location.href = '/user/registro'; // Redirección
+            }
+        }, 1000);
+    </script>
+<% } %>

@@ -1,9 +1,14 @@
  
 <main>
+    <% if (message) { %>
+        <div class="mensaje"><%= message %></div>
+    <% } %>
     <div id="modal" class="modal">
     <div class="modal-content">
+         <h1><%= user.username %> </h1>
          <h2>Logueo Exitoso!</h2>
-         <p>Estas conectado correctamente</p>
+         <p>Te logueaste correctamente.</p>
+         
     </div>
     </div>
     </main>
