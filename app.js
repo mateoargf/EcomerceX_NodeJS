@@ -52,7 +52,7 @@ app.use(passport.session({
      secret: secretPassport,
      resave: false,
      saveUninitialized: true,
-     cookie: { maxAge: 24 * 60 * 60 * 1000 } 
+     cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }))
 
 
@@ -72,6 +72,11 @@ app.use('/prod', productsRouter)
 
 // renderizado de todas las webs respecto a usuarios
 app.use('/user', userRouter)
+
+// prueba ejs
+app.get('/ayrton', (req, res) => {
+     res.status(200).render('pages/pruebaAyrton');
+});
 
 
 
