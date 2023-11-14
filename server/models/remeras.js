@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {Schema} = mongoose
+const { Schema } = mongoose
 
 const remeraSchema = new Schema({
   marca: {
@@ -22,7 +22,6 @@ const remeraSchema = new Schema({
     },
   },
   talle: [
-
     {
       type: String,
       enum: ['S', 'M', 'L', 'XL'],
