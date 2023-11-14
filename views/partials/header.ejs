@@ -51,7 +51,7 @@
                     <input type="text" name="" id="" placeholder="Busqueda">
                 </form>
             </div>
-            <div class="bag">
+            <!-- <div class="bag">
                 <button id="openBag"><i class="bi bi-bag iconBag"></i></button>
             </div>
             <div class="bagMenu" id="menuBag">
@@ -88,7 +88,31 @@
                 <div class="bagContainerFooter">
                     <button>Comprar Ahora</button>
                 </div>
+            </div> -->
+
+            <div class="bag">
+                <button id="carritoBtn"><i class="bi bi-bag iconBag"></i></button>
             </div>
+
+            <div id="carritoMenu">
+                <h2>Carrito de Compras</h2>
+        
+                <ul id="listaCarrito"></ul>
+        
+                <p id="total">Total: $0</p>
+        
+                <div id="confirmacionCompra">
+                    <p>¿Quiere confirmar su compra?</p>
+                    <button id="siBtn">SI</button>
+                    <button id="noBtn">NO</button>
+                </div>
+        
+                <div class="containerBtnMenu">
+                    <button id="comprarAhoraBtn">Comprar Ahora</button>
+                    <button id="cerrarCarritoBtn"><i class="bi bi-x-lg X"></i></button>
+                </div>
+            </div> 
+
             <div class="menuHamburger">
                 <button id="openHamburger"><i class="bi bi-list iconMenu"></i></button>
             </div>
@@ -728,7 +752,230 @@
     /*fin de la ediccion del "footer" del munu hamburguesa*/
 
     /*Ediccion del boton del carrito*/
-    .bag>button {
+
+#carritoBtn{
+    padding: 3px 10px;
+    background: transparent;
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.iconBag{
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+#carritoBtn .iconBag:hover{
+  color: #b8b8b8;
+}
+
+#carritoMenu{
+    position: fixed;
+    top: 0;/*60px*/
+    right: 0; /*20*/
+    /* bottom: 0; */
+    padding: 25px;
+    background: #000;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0, .5);
+    display: none;
+    transition: all 0.5s ease;
+}
+
+#carritoMenu h2{
+    color: #fff;
+}
+
+ul li{
+    color: #fff;
+}
+
+ul li button{
+    background: #E32B2B;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ul li button:hover{
+    background: #fff;
+    color: #E32B2B;
+    border: none;
+}
+
+#listaCarrito{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 15px 0;
+    width: 100%;
+}
+
+#listaCarrito li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#total{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #E32B2B;   
+    padding: 15px 0;
+}
+
+#confirmacionCompra {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    text-align: center;
+}
+
+#confirmacionCompra button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.containerBtnMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#comprarAhoraBtn{
+    height: 40px;
+    min-width: 130px;
+    padding: 5px 25px;
+    background: #000;
+    position: relative;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+#comprarAhoraBtn::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+#comprarAhoraBtn:hover{
+    color: #545454;
+}
+
+#comprarAhoraBtn:hover::after{
+    border: 1px solid #545454;
+}
+
+#comprarAhoraBtn:focus{
+    border: 1px solid #000;
+}
+
+#cerrarCarritoBtn{ 
+    width: 90px; 
+    height: 90px; 
+    background-color: transparent;
+    color: #fff;
+    border: none; 
+    border-radius: 50%; 
+    text-align: center; 
+    font-size: 1.5em; 
+    line-height: 90px; 
+    cursor: pointer;  
+    transition: all 0.3s ease;  
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+
+#siBtn{
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#siBtn:hover{
+    background: #000;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#noBtn{
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#noBtn:hover{
+    background: #000;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#mensajeAgregado {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: none;
+    text-align: center;
+}
+/*
+#mensaje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    text-align: center;
+}
+*/
+    /* .bag>button {
         padding: 3px 10px;
         background-color: transparent;
         border: 2px solid #3a3a3a;
@@ -766,6 +1013,7 @@
     }
 
     /*menu bag*/
+    /*
     .bagMenu {
         display: flex;
         flex-direction: column;
@@ -860,7 +1108,7 @@
         background: #2a2a2a;
         color: #fff;
         transition: all 0.3s ease;
-    }
+    } */
 
     /*fin de la ediccion del boton bag y 
 fin de la ediccion del header*/
