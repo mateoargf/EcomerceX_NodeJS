@@ -844,6 +844,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmacionCompra = document.getElementById('confirmacionCompra');
     const siBtn = document.getElementById('siBtn');
     const noBtn = document.getElementById('noBtn');
+    let total = 0; // Variable para almacenar el total
 
 
     function mostrarMensaje(mensaje) {
@@ -863,6 +864,11 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function(event) {
             const tresZonaUno = event.currentTarget.closest('.producto').querySelector('.tresZonaUno h2').textContent;
             const precio = event.currentTarget.closest('.producto').querySelector('.precio h3').textContent;
+
+            // Convertir el precio a un número y sumarlo al total
+            const precioNumerico = parseFloat(precio.replace('$', ''));
+            total += precioNumerico;
+            
             
             // Agregar al carrito
             const producto = document.createElement('div');
@@ -872,22 +878,27 @@ document.addEventListener('DOMContentLoaded', function() {
             eliminarBtn.textContent = 'Eliminar Producto';
             eliminarBtn.addEventListener('click', function() {
                 producto.remove();
+                // Restar el precio del producto eliminado del total
+                total -= precioNumerico;
+                // Actualizar el elemento del DOM que muestra el total al eliminar un producto
+                actualizarTotal();
             });
 
             producto.appendChild(eliminarBtn);
             listaCarrito.appendChild(producto);
 
-            // // Mostrar mensaje de producto agregado
-            // mensajeAgregado.classList.remove('hidden');
-
-            // // Ocultar mensaje después de 2 segundos
-            // setTimeout(function() {
-            //     mensajeAgregado.classList.add('hidden');
-            // }, 2000);
 
             mostrarMensaje("Producto agregado al carrito")
+
+            actualizarTotal();
         });
     });
+
+    function actualizarTotal() {
+        // Actualizar el elemento del DOM que muestra el total
+        const totalElement = document.getElementById('total');
+        totalElement.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total actualizado
+    }
 
     // Funcionalidad para el botón SI de confirmación de compra
     siBtn.addEventListener('click', function() {

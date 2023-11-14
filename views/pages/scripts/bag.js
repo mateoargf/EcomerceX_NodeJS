@@ -17,10 +17,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     comprarAhoraBtn.addEventListener("click", function() {
         if (total === 0) {
-            alert("Usted no tiene ningún producto, por favor agregue uno.");
+            mostrarMensaje("Usted no tiene ningún producto, por favor agregue uno.");
         } else {
             confirmacionCompra.style.display = "block";
         }
     });
+
+
+    function mostrarMensaje(mensaje) {
+        mensajeAgregado.textContent = mensaje;
+        mensajeAgregado.style.display = "block";
+
+        setTimeout(function() {
+            mensajeAgregado.style.display = "none";
+        }, 800);
+    }
+
+    function resetearTotal() {
+        total = 0;
+        actualizarTotal();
+    }
+
+    function actualizarTotal() {
+        totalElement.textContent = "Total: $" + total;
+    }
 });
+
+
 
