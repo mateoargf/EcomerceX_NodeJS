@@ -19,7 +19,7 @@
             </div>
             <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="Hydro_Zapatillas" class="catalogoDos" data-aos="fade-up" data-aos-delay="1100" data-aos-once="true">
             <div class="catalogoTres" data-aos="fade-up-left" data-aos-delay="1100" data-aos-once="true">
-                <div class="tresZonaUno">
+                <div class="tresZonaUno producto">
                     <div class="rate ocultarPhone">
                         <div class="descripcionRate">
                             <p>Hombres</p>
@@ -147,16 +147,36 @@
                     </a>
                 </div>
                 <div class="catalogoAgregar">
-                    <button>
+                    <button class="agregarBtn">
                         <h3>CARRITO</h3>
-                    </button><button>
+                    </button>
+                    <div id="mensajeAgregado" class="hidden">Producto agregado</div>
+                    <button>
                         <h3>SEGUIR</h3>
                     </button>
                 </div>
             </div>
         </div>
     </section>
+
     <style>
+        #mensajeAgregado {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: none;
+    text-align: center;
+}
+
+
         main {
             display: flex;
             flex-direction: column;
@@ -708,3 +728,55 @@
 
         @media screen and (min-width:1440px) and (max-width:1920px) {}
     </style>
+
+<script>
+       
+
+   document.addEventListener("DOMContentLoaded",function(){
+
+    const mensajeAgregado = document.getElementById("mensajeAgregado");
+
+
+    function mostrarMensaje(mensaje) {
+        mensajeAgregado.textContent = mensaje;
+        mensajeAgregado.style.display = "block";
+
+        setTimeout(function() {
+            mensajeAgregado.style.display = "none";
+        }, 800);
+    }
+
+    const productos = document.querySelectorAll(".tresZonaUno");
+    const catalogosAgregar = document.querySelectorAll(".catalogoAgregar");
+
+    catalogosAgregar.forEach(function(catalogosAgregar) {
+        const agregarBtn = catalogosAgregar.querySelector(".agregarBtn");
+        // const nombre = producto.querySelector("h2").textContent;
+        // const precio = parseFloat(producto.querySelector("p").textContent.replace("$", ""));//("Precio $, ...")
+        
+        agregarBtn.addEventListener("click", function() {
+            // const nuevoItem = document.createElement("li");
+            // nuevoItem.textContent = `${nombre} - $${precio}`;
+
+            // Agregar botón para eliminar producto
+            // const eliminarBtn = document.createElement("button");
+            // eliminarBtn.textContent = "Eliminar Producto";
+            // eliminarBtn.addEventListener("click", function() {
+            //     listaCarrito.removeChild(nuevoItem);
+            //     // Restar el precio del producto al total
+            //     total -= precio;
+            //     actualizarTotal();
+            // });
+            // nuevoItem.appendChild(eliminarBtn);
+
+            // listaCarrito.appendChild(nuevoItem);
+
+            // Sumar el precio del producto al total
+            // total += precio;
+            // actualizarTotal();
+
+            mostrarMensaje("Producto agregado al carrito");
+        });
+    });
+   })
+</script>
