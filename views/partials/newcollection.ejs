@@ -23,7 +23,21 @@
 
         </div>
 
-                <div class="mainCollection">
+        <div class="mainCollection">
+            <% productos.forEach(producto => { %>
+                <% Object.entries(producto).forEach(([categoria, productosArray]) => { %>
+                    <h2><%= categoria %></h2>
+                    <ul>
+                        <% productosArray.forEach(productoItem => { %>
+                            <li>Marca: <%= productoItem.marca %></li>
+                            <li>Modelo: <%= productoItem.modelo %></li>
+                            <br>
+                        <% }) %>
+                    </ul>
+                <% }) %>
+            <% }) %>
+            
+            
 
                     <div class="productCollectionOne">
 
@@ -190,7 +204,7 @@
                     </div>
 
 
-                </div>
+        </div>
     </section>
     <section id="popularNow section2" class="carrusel ">
         <div class="headerPopular">
