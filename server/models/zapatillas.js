@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose
 
-const shoeSchema = new mongoose.Schema({
+const shoeSchema = new Schema({
   marca: {
     type: String,
     required: true,
@@ -22,10 +23,10 @@ const shoeSchema = new mongoose.Schema({
   },
   talle: [
     {
-    type: String,
-    enum: ['6', '7', '8', '9', '10', '11', '12'],
-    required: true,
-  },
+      type: String,
+      enum: ['6', '7', '8', '9', '10', '11', '12'],
+      required: true,
+    },
   ],
   color: {
     type: String,

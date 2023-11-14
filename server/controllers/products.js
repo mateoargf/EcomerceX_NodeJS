@@ -2,9 +2,17 @@
 const mongoose = require('mongoose')
 // modelos productos
 const Campera = require('../models/camperas')
+const Mochila = require('../models/mochilas')
+const Pantalon = require('../models/pantalones')
+const Remera = require('../models/remeras')
+const Zapatilla = require('../models/zapatillas')
 
 // jsons productos
 const camperaData = require('../jsons/camperas.json')
+const mochilaData = require('../jsons/mochilas.json')
+const pantalonData = require('../jsons/pantalones.json')
+const remeraData = require('../jsons/remeras.json')
+const zapatillaData = require('../jsons/zapatillas.json')
 
 const getHydro = (req, res) => {
      res.status(200).render('pages/hydroShoes')
@@ -12,6 +20,16 @@ const getHydro = (req, res) => {
 
 const getAllProduct = (req, res) => {
      res.status(200).json({ msg: 'probando testeando rutas DOS' })
+}
+
+const getNewCollection = async (req, res) => {
+     // crear primero las colecciones de productos
+     // try {
+     //      const resultado = await Productos.find({})
+     //      res.json(resultado)
+     // } catch (error) {
+     //      console.log(`Error al conectar ${error}`)
+     // }
 }
 
 const getAllGroup = (req, res) => {
@@ -32,26 +50,70 @@ const getCategory = (req, res) => {
 }
 
 // enviamos los productos a la coleccion productos
-const postAllProduct = async(req, res) => {
+const postAllProduct = async (req, res) => {
      // envio camperas
      // try {
      //      const resultado = await Campera.insertMany(camperaData)
      //      console.log(`JSON enviado con éxito ${resultado}`)
      // } catch(error) {
      //      console.log(`Error al enviar los datos ${error}`)
-     // } finally {
-     //      mongoose.disconnect()
      // }
+
+     // envio mochilas
+     // try {
+     //      const resultado = await Mochila.insertMany(mochilaData)
+     //      console.log(`JSON enviado con éxito ${resultado}`)
+     // } catch(error) {
+     //      console.log(`Error al enviar los datos ${error}`)
+     // }
+
+     // envio pantalones
+     // try {
+     //      const resultado = await Pantalon.insertMany(pantalonData)
+     //      console.log(`JSON enviado con éxito ${resultado}`)
+     // } catch(error) {
+     //      console.log(`Error al enviar los datos ${error}`)
+     // }
+
+     // envio remeras
+     // try {
+     //      const resultado = await Remera.insertMany(remeraData)
+     //      console.log(`JSON enviado con éxito ${resultado}`)
+     // } catch(error) {
+     //      console.log(`Error al enviar los datos ${error}`)
+     // }
+
+     // envio zapatillas
+     try {
+          const resultado = await Zapatilla.insertMany(zapatillaData)
+          console.log(`JSON enviado con éxito ${resultado}`)
+     } catch(error) {
+          console.log(`Error al enviar los datos ${error}`)
+     }
+}
+
+// eliminamos productos de la coleccion
+const deleteAllProduct = async (req, res) => {
+     // eliminamos los productos de campera
+     //      try{
+     //           const resultado = await Campera.deleteMany({})
+     //           console.log(`Se eliminó con éxito ${resultado}`)
+     //      }catch(error){
+     //           console.log(`No pudimos eliminar ${error}`)
+     //           res.status(500).json({ error: 'Error interno del servidor' })
+     //      }
 }
 
 module.exports = {
      getAllProduct,
      getHydro,
      getAllGroup,
+     getNewCollection,
      // getMoreFrom,
      getCheckPage,
      getWishList,
      getLogin,
      getCategory,
-     postAllProduct
+     postAllProduct,
+     deleteAllProduct
 }
