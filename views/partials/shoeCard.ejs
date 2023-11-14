@@ -730,112 +730,7 @@
         @media screen and (min-width:1440px) and (max-width:1920px) {}
     </style>
 
-<!-- <script>
-       
-
-document.addEventListener("DOMContentLoaded",function(){
-    const mensajeAgregado = document.getElementById("mensajeAgregado");
-
-
-    function mostrarMensaje(mensaje) {
-        mensajeAgregado.textContent = mensaje;
-        mensajeAgregado.style.display = "block";
-
-        setTimeout(function() {
-            mensajeAgregado.style.display = "none";
-        }, 800);
-    
-    }
-
-    // const titulo = document.querySelectorAll(".tresZonaUno");
-    // const precios= document.querySelectorAll(".precio")
-    const catalogosAgregar = document.querySelectorAll(".catalogoAgregar");
-
-    catalogosAgregar.forEach(function(catalogosAgregar, titulo, precios) {
-        const agregarBtn = catalogosAgregar.querySelector(".agregarBtn");
-        // const nombre = titulo.querySelector("h2").textContent;
-        // const precio = parseFloat(precios.querySelector("h2").textContent.replace("$", ""));//("Precio $, ...")
-        
-        agregarBtn.addEventListener("click", function() {
-            // const nuevoItem = document.createElement("li");
-            // nuevoItem.textContent = `${nombre} - $${precio}`;
-
-            //Agregar botón para eliminar producto
-            // const eliminarBtn = document.createElement("button");
-            // eliminarBtn.textContent = "Eliminar Producto";
-            // eliminarBtn.addEventListener("click", function() {
-            //     listaCarrito.removeChild(nuevoItem);
-            //     // Restar el precio del producto al total
-            //     total -= precio;
-            //     actualizarTotal();
-            // });
-            // nuevoItem.appendChild(eliminarBtn);
-
-            // listaCarrito.appendChild(nuevoItem);
-
-            // //Sumar el precio del producto al total
-            // total += precio;
-            // actualizarTotal();
-
-            mostrarMensaje("Producto agregado al carrito");
-        });
-    });
-})
-
-
-</script> -->
-
 <script>
-    // Este script deberá estar incluido en la parte correspondiente de tu archivo productos.ejs
-// document.addEventListener('DOMContentLoaded', function() {
-//     const agregarBtns = document.querySelectorAll('.agregarBtn');
-//     const mensajeAgregado = document.getElementById('mensajeAgregado');
-//     const listaCarrito = document.getElementById('listaCarrito');
-//     const confirmacionCompra = document.getElementById('confirmacionCompra');
-//     const siBtn = document.getElementById('siBtn');
-//     const noBtn = document.getElementById('noBtn');
-
-//     agregarBtns.forEach(btn => {
-//         btn.addEventListener('click', function(event) {
-//             const nombreProducto = event.target.parentElement.querySelectorAll('.tresZonaUno h2').textContent;
-//             const precioProducto = event.target.parentElement.querySelectorAll('.precio h3').textContent;
-            
-//             // Agregar al carrito
-//             const producto = document.createElement('div');
-//             producto.innerHTML = `<p>${nombreProducto} - ${precioProducto}</p>`;
-            
-//             const eliminarBtn = document.createElement('button');
-//             eliminarBtn.textContent = 'Eliminar Producto';
-//             eliminarBtn.addEventListener('click', function() {
-//                 producto.remove();
-//             });
-
-//             producto.appendChild(eliminarBtn);
-//             listaCarrito.appendChild(producto);
-
-//             // Mostrar mensaje de producto agregado
-//             mensajeAgregado.classList.remove('hidden');
-
-//             // Ocultar mensaje después de 2 segundos
-//             setTimeout(function() {
-//                 mensajeAgregado.classList.add('hidden');
-//             }, 2000);
-//         });
-//     });
-
-//     // Funcionalidad para el botón SI de confirmación de compra
-//     siBtn.addEventListener('click', function() {
-//         // Redireccionar a otra página al hacer clic en SI
-//         // window.location.href = 'https://www.google.com'; // Redireccionar a Google
-//         // Coloca la URL a la que quieres redirigir en lugar de 'https://www.google.com'
-//     });
-
-//     // Funcionalidad para el botón NO de confirmación de compra
-//     noBtn.addEventListener('click', function() {
-//         // Ocultar el div con ID confirmacionCompra al hacer clic en NO
-//         confirmacionCompra.style.display = 'none';
-//     });
-// });
 
 document.addEventListener('DOMContentLoaded', function() {
     const agregarBtns = document.querySelectorAll('.agregarBtn');
@@ -913,7 +808,4 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmacionCompra.style.display = 'none';
     });
 });
-
-
-
 </script>
