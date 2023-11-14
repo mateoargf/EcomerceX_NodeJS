@@ -57,7 +57,7 @@ app.use(passport.session({
 
 
 // para layouts
-app.set('layout', 'layouts/layout')
+app.set('layout', './layouts/layout')
 app.use(layouts)
 
 app.get('/', (req, res) => {

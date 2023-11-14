@@ -1,5 +1,7 @@
 // usamos propiedades de mongoose para enviar, actualizar, obtener o eliminar datos de la db
 const mongoose = require('mongoose')
+// accede a rutas de archivos
+const path = require('path')
 // modelos productos
 const Campera = require('../models/camperas')
 const Mochila = require('../models/mochilas')
@@ -18,8 +20,31 @@ const getHydro = (req, res) => {
      res.status(200).render('pages/hydroShoes')
 }
 
-const getAllProduct = (req, res) => {
-     res.status(200).json({ msg: 'probando testeando rutas DOS' })
+const getAllProduct = async (req, res) => {
+     // crear primero las colecciones de productos
+     try {
+          // Obtener todos los productos de cada colección
+          const camperas = await Campera.find({});
+          const mochilas = await Mochila.find({});
+          const pantalones = await Pantalon.find({});
+          const remeras = await Remera.find({});
+          const zapatillas = await Zapatilla.find({});
+
+          // Destructuring de los atributos
+          const productos = {
+               allCamperas: camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               allMochilas: mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones })),
+               allPantalones: pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               allRemeras: remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               allZapatillas: zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+          };
+          const newCollectionPath = path.join(__dirname, '../../views/partials/newCollection')
+          res.render(newCollectionPath, { productos })
+
+     } catch (error) {
+          console.log(`Error al conectar ${error}`)
+          res.status(500).json({ error: 'Error al obtener productos' })
+     }
 }
 
 const getNewCollection = async (req, res) => {
@@ -84,12 +109,12 @@ const postAllProduct = async (req, res) => {
      // }
 
      // envio zapatillas
-     try {
-          const resultado = await Zapatilla.insertMany(zapatillaData)
-          console.log(`JSON enviado con éxito ${resultado}`)
-     } catch(error) {
-          console.log(`Error al enviar los datos ${error}`)
-     }
+     // try {
+     //      const resultado = await Zapatilla.insertMany(zapatillaData)
+     //      console.log(`JSON enviado con éxito ${resultado}`)
+     // } catch(error) {
+     //      console.log(`Error al enviar los datos ${error}`)
+     // }
 }
 
 // eliminamos productos de la coleccion

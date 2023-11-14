@@ -4,7 +4,8 @@
           <div class="infoFooter">
 
                <div class="logo" id="footerLink">
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png" alt="logo">
+                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/logoX.png"
+                         alt="logo">
                     <p>X</p>
                </div>
 
@@ -20,40 +21,41 @@
           </div>
 
           <hr class="lineaFooter">
-          
+
           <div class="linksFooter">
-        
+
                <div class="lFooter">
-                   <a href="#">Rastreador de pedidos</a>
-                   <a href="#">Mapa del sitio</a>
+                    <a href="#">Rastreador de pedidos</a>
+                    <a href="#">Mapa del sitio</a>
                </div>
-       
+
                <div class="lFooter">
-                   <a href="#">Contáctenos</a>
-                   <a href="#">Avisos legales</a>
+                    <a href="#">Contáctenos</a>
+                    <a href="#">Avisos legales</a>
                </div>
-       
+
                <div class="lFooter">
-                   <a href="#">Localizador de tiendas</a>
-                   <a href="#">Política de privacidad</a>
+                    <a href="#">Localizador de tiendas</a>
+                    <a href="#">Política de privacidad</a>
                </div>
-       
+
                <div class="lFooter">
-                   <a href="#">Sostenibilidad</a>
-                   <a href="#">Carreras</a>
+                    <a href="#">Sostenibilidad</a>
+                    <a href="#">Carreras</a>
                </div>
-       
+
                <div class="lFooter">
-                   <a href="#">Centro de ayuda</a>
-                   <a href="#">Síganos</a>
+                    <a href="#">Centro de ayuda</a>
+                    <a href="#">Síganos</a>
                </div>
-           </div>
+          </div>
 
 
           <hr class="lineaFooterFinal">
 
           <div class="derechosFinal">
-               <p>Todos los derechos reservados &copy; 2023</p>
+               <p>Todos los derechos reservados &copy; <%= new Date().getFullYear() %>
+               </p>
           </div>
 
      </div>
@@ -69,67 +71,67 @@
 </script>
 <style>
      .linksFooter a::before {
-     content: "";
-     position: absolute;
-     width: 100%;
-     height: 1px;
-     border-radius: 4px;
-     background-color: #000;
-     bottom: 0;
-     left: 0;
-     transform-origin: right;
-     transform: scaleX(0);
-     transition: transform 0.3s ease-in-out;
-}
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          border-radius: 4px;
+          background-color: #000;
+          bottom: 0;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform 0.3s ease-in-out;
+     }
 
-.linksFooter a:hover::before {
-     transform-origin: left;
-     transform: scaleX(1);
-}
+     .linksFooter a:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+     }
 
-.containerFooter {
-     display: flex;
-     flex-direction: column;
-}
+     .containerFooter {
+          display: flex;
+          flex-direction: column;
+     }
 
-.infoFooter {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding-top: 50px;
-}
+     .infoFooter {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 50px;
+     }
 
-.logo {
-     display: flex;
-     align-items: center;
-     cursor: pointer;
-}
+     .logo {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+     }
 
-.logo img {
-     height: 100px;
-}
+     .logo img {
+          height: 100px;
+     }
 
-.logo p {
-     font-weight: 600;
-}
+     .logo p {
+          font-weight: 600;
+     }
 
-.derechos {
-     display: none;
-}
+     .derechos {
+          display: none;
+     }
 
-.btnFooter button {
-     display: flex;
-     align-items: center;
-     gap: 1.5rem;
-     font-size: 1.188em;
-     padding: 10px 20px;
-     border: none;
-     background-color: transparent;
-     cursor: pointer;
-}
+     .btnFooter button {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          font-size: 1.188em;
+          padding: 10px 20px;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+     }
 
-.linksFooter {
-     /*
+     .linksFooter {
+          /*
      display: grid;
      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
      grid-template-rows: 1fr;
@@ -138,190 +140,193 @@
      z-index: 1;
      padding: 30px 0;
      */
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 2rem;
-     padding: 15px 0 ;
-}
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          padding: 15px 0;
+     }
 
-.linksFooter a {
-     position: relative;
-     text-decoration: none;
-     color: #000;
-     /*justify-self: center;*/
-}
+     .linksFooter a {
+          position: relative;
+          text-decoration: none;
+          color: #000;
+          /*justify-self: center;*/
+     }
 
-.linksFooter a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    border-radius: 4px;
-    background-color: #000;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.linksFooter a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-
-.lFooter{
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
-.derechosFinal {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding: 25px 0;
-}
-
-@media screen and (max-width:767px) {
-     .containerFooter{
+     .linksFooter a::before {
+          content: "";
+          position: absolute;
           width: 100%;
+          height: 1px;
+          border-radius: 4px;
+          background-color: #000;
+          bottom: 0;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform 0.3s ease-in-out;
+     }
+
+     .linksFooter a:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
      }
 
 
-     .infoFooter {
-          width: 95%;
-          margin: 0 auto;
+     .lFooter {
+          display: flex;
+          align-items: center;
+          gap: 4rem;
      }
-     /*
+
+     .derechosFinal {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 25px 0;
+     }
+
+     @media screen and (max-width:767px) {
+          .containerFooter {
+               width: 100%;
+          }
+
+
+          .infoFooter {
+               width: 95%;
+               margin: 0 auto;
+          }
+
+          /*
      .linksFooter {
           grid-template-columns: 50% 50%;
           gap: 1rem;
      }*/
 
-     .linksFooter{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 30px 0;
-    }
-    
-    .lFooter {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 60%;
-    }
-}
+          .linksFooter {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               gap: 0.8rem;
+               padding: 30px 0;
+          }
 
-@media screen and (min-width:768px) and (max-width:1023px) {
-
-     .derechos{
-          display: block;
+          .lFooter {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               width: 60%;
+          }
      }
-/*
+
+     @media screen and (min-width:768px) and (max-width:1023px) {
+
+          .derechos {
+               display: block;
+          }
+
+          /*
      .infoFooter {
           width: 85%;
           margin: 0 auto;
      }
      */
-     .linksFooter {
-          grid-template-columns: 50% 50%;
-     }
+          .linksFooter {
+               grid-template-columns: 50% 50%;
+          }
 
-     
-      .containerFooter{
-        width: 100%;
-    }
-/*
+
+          .containerFooter {
+               width: 100%;
+          }
+
+          /*
     .infoFooter{
         width: 95%;
     }
 */
-    
-    .containerFooter{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .infoFooter{
-        width: 95%;
-        margin: 0 auto;
-        /*
+
+          .containerFooter {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+          }
+
+          .infoFooter {
+               width: 95%;
+               margin: 0 auto;
+               /*
         padding-top: 50px ;
         */
-    }
-    
-    .linksFooter{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 30px 0;
-    }
-    
-    .lFooter {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 60%;
-    }
-    
-    .lineaFooterFinal{
-        display: block;
-    }
-    
-    .derechosFinal{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 25px 0;
-    }
-     
-     
-}
+          }
 
-@media screen and (min-width:1024px) {
+          .linksFooter {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               gap: 0.8rem;
+               padding: 30px 0;
+          }
 
-     .containerFooter {
-          width: 85%;
-          margin: 0 auto;
+          .lFooter {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               width: 60%;
+          }
+
+          .lineaFooterFinal {
+               display: block;
+          }
+
+          .derechosFinal {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               padding: 25px 0;
+          }
+
+
      }
 
-     .derechos {
-          display: block;
-     }
+     @media screen and (min-width:1024px) {
 
-     .derechosFinal {
-          display: none;
-     }
+          .containerFooter {
+               width: 85%;
+               margin: 0 auto;
+          }
 
-     .lineaFooterFinal {
-          display: none;
-     }
+          .derechos {
+               display: block;
+          }
 
-     .linksFooter {
-          flex-direction: row;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          align-items: center;
+          .derechosFinal {
+               display: none;
+          }
+
+          .lineaFooterFinal {
+               display: none;
+          }
+
+          .linksFooter {
+               flex-direction: row;
+               justify-content: space-between;
+               flex-wrap: wrap;
+               align-items: center;
+          }
      }
-}
 </style>
 
 <script>
      // agrega un evento click que vuelva al inicio
-      document.getElementById('footerLink').addEventListener('click', (e) => {
+     document.getElementById('footerLink').addEventListener('click', (e) => {
           // Evita que el enlace siga normalmente
           e.preventDefault()
-  
+
           // Redirige a '/'
-          window.location.href="/"
-      })
- </script>
+          window.location.href = "/"
+     })
+</script>
