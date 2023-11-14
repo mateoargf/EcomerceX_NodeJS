@@ -12,6 +12,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const {OAuth2Client} = require('google-auth-library');
 const key = require('./../config/keysGoogle.js');
 const url = require('url');
+const cookies = require('cookie-parser');
 
 //validacionpassword-email
 const { validarContrasena } = require('./../utilsBack/validacionContrasena');
@@ -35,9 +36,7 @@ const getFormulario = (req, res) => {
           }
      };
 const postFormulario = async (req, res) => {
-     //destructuring del modelo usuarios
-
-     console.log("req.body",req.body)
+      console.log("req.body",req.body)
      //activeTab es el nombre de la pestaña activa
      const activeTab = req.body.activeTab ;//si no hay query, login
      console.log("activeTab",activeTab)
@@ -48,17 +47,18 @@ const postFormulario = async (req, res) => {
 
           if (contraseñaError) {
                req.flash('error', contraseñaError);
-               return res.redirect('/user/registro#registrarse');
+               return res.redirect('/user/registro?active=signup');
           }
           if (emailError) {   
                req.flash('error', emailError);
-               return res.redirect('/user/registro#registrarse');
+               return res.redirect('/user/registro?active=signup');
           }
           const hashedPassword = await bcrypt.hash(password, 10)
 
           try {
                const user = await Usuarios.create({ username, password: hashedPassword, email })
                console.log(user)
+               req.session.user = user;
                res.redirect('/user/RegistroExitoso')
           }
           catch (error) {
@@ -76,7 +76,7 @@ const postFormulario = async (req, res) => {
                     req.flash('error', 'error desconocido')
                     console.log('error desconocido:', error)
                }
-               res.redirect('/user/registro');
+               res.redirect('/user/registro?active=signup');
           }
      }else if(activeTab === 'login') {
           const { username, password } = req.body
@@ -88,66 +88,70 @@ const postFormulario = async (req, res) => {
                if(!user){
                     console.log("usuario incorrecto");
                     req.flash('error', 'Nombre de usuario incorrecto');
-                    return res.redirect('/user/registro#login');
+                    return res.redirect('/user/registro?active=login');
                }
                const match = await bcrypt.compare(password, user.password);
                if(!match){
                     console.log("password incorrecto");
                     req.flash('error', 'Contraseña incorrecta');
-                    return res.redirect('/user/registro#login');
+                    return res.redirect('/user/registro?active=login');
                }
-               req.login(user, (err) => {
-                    if (err) {
-                         console.log("error al iniciar sesion",err);
-                         req.flash('error', 'Error al iniciar sesión');
-                         return res.redirect('/user/login');
-                    }
-               console.log("login exitoso");
-               return res.redirect('/user/loginExitoso');
+               req.session.user = user;
+               console.log("user",user)
+               return res.redirect('/user/LogueoExitoso');
 
-               });
           } catch (error) {
                req.flash('error', 'Error al iniciar sesión');
                console.error('Error al iniciar sesión:', error);
-               return res.redirect('/user/registro#login');
+               return res.redirect('/user/registro?active=login');
           }
      }
      };
      
 //logueo y registro exitoso
-const getRegistroExitoso = (req, res) => {res.status(200).render('pages/registroExitoso');}
-const getLogueoExitoso = (req, res) => {res.status(200).render('pages/logueoExitoso');}
+const getRegistroExitoso = (req, res) => {
+     const nombreUsuario = req.session.user.username;
+     console.log("nombreUsuario",req.session.user)
+     res.status(200).render('pages/registroExitoso',{errorMessage:'' ,username: nombreUsuario})}
+
+     const getLogueoExitoso = (req, res) => {
+     const nombreUsuario = req.session.user.username;
+     console.log("nombreUsuario",req.session.user)
+     res.status(200).render('pages/logueoExitoso',{errorMessage:'' ,username: nombreUsuario})}
 
 
 const getAuthGoogle  = passport.authenticate('registroGoogle', { scope: ['profile', 'email'] });
 
 const getGoogleCallback = (req, res, next) => {
-     const action = req.query.action;
-     console.log("action",action)
+     //cookies
 
      passport.authenticate('registroGoogle', (err, user, info) => {
        // Aquí puedes manejar la redirección después de la autenticación de Google
+       //cookies
+
        if (err) {
          return next(err);
        }
-       //esNuevoUsuario = info
-         console.log(info)
+       req.session.user = user;
+       const action = req.cookies.activeTab;
+       console.log("action",action)
+        
         esNuevoUsuario = info.nuevoUsuario
        if (esNuevoUsuario===false) {
           if (action === 'login') {
                console.log("action user y menssage",action,user,esNuevoUsuario)
-               return res.render('pages/registroExitoso', { message: 'No estaba registrado. Se creó usuario' ,user});
+               return res.render('pages/registroExitoso', { errorMessage: '',username:user.username});
              } else {
                console.log("action user y menssage",action,user,esNuevoUsuario)
-               return res.render('pages/registroExitoso',{ message: '' ,user});
+               return res.render('pages/registroExitoso',{ errorMessage: 'Ya existía y se logueó' ,username: user.username});
              }
      }else{
           if (action === 'login') {
                console.log("action user y menssage",action,user,esNuevoUsuario)
-               return res.render('pages/logueoExitoso',{ message: '' , user});
+               return res.render('pages/RegistroExitoso',{ mensaje: 'No estaba registrado. Se creó usuario' ,username: user.username});
                } else if(action === 'register'){
                     console.log("action user y menssage",action,user,esNuevoUsuario)
-               return res.render('pages/logueoExitoso', { message: 'Ya existía y se logueó',user});
+               return res.render('pages/registroExitoso', { errorMessage: '',username: user.username });
                }
           }
           

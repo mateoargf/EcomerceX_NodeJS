@@ -98,12 +98,7 @@
 
 </main>
 
-<script>
-     document.getElementById("googleButtonRegister").addEventListener("click", function() {
-         // Redirigir a la URL de Google con el query string ?action=register
-         window.location.href = "/user/auth/google?action=register";
-     });
-     </script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 
    <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -118,6 +113,12 @@
      const registrarseForm = document.getElementById("registrarse");  //formulario registro
      const LOGIN = document.getElementById("LOGIN");          //boton login
      const SIGNUP = document.getElementById("SIGNUP"); 
+     let domain = 'localhost'; // por defecto en desarrollo
+
+     if (window.location.hostname !== 'localhost') {
+          domain = window.location.hostname; // en producción, establecer el dominio actual
+     }
+
      console.log("estoy aca")
        //boton registro
      const url = window.location.href;
@@ -134,23 +135,30 @@
     // Muestra el mensaje de error
     mensajeErrorLOGIN.style.display = "block";
     mensajeErrorLOGIN.textContent = "Usuario o contraseña incorrectos";
-} else {
+     } else {
     // Opcional: Puedes manejar la situación donde el elemento no se encuentra
     console.error("El elemento mensajeErrorLogin no se encontró");
-}
-console.log("estoy aca")
+     }
+     Cookies.set('activeTab', 'login', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
+
+
+
+     console.log("estoy aca")
      if (activeTab === 'signup') {
           console.log("active tab es signup");
           LOGIN.classList.remove("active");
           SIGNUP.classList.add("active");
           registrarseForm.style.display = "block";
           iniciarSesionForm.style.display = "none";
+          Cookies.set('activeTab', 'signup', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
      } else {
           console.log("active tab es login");
           LOGIN.classList.add("active");
           SIGNUP.classList.remove("active");
           registrarseForm.style.display = "none";
           iniciarSesionForm.style.display = "block";
+          Cookies.set('activeTab', 'login', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
+
      }
 
      LOGIN.addEventListener("click", function() {
@@ -158,12 +166,15 @@ console.log("estoy aca")
           if(!LOGIN.classList.contains("active")){
                SIGNUP.classList.remove("active");
                LOGIN.classList.add("active");
+               Cookies.set('activeTab', 'login', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
           }
           
           iniciarSesionTab.classList.add("active");
           registrarseTab.classList.remove("active");
           iniciarSesionForm.style.display = "block";
           registrarseForm.style.display = "none";
+          Cookies.set('activeTab', 'login', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
+
      });
      SIGNUP.addEventListener("click", function() {
           console.log("apreto signup");
@@ -173,46 +184,21 @@ console.log("estoy aca")
           {
                LOGIN.classList.remove("active");
                SIGNUP.classList.add("active");
+               Cookies.set('activeTab', 'signup', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
+
           }
-          
+
           
           registrarseTab.classList.add("active");
           iniciarSesionTab.classList.remove("active");
           registrarseForm.style.display = "block";
           iniciarSesionForm.style.display = "none";
+          Cookies.set('activeTab', 'signup', { expires: 365, path: '/', domain: domain, secure: true, sameSite: 'none' });
+
 
      });
 });
-     //      iniciarSesionTab.addEventListener("click", function() {
-               
-     //           if(!LOGIN.classList.contains("active")){
-     //                SIGNUP.classList.remove("active");
-     //                LOGIN.classList.add("active");
-     //           }
-               
-     //           iniciarSesionTab.classList.add("active");
-     //           registrarseTab.classList.remove("active");
-     //           iniciarSesionForm.style.display = "block";
-     //           registrarseForm.style.display = "none";
-     //      });
-
-     //      registrarseTab.addEventListener("click", function() {
-     //           if(SIGNUP.classList.contains("active")){
-     //           }
-     //           else
-     //           {
-     //                LOGIN.classList.remove("active");
-     //                SIGNUP.classList.add("active");
-     //           }
-               
-
-     //           registrarseTab.classList.add("active");
-     //           iniciarSesionTab.classList.remove("active");
-     //           registrarseForm.style.display = "block";
-     //           iniciarSesionForm.style.display = "none";
-
-     //      });
-     
+    
 
 
 </script>

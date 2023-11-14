@@ -1,23 +1,50 @@
- 
-<main>
-    <% if (message) { %>
-        <div class="mensaje"><%= message %></div>
-    <% } %>
+ <main>
+    <div id="contador"><h1>Redireccionando..</h1></div>
     <div id="modal" class="modal">
     <div class="modal-content">
-         <h1><%= user.username %> </h1>
+        <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/successful.png" alt="logo" width="400px">
+            <h2>
+                Bienvenido, <%=username%>
+            </h2>
          <h2>Logueo Exitoso!</h2>
-         <p>Te logueaste correctamente.</p>
-         
+         <% if (errorMessage) { %>
+            <h4 class="mensaje"><%= errorMessage %></h4>
+        <% } %> 
+
+
+
     </div>
     </div>
     </main>
-    <style>
+    <script>
+        function actualizarContador(num) {
+            document.getElementById('contador').innerText = num;
+        }
         
+        function redireccionar() {
+            window.location.href = '/';
+        }
+        
+        function iniciarCuentaRegresiva() {
+        for (let i = 5; i >= 0; i--) {
+            setTimeout(() => {
+                actualizarContador(i); // Actualiza el contador
+                if (i === 0) {
+                    redireccionar(); // Redirecciona cuando el contador llega a 0
+                }
+            }, (5 - i) * 1000); }// El tiempo que espera para ejecutar la función
+        }
+        
+            window.onload = iniciarCuentaRegresiva();</script>
+
+    
+    <style>
         header, footer{
          display: none;
         }
-    
+    body{
+        background-color: #7d7b7b;
+    }
     .modal {
         display: block;
         position: fixed;
@@ -38,5 +65,21 @@
     .modal p {
         color: #555;
     }
+
+    .modal h4 {
+    color: red;
+    }
+    #contador {
+        font-size: 1.5em; /* Tamaño de la fuente grande */
+        font-weight: bold; /* Texto en negrita para mayor énfasis */
+        color: #fff; /* Color del texto */
+        text-align: center; /* Centrar el texto */
+        margin-top: 0px; /* Espacio superior */
+        background-color: #007bff; /* Color de fondo */
+        padding: 10px; /* Añadir espaciado alrededor del contador */
+        border-radius: 5px; /* Esquinas redondeadas */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    }
+
     </style>
     

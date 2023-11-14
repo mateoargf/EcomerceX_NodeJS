@@ -9,7 +9,10 @@ const userRouter = require('./server/routes/user')
 const errRouter = require('./server/routes/err')
 const path = require('path')
 const layouts = require('express-ejs-layouts')
+const cookieParser = require('cookie-parser')
+
 app.use(express.json())
+app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }))
 const db = process.env.MONGO_URL
@@ -48,7 +51,8 @@ app.use(passport.initialize())
 app.use(passport.session({
      secret: secretPassport,
      resave: false,
-     saveUninitialized: true
+     saveUninitialized: true,
+     cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }))
 
 
