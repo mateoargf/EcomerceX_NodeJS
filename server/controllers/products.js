@@ -28,18 +28,27 @@ const getAllProduct = async (req, res) => {
           const mochilas = await Mochila.find({});
           const pantalones = await Pantalon.find({});
           const remeras = await Remera.find({});
-          const zapatillas = await Zapatilla.find({});
+          // const zapatillas = await Zapatilla.find({});
 
           // Destructuring de los atributos
-          const productos = {
-               allCamperas: camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               allMochilas: mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones })),
-               allPantalones: pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               allRemeras: remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               allZapatillas: zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-          };
-          const newCollectionPath = path.join(__dirname, '../../views/partials/newCollection')
-          res.render(newCollectionPath, { productos })
+          const productos =  [
+               {
+                    allCamperas: camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+               },
+               {
+                    allMochilas: mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }))
+               },
+               {
+                    allPantalones: pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+               },
+               {
+                    allRemeras: remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               }
+               // {
+               //      allZapatillas: zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+               // }
+          ];
+          res.render('partials/newcollection', { productos }, console.log(productos))
 
      } catch (error) {
           console.log(`Error al conectar ${error}`)
