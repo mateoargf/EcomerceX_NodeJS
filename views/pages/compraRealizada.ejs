@@ -1,0 +1,111 @@
+<section>
+    <div class="saludoFinal">
+
+        <div class="titulo">
+            <h1>X "Tu lugar de confianza"</h1>
+        </div>
+
+        <div class="texto">
+            <p>Tu compra se realizo de manera exitosa. Muchas gracias por confiar en nosotros.</p>
+        </div>
+
+        <div class="final">
+            <h2>Siga explorando nuestros productos</h2>
+            <button id="volverBtn">Volver a la pagina incial</button>
+        </div>
+
+    </div>
+
+    <div id="redirigir">
+        <p>Volviendo a la pagina inicial</p>
+    </div>
+</section>
+
+<style>
+    .saludoFinal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .final{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #redirigir{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: none;
+    text-align: center;
+    }
+
+    #volverBtn{
+    height: 40px;
+    min-width: 130px;
+    padding: 5px 25px;
+    background: #000;
+    position: relative;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.063em;
+    text-align: center;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+#volverBtn::after{
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    bottom: 3px;
+    right: 5px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+#volverBtn:hover{
+    color: #545454;
+}
+
+#volverBtn:hover::after{
+    border: 1px solid #545454;
+}
+
+#volverBtn:focus{
+    border: 1px solid #000;
+}
+
+</style>
+
+<script>
+     const volverBtn = document.getElementById('volverBtn');
+        const redirigir = document.getElementById('redirigir');
+
+        volverBtn.addEventListener('click', () => {
+            redirigir.style.display = 'block'; // Mostrar mensaje de compra exitosa
+
+            setTimeout(() => {
+                window.location.href = 'http://localhost:3600/'; // Redirigir a Google después de 3 segundos (3000 ms)
+            }, 5000);
+        });
+</script>

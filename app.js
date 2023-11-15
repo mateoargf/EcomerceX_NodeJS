@@ -78,6 +78,8 @@ app.get('/ayrton', (req, res) => {
      res.status(200).render('pages/pruebaAyrton');
 });
 
-
+app.get('/compraRealizada', (req, res) => {
+     res.status(200).render('pages/compraRealizada');
+});
 
 iniciar() 

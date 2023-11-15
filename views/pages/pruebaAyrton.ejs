@@ -1,0 +1,47 @@
+<section>
+    <div class="contenidoCarrito">
+        <h1>Contenido del Carrito</h1>
+        <div id="productosCarrito">
+            <!-- Mostrar los productos del carrito -->
+            <ul></ul>
+            <button id="realizarCompraBtn">Realizar Compra</button>
+        </div>
+    </div>
+
+    <div id="mensajeCompraExitosa">
+        <p>Procesando su compra. Espere unos minutos</p>
+    </div>
+
+</section>
+
+<style>
+    #mensajeCompraExitosa{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: none;
+    text-align: center;
+    }
+</style>
+
+
+<script>
+    const realizarCompraBtn = document.getElementById('realizarCompraBtn');
+        const mensajeCompraExitosa = document.getElementById('mensajeCompraExitosa');
+
+        realizarCompraBtn.addEventListener('click', () => {
+            mensajeCompraExitosa.style.display = 'block'; // Mostrar mensaje de compra exitosa
+
+            setTimeout(() => {
+                window.location.href = 'http://localhost:3600/compraRealizada'; // Redirigir a Google después de 3 segundos (3000 ms)
+            }, 10000);
+        });
+</script>

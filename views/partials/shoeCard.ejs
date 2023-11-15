@@ -753,9 +753,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     }
 
-
-
-
     agregarBtns.forEach(btn => {
         btn.addEventListener('click', function(event) {
             const tresZonaUno = event.currentTarget.closest('.producto').querySelector('.tresZonaUno h2').textContent;
@@ -787,6 +784,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarMensaje("Producto agregado al carrito")
 
             actualizarTotal();
+
         });
     });
 
@@ -799,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funcionalidad para el botón SI de confirmación de compra
     siBtn.addEventListener('click', function() {
         // Redireccionar a otra página al hacer clic en SI
-        window.location.href = 'http://localhost:3600/prod/wishlist'; // Redireccionar a Google
+        window.location.href = 'http://localhost:3600/ayrton'; // Redireccionar a Google
         // Coloca la URL a la que quieres redirigir en lugar de 'https://www.google.com'
     });
 
