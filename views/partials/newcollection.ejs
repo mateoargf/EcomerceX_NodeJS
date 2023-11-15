@@ -22,79 +22,83 @@
 
 
         </div>
-        <% if (productos) { %>
-            <!-- <% console.log(productos); %> -->
-
-            <ul>
-                <% productos.forEach(producto=> { %>
-                    <h2>
-                        marca: <%= producto.marca %> - modelo: <%= producto.modelo %>
-                    </h2>
-                    <% }) %>
-            </ul>
-            <% } else { %>
-                <p>No hay productos disponibles.</p>
-                <% } %>
 
         <div class="mainCollection">
 
             <div class="productCollectionOne">
-
                 <div class="wideProduct">
 
-                    <img src="" alt="">
+                    <% productos.slice(0, 2).forEach(p=> { %>
+                        <div>
+                            <img src="<%= p.imagen %>" alt="">
+                        </div>
+
+                        <div class="infoProduct">
+                            <div class="nameProduct">
+                                <a href="#">
+                                    <%= p.modelo %>
+                                </a>
+                            </div>
+
+                            <div class="for">
+                                <p>
+                                    <%= p.descripción %>
+                                </p>
+                            </div>
+
+                            <div class="price">
+                                <p>$<%= p.precio %>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="product">
+                    <div>
+                        <img src="<%= p.imagen %>" alt="">
+                    </div>
 
                     <div class="infoProduct">
                         <div class="nameProduct">
-                            <a href="#">Imagen 1</a>
+                            <a href="#">
+                                <%= p.modelo %>
+                            </a>
                         </div>
 
                         <div class="for">
-                            <p>Ropa deportiva de mujeres</p>
+                            <p>
+                                <%= p.descripción %>
+                            </p>
                         </div>
 
                         <div class="price">
-                            <p>$65</p>
+                            <p>$<%= p.precio %>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="product">
-
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
-
-                    <div class="infoProduct">
-                        <div class="nameProduct">
-                            <a href="#">Imagen 2</a>
-                        </div>
-
-                        <div class="for">
-                            <p>Ropa deportiva de hombres</p>
-                        </div>
-
-                        <div class="price">
-                            <p>$110</p>
-                        </div>
+                    <div>
+                        <img src="<%= p.imagen %>" alt="">
                     </div>
-                </div>
-
-                <div class="product">
-
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
 
                     <div class="infoProduct">
                         <div class="nameProduct">
-                            <a href="#">Imagen 3</a>
+                            <a href="#">
+                                <%= p.modelo %>
+                            </a>
                         </div>
 
                         <div class="for">
-                            <p>Ropa deportiva de hombres</p>
+                            <p>
+                                <%= p.descripción %>
+                            </p>
                         </div>
 
                         <div class="price">
-                            <p>$110</p>
+                            <p>$<%= p.precio %>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,61 +108,75 @@
             <div class="productCollectionTwo">
 
                 <div class="product">
-
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
+                    <div>
+                        <img src="<%= p.imagen %>" alt="">
+                    </div>
 
                     <div class="infoProduct">
                         <div class="nameProduct">
-                            <a href="#">Imagen 4</a>
+                            <a href="#">
+                                <%= p.modelo %>
+                            </a>
                         </div>
 
                         <div class="for">
-                            <p>Ropa deportiva de hombres</p>
+                            <p>
+                                <%= p.descripción %>
+                            </p>
                         </div>
 
                         <div class="price">
-                            <p>$100</p>
+                            <p>$<%= p.precio %>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="product">
-
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
+                    <div>
+                        <img src="<%= p.imagen %>" alt="">
+                    </div>
 
                     <div class="infoProduct">
                         <div class="nameProduct">
-                            <a href="#">Imagen 5</a>
+                            <a href="#">
+                                <%= p.modelo %>
+                            </a>
                         </div>
 
                         <div class="for">
-                            <p>Ropa deportiva de hombres</p>
+                            <p>
+                                <%= p.descripción %>
+                            </p>
                         </div>
 
                         <div class="price">
-                            <p>$33</p>
+                            <p>$<%= p.precio %>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="wideProduct">
 
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/checkPage_photo.jpg"
-                        alt="">
+                    <img src="<%= p.imagen %>" alt="">
 
                     <div class="infoProduct">
                         <div class="nameProduct">
-                            <a href="#">Imagen 6</a>
+                            <a href="#">
+                                <%= p.modelo %>
+                            </a>
                         </div>
 
                         <div class="for">
-                            <p>Ropa deportiva de mujeres</p>
+                            <p>
+                                <%= p.descripción %>
+                            </p>
                         </div>
 
                         <div class="price">
-                            <p>$65</p>
+                            <p>$<%= p.precio %>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -169,8 +187,7 @@
             <div class="imagesCollection">
 
                 <div class="image">
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
+                    <img src="<%= p.imagen %>" alt="">
                 </div>
 
                 <div class="advertisement">
@@ -192,17 +209,15 @@
                 </div>
 
                 <div class="image">
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
+                    <img src="<%= p.imagen %>" alt="">
                 </div>
 
                 <div class="image">
-                    <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/moreno-matkovic-eLINoxJqbT0-unsplash.jpg"
-                        alt="">
+                    <img src="<%= p.imagen %>" alt="">
+                    <%})%>
                 </div>
 
             </div>
-
 
         </div>
     </section>
