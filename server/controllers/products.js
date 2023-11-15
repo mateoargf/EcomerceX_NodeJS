@@ -23,32 +23,24 @@ const getHydro = (req, res) => {
 const getAllProduct = async (req, res) => {
      // crear primero las colecciones de productos
      try {
-          // Obtener todos los productos de cada colección
-          const camperas = await Campera.find({});
-          const mochilas = await Mochila.find({});
-          const pantalones = await Pantalon.find({});
-          const remeras = await Remera.find({});
-          // const zapatillas = await Zapatilla.find({});
+              // Obtener todos los productos simultáneamente
+              const [camperas, mochilas, pantalones, remeras] = await Promise.all([
+               Campera.find({}),
+               Mochila.find({}),
+               Pantalon.find({}),
+               Remera.find({})
+               // Zapatilla.find({})
+          ]);
 
-          // Destructuring de los atributos
-          const productos =  [
-               {
-                    allCamperas: camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-               },
-               {
-                    allMochilas: mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }))
-               },
-               {
-                    allPantalones: pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-               },
-               {
-                    allRemeras: remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               }
-               // {
-               //      allZapatillas: zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-               // }
-          ];
-          res.render('partials/newcollection', { productos }, console.log(productos))
+           // Crear un array único con todos los productos
+           const productos = [
+               ...camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               ...mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones })),
+               ...pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
+               ...remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+               // ...zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
+          ]
+          res.render('partials/newcollection', { productos })
 
      } catch (error) {
           console.log(`Error al conectar ${error}`)
