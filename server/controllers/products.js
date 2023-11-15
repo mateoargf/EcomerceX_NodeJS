@@ -48,8 +48,7 @@ const getAllProduct = async (req, res) => {
                //      allZapatillas: zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
                // }
           ];
-          const newCollectionPath = path.join(__dirname, '../../views/partials/newCollection')
-          res.render(newCollectionPath, { productos }, console.log(productos))
+          res.render('partials/newcollection', { productos }, console.log(productos))
 
      } catch (error) {
           console.log(`Error al conectar ${error}`)
