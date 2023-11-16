@@ -8,9 +8,10 @@ const productsRouter = require('./server/routes/products')
 const userRouter = require('./server/routes/user')
 const errRouter = require('./server/routes/err')
 const path = require('path')
+// index productos
+const { getAllProduct } = require('./server/controllers/products')
 const layouts = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser')
-
 app.use(express.json())
 app.use(cookieParser());
 
@@ -60,8 +61,11 @@ app.use(passport.session({
 app.set('layout', './layouts/layout')
 app.use(layouts)
 
-app.get('/', (req, res) => {
-     res.status(200).render('pages/index')
+
+app.get('/', getAllProduct, (req, res) => {
+     const {camperas, mochilas, pantalones, remeras, productos} = res.locals;
+
+     res.status(200).render('pages/index', {camperas, mochilas, pantalones, remeras, productos})
 })
 
 // renderizado de todas las web de errors

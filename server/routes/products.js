@@ -2,7 +2,6 @@ const Router = require('express')
 const router = Router()
 
 const {
-     getAllProduct,
      getHydro,
      getNewCollection,
      // getMoreFrom,
@@ -16,7 +15,6 @@ const {
 } = require('../controllers/products')
 
 // rutas.get
-router.get('/todos', getAllProduct)
 router.get('/hydro', getHydro)
 router.get('/group', getAllGroup)
 router.get('',getNewCollection)

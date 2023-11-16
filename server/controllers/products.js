@@ -20,28 +20,51 @@ const getHydro = (req, res) => {
      res.status(200).render('pages/hydroShoes')
 }
 
-const getAllProduct = async (req, res) => {
+const getAllProduct = async (req, res, next) => {
      // crear primero las colecciones de productos
      try {
-              // Obtener todos los productos simultáneamente
-              const [camperas, mochilas, pantalones, remeras] = await Promise.all([
+          // Obtener todos los productos simultáneamente
+          const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
                Campera.find({}),
                Mochila.find({}),
                Pantalon.find({}),
-               Remera.find({})
-               // Zapatilla.find({})
+               Remera.find({}),
+               Zapatilla.find({})
           ]);
 
-           // Crear un array único con todos los productos
-           const productos = [
-               ...camperas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               ...mochilas.map(({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, capacidad, color, precio, descripción, categoría, valoraciones })),
-               ...pantalones.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones })),
-               ...remeras.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-               // ...zapatillas.map(({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }) => ({ _id, marca, modelo, imagen, talle, color, precio, descripción, categoría, valoraciones }))
-          ]
-          res.render('partials/newcollection', { productos })
+          const productos = {
+               remeras: {
+                    destacada: remeras[0],
+                    otros: [remeras[1], remeras[2]]
+               },
+               pantalones: {
+                    destacada: pantalones[0],
+                    otros: [pantalones[1], pantalones[2]]
+               },
+               mochilas: {
+                    destacada: mochilas[0],
+                    otros: [mochilas[1], mochilas[2]]
+               },
+               camperas: {
+                    destacada: camperas[0],
+                    otros: [camperas[1], camperas[2]]
+               },
+               zapatillas: {
+                    destacada: zapatillas[0],
+                    otros: [zapatillas[1], zapatillas[2]]
+               }
+          };
 
+          //res.render('partials/newcollection', { camperas, mochilas, pantalones, remeras, productos })
+          
+          res.locals.productos = productos;
+          res.locals.remeras = remeras;
+          res.locals.pantalones = pantalones;
+          res.locals.mochilas = mochilas;
+          res.locals.camperas = camperas;
+          res.locals.zapatillas = zapatillas;
+
+          next();
      } catch (error) {
           console.log(`Error al conectar ${error}`)
           res.status(500).json({ error: 'Error al obtener productos' })
