@@ -1,0 +1,15 @@
+services:
+  - name: web
+    buildCommand: npm run build
+    startCommand: npm start
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URL
+        value: 'mongodb+srv://mateogf:AN52xp4zbpcH-Qr@cluster0.fmdesn4.mongodb.net/?retryWrites=true&w=majority'
+      - key: PUERTO
+        value: '3600'
+      - key: SECRET_SESSION
+        value: 'mi-secreto'
+      - key: SECRET_PASSPORT
+        value: 'secreto'

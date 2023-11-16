@@ -31,8 +31,8 @@ const getHydro = async (req, res) => {
      }
 
      try {
-            // Obtener todos los productos simultáneamente
-            const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
+          // Obtener todos los productos simultáneamente
+          const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
                Campera.find({}),
                Mochila.find({}),
                Pantalon.find({}),
@@ -63,6 +63,7 @@ const getHydro = async (req, res) => {
           };
 
           const product = await findProductById(id, [Campera, Mochila, Pantalon, Remera, Zapatilla]);
+          console.log(product)
           // console.log(product);
           res.locals.product = product
           res.locals.productos = productos;

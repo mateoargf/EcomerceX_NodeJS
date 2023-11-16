@@ -56,15 +56,17 @@
                 <div class="catalogoColors">
                     <h4>COLORES</h4>
                     <div class="coloresShoes">
-                        <% Object.entries(product).forEach(([key, value])=> { %>
+                        <% if(product.color) { %>
 
                             <a href="#" class="colorShoe">
 
                                 <p>
-                                    <%= value.color %>
+                                    <%= product.color %>
                                 </p>
                             </a>
-                            <% }) %>
+                            <% } %>
+                                <a href="#" class="colorShoe">
+                                </a>
                                 <a href="#" class="colorShoe">
                                 </a>
                                 <a href="#" class="colorShoe">
@@ -76,13 +78,27 @@
                 <div class="catalogoSizes">
                     <h4>TALLES</h4>
                     <div class="sizesDiv">
-                        <% product.talle.forEach(talle=> { %>
-                            <a href="#">
-                                <h5>
-                                    <%= talle %>
-                                </h5>
-                            </a>
-                            <% }) %>
+                        <% if (product) { %>
+                            <% if (product.talle && Array.isArray(product.talle)) { %>
+                                <% product.talle.forEach(talle=> { %>
+                                    <a href="#">
+                                        <h5>
+                                            <%= talle %>
+                                        </h5>
+                                    </a>
+                                    <% }) %>
+                                        <% } else if (product.talla && Array.isArray(product.talla)) { %>
+
+                                            <% product.talla.forEach(talla=> { %>
+                                                <a href="#">
+                                                    <h5>
+                                                        <%= talla %>
+                                                    </h5>
+                                                </a>
+                                                <% }) %>
+                                                    <% } %>
+                                                        <% } %>
+
                     </div>
                 </div>
                 <div class="catalogoInfo">

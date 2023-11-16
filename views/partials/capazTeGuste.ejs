@@ -3,32 +3,64 @@
     <i class="bi bi-arrow-down-short" data-aos="fade-down" data-aos-delay="100" data-aos-once="true"></i>
     <div class="alsoLikeCards" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
         <div class="alsoLikeCard">
-            <img src="" alt="hodie">
-            <div class="alsoLikeInfo">
-                <h4>ZAPATILLAS STAN SMT</h4>
-                <p>$105</p>
-            </div>
+            <% if(productos.camperas.destacada) { %>
+                <a href="/prod/hydro/<%= productos.camperas.destacada._id %>">
+                    <img src="<%= productos.camperas.destacada.imagen %>" alt="hodie">
+                    <div class="alsoLikeInfo">
+                        <h4>
+                            <%= productos.camperas.destacada.modelo %>
+                        </h4>
+                        <p>$<%= productos.camperas.destacada.precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="alsoLikeCard">
-            <img src="" alt="remera">
-            <div class="alsoLikeInfo">
-                <h4>ZAPATILLAS BAJAS FRM</h4>
-                <p>$110</p>
-            </div>
+            <% if(productos.camperas.otros[0]) { %>
+                <a href="/prod/hydro/<%= productos.camperas.otros[0]._id %>">
+                    <img src="<%= productos.camperas.otros[0].imagen %>" alt="hodie">
+                    <div class="alsoLikeInfo">
+                        <h4>
+                            <%= productos.camperas.otros[0].modelo %>
+                        </h4>
+                        <p>$<%= productos.camperas.otros[0].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="alsoLikeCard">
-            <img src="" alt="pantalon-basico">
-            <div class="alsoLikeInfo">
-                <h4>ZAPATILLAS DIARIAS 3.0</h4>
-                <p>$65</p>
-            </div>
+            <% if(productos.zapatillas.otros[0]) { %>
+                <a href="/prod/hydro/<%= productos.zapatillas.otros[0]._id %>">
+                    <img src="<%= productos.zapatillas.otros[0].imagen %>" alt="hodie">
+                    <div class="alsoLikeInfo">
+                        <h4>
+                            <%= productos.zapatillas.otros[0].modelo %>
+                        </h4>
+                        <p>$<%= productos.zapatillas.otros[0].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="alsoLikeCard">
-            <img src="" alt="shorts">
-            <div class="alsoLikeInfo">
-                <h4>ZAPATILLAS OZZ</h4>
-                <p>$100</p>
-            </div>
+            <% if(productos.zapatillas.destacada) { %>
+                <a href="/prod/hydro/<%= productos.zapatillas.destacada._id %>">
+                    <img src="<%= productos.zapatillas.destacada.imagen %>" alt="hodie">
+                    <div class="alsoLikeInfo">
+                        <h4>
+                            <%= productos.zapatillas.destacada.modelo %>
+                        </h4>
+                        <p>$<%= productos.zapatillas.destacada.precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
     </div>
 </section>
@@ -68,6 +100,10 @@
         justify-content: space-between;
         z-index: 1;
         gap: 1rem;
+    }
+    .alsoLikeCards a {
+        text-decoration: none;
+        color: black;
     }
 
     .alsoLikeCard {
