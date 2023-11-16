@@ -1,22 +1,32 @@
 <section class="hydroSeason">
-    <H2 data-aos="fade-down-left" data-aos-delay="100" data-aos-once="true">ZAPATILLAS PREMIUM HYDRO PARA LA TEMPORADA MÁS FRESCA</H2>
+    <H2 data-aos="fade-down-left" data-aos-delay="100" data-aos-once="true">ZAPATILLAS PREMIUM HYDRO PARA LA TEMPORADA
+        MÁS FRESCA</H2>
     <i class="bi bi-arrow-down-short" data-aos="fade-down-left" data-aos-delay="100" data-aos-once="true"></i>
     <div class="hydroSeasonImgs">
+
         <div class="hydroSUno" data-aos="fade-up-right" data-aos-delay="500" data-aos-once="true">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/seasonAModel.png" alt="">
-            <div class="hydroSDes">
-                <h3>ENVÍOS</h3>
-                <p>Los pedidos son enviados en días laborales (Lunes a Viernes). excepto por feriados</p>
-            </div>
-            <a href="#">MÁS</a>
+            <a href="/prod/hydro/<%= product._id %>">
+                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/seasonAModel.png"
+                    alt="">
+                <div class="hydroSDes">
+                    <h3>ENVÍOS</h3>
+                    <p>Los pedidos son enviados en días laborales (Lunes a Viernes). excepto por feriados</p>
+                </div>
+                <a href="#">MÁS</a>
+            </a>
         </div>
+
+
         <div class="hydroSDos" data-aos="fade-up-left" data-aos-delay="500" data-aos-once="true">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/seasonAModel.png" alt="">
-            <div class="hydroSDes">
-                <h3>FAQ</h3>
-                <p>Encontrarás respuestas a todas tus dudas acerca del producto o página web en FAQ.</p>
-            </div>
-            <a href="#">MÁS</a>
+            <a href="/prod/hydro/<%= product._id %>">
+                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/seasonAModel.png"
+                    alt="">
+                <div class="hydroSDes">
+                    <h3>FAQ</h3>
+                    <p>Encontrarás respuestas a todas tus dudas acerca del producto o página web en FAQ.</p>
+                </div>
+                <a href="#">MÁS</a>
+            </a>
         </div>
     </div>
 </section>
@@ -118,6 +128,7 @@
     .hydroSUno a,
     .hydroSDos a {
         letter-spacing: 0.09rem;
+        text-decoration: none;
     }
 
     .hydroSUno a,
