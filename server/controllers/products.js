@@ -16,9 +16,41 @@ const pantalonData = require('../jsons/pantalones.json')
 const remeraData = require('../jsons/remeras.json')
 const zapatillaData = require('../jsons/zapatillas.json')
 
-const getHydro = (req, res) => {
-     res.status(200).render('pages/hydroShoes')
-}
+const getHydro = async (req, res) => {
+     const productId = req.params.id;
+
+     // Función auxiliar para buscar un producto por ID en la colección
+     async function findProductById(id, collections) {
+          for (const collection of collections) {
+               const foundProduct = await collection.findOne({ _id: id });
+               if (foundProduct) {
+                    return foundProduct;
+               }
+          }
+          return null;
+     }
+
+     try {
+          const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
+               Campera.find({}),
+               Mochila.find({}),
+               Pantalon.find({}),
+               Remera.find({}),
+               Zapatilla.find({})
+          ]);
+
+          const product = await findProductById(productId, [camperas, mochilas, pantalones, remeras, zapatillas]);
+
+          if (product) {
+               res.render('pages/hydroShoes', { product });
+          } else {
+               res.render('pages/err404');
+          }
+     } catch (error) {
+          console.log(`Error al buscar el producto: ${error}`);
+          res.status(500).json({ error: 'Error al obtener productos' });
+     }
+};
 
 const getAllProduct = async (req, res, next) => {
      // crear primero las colecciones de productos
@@ -56,7 +88,7 @@ const getAllProduct = async (req, res, next) => {
           };
 
           //res.render('partials/newcollection', { camperas, mochilas, pantalones, remeras, productos })
-          
+
           res.locals.productos = productos;
           res.locals.remeras = remeras;
           res.locals.pantalones = pantalones;

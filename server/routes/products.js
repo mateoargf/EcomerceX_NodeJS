@@ -15,7 +15,7 @@ const {
 } = require('../controllers/products')
 
 // rutas.get
-router.get('/hydro', getHydro)
+router.get('/hydro/:id', getHydro)
 router.get('/group', getAllGroup)
 router.get('',getNewCollection)
 // router.get('/morefrom', getMoreFrom)
