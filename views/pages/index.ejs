@@ -20,20 +20,20 @@
                                 </P>
                             </div>
                             <div class="heroBotones">
-                                <a class="btnHombre">
+                                <button id="menIndexBtn" class="btnHombre">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     HOMBRE
-                                </a>
-                                <a class="btnMujer ocultar">
+                                </button>
+                                <button id="womenIndexBtn" class="btnMujer ocultar">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     MUJER
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <a class="heroSiguiente ocultar">
@@ -468,3 +468,24 @@
 
     @media screen and (min-width:1441px) and (max-width:1920px) {}
 </style>
+
+<script>
+    const menIndexBtn= document.getElementById('menIndexBtn');
+
+    menIndexBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/category';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+    const womenIndexBtn= document.getElementById('womenIndexBtn');
+
+    womenIndexBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/category';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+</script>

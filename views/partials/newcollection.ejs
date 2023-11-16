@@ -33,7 +33,7 @@
 
                         <div class="infoProduct">
                             <div class="nameProduct">
-                                <a href="#">
+                                <a href="http://localhost:3600/prod/hydro">
                                     <%= productos.remeras.destacada.modelo %>
                                 </a>
                             </div>
@@ -150,7 +150,7 @@
                                     artículos esenciales para actividades al aire libre.</p>
                             </div>
                             <div class="btnAd">
-                                <button>Shop</button>
+                                <button id="shopBtn">Shop</button>
                             </div>
                         </div>
 
@@ -286,7 +286,7 @@
                                     todo está a solo un clic de distancia.</p>
                             </div>
 
-                            <div class="btnAdW">
+                            <div id="uneteBtn" class="btnAdW">
                                 <button>Unete a adiclub</button>
                             </div>
 
@@ -437,7 +437,7 @@
                         <h2><a href="#">Hombre</a></h2>
                     </div>
                     <div class="arrowRight">
-                        <button><i class="bi bi-arrow-right"></i></button>
+                        <button id="menBtn"><i class="bi bi-arrow-right"></i></button>
                     </div>
                 </div>
 
@@ -463,7 +463,7 @@
                             <h2><a href="#">Niños</a></h2>
                         </div>
                         <div class="arrowRight">
-                            <button><i class="bi bi-arrow-right"></i></button>
+                            <button id="kidsBtn"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -473,7 +473,7 @@
                             <h2><a href="#">Mujeres</a></h2>
                         </div>
                         <div class="arrowRight">
-                            <button><i class="bi bi-arrow-right"></i></button>
+                            <button id="womenBtn"><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                     <% if(productos.remeras.destacada) { %>
@@ -1659,4 +1659,52 @@ button {
             });
         });
     });
+
+
+    const shopBtn = document.getElementById('shopBtn');
+
+    shopBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/group';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+    const uneteBtn = document.getElementById('uneteBtn');
+
+    uneteBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/user/registro';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+    const menBtn = document.getElementById('menBtn');
+    const kidsBtn = document.getElementById('kidsBtn');
+    const womenBtn = document.getElementById('womenBtn');
+
+    menBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/category';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+
+    kidsBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/category';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+
+    womenBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/category';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+
 </script>
