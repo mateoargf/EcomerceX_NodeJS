@@ -38,6 +38,58 @@
         align-items: center;
         gap: 2rem;
     }
+
+    .contenidoCarrito h1{
+        font-size: 3em;
+    }
+
+    #realizarCompraBtn {
+        height: 40px;
+        min-width: 130px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 5px 35px;
+        background: #fff;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.063em;
+        text-align: center;
+        border: 1px solid #c6c6c6;
+        border-radius: 3px;
+        z-index: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    #realizarCompraBtn::after {
+        content: "";
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        bottom: 3px;
+        right: 5px;
+        background: #000;
+        border: 1px solid #000;
+        border-radius: 3px;
+        transition: 0.2s;
+    }
+
+    #realizarCompraBtn:hover {
+        color: #545454;
+    }
+
+    #realizarCompraBtn:hover::after {
+        border: 1px solid #545454;
+    }
+
+    #realizarCompraBtn:focus {
+        border: 1px solid #000;
+    }
+
 </style>
 
 
