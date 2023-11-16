@@ -31,15 +31,16 @@ const getHydro = async (req, res) => {
      }
 
      try {
-          const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
-               Campera.find({}),
-               Mochila.find({}),
-               Pantalon.find({}),
-               Remera.find({}),
-               Zapatilla.find({})
-          ]);
+          // const [camperas, mochilas, pantalones, remeras, zapatillas] = await Promise.all([
+          //      Campera.find({}),
+          //      Mochila.find({}),
+          //      Pantalon.find({}),
+          //      Remera.find({}),
+          //      Zapatilla.find({})
+          // ]);
 
-          const product = await findProductById(id, [camperas, mochilas, pantalones, remeras, zapatillas]);
+          const product = await findProductById(id, [Campera, Mochila, Pantalon, Remera, Zapatilla]);
+          // console.log(product);
           res.locals.product = product
           if (product) {
                res.render('pages/hydroShoes', { product });

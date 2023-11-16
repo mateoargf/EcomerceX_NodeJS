@@ -4,20 +4,26 @@
             <nav class="guiaTitulo">
                 <a id="inicioLink" href="#">INICIO<i class="bi bi-arrow-right"></i></a>
                 <a href="#">CATÁLOGO<i class="bi bi-arrow-right"></i></a>
-                <a href="http://localhost:3600/prod/category">ZAPATILLAS<i class="bi bi-arrow-right"></i></a>
-                <a href="#">ZAPATILLAS HYDRO</a>
+                <a href="http://localhost:3600/prod/category">
+                    <%= product.marca %><i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="#">
+                    <%= product.modelo %>
+                </a>
             </nav>
             <h3>ZAPATILLAS</h3>
         </div>
         <div class="catalogoShoes">
-            <div class="catalogoUno ocultarPhone ocultarTablet" data-aos="fade-up-right" data-aos-delay="1100" data-aos-once="true">
-                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="">
-                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="">
-                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="">
-                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="">
-                <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="">
+            <div class="catalogoUno ocultarPhone ocultarTablet" data-aos="fade-up-right" data-aos-delay="1100"
+                data-aos-once="true">
+                <img src="<%= product.imagen %>" alt="">
+                <img src="<%= product.imagen %>" alt="">
+                <img src="<%= product.imagen %>" alt="">
+                <img src="<%= product.imagen %>" alt="">
+                <img src="<%= product.imagen %>" alt="">
             </div>
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloHero.png" alt="Hydro_Zapatillas" class="catalogoDos" data-aos="fade-up" data-aos-delay="1100" data-aos-once="true">
+            <img src="<%= product.imagen %>" alt="Hydro_Zapatillas" class="catalogoDos" data-aos="fade-up"
+                data-aos-delay="1100" data-aos-once="true">
 
             <div class="catalogoTres producto" data-aos="fade-up-left" data-aos-delay="1100" data-aos-once="true">
                 <div class="tresZonaUno">
@@ -38,95 +44,60 @@
                             <p>2043</p>
                         </div>
                     </div>
-                    <h2>HYDRO ZAPATILLAS</h2>
+                    <h2>
+                        <%= product.modelo %>
+                    </h2>
                     <div class="precio">
                         <h3>$120</h3>
-                        <h2>$96</h2>
+                        <h2>$<%= product.precio %>
+                        </h2>
                     </div>
                 </div>
                 <div class="catalogoColors">
                     <h4>COLORES</h4>
                     <div class="coloresShoes">
-                        <a href="#" class="colorShoe">
-                            <img src="" alt="">
-                        </a>
-                        <a href="#" class="colorShoe">
-                            <img src="" alt="">
-                        </a>
-                        <a href="#" class="colorShoe">
-                            <img src="" alt="">
-                        </a>
-                        <a href="#" class="colorShoe">
-                            <img src="" alt="">
-                        </a>
-                        <a href="#" class="colorShoe">
-                            <img src="" alt="">
-                        </a>
+                        <% Object.entries(product).forEach(([key, value])=> { %>
+                            <% if(value.color===null){ %>
+                                <a href="#" class="colorShoe" style="display: none;">
+
+                                    <p>
+
+                                    </p>
+                                </a>
+                                <% } else { %>
+                                    <a href="#" class="colorShoe">
+
+                                        <p>
+                                            <%= value.color %>
+                                        </p>
+                                    </a>
+                                    <% } %>
+                                        <% }) %>
+                                            <a href="#" class="colorShoe">
+                                            </a>
+                                            <a href="#" class="colorShoe">
+                                            </a>
+                                            <a href="#" class="colorShoe">
+                                            </a>
                     </div>
                 </div>
                 <div class="catalogoSizes">
                     <h4>TALLES</h4>
                     <div class="sizesDiv">
-                        <a href="#">
-                            <h5>4</h5>
-                        </a>
-                        <a href="#">
-                            <h5>4.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>5.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>6</h5>
-                        </a>
-                        <a href="#">
-                            <h5>6.5<i class="bi bi-stopwatch"></i></h5>
-                        </a>
-                        <a href="#">
-                            <h5>7</h5>
-                        </a>
-                        <a href="#">
-                            <h5>7.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>8</h5>
-                        </a>
-                        <a href="#">
-                            <h5>8.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>9</h5>
-                        </a>
-                        <a href="#">
-                            <h5>9.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>10</h5>
-                        </a>
-                        <a href="#">
-                            <h5>10.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>11</h5>
-                        </a>
-                        <a href="#">
-                            <h5>12</h5>
-                        </a>
-                        <a href="#">
-                            <h5>12.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>13</h5>
-                        </a>
-                        <a href="#">
-                            <h5>13.5</h5>
-                        </a>
-                        <a href="#">
-                            <h5>14<i class="bi bi-stopwatch"></i></h5>
-                        </a>
+                        <% product.talle.forEach(talle=> { %>
+                            <a href="#">
+                                <% if(talle.value===null){ %>
+                                    <h5 class="nullTalle">
+                                        <%= talle %>
+                                            <%= talle %>i class="bi bi-stopwatch"></i>
+                                    </h5>
+                                    <% } else { %>
+                                        <h5>
+                                            <%= talle %>
+                                        </h5>
+                                        <% } %>
+                            </a>
+                            <% }) %>
                     </div>
                 </div>
                 <div class="catalogoInfo">
@@ -162,20 +133,20 @@
 
     <style>
         #mensajeAgregado {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    color: #000;
-    font-weight: bold;
-    padding: 20px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    display: none;
-    text-align: center;
-}
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            color: #000;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+            display: none;
+            text-align: center;
+        }
 
 
         main {
@@ -184,13 +155,13 @@
             gap: 3rem;
         }
 
-        .guiaTitulo{
+        .guiaTitulo {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .guiaTitulo a{
+        .guiaTitulo a {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -201,7 +172,7 @@
             transition: all 0.3s ease;
         }
 
-        .guiaTitulo a:hover{
+        .guiaTitulo a:hover {
             color: #000;
             transition: all 0.3s ease;
         }
@@ -256,6 +227,7 @@
             align-items: center;
             gap: 1rem;
         }
+
         /*
         .guiaTitulo a {
             color: #4a4a4a7c;
@@ -347,7 +319,7 @@
         .catalogoUno img:nth-child(5) {
             height: 5rem;
             width: 5rem;
-            background-color: red;
+            background-color: #c4c4c483;
             cursor: pointer;
         }
 
@@ -391,7 +363,8 @@
         }
 
         .sizesDiv a:nth-child(6),
-        .sizesDiv a:nth-child(20) {
+        .sizesDiv a:nth-child(20),
+        .nullTalle {
             color: #ceb044;
             border-color: #ceb044;
             background-color: transparent;
@@ -461,13 +434,13 @@
             flex: 1;
             width: auto;
             max-width: 100%;
-            background-color: red;
+            background-color: #c4c4c483;
         }
 
         .catalogoDos {
             min-height: 100%;
             width: 55%;
-            background-color: blue;
+            background-color: #c4c4c483;
             cursor: pointer;
         }
 
@@ -559,6 +532,11 @@
             border-radius: 0.3rem;
             border: 2px solid #A5A5A5;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
         }
 
         .catalogoSizes {
@@ -731,80 +709,80 @@
     </style>
 
 
-<script>
+    <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    const agregarBtns = document.querySelectorAll('.agregarBtn');
-    const mensajeAgregado = document.getElementById('mensajeAgregado');
-    const listaCarrito = document.getElementById('listaCarrito');
-    const confirmacionCompra = document.getElementById('confirmacionCompra');
-    const siBtn = document.getElementById('siBtn');
-    const noBtn = document.getElementById('noBtn');
-    let total = 0; // Variable para almacenar el total
+        document.addEventListener('DOMContentLoaded', function () {
+            const agregarBtns = document.querySelectorAll('.agregarBtn');
+            const mensajeAgregado = document.getElementById('mensajeAgregado');
+            const listaCarrito = document.getElementById('listaCarrito');
+            const confirmacionCompra = document.getElementById('confirmacionCompra');
+            const siBtn = document.getElementById('siBtn');
+            const noBtn = document.getElementById('noBtn');
+            let total = 0; // Variable para almacenar el total
 
 
-    function mostrarMensaje(mensaje) {
-        mensajeAgregado.textContent = mensaje;
-        mensajeAgregado.style.display = "block";
+            function mostrarMensaje(mensaje) {
+                mensajeAgregado.textContent = mensaje;
+                mensajeAgregado.style.display = "block";
 
-        setTimeout(function() {
-            mensajeAgregado.style.display = "none";
-        }, 800);
-    
-    }
+                setTimeout(function () {
+                    mensajeAgregado.style.display = "none";
+                }, 800);
 
-    agregarBtns.forEach(btn => {
-        btn.addEventListener('click', function(event) {
-            const tresZonaUno = event.currentTarget.closest('.producto').querySelector('.tresZonaUno h2').textContent;
-            const precio = event.currentTarget.closest('.producto').querySelector('.precio h3').textContent;
+            }
 
-            // Convertir el precio a un número y sumarlo al total
-            const precioNumerico = parseFloat(precio.replace('$', ''));
-            total += precioNumerico;
-            
-            
-            // Agregar al carrito
-            const producto = document.createElement('div');
-            producto.innerHTML = `<p>${tresZonaUno} - ${precio}</p>`;
-            
-            const eliminarBtn = document.createElement('button');
-            eliminarBtn.textContent = 'Eliminar Producto';
-            eliminarBtn.addEventListener('click', function() {
-                producto.remove();
-                // Restar el precio del producto eliminado del total
-                total -= precioNumerico;
-                // Actualizar el elemento del DOM que muestra el total al eliminar un producto
-                actualizarTotal();
+            agregarBtns.forEach(btn => {
+                btn.addEventListener('click', function (event) {
+                    const tresZonaUno = event.currentTarget.closest('.producto').querySelector('.tresZonaUno h2').textContent;
+                    const precio = event.currentTarget.closest('.producto').querySelector('.precio h3').textContent;
+
+                    // Convertir el precio a un número y sumarlo al total
+                    const precioNumerico = parseFloat(precio.replace('$', ''));
+                    total += precioNumerico;
+
+
+                    // Agregar al carrito
+                    const producto = document.createElement('div');
+                    producto.innerHTML = `<p>${tresZonaUno} - ${precio}</p>`;
+
+                    const eliminarBtn = document.createElement('button');
+                    eliminarBtn.textContent = 'Eliminar Producto';
+                    eliminarBtn.addEventListener('click', function () {
+                        producto.remove();
+                        // Restar el precio del producto eliminado del total
+                        total -= precioNumerico;
+                        // Actualizar el elemento del DOM que muestra el total al eliminar un producto
+                        actualizarTotal();
+                    });
+
+                    producto.appendChild(eliminarBtn);
+                    listaCarrito.appendChild(producto);
+
+
+                    mostrarMensaje("Producto agregado al carrito")
+
+                    actualizarTotal();
+
+                });
             });
 
-            producto.appendChild(eliminarBtn);
-            listaCarrito.appendChild(producto);
+            function actualizarTotal() {
+                // Actualizar el elemento del DOM que muestra el total
+                const totalElement = document.getElementById('total');
+                totalElement.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total actualizado
+            }
 
+            // Funcionalidad para el botón SI de confirmación de compra
+            siBtn.addEventListener('click', function () {
+                // Redireccionar a otra página al hacer clic en SI
+                window.location.href = 'http://localhost:3600/ayrton'; // Redireccionar a Google
+                // Coloca la URL a la que quieres redirigir en lugar de 'https://www.google.com'
+            });
 
-            mostrarMensaje("Producto agregado al carrito")
-
-            actualizarTotal();
-
+            // Funcionalidad para el botón NO de confirmación de compra
+            noBtn.addEventListener('click', function () {
+                // Ocultar el div con ID confirmacionCompra al hacer clic en NO
+                confirmacionCompra.style.display = 'none';
+            });
         });
-    });
-
-    function actualizarTotal() {
-        // Actualizar el elemento del DOM que muestra el total
-        const totalElement = document.getElementById('total');
-        totalElement.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total actualizado
-    }
-
-    // Funcionalidad para el botón SI de confirmación de compra
-    siBtn.addEventListener('click', function() {
-        // Redireccionar a otra página al hacer clic en SI
-        window.location.href = 'http://localhost:3600/ayrton'; // Redireccionar a Google
-        // Coloca la URL a la que quieres redirigir en lugar de 'https://www.google.com'
-    });
-
-    // Funcionalidad para el botón NO de confirmación de compra
-    noBtn.addEventListener('click', function() {
-        // Ocultar el div con ID confirmacionCompra al hacer clic en NO
-        confirmacionCompra.style.display = 'none';
-    });
-});
-</script>
+    </script>

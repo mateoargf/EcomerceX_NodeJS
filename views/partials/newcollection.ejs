@@ -55,91 +55,106 @@
                     <% } %>
                         <% productos.remeras.otros.forEach(p=> { %>
                             <div class="product">
-                                <div>
-                                    <img src="<%= p.imagen %>" alt="">
-                                </div>
 
-                                <div class="infoProduct">
-                                    <div class="nameProduct">
-                                        <a href="#">
-                                            <%= p.modelo %>
-                                        </a>
+                                <a href="/prod/hydro/<%= p._id %>">
+                                    <div>
+                                        <img src="<%= p.imagen %>" alt="">
                                     </div>
 
-                                    <div class="for">
-                                        <p>
-                                            <%= p.descripción %>
-                                        </p>
-                                    </div>
+                                    <div class="infoProduct">
+                                        <div class="nameProduct">
+                                            <a href="#">
+                                                <%= p.modelo %>
+                                            </a>
+                                        </div>
 
-                                    <div class="price">
-                                        <p>$<%= p.precio %>
-                                        </p>
+                                        <div class="for">
+                                            <p>
+                                                <%= p.descripción %>
+                                            </p>
+                                        </div>
+
+                                        <div class="price">
+                                            <p>$<%= p.precio %>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <%})%>
             </div>
             <div class="productCollectionTwo">
                 <% productos.pantalones.otros.forEach(p=> { %>
                     <div class="product">
-                        <div>
-                            <img src="<%= p.imagen %>" alt="">
-                        </div>
 
-                        <div class="infoProduct">
-                            <div class="nameProduct">
-                                <a href="#">
-                                    <%= p.modelo %>
-                                </a>
+                        <a href="/prod/hydro/<%= p._id %>">
+
+                            <div>
+                                <img src="<%= p.imagen %>" alt="">
                             </div>
 
-                            <div class="for">
-                                <p>
-                                    <%= p.descripción %>
-                                </p>
-                            </div>
+                            <div class="infoProduct">
+                                <div class="nameProduct">
+                                    <a href="#">
+                                        <%= p.modelo %>
+                                    </a>
+                                </div>
 
-                            <div class="price">
-                                <p>$<%= p.precio %>
-                                </p>
+                                <div class="for">
+                                    <p>
+                                        <%= p.descripción %>
+                                    </p>
+                                </div>
+
+                                <div class="price">
+                                    <p>$<%= p.precio %>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <%})%>
                         <% if (productos.pantalones.destacada) { %>
                             <div class="wideProduct">
-                                <div>
-                                    <img src="<%= productos.pantalones.destacada.imagen %>" alt="">
-                                </div>
 
-                                <div class="infoProduct">
-                                    <div class="nameProduct">
-                                        <a href="#">
-                                            <%= productos.pantalones.destacada.modelo %>
-                                        </a>
+                                <a href="/prod/hydro/<%= productos.pantalones.destacada._id %>">
+                                    <div>
+                                        <img src="<%= productos.pantalones.destacada.imagen %>" alt="">
                                     </div>
 
-                                    <div class="for">
-                                        <p>
-                                            <%= productos.pantalones.destacada.descripción %>
-                                        </p>
-                                    </div>
+                                    <div class="infoProduct">
+                                        <div class="nameProduct">
+                                            <a href="#">
+                                                <%= productos.pantalones.destacada.modelo %>
+                                            </a>
+                                        </div>
 
-                                    <div class="price">
-                                        <p>$<%= productos.pantalones.destacada.precio %>
-                                        </p>
+                                        <div class="for">
+                                            <p>
+                                                <%= productos.pantalones.destacada.descripción %>
+                                            </p>
+                                        </div>
+
+                                        <div class="price">
+                                            <p>$<%= productos.pantalones.destacada.precio %>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+
                             </div>
                             <% } %>
             </div>
 
             <div class="imagesCollection">
                 <% if (productos.mochilas.destacada) { %>
-                    <div class="image">
-                        <img src="<%= productos.mochilas.destacada.imagen %>" alt="">
-                    </div>
+
+                    <a href="/prod/hydro/<%= productos.mochilas.destacada._id %>">
+                        <div class="image">
+                            <img src="<%= productos.mochilas.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
+
                     <% } %>
 
                         <div class="advertisement">
@@ -157,9 +172,13 @@
                         </div>
 
                         <% productos.mochilas.otros.forEach(p=> { %>
-                            <div class="image">
-                                <img src="<%= p.imagen %>" alt="">
-                            </div>
+
+                            <a href="/prod/hydro/<%= p._id %>">
+                                <div class="image">
+                                    <img src="<%= p.imagen %>" alt="">
+                                </div>
+                            </a>
+
                             <% }) %>
             </div>
         </div>
@@ -186,94 +205,101 @@
 
             <% if(productos.camperas.destacada) { %>
                 <div class="product">
-
-                    <img src="<%= productos.camperas.destacada.imagen %>" alt="">
-                    <div class="infoProduct">
-                        <div class="nameProduct">
-                            <a href="#">
-                                <%= productos.camperas.destacada.marca %>
-                            </a>
+                    <a href="/prod/hydro/<%= productos.camperas.destacada._id %>">
+                        <img src="<%= productos.camperas.destacada.imagen %>" alt="">
+                        <div class="infoProduct">
+                            <div class="nameProduct">
+                                <a href="#">
+                                    <%= productos.camperas.destacada.marca %>
+                                </a>
+                            </div>
+                            <div class="for">
+                                <p>
+                                    <%= productos.camperas.destacada.imagen.descripción %>
+                                </p>
+                            </div>
+                            <div class="price">
+                                <del>$60</del>
+                                <span>$<%=productos.camperas.destacada.imagen.precio%></span>
+                            </div>
                         </div>
-                        <div class="for">
-                            <p>
-                                <%= productos.camperas.destacada.imagen.descripción %>
-                            </p>
-                        </div>
-                        <div class="price">
-                            <del>$60</del>
-                            <span>$<%=productos.camperas.destacada.imagen.precio%></span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <% } %>
 
                     <% if(productos.zapatillas.destacada) { %>
                         <div class="product">
-
-                            <img src="<%= productos.zapatillas.destacada.imagen %>" alt="">
-                            <div class="infoProduct">
-                                <div class="nameProduct">
-                                    <a href="#">
-                                        <%= productos.zapatillas.destacada.marca %>
-                                    </a>
+                            <a href="/prod/hydro/<%= productos.zapatillas.destacada._id %>">
+                                <img src="<%= productos.zapatillas.destacada.imagen %>" alt="">
+                                <div class="infoProduct">
+                                    <div class="nameProduct">
+                                        <a href="#">
+                                            <%= productos.zapatillas.destacada.marca %>
+                                        </a>
+                                    </div>
+                                    <div class="for">
+                                        <p>
+                                            <%= productos.zapatillas.destacada.descripción %>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <p>$<%=productos.zapatillas.destacada.precio%>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="for">
-                                    <p>
-                                        <%= productos.zapatillas.destacada.descripción %>
-                                    </p>
-                                </div>
-                                <div class="price">
-                                    <p>$<%=productos.zapatillas.destacada.precio%>
-                                    </p>
-                                </div>
-                            </div>
-
+                            </a>
                         </div>
                         <% } %>
                             <% productos.camperas.otros.forEach(p=>{ %>
                                 <div class="product">
-                                    <img src="<%= p.imagen %>" alt="">
-                                    <div class="infoProduct">
-                                        <div class="nameProduct">
-                                            <a href="#">
-                                                <%= p.marca %>
-                                            </a>
+                                    <a href="/prod/hydro/<%= p._id %>">
+                                        <img src="<%= p.imagen %>" alt="">
+                                        <div class="infoProduct">
+                                            <div class="nameProduct">
+                                                <a href="#">
+                                                    <%= p.marca %>
+                                                </a>
+                                            </div>
+                                            <div class="for">
+                                                <p>
+                                                    <%= p.descripción %>
+                                                </p>
+                                            </div>
+                                            <div class="price">
+                                                <p>$<%=p.precio%>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="for">
-                                            <p>
-                                                <%= p.descripción %>
-                                            </p>
-                                        </div>
-                                        <div class="price">
-                                            <p>$<%=p.precio%>
-                                            </p>
-                                        </div>
-                                    </div>
-
+                                    </a>
                                 </div>
                                 <% }) %>
         </div>
         <div class="footerPopular">
             <div class="imagesPopular">
                 <% if(productos.camperas.destacada) { %>
-
-                    <div class="imageP">
-                        <img src="<%= productos.camperas.destacada.imagen %>" alt="">
-                    </div>
+                    <a href="/prod/hydro/<%= productos.camperas.destacada._id %>">
+                        <div class="imageP">
+                            <img src="<%= productos.camperas.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
                     <% } %>
                         <% productos.zapatillas.otros.forEach(p=>{ %>
-                            <div class="imageP">
-                                <img src="<%= p.imagen %>" alt="">
-                            </div>
+                            <a href="/prod/hydro/<%= p._id %>">
+                                <div class="imageP">
+                                    <img src="<%= p.imagen %>" alt="">
+                                </div>
+                            </a>
                             <% }) %>
 
             </div>
 
             <div class="wideImagePopular">
                 <% if(productos.remeras.destacada) { %>
-                    <div class="wideImageP">
-                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
-                    </div>
+                    <a href="/prod/hydro/<%= productos.remeras.destacada._id %>">
+                        <div class="wideImageP">
+                            <img src="<%= productos.remeras.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
                     <% } %>
                         <div class="wideAdvertisement">
 
@@ -298,15 +324,19 @@
 
             <div class="imagesPopular">
                 <% productos.mochilas.otros.forEach(p=>{ %>
-                    <div class="imageP">
-                        <img src="p.imagen" alt="">
-                    </div>
+                    <a href="/prod/hydro/<%= p._id %>">
+                        <div class="imageP">
+                            <img src="p.imagen" alt="">
+                        </div>
+                    </a>
                     <% }) %>
             </div>
             <% if(productos.pantalones.destacada) { %>
-                <div class="wideImageP">
-                    <img src="<%=  productos.pantalones.destacada.imagen  %>" alt="">
-                </div>
+                <a href="/prod/hydro/<%= productos.pantalones.destacada._id %>">
+                    <div class="wideImageP">
+                        <img src="<%=  productos.pantalones.destacada.imagen  %>" alt="">
+                    </div>
+                </a>
                 <% } %>
 
 
@@ -342,68 +372,76 @@
                 <div class="fliaOne">
                     <div class="product">
                         <% if(productos.zapatillas.destacada) { %>
-                            <img src="<%=  productos.zapatillas.destacada.imagen %>" alt="">
-                            <div class="infoProduct">
-                                <div class="nameProduct">
-                                    <a href="#">
-                                        <%= productos.zapatillas.destacada.marca %>
-                                    </a>
+                            <a href="/prod/hydro/<%= productos.zapatillas.destacada._id %>">
+
+                                <img src="<%=  productos.zapatillas.destacada.imagen %>" alt="">
+                                <div class="infoProduct">
+                                    <div class="nameProduct">
+                                        <a href="#">
+                                            <%= productos.zapatillas.destacada.marca %>
+                                        </a>
+                                    </div>
+                                    <div class="for">
+                                        <p>
+                                            <%= productos.zapatillas.destacada.descripción %>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <p>$<%= productos.zapatillas.destacada.precio %>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="for">
-                                    <p>
-                                        <%= productos.zapatillas.destacada.descripción %>
-                                    </p>
-                                </div>
-                                <div class="price">
-                                    <p>$<%= productos.zapatillas.destacada.precio %>
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                             <% } %>
                     </div>
                     <div class="product">
 
                         <% if(productos.pantalones.destacada) { %>
-                            <img src="<%=  productos.pantalones.destacada.imagen %>" alt="">
-                            <div class="infoProduct">
-                                <div class="nameProduct">
-                                    <a href="#">
-                                        <%= productos.pantalones.destacada.marca %>
-                                    </a>
+                            <a href="/prod/hydro/<%= productos.pantalones.destacada._id %>">
+                                <img src="<%=  productos.pantalones.destacada.imagen %>" alt="">
+                                <div class="infoProduct">
+                                    <div class="nameProduct">
+                                        <a href="#">
+                                            <%= productos.pantalones.destacada.marca %>
+                                        </a>
+                                    </div>
+                                    <div class="for">
+                                        <p>
+                                            <%= productos.pantalones.destacada.descripción %>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <p>$<%= productos.pantalones.destacada.precio %>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="for">
-                                    <p>
-                                        <%= productos.pantalones.destacada.descripción %>
-                                    </p>
-                                </div>
-                                <div class="price">
-                                    <p>$<%= productos.pantalones.destacada.precio %>
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                             <% } %>
                     </div>
                 </div>
                 <div class="fliaTwo">
                     <div class="wideProduct">
                         <% if(productos.remeras.destacada) { %>
-                            <img src="<%=productos.remeras.destacada.imagen%>" alt="">
-                            <div class="infoProduct">
-                                <div class="nameProduct">
-                                    <a href="#">
-                                        <%=productos.remeras.destacada.marca%>
-                                    </a>
+                            <a href="/prod/hydro/<%= productos.remeras.destacada._id %>">
+
+                                <img src="<%=productos.remeras.destacada.imagen%>" alt="">
+                                <div class="infoProduct">
+                                    <div class="nameProduct">
+                                        <a href="#">
+                                            <%=productos.remeras.destacada.marca%>
+                                        </a>
+                                    </div>
+                                    <div class="for">
+                                        <p>
+                                            <%=productos.remeras.destacada.descripción%>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <p>$<%=productos.remeras.destacada.precio%>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="for">
-                                    <p>
-                                        <%=productos.remeras.destacada.descripción%>
-                                    </p>
-                                </div>
-                                <div class="price">
-                                    <p>$<%=productos.remeras.destacada.precio%>
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                             <% } %>
                     </div>
                 </div>
@@ -411,23 +449,26 @@
             <div class="productArrivalTwo">
                 <div class="product">
                     <% if(productos.camperas.destacada){ %>
-                        <img src="<%= productos.camperas.destacada.imagen %>" alt="">
-                        <div class="infoProduct">
-                            <div class="nameProduct">
-                                <a href="#">
-                                    <%= productos.camperas.destacada.marca %>
-                                </a>
+                        <a href="/prod/hydro/<%= productos.camperas.destacada._id %>">
+
+                            <img src="<%= productos.camperas.destacada.imagen %>" alt="">
+                            <div class="infoProduct">
+                                <div class="nameProduct">
+                                    <a href="#">
+                                        <%= productos.camperas.destacada.marca %>
+                                    </a>
+                                </div>
+                                <div class="for">
+                                    <p>
+                                        <%= productos.camperas.destacada.descripción %>
+                                    </p>
+                                </div>
+                                <div class="price">
+                                    <p>$<%= productos.camperas.destacada.precio %>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="for">
-                                <p>
-                                    <%= productos.camperas.destacada.descripción %>
-                                </p>
-                            </div>
-                            <div class="price">
-                                <p>$<%= productos.camperas.destacada.precio %>
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                         <% } %>
                 </div>
             </div>
@@ -444,18 +485,22 @@
                 </div>
 
                 <% if(productos.remeras.destacada) { %>
-                    <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
-                    </div>
+                    <a href="/prod/hydro/<%= productos.camperas.destacada._id %>">
+                        <div class="imageCategory">
+                            <img src="<%= productos.remeras.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
 
                     <% } %>
             </div>
             <div class="kids">
                 <% if(productos.remeras.destacada) { %>
-                    <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
-                    </div>
 
+                    <a href="/prod/hydro/<%= productos.remeras.destacada._id %>">
+                        <div class="imageCategory">
+                            <img src="<%= productos.remeras.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
                     <% } %>
 
                         <div class="headerCategory">
@@ -477,10 +522,11 @@
                     </div>
                 </div>
                 <% if(productos.remeras.destacada) { %>
-                    <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
-                    </div>
-
+                    <a href="/prod/hydro/<%= productos.remeras.destacada._id %>">
+                        <div class="imageCategory">
+                            <img src="<%= productos.remeras.destacada.imagen %>" alt="">
+                        </div>
+                    </a>
                     <% } %>
             </div>
         </div>
