@@ -1,34 +1,66 @@
 <section class="completeLookSection">
     <H2 data-aos="fade-down-right" data-aos-delay="100" data-aos-once="true">LOOK COMPLETO</H2>
     <i class="bi bi-arrow-down-short" data-aos="fade-down-right" data-aos-delay="100" data-aos-once="true"></i>
-    <div class="completeLookCards"  data-aos="fade-up-left" data-aos-delay="500" data-aos-once="true">
+    <div class="completeLookCards" data-aos="fade-up-left" data-aos-delay="500" data-aos-once="true">
         <div class="completeLookCardUno">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloCompleteLookAparte1.png" alt="hodie">
-            <div class="cLCardInfo">
-                <h4>SUDADERA CON CAPUCHA TREF</h4>
-                <p>$60</p>
-            </div>
+            <% if(productos.remeras.otros[1]) { %>
+                <a href="/prod/hydro/<%=  productos.remeras.otros[1]._id  %>">
+                    <img src="<%= productos.remeras.otros[1].imagen  %>" alt="hodie">
+                    <div class="cLCardInfo">
+                        <h4>
+                            <%= productos.remeras.otros[1].modelo %>
+                        </h4>
+                        <p>$<%= productos.remeras.otros[1].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="completeLookCardDos">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloCompleteLookB.png" alt="remera">
-            <div class="cLCardInfo">
-                <h4>CAMISETA XCOLOR CONT</h4>
-                <p>$40</p>
-            </div>
+            <% if(productos.remeras.otros[0]) { %>
+                <a href="/prod/hydro/<%=  productos.remeras.otros[0]._id  %>">
+                    <img src="<%=  productos.remeras.otros[0].imagen  %>" alt="remera">
+                    <div class="cLCardInfo">
+                        <h4>
+                            <%= productos.remeras.otros[0].modelo %>
+                        </h4>
+                        <p>$<%= productos.remeras.otros[0].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="completeLookCardTres">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloCompleteLookAparte2.png" alt="pantalon-basico">
-            <div class="cLCardInfo">
-                <h4>PANTALONES ESENCIALES TREF</h4>
-                <p>$60</p>
-            </div>
+            <% if(productos.pantalones.otros[1]) { %>
+                <a href="/prod/hydro/<%=  productos.pantalones.otros[1]._id  %>">
+                    <img src="<%=  productos.pantalones.otros[1].imagen  %>" alt="hodie">
+                    <div class="cLCardInfo">
+                        <h4>
+                            <%= productos.pantalones.otros[1].modelo %>
+                        </h4>
+                        <p>$<%= productos.pantalones.otros[1].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
         <div class="completeLookCardCuatro">
-            <img src="https://raw.githubusercontent.com/mateoargf/imagenesXEcomerceTPFINAL/main/modeloCompleteLookCShorts.png" alt="shorts">
-            <div class="cLCardInfo">
-                <h4>SHORTS TERRY FRANCÉS</h4>
-                <p>$40</p>
-            </div>
+            <% if(productos.pantalones.otros[0]) { %>
+                <a href="/prod/hydro/<%=  productos.pantalones.otros[0]._id  %>">
+                    <img src="<%=  productos.pantalones.otros[0].imagen  %>" alt="hodie">
+                    <div class="cLCardInfo">
+                        <h4>
+                            <%= productos.pantalones.otros[0].modelo %>
+                        </h4>
+                        <p>$<%= productos.pantalones.otros[0].precio %>
+                        </p>
+                    </div>
+                </a>
+
+                <% } %>
         </div>
     </div>
 </section>
@@ -93,6 +125,11 @@
         max-width: 100%;
         height: 20rem;
         object-fit: cover;
+    }
+
+    .completeLookCards a {
+        text-decoration: none;
+        color: black;
     }
 
     .cLCardInfo {

@@ -57,28 +57,20 @@
                     <h4>COLORES</h4>
                     <div class="coloresShoes">
                         <% Object.entries(product).forEach(([key, value])=> { %>
-                            <% if(value.color===null){ %>
-                                <a href="#" class="colorShoe" style="display: none;">
 
-                                    <p>
+                            <a href="#" class="colorShoe">
 
-                                    </p>
+                                <p>
+                                    <%= value.color %>
+                                </p>
+                            </a>
+                            <% }) %>
+                                <a href="#" class="colorShoe">
                                 </a>
-                                <% } else { %>
-                                    <a href="#" class="colorShoe">
-
-                                        <p>
-                                            <%= value.color %>
-                                        </p>
-                                    </a>
-                                    <% } %>
-                                        <% }) %>
-                                            <a href="#" class="colorShoe">
-                                            </a>
-                                            <a href="#" class="colorShoe">
-                                            </a>
-                                            <a href="#" class="colorShoe">
-                                            </a>
+                                <a href="#" class="colorShoe">
+                                </a>
+                                <a href="#" class="colorShoe">
+                                </a>
                     </div>
                 </div>
                 <div class="catalogoSizes">
@@ -86,16 +78,9 @@
                     <div class="sizesDiv">
                         <% product.talle.forEach(talle=> { %>
                             <a href="#">
-                                <% if(talle.value===null){ %>
-                                    <h5 class="nullTalle">
-                                        <%= talle %>
-                                            <%= talle %>i class="bi bi-stopwatch"></i>
-                                    </h5>
-                                    <% } else { %>
-                                        <h5>
-                                            <%= talle %>
-                                        </h5>
-                                        <% } %>
+                                <h5>
+                                    <%= talle %>
+                                </h5>
                             </a>
                             <% }) %>
                     </div>
