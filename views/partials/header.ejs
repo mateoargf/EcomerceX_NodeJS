@@ -1,13 +1,22 @@
 <header id="header">
-    <div class="headerDescuento" data-aos="fade-right" data-aos-once="true">
-        <a href="#" class="descuentoLink">
+    <div class="headerDescuento aos-init aos-animate" data-aos="fade-right" data-aos-once="true">
+        <button href="#" class="descuentoLink">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <h4>APP EXCLUSIVA! 33% OFF</h4>
             <i class="bi bi-arrow-right"></i>
-        </a>
+        </button>
+
+        <div class="alertaHeader"  style="display: none;">
+            <p>"X" ofrece una gran variedad de descuentos y promociones a nuestro usarios. Para acceder a estos descuentos haz click en registrarse</p>
+            <div class="btnAlertH">
+                <button id="registrateBtn">registrarse</button>
+                <button id="cerrarAlertaBtn"><i class="bi bi-x-lg"></i></button>
+
+            </div>
+        </div>
     </div>
     <div class="headerDiv" data-aos="fade-left" data-aos-once="true">
         <div class="containerLogo" id="headerLink">
@@ -171,6 +180,99 @@
         z-index: 1000;
     }
 
+    #cerrarAlertaBtn{
+        width: 90px;
+        height: 90px;
+        background-color: transparent;
+        color: #000;
+        border: none;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.5em;
+        line-height: 90px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+    }
+
+    #cerrarAlertaBtn:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btnAlertH{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    #registrateBtn {
+        height: 40px;
+        min-width: 130px;
+        /* width: 100%; */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 5px 25px;
+        background: #fff;
+        color: #000;
+        font-weight: 600;
+        font-size: 1.063em;
+        text-align: center;
+        border: 1px solid #c6c6c6;
+        border-radius: 3px;
+        z-index: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    #registrateBtn::after {
+        content: "";
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        bottom: 3px;
+        right: 5px;
+        background: #fff;
+        border: 1px solid #000;
+        border-radius: 3px;
+        transition: 0.2s;
+    }
+
+    #registrateBtn:hover {
+        color: #545454;
+    }
+
+    #registrateBtn:hover::after {
+        border: 1px solid #545454;
+    }
+
+    #registrateBtn:focus {
+        border: 1px solid #000;
+    }
+
+    .alertaHeader{
+        position: fixed;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        padding: 20px;
+        border: 2px solid #000;
+        border-radius: 5px;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        display: none;
+        text-align: center;
+    }
+
     .headerDescuento:hover .descuentoLink,
     .headerDescuento:hover {
         background-color: #fff;
@@ -310,7 +412,9 @@
         align-items: center;
         gap: 1rem;
         width: fit-content;
+        background: transparent;
         color: #CFCFCF;
+        border: none;
         text-decoration: none;
         cursor: pointer;
         position: relative;
@@ -1036,3 +1140,25 @@ fin de la ediccion del header*/
 </script>
 <script src="./../pages/scripts/bag.js"></script>
 <script src="./../pages/scripts/hamburguesa.js"></script>
+
+<script>
+    const descuentoLink = document.querySelector('.descuentoLink');
+    const alertaHeader = document.querySelector('.alertaHeader');
+    const cerrarAlertaBtn = document.getElementById('cerrarAlertaBtn');
+    const registrateBtn = document.getElementById('registrateBtn');
+
+    descuentoLink.addEventListener('click', () => {
+        alertaHeader.style.display = 'block';
+    });
+
+    cerrarAlertaBtn.addEventListener('click', () => {
+        alertaHeader.style.display = 'none';
+    });
+
+    registrateBtn.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/user/registro';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+</script>
