@@ -1,3 +1,4 @@
+
 <header id="header">
     <div class="headerDescuento aos-init aos-animate" data-aos="fade-right" data-aos-once="true">
         <button href="#" class="descuentoLink">
@@ -95,9 +96,13 @@
                         <p>X</p>
                     </div>
                     <div class="btnHamburguer">
-                        <div class="btnTraslate">
+                        <!-- <div class="btnTraslate">
                             <button><i class="bi bi-translate"></i> eng <i class="bi bi-arrow-down"></i></button>
+                        </div> -->
+                        <div class="btnTraslate">
+                            <button id="toggleTranslationBtn"><i class="bi bi-translate"></i> <span id="languageIndicator">eng</span> <i class="bi bi-arrow-down"></i></button>
                         </div>
+                        <div id="google_translate_element" style="display: none;"></div>
                         <div class="btnDollar">
                             <button><i class="bi bi-currency-dollar"></i> usd <i class="bi bi-arrow-down"></i></button>
                         </div>
@@ -156,13 +161,15 @@
                         <p>No te detengas hasta que estés orgullosa</p>
                     </div>
                     <div class="iconFooter">
-                        <button id="closeHamburger"><i class="bi bi-x-lg"></i></button>
+                        <button id="closeHamburger"><i class="bi bi-x-lg "></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </header>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
@@ -640,19 +647,24 @@
 
 
     .hamburgerMenu {
+        
         display: flex;
         flex-direction: column;
-        position: absolute;
+        position: fixed;/*position: absolute;*/
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #fff;
+        background-color: #e6e6e6;        
         color: black;
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s ease;
+        z-index: 999;
+        
     }
+
+
 
     .hamburgerMenu.visible {
         opacity: 1;
@@ -666,8 +678,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: 70%;
-        margin: 0 auto;
+        background-color: #e6e6e6;
     }
 
     .logoHeaderHamburger {
@@ -708,7 +719,7 @@
 
     .btnTraslate button:hover {
         background-color: #2a2a2a;
-        color: #fff;
+        background-color: #e6e6e6;
     }
 
     .btnDollar button {
@@ -742,18 +753,26 @@
     .containerHamburgerContent {
         display: flex;
         align-items: center;
-        margin: 0 auto;
         flex-direction: column;
-        width: 95%;
-    }
+        background-color: #e6e6e6;    }
 
     .element {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding-left: 100px;
+        
+
         border-bottom: 1px solid #c6c6c6;
     }
+.element:nth-child(1),.element:nth-child(3),.element:nth-child(5){
+    padding-right: 150px;
+
+}
+.element:nth-child(2), .element:nth-child(4){
+padding-left: 200px;}
+
 
     .img img {
         height: 20vh;
@@ -782,14 +801,16 @@
     /*ediccion del "footer" del menu hamburguesa*/
     .footerHamburgerContainer {
         display: flex;
+        
         align-items: center;
-        width: 70%;
-        margin: 0 auto;
         padding: 30px 0;
         justify-content: center;
-    }
-
-    .textFooter {
+        background-color: transparent;
+        z-index: 999;
+        background-color: #e6e6e6;
+        flex-direction: column;
+      }
+    .footerHamburgerContainer>  {
         display: none;
     }
 
@@ -799,7 +820,7 @@
         background-color: transparent;
         color: #000;
         border: none;
-        border-radius: 50%;
+        /* border-radius: 50%; */
         text-align: center;
         font-size: 1.5em;
         line-height: 90px;
@@ -1054,6 +1075,7 @@ ul li button:hover{
     color: #fff;
 }
 
+
 /*fin de la ediccion del boton bag y 
 fin de la ediccion del header*/
 
@@ -1126,7 +1148,36 @@ fin de la ediccion del header*/
 
 
     @media screen and (min-width:1441px) and (max-width:1920px) {}
+
 </style>
+<!-- <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',  // Establece el idioma original
+            autoDisplay: false,
+        }, 'google_translate_element');
+    }
+
+    document.getElementById('toggleTranslationBtn').addEventListener('click', function () {
+        var select = document.querySelector('.goog-te-combo');
+        var languageIndicator = document.getElementById('languageIndicator');
+
+        if (select && languageIndicator) {
+            if (select.value === 'en') {
+                // Si el idioma actual es inglés, cambia a español
+                select.value = 'es';
+                languageIndicator.textContent = 'esp';
+            } else {
+                // Si el idioma actual no es inglés, cambia a inglés
+                select.value = 'en';
+                languageIndicator.textContent = 'eng';
+            }
+
+            var event = new Event('change');
+            select.dispatchEvent(event);
+        }
+    });
+</script> -->
 
 <script>
     // agrega un evento click que vuelva al inicio
@@ -1141,11 +1192,18 @@ fin de la ediccion del header*/
 <script src="./../pages/scripts/bag.js"></script>
 <script src="./../pages/scripts/hamburguesa.js"></script>
 
+<!-- script que tra google translate  -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
+
     const descuentoLink = document.querySelector('.descuentoLink');
     const alertaHeader = document.querySelector('.alertaHeader');
     const cerrarAlertaBtn = document.getElementById('cerrarAlertaBtn');
     const registrateBtn = document.getElementById('registrateBtn');
+
+     // Oculta el banner de traducción de Google
+   
 
     descuentoLink.addEventListener('click', () => {
         alertaHeader.style.display = 'block';
@@ -1160,5 +1218,33 @@ fin de la ediccion del header*/
         setTimeout(() => {
             window.location.href = 'http://localhost:3600/user/registro';
         }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+</script>
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',  // Establece el idioma original
+            autoDisplay: false,
+        }, 'google_translate_element');
+    }
+  
+    document.getElementById('toggleTranslationBtn').addEventListener('click', function () {
+        var select = document.querySelector('.goog-te-combo');
+        var languageIndicator = document.getElementById('languageIndicator');
+
+        if (select && languageIndicator) {
+            if (select.value === 'en') {
+                // Si el idioma actual es inglés, cambia a español
+                select.value = 'es';
+                languageIndicator.textContent = 'esp';
+            } else {
+                // Si el idioma actual no es inglés, cambia a inglés
+                select.value = 'en';
+                languageIndicator.textContent = 'eng';
+            }
+
+            var event = new Event('change');
+            select.dispatchEvent(event);
+        }
     });
 </script>
