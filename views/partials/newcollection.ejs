@@ -256,7 +256,6 @@
         <div class="footerPopular">
             <div class="imagesPopular">
                 <% if(productos.camperas.destacada) { %>
-
                     <div class="imageP">
                         <img src="<%= productos.camperas.destacada.imagen %>" alt="">
                     </div>
@@ -293,13 +292,11 @@
                             </div>
 
                         </div>
-
             </div>
-
             <div class="imagesPopular">
                 <% productos.mochilas.otros.forEach(p=>{ %>
                     <div class="imageP">
-                        <img src="p.imagen" alt="">
+                        <img src="<%=p.imagen%>" alt="">
                     </div>
                     <% }) %>
             </div>
@@ -1006,8 +1003,10 @@ button {
     .imagesPopular {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
         padding-bottom: 10px;
+        justify-content: center;
+
 
     }
 
