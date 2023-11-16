@@ -457,32 +457,33 @@
                     </div>
 
                     <% } %>
-                </div>
-                <div class="headerCategory">
-                    <div class="titleCategory">
-                        <h2><a href="#">Niños</a></h2>
-                    </div>
-                    <div class="arrowRight">
-                        <button><i class="bi bi-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="women">
-                <div class="headerCategory">
-                    <div class="titleCategory">
-                        <h2><a href="#">Mujeres</a></h2>
-                    </div>
-                    <div class="arrowRight">
-                        <button><i class="bi bi-arrow-right"></i></button>
-                    </div>
-                </div>
-                <% if(productos.remeras.destacada) { %>
-                    <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>"
-                            alt="">
-                    </div>
 
-                    <% } %>
+                    <div class="headerCategory">
+                        <div class="titleCategory">
+                            <h2><a href="#">Niños</a></h2>
+                        </div>
+                        <div class="arrowRight">
+                            <button><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="women">
+                    <div class="headerCategory">
+                        <div class="titleCategory">
+                            <h2><a href="#">Mujeres</a></h2>
+                        </div>
+                        <div class="arrowRight">
+                            <button><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <% if(productos.remeras.destacada) { %>
+                        <div class="imageCategory">
+                            <img src="<%= productos.remeras.destacada.imagen %>"
+                                alt="">
+                        </div>
+    
+                        <% } %>
+                    </div>
                 </div>
             </div>
         </div>
@@ -690,18 +691,22 @@ button {
     .wideProduct img {
         height: 44vh;
         width: 100%;
+        border: 1px solid #c6c6c6;
         border-radius: 5px;
         object-fit: contain;
     }
 
     .product img {
         height: 44vh;
+        border: 1px solid #c6c6c6;
         border-radius: 5px;
     }
 
     .image img {
         height: 50vh;
         /*55*/
+        width: 100%;
+        border: 1px solid #c6c6c6;
         border-radius: 5px;
     }
 
@@ -752,6 +757,7 @@ button {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        gap: 3rem;
         width: 100%;
         /*Agregue el width para que ocupe todo el espacio*/
     }
@@ -761,6 +767,7 @@ button {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        width: 100%;
     }
 
     .container1 .img-container1 {
@@ -772,11 +779,11 @@ button {
 
     }
 
-    .img-container1 img,
+    /* .img-container1 img,
     .img-container2 img {
         max-width: 40vw;
-        height: 20vw;
-    }
+        /* height: 20vw; */
+    /* } */
 
     .imagenancha {
         padding: 50px 0px 10px 0px;
@@ -870,8 +877,8 @@ button {
         gap: 1rem;
         background: #000;
         height: 50vh;
-        width: 50%;
-        /*19.8*/
+        width: 30%;
+        /*50%*/
         padding: 0px 0px;
         border-radius: 5px;
     }
@@ -959,13 +966,14 @@ button {
         align-items: center;
         justify-content: space-between;
         gap: 0.5rem;
-        flex-wrap: wrap;
-        padding-bottom: 15px;
+        /* flex-wrap: wrap; */
+        /* padding-bottom: 15px; */
     }
 
     .mainPopular .product {
         width: calc(50% -10px);
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
+        height: 50vh;
     }
 
     .mainPopular .product img {
@@ -993,6 +1001,7 @@ button {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        margin-top: 10rem;
     }
 
     .imagesPopular {
@@ -1003,11 +1012,21 @@ button {
 
     }
 
+    .imagesPopular .imageP:nth-child(3){
+        width: 85%;
+    }
+
+    /* .imagesPopular .imageP img:nth-child(3){
+        width: 100%;
+    } */
+
     .imageP img {
         height: 44vh;
         /*44vh*/
-        border-radius: 3px;
+        border: 1px solid #c6c6c6;
+        border-radius: 5px;
         /*max-width: 100%;*/
+        width: 100%;
     }
 
     .wideImageP {
@@ -1020,6 +1039,7 @@ button {
     .wideImageP img {
         height: 44vh;
         width: 100%;
+        border:1px solid #c6c6c6;
         border-radius: 5px;
     }
 
@@ -1032,7 +1052,7 @@ button {
     }
 
     .wideImagePopular .wideImageP {
-        width: 85%;
+        width: 91%;
     }
 
     .wideAdvertisement {
@@ -1122,20 +1142,26 @@ button {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        width: 100%;
         padding-bottom: 30px;
     }
 
     .productArrivalOne {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 50%;
     }
+
 
     .productArrivalTwo {
         display: flex;
         flex-direction: column;
-        /*width: 80%;*/
+        width: 60%;/*50%*/
     }
+
+    /* .productArrivalOne .product{
+        width: 80%;
+    }  */
 
     .fliaOne,
     .fliaTwo {
@@ -1153,7 +1179,8 @@ button {
     }
 
     .productArrivalTwo .product img {
-        height: 96vh
+        height: 95vh;/*96vh*/
+        width: 100%;
             /*calc(67vw/1.28);*/
     }
 
@@ -1194,7 +1221,12 @@ button {
 
     .imageCategory img {
         height: 65.6vh;
-        border-radius: 3px;
+        border: 1px solid #c6c6c6;
+        border-radius: 5px;
+    }
+
+    .kids{
+        margin-top: 2rem;
     }
 
     @media screen and (min-width:1024px) and (max-width:1430px) {
@@ -1249,12 +1281,16 @@ button {
             justify-content: space-between;
         }
 
-        .productCollectionOne .wideProduct,
+        .carousel-container{
+            width: 90vw;
+        }
+
+        /* .productCollectionOne .wideProduct,
         .productCollectionTwo .wideProduct {
             flex-basis: calc(100% - 2rem);
             /* El primer elemento ocupa todo el ancho en la primera fila */
-            margin-right: 2rem;
-        }
+            /* margin-right: 2rem;
+        } */ 
 
         .productCollectionOne .product,
         .productCollectionTwo .product {
@@ -1326,6 +1362,18 @@ button {
             /* Agrega un espacio en la parte inferior para crear una nueva fila */
         }
 
+        .imagesPopular .imageP:nth-child(3){
+            width: 100%;
+        }
+
+        .imageP:nth-child(3){
+            flex-basis: auto;
+        }
+
+        .imageP img:nth-child(3){
+            width: 100%;
+        }
+
         .wideadvertisement {
             flex-basis: 50%;
             /* El elemento de anuncio ocupa todo el ancho en su propia fila */
@@ -1376,7 +1424,8 @@ button {
         }
 
         .productArrivalTwo .product img {
-            height: calc(84vw/1.28);
+            /* height: calc(84vw/1.28); */
+            height: 100vh;
         }
     }
 
@@ -1447,9 +1496,13 @@ button {
             flex-direction: column;
         }
 
-        .mainPopular .product img {
-            height: 100vh;
+        .imagesPopular .imageP:nth-child(3){
+            width: 100%;
         }
+
+        /* .mainPopular .product img {
+            height: 100vh;
+        } */
 
         .imagesPopular {
             flex-direction: column;
