@@ -469,7 +469,7 @@
 
                 <div class="text">
                     <nav class="navInfoPersonal">
-                        <a href="#" class="inicioLink">Inicio <i class="bi bi-arrow-right"></i></a>
+                        <a href="http://localhost:3600/" class="inicioLink">Inicio <i class="bi bi-arrow-right"></i></a>
                         <a href="#">Perfil <i class="bi bi-arrow-right"></i></a>
                     </nav>
                     <h3>Informacion Personal</h3>
@@ -500,7 +500,7 @@
                         <i class="bi bi-arrow-up arrowUp"></i>
                     </button>
 
-                    <button class="btnList">
+                    <button id="mB" class="btnList">
                         <i class="bi bi-handbag iconBtn"></i>
                         Mi bolsa
                         <i class="bi bi-arrow-right arrowRight"></i>
@@ -516,7 +516,7 @@
                         <i class="bi bi-arrow-up arrowUp"></i>
                     </button>
 
-                    <button class="btnList">
+                    <button id="dP"  class="btnList">
                         <i class="bi bi-wallet2 iconBtn"></i>
                         Detalles del pago
                         <i class="bi bi-arrow-right arrowRight"></i>
@@ -648,3 +648,24 @@
 
     </section>
 </main>
+
+<script>
+    const mB = document.getElementById('mB');
+    const dP = document.getElementById('dP');
+
+    mB.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/wishlist';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+
+    dP.addEventListener('click', () => {
+        // Agregar un retraso de 2 segundos antes de redirigir a Google
+        setTimeout(() => {
+            window.location.href = 'http://localhost:3600/prod/checkPage';
+        }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+    });
+
+</script>

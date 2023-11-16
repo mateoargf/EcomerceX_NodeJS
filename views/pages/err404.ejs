@@ -280,7 +280,18 @@
                     otro camino!</p>
           </div>
           <div class="div-button">
-               <button class="continue-button">CONTINUAR COMPRANDO</button>
+               <button id="btn404" class="continue-button">CONTINUAR COMPRANDO</button>
           </div>
      </div>
 </section>
+
+<script>
+      const btn404 = document.getElementById('btn404');
+
+          btn404.addEventListener('click', () => {
+               // Agregar un retraso de 2 segundos antes de redirigir a Google
+               setTimeout(() => {
+                    window.location.href = 'http://localhost:3600/';
+               }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
+          });
+</script>
