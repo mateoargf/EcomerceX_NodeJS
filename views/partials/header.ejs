@@ -1203,8 +1203,65 @@ fin de la ediccion del header*/
          window.location.href="/"
      })
 </script>
-<script src="./../pages/scripts/bag.js"></script>
-<script src="./../pages/scripts/hamburguesa.js"></script>
+
+<!-- <script src="../pages/scripts/bag.js"></script> -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const carritoBtn = document.querySelector("#carritoBtn");
+    const carritoMenu = document.querySelector("#carritoMenu");
+    const comprarAhoraBtn = document.querySelector("#comprarAhoraBtn");
+    const cerrarCarritoBtn = document.querySelector("#cerrarCarritoBtn");
+    const confirmacionCompra = document.querySelector("#confirmacionCompra");
+    const listaCarrito = document.getElementById('listaCarrito');
+
+
+    carritoBtn.addEventListener("click", function() {
+        carritoMenu.style.display = "block";
+    });
+
+    cerrarCarritoBtn.addEventListener("click", function() {
+        carritoMenu.style.display = "none";
+    });
+
+
+    function mostrarMensaje(mensaje) {
+        mensajeAgregado.textContent = mensaje;
+        mensajeAgregado.style.display = "block";
+
+        setTimeout(function() {
+            mensajeAgregado.style.display = "none";
+        }, 800);
+    }
+
+   
+    comprarAhoraBtn.addEventListener('click', function() {
+        if (listaCarrito.childElementCount === 0) {
+            // alert('Usted no tiene ningún producto, por favor agregue uno.');
+            mostrarMensaje("Usted no tiene ningún producto, por favor agregue uno");
+        } else {
+            confirmacionCompra.style.display = 'block';
+        }
+    })
+});
+
+</script>
+
+<!-- <script src="./../pages/scripts/hamburguesa.js"></script> -->
+
+<script>
+    const hamburger = document.querySelector("#hamburger");
+    const abrir = document.querySelector("#openHamburger");
+    const cerrar = document.querySelector("#closeHamburger");
+
+    abrir.addEventListener("click", () => {
+        hamburger.classList.add("visible");
+    })
+
+    cerrar.addEventListener("click", () =>{
+        hamburger.classList.remove("visible");
+    })
+</script>
 
 <!-- script que tra google translate  -->
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -1234,6 +1291,7 @@ fin de la ediccion del header*/
         }, 2000); // El retraso se define en milisegundos (en este caso, 2000 ms = 2 segundos)
     });
 </script>
+
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
