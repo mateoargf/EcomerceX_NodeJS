@@ -27,28 +27,30 @@
             <div class="productCollectionOne">
                 <% if (productos.remeras.destacada) { %>
                     <div class="wideProduct">
-                        <div>
-                            <img src="<%= productos.remeras.destacada.imagen %>" alt="">
-                        </div>
-
-                        <div class="infoProduct">
-                            <div class="nameProduct">
-                                <a href="http://localhost:3600/prod/hydro">
-                                    <%= productos.remeras.destacada.modelo %>
-                                </a>
+                        <a href="/prod/hydro/<%= productos.remeras.destacada._id %>">
+                            <div>
+                                <img src="<%= productos.remeras.destacada.imagen %>" alt="">
                             </div>
 
-                            <div class="for">
-                                <p>
-                                    <%= productos.remeras.destacada.descripción %>
-                                </p>
-                            </div>
+                            <div class="infoProduct">
+                                <div class="nameProduct">
+                                    <a href="#">
+                                        <%= productos.remeras.destacada.modelo %>
+                                    </a>
+                                </div>
 
-                            <div class="price">
-                                <p>$<%= productos.remeras.destacada.precio %>
-                                </p>
+                                <div class="for">
+                                    <p>
+                                        <%= productos.remeras.destacada.descripción %>
+                                    </p>
+                                </div>
+
+                                <div class="price">
+                                    <p>$<%= productos.remeras.destacada.precio %>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <% } %>
                         <% productos.remeras.otros.forEach(p=> { %>
@@ -443,8 +445,7 @@
 
                 <% if(productos.remeras.destacada) { %>
                     <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>"
-                            alt="">
+                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
                     </div>
 
                     <% } %>
@@ -452,40 +453,38 @@
             <div class="kids">
                 <% if(productos.remeras.destacada) { %>
                     <div class="imageCategory">
-                        <img src="<%= productos.remeras.destacada.imagen %>"
-                            alt="">
+                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
                     </div>
 
                     <% } %>
 
-                    <div class="headerCategory">
-                        <div class="titleCategory">
-                            <h2><a href="#">Niños</a></h2>
+                        <div class="headerCategory">
+                            <div class="titleCategory">
+                                <h2><a href="#">Niños</a></h2>
+                            </div>
+                            <div class="arrowRight">
+                                <button id="kidsBtn"><i class="bi bi-arrow-right"></i></button>
+                            </div>
                         </div>
-                        <div class="arrowRight">
-                            <button id="kidsBtn"><i class="bi bi-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="women">
-                    <div class="headerCategory">
-                        <div class="titleCategory">
-                            <h2><a href="#">Mujeres</a></h2>
-                        </div>
-                        <div class="arrowRight">
-                            <button id="womenBtn"><i class="bi bi-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <% if(productos.remeras.destacada) { %>
-                        <div class="imageCategory">
-                            <img src="<%= productos.remeras.destacada.imagen %>"
-                                alt="">
-                        </div>
-    
-                        <% } %>
-                    </div>
-                </div>
             </div>
+            <div class="women">
+                <div class="headerCategory">
+                    <div class="titleCategory">
+                        <h2><a href="#">Mujeres</a></h2>
+                    </div>
+                    <div class="arrowRight">
+                        <button id="womenBtn"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+                <% if(productos.remeras.destacada) { %>
+                    <div class="imageCategory">
+                        <img src="<%= productos.remeras.destacada.imagen %>" alt="">
+                    </div>
+
+                    <% } %>
+            </div>
+        </div>
+        </div>
         </div>
     </section>
     <section id="newMore section4" class="seccion carrusel">
@@ -584,7 +583,7 @@ button {
     }
 
     img {
-        object-fit:contain;
+        object-fit: contain;
     }
 
     .carrusel img {
@@ -1012,7 +1011,7 @@ button {
 
     }
 
-    .imagesPopular .imageP:nth-child(3){
+    .imagesPopular .imageP:nth-child(3) {
         width: 85%;
     }
 
@@ -1039,7 +1038,7 @@ button {
     .wideImageP img {
         height: 44vh;
         width: 100%;
-        border:1px solid #c6c6c6;
+        border: 1px solid #c6c6c6;
         border-radius: 5px;
     }
 
@@ -1156,7 +1155,8 @@ button {
     .productArrivalTwo {
         display: flex;
         flex-direction: column;
-        width: 60%;/*50%*/
+        width: 60%;
+        /*50%*/
     }
 
     /* .productArrivalOne .product{
@@ -1179,9 +1179,10 @@ button {
     }
 
     .productArrivalTwo .product img {
-        height: 95vh;/*96vh*/
+        height: 95vh;
+        /*96vh*/
         width: 100%;
-            /*calc(67vw/1.28);*/
+        /*calc(67vw/1.28);*/
     }
 
 
@@ -1225,7 +1226,7 @@ button {
         border-radius: 5px;
     }
 
-    .kids{
+    .kids {
         margin-top: 2rem;
     }
 
@@ -1281,7 +1282,7 @@ button {
             justify-content: space-between;
         }
 
-        .carousel-container{
+        .carousel-container {
             width: 90vw;
         }
 
@@ -1289,8 +1290,8 @@ button {
         .productCollectionTwo .wideProduct {
             flex-basis: calc(100% - 2rem);
             /* El primer elemento ocupa todo el ancho en la primera fila */
-            /* margin-right: 2rem;
-        } */ 
+        /* margin-right: 2rem;
+        } */
 
         .productCollectionOne .product,
         .productCollectionTwo .product {
@@ -1362,15 +1363,15 @@ button {
             /* Agrega un espacio en la parte inferior para crear una nueva fila */
         }
 
-        .imagesPopular .imageP:nth-child(3){
+        .imagesPopular .imageP:nth-child(3) {
             width: 100%;
         }
 
-        .imageP:nth-child(3){
+        .imageP:nth-child(3) {
             flex-basis: auto;
         }
 
-        .imageP img:nth-child(3){
+        .imageP img:nth-child(3) {
             width: 100%;
         }
 
@@ -1496,7 +1497,7 @@ button {
             flex-direction: column;
         }
 
-        .imagesPopular .imageP:nth-child(3){
+        .imagesPopular .imageP:nth-child(3) {
             width: 100%;
         }
 
