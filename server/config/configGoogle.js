@@ -12,7 +12,7 @@ passport.use('registroGoogle',new GoogleStrategy({
         //opciones de estrategia de google
         clientID:keys.google.clientID,
         clientSecret:keys.google.clientSecret,
-        callbackURL:'http://localhost:3600/user/auth/google/callback',
+        callbackURL:'http://tpfinalxecomerce.onrender.com/user/auth/google/callback',
         scope: ['email', 'profile']
         
     }, async(accessToken,refreshToken,profile,done)=>{
