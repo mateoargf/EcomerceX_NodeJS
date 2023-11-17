@@ -2,7 +2,7 @@ services:
   - name: web
     buildCommand: npm run build
     startCommand: npm start
-    env: .env
+    env:
       - key: NODE_ENV
         value: production
       - key: MONGO_URL
@@ -12,4 +12,4 @@ services:
       - key: SECRET_SESSION
         value: 'mi-secreto'
       - key: SECRET_PASSPORT
-        value: 'secreto'
+        value: 'secreto'
